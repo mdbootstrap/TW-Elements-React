@@ -1,0 +1,47 @@
+{
+  "name": "te-react-ui-kit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --open",
+    "dev": "vite",
+    "build": "vite build && cross-env --env.buildFile=umd vite build && npm run copy:te-files && cd ./site && npm run build:tailwind",
+    "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo ts-node config/build.ts",
+    "build:docs": "cross-env --env.mode=docs vite build && cd dist-docs",
+    "copy:te-files": "node helpers/copyTeFiles.cjs",
+    "docs:install": "npm install && cd ./site && npm install && cd ../ && npm run build",
+    "docs:start": "cd ./site && npm start",
+    "test": "jest",
+    "lint": "lint-staged && pretty-quick",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.2.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/shelljs": "^0.8.12",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
+    "clsx": "^1.2.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "fs-extra": "^11.1.1",
+    "postcss": "^8.4.23",
+    "shelljs": "^0.8.5",
+    "sass": "^1.62.1",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  }
+}
