@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 const entryPath = `src/lib/index.tsx`;
-const packageName = 'tw-elements-react';
-const outDir = process.env.buildFile === 'docs' ? 'dist' : 'dist-docs';
+const packageName = "tw-elements-react";
+const outDir = process.env.mode === "docs" ? "dist-docs" : "dist";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'tw-elements-react': path.resolve('./src/lib/index.tsx'),
+      "tw-elements-react": path.resolve("./src/lib/index.tsx"),
     },
   },
   build: {
@@ -26,13 +26,11 @@ export default defineConfig({
     copyPublicDir: false,
     lib: process.env.mode !== "docs" && {
       entry: path.resolve(__dirname, entryPath),
-      name: 'te',
+      name: "te",
       formats: process.env.buildFile ? ["umd"] : ["es"],
-      fileName: (format) => `${packageName}.${format}.min.js`,
+      fileName: (format) => `js/${packageName}.${format}.min.js`,
     },
     sourcemap: true,
-    rollupOptions: {
-      
-    },
+    rollupOptions: {},
   },
-})
+});

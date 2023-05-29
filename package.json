@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite --open",
     "dev": "vite",
-    "build": "vite build && cross-env --env.buildFile=umd vite build && npm run copy:te-files && cd ./site && npm run build:tailwind",
+    "build": "vite build && cross-env --env.buildFile=umd vite build && ts-node config/build.ts && npm run copy:te-files && cd ./site && npm run build:tailwind",
     "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo ts-node config/build.ts",
     "build:docs": "cross-env --env.mode=docs vite build && cd dist-docs",
     "copy:te-files": "node helpers/copyTeFiles.cjs",
