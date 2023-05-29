@@ -1,29 +1,74 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from "react";
 
 //demo pages
-import ButtonPage from './pages/button/ButtonPage';
-import CollapsePage from './pages/collapse/CollapsePage';
-import HomePage from './HomePage';
+import ButtonPage from "./pages/components/button/ButtonPage";
+import CollapsePage from "./pages/components/collapse/CollapsePage";
 
 //examples pages
-import ButtonBasicExample from './pages/button/examples/ButtonBasicExample';
-import CollapseBasicExample from './pages/collapse/examples/CollapseBasicExample';
+import ButtonExamples from "./pages/components/button/exampleList";
+import CollapseExamples from "./pages/components/collapse/exampleList";
 
 interface Pages {
-  name: string,
-  path: string,
-  element: ReactElement,
+  name: string;
+  path: string;
+  element: ReactElement;
 }
 
-const demoPages: Pages[] = [
-  { name: 'home', path: '/', element: <HomePage /> },
-  { name: 'button', path: '/button', element: <ButtonPage /> },
-  { name: 'collapse', path: '/collapse', element: <CollapsePage /> },
-]
+interface PagesSection {
+  section: string;
+  pages: Pages[];
+}
 
-export const examplesPages: Pages[] = [
-  { name: 'ButtonBasicExample', path: '/button/examples/button-basic-example', element: <ButtonBasicExample /> },
-  { name: 'CollapseBasicExample', path: '/collapse/examples/collapse-basic-example', element: <CollapseBasicExample /> },
-]
+const componentsPages: Pages[] = [
+  { name: "button", path: "/components/button", element: <ButtonPage /> },
+  { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+];
+
+const contentStylesPages: Pages[] = [];
+
+const dataPages: Pages[] = [];
+
+const formsPages: Pages[] = [];
+
+const methodsPages: Pages[] = [];
+
+const navigationPages: Pages[] = [];
+
+const designBlocksPages: Pages[] = [];
+
+// list of pages with sections
+const demoPages: PagesSection[] = [
+  {
+    section: "components",
+    pages: componentsPages,
+  },
+  {
+    section: "content styles",
+    pages: contentStylesPages,
+  },
+  {
+    section: "data",
+    pages: dataPages,
+  },
+  {
+    section: "forms",
+    pages: formsPages,
+  },
+  {
+    section: "methods",
+    pages: methodsPages,
+  },
+  {
+    section: "navigation",
+    pages: navigationPages,
+  },
+  {
+    section: "design blocks",
+    pages: designBlocksPages,
+  },
+];
+
+// list of examples
+export const examplesPages: Pages[] = [...ButtonExamples, ...CollapseExamples];
 
 export default demoPages;

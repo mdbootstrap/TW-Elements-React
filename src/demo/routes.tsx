@@ -1,23 +1,22 @@
-import React from 'react';
-import { Route, Routes as Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Routes as Switch } from "react-router-dom";
 
-import demoPages from './pages';
-import { examplesPages } from './pages';
+import demoPages from "./pages";
+import { examplesPages } from "./pages";
+import HomePage from "./HomePage";
 
 export default function Routes(): JSX.Element {
   return (
     <Switch>
-      {
-        demoPages.map(({ name, path, element }) => (
+      <Route path="/" element={<HomePage />} />
+      {demoPages.map(({ pages }) =>
+        pages.map(({ name, path, element }) => (
           <Route key={name} path={path} element={element} />
         ))
-      }
-      {
-        examplesPages.map(({ name, path, element }) => (
-          <Route key={name} path={path} element={element} />
-        ))
-      }
+      )}
+      {examplesPages.map(({ name, path, element }) => (
+        <Route key={name} path={path} element={element} />
+      ))}
     </Switch>
   );
 }
-  
