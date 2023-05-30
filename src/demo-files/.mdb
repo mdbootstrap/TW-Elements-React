@@ -1,5 +1,8 @@
 {
+  "projectName": "te-react-docs",
+  "meta": {
+    "type": "frontend"
+  },
   "packageManager": "npm",
-  "projectName": "mdbtwdd",
   "hash": "31fd1d29"
 }
