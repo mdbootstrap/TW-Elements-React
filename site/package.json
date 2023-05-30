@@ -6,7 +6,7 @@
   "main": "index.js",
   "author": "MDBootstrap <office@mdbootstrap.com>",
   "scripts": {
-    "start": "concurrently npm:watch:*",
+    "start": "node config.js && concurrently npm:watch:*",
     "watch:tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.min.css --minify --watch",
     "watch:hugo": "hugo server -D",
     "build:tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.min.css --minify",

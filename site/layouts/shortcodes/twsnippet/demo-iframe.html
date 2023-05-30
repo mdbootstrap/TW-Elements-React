@@ -1,14 +1,14 @@
 {{ $id := .Get "id" }}
 {{ $iframe := .Get "iframe" }}
+{{ $height := .Get "height" }}
 {{ $title := .Get "title" }}
-{{ $published := "https://b-cylwik-te-react-docs.mdbgo.io/#" }}
-
+{{ $url := "https://b-cylwik-te-react-docs.mdbgo.io/#" }}
 
 <section class="my-5">
   <div
     class="rounded-lg border bg-white dark:border-neutral-600 dark:bg-neutral-800">
     <div class="p-4">
-      <iframe data-te-react-id="{{ $id }}" height="250px" width="500px" src="{{ $published }}{{ $iframe }}" title="{{ $title }}"></iframe>
+      <iframe data-te-react-id="{{ $id }}" height="{{ $height }}px" width="100%" src="{{ $url }}{{ $iframe }}" title="{{ $title }}"></iframe>
     </div>
     <!-- Header -->
     <div class="hidden md:block mt-4 border-t p-4 text-center dark:border-neutral-600">
@@ -42,3 +42,13 @@
 </section>
 
 
+<script src="/js/demo-url.js"></script>
+<script>
+  const iframe = document.querySelector("[data-te-react-id='{{ $id }}']")
+  const oldUrl = "{{ $url }}"
+  
+  if (url && url !== oldUrl) {
+    const link = "{{ $iframe }}"
+    iframe.setAttribute("src", `${url}${link}` )
+  }
+</script>
