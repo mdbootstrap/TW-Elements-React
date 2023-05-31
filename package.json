@@ -1,7 +1,8 @@
 {
   "name": "tw-elements-react",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha1",
   "type": "module",
+  "license": "AGPL",
   "scripts": {
     "start": "vite --open",
     "dev": "vite",
