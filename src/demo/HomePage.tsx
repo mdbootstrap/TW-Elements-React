@@ -5,7 +5,7 @@ import demoPages from "./pages";
 
 const HomePage = () => {
   return (
-    <div className="my-8 mx-16">
+    <div>
       <h1 className="flex justify-center mb-10 mt-0 text-5xl font-medium leading-tight text-primary">
         Tailwind Element React UI KIT
       </h1>
