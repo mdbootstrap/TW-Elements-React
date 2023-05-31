@@ -7,10 +7,9 @@
 /site/assets/css/style.min.css
 /site/static/js/index.min.js
 /site/static/js/index.min.js.map
-/site/static/js/tw-elements.umd.min.js
-/site/static/js/tw-elements.umd.min.js.map
 /site/static/js/plugin.js
 /site/static/js/plugin.cjs
+/site/static/js/demo-url.js
 
 ## OS Files
 # Windows

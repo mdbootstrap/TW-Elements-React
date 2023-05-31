@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MDBCollapse } from 'tw-elements-react';
+import React, { useState } from "react";
+import { TECollapse } from "tw-elements-react";
 
 export default function CollapseBasicExample(): JSX.Element {
   const [showShow, setShowShow] = useState(false);
@@ -7,7 +7,7 @@ export default function CollapseBasicExample(): JSX.Element {
   const toggleShow = () => setShowShow(!showShow);
 
   const customTheme = {
-    visible: '',
+    visible: "",
   };
 
   return (
@@ -20,12 +20,13 @@ export default function CollapseBasicExample(): JSX.Element {
         Button
       </button>
 
-      <MDBCollapse show={showShow} theme={customTheme}>
+      <TECollapse show={showShow} theme={customTheme}>
         <div className="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 dark:text-neutral-50">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+          labore wes anderson cred nesciunt sapiente ea proident.
         </div>
-      </MDBCollapse>
+      </TECollapse>
     </>
   );
 }

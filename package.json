@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build && cross-env --env.buildFile=umd vite build && ts-node config/build.ts && npm run copy:te-files && cd ./site && npm run build:tailwind",
     "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo ts-node config/build.ts",
-    "build:docs": "cross-env --env.mode=docs vite build && cd dist-docs",
+    "build:docs": "cross-env --env.mode=docs vite build && cross-env --env.mode=docs ts-node config/build.ts && cd dist-docs && mdb publish --override",
     "copy:te-files": "node helpers/copyTeFiles.cjs",
     "docs:install": "npm install && cd ./site && npm install && cd ../ && npm run build",
     "docs:start": "cd ./site && npm start",

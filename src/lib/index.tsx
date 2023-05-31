@@ -1,5 +1,3 @@
-import MDBCollapse from './Collapse/Collapse';
+import TECollapse from "./components/Collapse/Collapse";
 
-export {
-  MDBCollapse,
-};
+export { TECollapse };

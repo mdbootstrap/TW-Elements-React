@@ -1,0 +1,91 @@
+---
+title: "Collapse"
+date: 2023-03-01T16:00:58+02:00
+draft: "false"
+main_title: "Collapse"
+subheading: "Tailwind CSS React Collapse"
+seo_title: "Tailwind CSS React Collapse - Free Examples & Tutorial"
+description: "Use responsive collapse component with helper examples for expand collapse, collappse toggle, collapse animation & more. Free download, open-source license."
+image: "https://tecdn.b-cdn.net/img/docs/components/collapse.webp"
+video: "https://www.youtube.com/watch?v=-GmnyjgI4Jc&ab_channel=Keepcoding"
+url: "docs/react/components/collapse/"
+menu:
+  components:
+    name: "Collapse"
+---
+
+<!-- Section: Basic example -->
+<section>
+  <!-- Title -->
+  <h2
+    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+    id="basic"
+    data-te-spy-item>
+    Basic example
+  </h2>
+
+  <!-- Description -->
+  <p class="mb-3">
+    The collapse od used in the
+    <a
+      href="https://tailwind-elements.com/docs/standard/components/accordion/"
+      class="text-primary dark:text-primary-400"
+      >accordion</a
+    >
+    component to make it fold and unfold.
+  </p>
+
+  <!-- prettier-ignore -->
+  {{< twsnippet/demo-iframe id="example1" iframe="/components/collapse/examples/collapse-basic-example" height="132" title="Collapse Basic Example">}}
+
+  <section class="!visible hidden" data-te-collapse-item id="example1">
+    <div class="pt-4">
+      {{< twsnippet/wrapper "HTML,javascript" >}}
+      {{< twsnippet/code active=true lang="HTML" >}}
+      <a
+        class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+        data-te-collapse-init
+        data-te-ripple-init
+        data-te-ripple-color="light"
+        href="#collapseExample"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample">
+        Link with href
+      </a>
+      <button
+        class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+        type="button"
+        data-te-collapse-init
+        data-te-ripple-init
+        data-te-ripple-color="light"
+        data-te-target="#collapseExample"
+        aria-expanded="false"
+        aria-controls="collapseExample">
+        Button with data-te-target
+      </button>
+      <div class="!visible hidden" id="collapseExample" data-te-collapse-item>
+        <div
+          class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 dark:text-neutral-50">
+          Some placeholder content for the collapse component. This panel is
+          hidden by default but revealed when the user activates the relevant
+          trigger.
+        </div>
+      </div>
+      {{< /twsnippet/code >}}
+      <!-- prettier-ignore -->
+      {{< twsnippet/code lang="js" >}}
+      // Initialization for ES Users
+      import {
+        Collapse,
+        Ripple,
+        initTE,
+      } from "tw-elements";
+      
+      initTE({ Collapse, Ripple });
+      {{< /twsnippet/code >}}
+      {{< /twsnippet/wrapper >}}
+    </div>
+  </section>
+</section>
+<!-- Section: Basic example -->

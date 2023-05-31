@@ -1,12 +1,13 @@
-import fs from 'fs-extra';
+import fs from "fs-extra";
 // import EOL from 'os';
-import shell from 'shelljs';
+import shell from "shelljs";
 // import { version } from '../package.json';
 // import intro from "./intro";
 
-const distName = process.env.mode === "demo" ? "dist-demo" : "dist";
+// prettier-ignore
+const distName = process.env.mode === "demo" ? "dist-demo" : process.env.mode === "docs" ? "dist-docs" : "dist";
 
-if (process.env.mode === "demo") {
+if (process.env.mode === "demo" || process.env.mode === "docs") {
   // demo build
   fs.copy(`./src/demo-files`, `./${distName}`, (err) => {
     if (err) throw err;
@@ -78,19 +79,39 @@ if (process.env.mode === "demo") {
   //   });
   // });
 
-  fs.copy(`./src/files/index.html`, `./${distName}/index.html`, (err: NodeJS.ErrnoException | null | undefined): void => {
-    if (err) throw err;
-  });
-  fs.copy(`./src/files/README.md`, `./${distName}/README.md`, (err: NodeJS.ErrnoException | null | undefined): void => {
-    if (err) throw err;
-  });
-  fs.copy(`./src/plugin.cjs`, `./${distName}/plugin.cjs`, (err: NodeJS.ErrnoException | null | undefined): void => {
-    if (err) throw err;
-  });
-  fs.copy(`./src/lib`, `./${distName}/src/lib`, (err: NodeJS.ErrnoException | null | undefined): void => {
-    if (err) throw err;
-  });
-  fs.copy(`./src/scss`, `./${distName}/src/scss`, (err: NodeJS.ErrnoException | null | undefined): void => {
-    if (err) throw err;
-  });
+  fs.copy(
+    `./src/files/index.html`,
+    `./${distName}/index.html`,
+    (err: NodeJS.ErrnoException | null | undefined): void => {
+      if (err) throw err;
+    }
+  );
+  fs.copy(
+    `./src/files/README.md`,
+    `./${distName}/README.md`,
+    (err: NodeJS.ErrnoException | null | undefined): void => {
+      if (err) throw err;
+    }
+  );
+  fs.copy(
+    `./src/plugin.cjs`,
+    `./${distName}/plugin.cjs`,
+    (err: NodeJS.ErrnoException | null | undefined): void => {
+      if (err) throw err;
+    }
+  );
+  fs.copy(
+    `./src/lib`,
+    `./${distName}/src/lib`,
+    (err: NodeJS.ErrnoException | null | undefined): void => {
+      if (err) throw err;
+    }
+  );
+  fs.copy(
+    `./src/scss`,
+    `./${distName}/src/scss`,
+    (err: NodeJS.ErrnoException | null | undefined): void => {
+      if (err) throw err;
+    }
+  );
 }
