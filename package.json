@@ -1,6 +1,5 @@
 {
-  "name": "te-react-ui-kit",
-  "private": true,
+  "name": "tw-elements-react",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
