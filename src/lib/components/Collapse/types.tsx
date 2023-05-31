@@ -1,6 +1,6 @@
-import { ComponentProps, HTMLAttributes, RefObject } from 'react';
+import { ComponentProps, HTMLAttributes, RefObject } from "react";
 
-interface CollapseTheme { 
+interface CollapseTheme {
   visible?: string;
   hidden?: string;
   baseTransition?: string;
@@ -13,10 +13,10 @@ interface CollapseProps extends HTMLAttributes<HTMLElement> {
   show?: boolean;
   tag?: ComponentProps<any>;
   navbar?: boolean;
-  direction?: 'vertical' | 'horizontal';
+  direction?: "vertical" | "horizontal";
   onShow?: any;
   onHide?: any;
-  customTheme?: CollapseTheme;
+  theme?: CollapseTheme;
 }
 
 export type { CollapseProps };
