@@ -25,6 +25,9 @@ interface PagesSection {
 const componentsPages: Pages[] = [
   { name: "button", path: "/components/button", element: <ButtonPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+];
+
+const contentStylesPages: Pages[] = [
   { name: "colors", path: "/content-styles/colors", element: <ColorsPage /> },
   {
     name: "dividers",
@@ -37,8 +40,6 @@ const componentsPages: Pages[] = [
     element: <FiguresPage />,
   },
 ];
-
-const contentStylesPages: Pages[] = [];
 
 const dataPages: Pages[] = [];
 
