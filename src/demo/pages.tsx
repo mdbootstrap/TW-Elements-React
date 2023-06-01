@@ -3,6 +3,9 @@ import React, { ReactElement } from "react";
 //demo pages
 import ButtonPage from "./pages/components/button/ButtonPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
+import ColorsPage from "./pages/content-styles/colors/ColorsPage";
+import DividersPage from "./pages/content-styles/dividers/DividersPage";
+import FiguresPage from "./pages/content-styles/figures/FiguresPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -22,6 +25,17 @@ interface PagesSection {
 const componentsPages: Pages[] = [
   { name: "button", path: "/components/button", element: <ButtonPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+  { name: "colors", path: "/content-styles/colors", element: <ColorsPage /> },
+  {
+    name: "dividers",
+    path: "/content-styles/dividers",
+    element: <DividersPage />,
+  },
+  {
+    name: "figures",
+    path: "/content-styles/figures",
+    element: <FiguresPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [];
