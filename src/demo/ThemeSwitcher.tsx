@@ -178,7 +178,6 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                 style={
                   activeTheme === "light" ? { color: "rgb(101,144,213)" } : {}
                 }
-                href="#"
                 data-theme="light"
                 data-te-dropdown-item-ref
                 onClick={setLightTheme}
@@ -200,7 +199,6 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                 style={
                   activeTheme === "dark" ? { color: "rgb(101,144,213)" } : {}
                 }
-                href="#"
                 data-theme="dark"
                 data-te-dropdown-item-ref
                 onClick={setDarkTheme}
@@ -222,7 +220,6 @@ const ThemeSwitcher: React.FC = (): JSX.Element => {
                 style={
                   activeTheme === "system" ? { color: "rgb(101,144,213)" } : {}
                 }
-                href="#"
                 data-theme="system"
                 data-te-dropdown-item-ref
                 onClick={setSystemTheme}
