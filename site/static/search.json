@@ -36,6 +36,24 @@
     "category": "Getting started"
   },
   {
+    "href": "/docs/react/content-styles/headings/",
+    "name": "Headings",
+    "keywords": ["headings"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/icons/",
+    "name": "Icons",
+    "keywords": ["icons"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/images/",
+    "name": "Images",
+    "keywords": ["images"],
+    "category": "Content & styles"
+  },
+  {
     "href": "/docs/react/content-styles/colors/",
     "name": "Colors",
     "keywords": ["colors"],

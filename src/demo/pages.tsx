@@ -7,6 +7,9 @@ import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
 import DividersPage from "./pages/content-styles/dividers/DividersPage";
 import FiguresPage from "./pages/content-styles/figures/FiguresPage";
+import ImagesPage from "./pages/content-styles/images/ImagesPage";
+import HeadingsPage from "./pages/content-styles/headings/HeadingsPage";
+import IconsPage from "./pages/content-styles/icons/IconsPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -30,6 +33,13 @@ const componentsPages: Pages[] = [
 ];
 
 const contentStylesPages: Pages[] = [
+  { name: "images", path: "/content-styles/images", element: <ImagesPage /> },
+  { name: "icons", path: "/content-styles/icons", element: <IconsPage /> },
+  {
+    name: "headings",
+    path: "/content-styles/headings",
+    element: <HeadingsPage />,
+  },
   { name: "colors", path: "/content-styles/colors", element: <ColorsPage /> },
   {
     name: "dividers",
