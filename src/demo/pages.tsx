@@ -10,6 +10,12 @@ import FiguresPage from "./pages/content-styles/figures/FiguresPage";
 import ShadowsPage from "./pages/content-styles/shadows/ShadowsPage";
 import TypographyPage from "./pages/content-styles/typography/TypographyPage";
 import BreadcrumbsPage from "./pages/navigation/breadcrumbs/BreadcrumbsPage";
+import ImagesPage from "./pages/content-styles/images/ImagesPage";
+import HeadingsPage from "./pages/content-styles/headings/HeadingsPage";
+import IconsPage from "./pages/content-styles/icons/IconsPage";
+import BadgesPage from "./pages/components/badges/BadgesPage";
+import AvatarPage from "./pages/components/avatar/AvatarPage";
+import PaginationPage from "./pages/navigation/pagination/PaginationPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -30,9 +36,18 @@ interface PagesSection {
 const componentsPages: Pages[] = [
   { name: "button", path: "/components/button", element: <ButtonPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+  { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
+  { name: "badge", path: "/components/badges", element: <BadgesPage /> },
 ];
 
 const contentStylesPages: Pages[] = [
+  { name: "images", path: "/content-styles/images", element: <ImagesPage /> },
+  { name: "icons", path: "/content-styles/icons", element: <IconsPage /> },
+  {
+    name: "headings",
+    path: "/content-styles/headings",
+    element: <HeadingsPage />,
+  },
   { name: "colors", path: "/content-styles/colors", element: <ColorsPage /> },
   {
     name: "dividers",
@@ -69,6 +84,11 @@ const navigationPages: Pages[] = [
     name: "breadcrumbs",
     path: "/navigation/breadcrumbs",
     element: <BreadcrumbsPage />,
+  },
+  {
+    name: "pagination",
+    path: "/navigation/pagination",
+    element: <PaginationPage />,
   },
 ];
 
