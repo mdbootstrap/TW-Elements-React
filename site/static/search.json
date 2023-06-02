@@ -34,5 +34,23 @@
     "name": "Changelog",
     "keywords": ["releases", "updates"],
     "category": "Getting started"
+  },
+  {
+    "href": "/docs/react/content-styles/colors/",
+    "name": "Colors",
+    "keywords": ["colors"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/dividers/",
+    "name": "Dividers",
+    "keywords": ["dividers"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/figures/",
+    "name": "Figures",
+    "keywords": ["figures"],
+    "category": "Content & styles"
   }
 ]
