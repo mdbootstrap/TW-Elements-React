@@ -52,5 +52,50 @@
     "name": "Pagination",
     "keywords": ["pages", "paginate", "next", "previous"],
     "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/content-styles/headings/",
+    "name": "Headings",
+    "keywords": ["headings"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/icons/",
+    "name": "Icons",
+    "keywords": ["icons"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/images/",
+    "name": "Images",
+    "keywords": ["images"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/colors/",
+    "name": "Colors",
+    "keywords": ["colors"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/dividers/",
+    "name": "Dividers",
+    "keywords": ["dividers"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/figures/",
+    "name": "Figures",
+    "keywords": ["figures"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/methods/ripple/",
+    "name": "Ripple",
+    "keywords": ["ripple", "wave"],
+    "category": "Methods",
+    "priority": {
+      "ripple": 1
+    }
   }
 ]
