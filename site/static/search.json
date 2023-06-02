@@ -52,5 +52,14 @@
     "name": "Figures",
     "keywords": ["figures"],
     "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/methods/ripple/",
+    "name": "Ripple",
+    "keywords": ["ripple", "wave"],
+    "category": "Methods",
+    "priority": {
+      "ripple": 1
+    }
   }
 ]
