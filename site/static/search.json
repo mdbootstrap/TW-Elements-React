@@ -36,6 +36,24 @@
     "category": "Getting started"
   },
   {
+    "href": "docs/react/components/badges/",
+    "name": "Badges",
+    "keywords": ["label", "notifications"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/components/avatar/",
+    "name": "Avatar",
+    "keywords": ["avatar"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/navigation/pagination/",
+    "name": "Pagination",
+    "keywords": ["pages", "paginate", "next", "previous"],
+    "category": "Navigation"
+  },
+  {
     "href": "/docs/react/content-styles/headings/",
     "name": "Headings",
     "keywords": ["headings"],
