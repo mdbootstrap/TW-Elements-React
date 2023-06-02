@@ -7,6 +7,9 @@ import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
 import DividersPage from "./pages/content-styles/dividers/DividersPage";
 import FiguresPage from "./pages/content-styles/figures/FiguresPage";
+import ShadowsPage from "./pages/content-styles/shadows/ShadowsPage";
+import TypographyPage from "./pages/content-styles/typography/TypographyPage";
+import BreadcrumbsPage from "./pages/navigation/breadcrumbs/BreadcrumbsPage";
 import ImagesPage from "./pages/content-styles/images/ImagesPage";
 import HeadingsPage from "./pages/content-styles/headings/HeadingsPage";
 import IconsPage from "./pages/content-styles/icons/IconsPage";
@@ -56,6 +59,16 @@ const contentStylesPages: Pages[] = [
     path: "/content-styles/figures",
     element: <FiguresPage />,
   },
+  {
+    name: "shadows",
+    path: "/content-styles/shadows",
+    element: <ShadowsPage />,
+  },
+  {
+    name: "typography",
+    path: "/content-styles/typography",
+    element: <TypographyPage />,
+  },
 ];
 
 const dataPages: Pages[] = [];
@@ -67,6 +80,11 @@ const methodsPages: Pages[] = [
 ];
 
 const navigationPages: Pages[] = [
+  {
+    name: "breadcrumbs",
+    path: "/navigation/breadcrumbs",
+    element: <BreadcrumbsPage />,
+  },
   {
     name: "pagination",
     path: "/navigation/pagination",
