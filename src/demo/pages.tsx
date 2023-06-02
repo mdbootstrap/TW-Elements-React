@@ -7,6 +7,9 @@ import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
 import DividersPage from "./pages/content-styles/dividers/DividersPage";
 import FiguresPage from "./pages/content-styles/figures/FiguresPage";
+import ShadowsPage from "./pages/content-styles/shadows/ShadowsPage";
+import TypographyPage from "./pages/content-styles/typography/TypographyPage";
+import BreadcrumbsPage from "./pages/navigation/breadcrumbs/BreadcrumbsPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -41,6 +44,16 @@ const contentStylesPages: Pages[] = [
     path: "/content-styles/figures",
     element: <FiguresPage />,
   },
+  {
+    name: "shadows",
+    path: "/content-styles/shadows",
+    element: <ShadowsPage />,
+  },
+  {
+    name: "typography",
+    path: "/content-styles/typography",
+    element: <TypographyPage />,
+  },
 ];
 
 const dataPages: Pages[] = [];
@@ -51,7 +64,13 @@ const methodsPages: Pages[] = [
   { name: "ripple", path: "/methods/ripple", element: <RipplePage /> },
 ];
 
-const navigationPages: Pages[] = [];
+const navigationPages: Pages[] = [
+  {
+    name: "breadcrumbs",
+    path: "/navigation/breadcrumbs",
+    element: <BreadcrumbsPage />,
+  },
+];
 
 const designBlocksPages: Pages[] = [];
 

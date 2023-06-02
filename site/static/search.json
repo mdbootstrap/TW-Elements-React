@@ -61,5 +61,23 @@
     "priority": {
       "ripple": 1
     }
+  },
+  {
+    "href": "/docs/react/content-styles/shadows/",
+    "name": "Shadows",
+    "keywords": ["shadows"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/typography/",
+    "name": "Typography",
+    "keywords": ["typography"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/navigation/breadcrumbs",
+    "name": "Breadcrumbs",
+    "keywords": ["breadcrumbs"],
+    "category": "Navigation"
   }
 ]
