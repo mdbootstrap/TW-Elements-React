@@ -52,5 +52,32 @@
     "name": "Images",
     "keywords": ["images"],
     "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/colors/",
+    "name": "Colors",
+    "keywords": ["colors"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/dividers/",
+    "name": "Dividers",
+    "keywords": ["dividers"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/figures/",
+    "name": "Figures",
+    "keywords": ["figures"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/methods/ripple/",
+    "name": "Ripple",
+    "keywords": ["ripple", "wave"],
+    "category": "Methods",
+    "priority": {
+      "ripple": 1
+    }
   }
 ]
