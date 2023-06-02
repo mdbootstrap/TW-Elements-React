@@ -3,10 +3,12 @@ import React, { ReactElement } from "react";
 //demo pages
 import ButtonPage from "./pages/components/button/ButtonPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
+import RipplePage from "./pages/methods/ripple/RipplePage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
+import RippleExamples from "./pages/methods/ripple/exampleList";
 
 interface Pages {
   name: string;
@@ -30,7 +32,9 @@ const dataPages: Pages[] = [];
 
 const formsPages: Pages[] = [];
 
-const methodsPages: Pages[] = [];
+const methodsPages: Pages[] = [
+  { name: "ripple", path: "/methods/ripple", element: <RipplePage /> },
+];
 
 const navigationPages: Pages[] = [];
 
@@ -69,6 +73,10 @@ const demoPages: PagesSection[] = [
 ];
 
 // list of examples
-export const examplesPages: Pages[] = [...ButtonExamples, ...CollapseExamples];
+export const examplesPages: Pages[] = [
+  ...ButtonExamples,
+  ...CollapseExamples,
+  ...RippleExamples,
+];
 
 export default demoPages;
