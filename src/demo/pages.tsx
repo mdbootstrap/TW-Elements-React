@@ -16,6 +16,9 @@ import IconsPage from "./pages/content-styles/icons/IconsPage";
 import BadgesPage from "./pages/components/badges/BadgesPage";
 import AvatarPage from "./pages/components/avatar/AvatarPage";
 import PaginationPage from "./pages/navigation/pagination/PaginationPage";
+import FileInputPage from "./pages/forms/file-input/FileInputPage";
+import RadioPage from "./pages/forms/radio/RadioPage";
+import RangePage from "./pages/forms/range/RangePage";
 import ListGroupPage from "./pages/components/listgroup/ListGroupPage";
 import ParagraphsPage from "./pages/components/paragraphs/ParagraphsPage";
 import ProgressPage from "./pages/components/progress/ProgressPage";
@@ -101,6 +104,21 @@ const dataPages: Pages[] = [
 ];
 
 const formsPages: Pages[] = [
+  {
+    name: "file input",
+    path: "/forms/file-input",
+    element: <FileInputPage />,
+  },
+  {
+    name: "radio",
+    path: "/forms/radio",
+    element: <RadioPage />,
+  },
+  {
+    name: "range",
+    path: "/forms/range",
+    element: <RangePage />,
+  },
   { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
   { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
 ];
