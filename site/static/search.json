@@ -36,6 +36,42 @@
     "category": "Getting started"
   },
   {
+    "href": "docs/react/components/badges/",
+    "name": "Badges",
+    "keywords": ["label", "notifications"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/components/avatar/",
+    "name": "Avatar",
+    "keywords": ["avatar"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/navigation/pagination/",
+    "name": "Pagination",
+    "keywords": ["pages", "paginate", "next", "previous"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/content-styles/headings/",
+    "name": "Headings",
+    "keywords": ["headings"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/icons/",
+    "name": "Icons",
+    "keywords": ["icons"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/images/",
+    "name": "Images",
+    "keywords": ["images"],
+    "category": "Content & styles"
+  },
+  {
     "href": "/docs/react/content-styles/colors/",
     "name": "Colors",
     "keywords": ["colors"],
@@ -79,5 +115,23 @@
     "name": "Checkbox",
     "keywords": ["checked"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/content-styles/shadows/",
+    "name": "Shadows",
+    "keywords": ["shadows"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/typography/",
+    "name": "Typography",
+    "keywords": ["typography"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/navigation/breadcrumbs",
+    "name": "Breadcrumbs",
+    "keywords": ["breadcrumbs"],
+    "category": "Navigation"
   }
 ]
