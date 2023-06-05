@@ -32,7 +32,7 @@
       data-te-sidenav-accordion="true">
       <a
         href="/"
-        class="mb-3 flex items-center justify-center rounded-md py-6 pr-3 text-lg font-medium dark:text-neutral-100"
+        class="relative mb-3 flex items-center justify-center rounded-md py-6 pr-3 text-lg font-medium dark:text-neutral-100"
         aria-current="page">
         <picture>
           <source
@@ -44,7 +44,8 @@
             src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.png"
             class="mr-2 h-[20px]"
             alt="logo" /> </picture
-        >Tailwind Elements</a
+        >Tailwind Elements
+        <span class="absolute right-8 top-1/2">React</span></a
       >
       {{ partial "sidenav/standard.html" . }}
     </nav>

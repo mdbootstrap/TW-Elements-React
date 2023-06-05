@@ -36,6 +36,12 @@
     "category": "Getting started"
   },
   {
+    "href": "/docs/react/getting-started/contribute/",
+    "name": "Contribute",
+    "keywords": ["contribute", "pull request", "issues"],
+    "category": "Getting started"
+  },
+  {
     "href": "docs/react/components/badges/",
     "name": "Badges",
     "keywords": ["label", "notifications"],
@@ -99,6 +105,24 @@
     }
   },
   {
+    "href": "/docs/react/components/rating/",
+    "name": "Rating",
+    "keywords": ["feedback", "stars", "emoji"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/spinners/",
+    "name": "Spinners",
+    "keywords": ["loading"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/forms/checkbox/",
+    "name": "Checkbox",
+    "keywords": ["checked"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/content-styles/shadows/",
     "name": "Shadows",
     "keywords": ["shadows"],
@@ -133,5 +157,35 @@
     "name": "Range",
     "keywords": ["range"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/switch/",
+    "name": "Switch",
+    "keywords": ["toggle"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/tables/",
+    "name": "Tables",
+    "keywords": ["tables"],
+    "category": "Data"
+  },
+  {
+    "href": "/docs/react/components/listgroup",
+    "name": "List Group",
+    "keywords": ["list", "group"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/paragraphs",
+    "name": "Paragraphs",
+    "keywords": ["paragraphs"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/progress",
+    "name": "Progress",
+    "keywords": ["progress"],
+    "category": "Components"
   }
 ]

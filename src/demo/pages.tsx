@@ -19,6 +19,14 @@ import PaginationPage from "./pages/navigation/pagination/PaginationPage";
 import FileInputPage from "./pages/forms/file-input/FileInputPage";
 import RadioPage from "./pages/forms/radio/RadioPage";
 import RangePage from "./pages/forms/range/RangePage";
+import ListGroupPage from "./pages/components/listgroup/ListGroupPage";
+import ParagraphsPage from "./pages/components/paragraphs/ParagraphsPage";
+import ProgressPage from "./pages/components/progress/ProgressPage";
+import RatingPage from "./pages/components/rating/RatingPage";
+import SpinnersPage from "./pages/components/spinners/SpinnersPage";
+import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
+import TablesPage from "./pages/data/tables/TablesPage";
+import SwitchPage from "./pages/forms/switch/SwitchPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -39,8 +47,25 @@ interface PagesSection {
 const componentsPages: Pages[] = [
   { name: "button", path: "/components/button", element: <ButtonPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+  { name: "rating", path: "/components/rating", element: <RatingPage /> },
+  { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  {
+    name: "list group",
+    path: "/components/listgroup",
+    element: <ListGroupPage />,
+  },
+  {
+    name: "paragraphs",
+    path: "/components/paragraphs",
+    element: <ParagraphsPage />,
+  },
+  {
+    name: "Progress",
+    path: "/components/progress",
+    element: <ProgressPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -74,7 +99,9 @@ const contentStylesPages: Pages[] = [
   },
 ];
 
-const dataPages: Pages[] = [];
+const dataPages: Pages[] = [
+  { name: "tables", path: "/data/tables", element: <TablesPage /> },
+];
 
 const formsPages: Pages[] = [
   {
@@ -92,6 +119,8 @@ const formsPages: Pages[] = [
     path: "/forms/range",
     element: <RangePage />,
   },
+  { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
+  { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
 ];
 
 const methodsPages: Pages[] = [
