@@ -22,6 +22,8 @@ import ProgressPage from "./pages/components/progress/ProgressPage";
 import RatingPage from "./pages/components/rating/RatingPage";
 import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
+import TablesPage from "./pages/data/tables/TablesPage";
+import SwitchPage from "./pages/forms/switch/SwitchPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -94,9 +96,12 @@ const contentStylesPages: Pages[] = [
   },
 ];
 
-const dataPages: Pages[] = [];
+const dataPages: Pages[] = [
+  { name: "tables", path: "/data/tables", element: <TablesPage /> },
+];
 
 const formsPages: Pages[] = [
+  { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
   { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
 ];
 
