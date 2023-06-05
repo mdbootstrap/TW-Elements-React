@@ -105,6 +105,24 @@
     }
   },
   {
+    "href": "/docs/react/components/rating/",
+    "name": "Rating",
+    "keywords": ["feedback", "stars", "emoji"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/spinners/",
+    "name": "Spinners",
+    "keywords": ["loading"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/forms/checkbox/",
+    "name": "Checkbox",
+    "keywords": ["checked"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/content-styles/shadows/",
     "name": "Shadows",
     "keywords": ["shadows"],
