@@ -4,8 +4,8 @@ date: 2023-03-07T16:00:58+02:00
 draft: false
 main_title: "Quick Start"
 subheading: ""
-seo_title: "Install a free Tailwind CSS components library"
-description: "Install Tailwind Elements via npm, via command line, via CDN or download a free .zip package. Use our open source Tailwind CSS components for free."
+seo_title: "Install a free Tailwind CSS React components library"
+description: "Install Tailwind Elements React via npm, via command line, via CDN or download a free .zip package. Use our open source Tailwind CSS components for free."
 image: "https://tecdn.b-cdn.net/img/components-big.jpg"
 video: "https://www.youtube.com/watch?v=-GmnyjgI4Jc&ab_channel=Keepcoding"
 url: "docs/react/getting-started/quick-start/"
@@ -19,15 +19,14 @@ menu:
   <!-- <div class="basis-7/12"> -->
   <div class="w-full">
     <p class="mb-2">
-      Tailwind Elements is a plugin that extends the functionality of the
+      Tailwind Elements React is a plugin that extends the functionality of the
       library with many interactive components.
     </p>
 
     <p class="mb-2">
-      In some dynamic components (like dropdowns or modals) we add custom
-      JavaScript. However, they do not require any additional installation, all
+      Some of our components (like dropdowns or modals) include a custom React code. However, they do not require any additional installation, all
       the necessary code is always included in the example and copied to any
-      Tailwind project - it will work.
+      Tailwind project with React - it will work.
     </p>
 
     <div
@@ -52,63 +51,6 @@ menu:
 
 <hr class="my-10" />
 
-<div class="w-full">
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="formats"
-    data-te-spy-item>
-    Tailwind Elements formats
-  </h2>
-  <p class="mb-6">
-    Tailwind Elements, in order to meet the new, modular approach, allows the
-    use of <code>ES</code> and <code>UMD</code> formats. These formats will
-    differ in the way components are initialized and will be used in different
-    cases.
-  </p>
-
-  <h3 class="mb-3 font-bold">When to use ES or UMD format?</h3>
-  <p>If your application:</p>
-  <ol class="mb-2 ml-8 list-decimal">
-    <li>is based on <code>modules</code></li>
-    <li>uses <code>bundler</code> functionality</li>
-    <li>needs <code>treeshaking</code></li>
-  </ol>
-
-  <p class="mb-6">
-    the <code>ES</code> format will be most suitable for you, otherwise
-    <code>UMD</code> is the way to go.
-  </p>
-
-  <h3 class="mb-3 font-bold">
-    What is the difference between Tailwind Elements ES and UMD formats?
-  </h3>
-
-  <p class="mb-6">
-    In short, the way to initialize components. In order to allow bundlers to
-    perform proper treeshaking, we have moved component initialization to the
-    <code>initTE</code> method. Tailwind Elements in <code>UMD</code> format
-    will work without adding more elements, but will lack treeshaking. Tailwind
-    Elements in <code>ES</code> format, on the other hand, allows components to
-    be used as separate modules, resulting in the much smaller build size.
-  </p>
-
-  <h3 class="mb-3 font-bold">About the <code>initTE</code> method</h3>
-  <p>
-    To use the initTE method, you need to import it from the
-    <code>tw-elements</code>, same as for components. You can add a second
-    parameter of type <code>Boolean</code> that acts as a debugger. By default
-    it's value is set to <code>false</code>, so it will fire only when you want
-    to. How does it work? If it finds a component that should be inited but has
-    not been passed as an argument (for example, it finds a data atribute that
-    would suggest that it should be initialized automatically), it will display
-    a warning in a console. We encourage to use it in the last invocation of
-    <code>initTE</code> method because it shows what inits are lacking at the
-    current moment.
-  </p>
-</div>
-
-<hr class="my-10" />
-
 <div class="flex flex-row">
   <!-- <div class="w-full basis-7/12"> -->
   <div class="w-full">
@@ -119,7 +61,7 @@ menu:
       NPM
     </h2>
     <p class="my-3">
-      NPM is a recommended way to work with <b>Tailwind Elements</b> and others
+      NPM is a recommended way to work with <b>Tailwind Elements React</b> and others
       libraries.
     </p>
     <p class="my-3">
@@ -153,7 +95,7 @@ menu:
 <p class="mb-2">2. Run the following command to install the package via NPM:</p>
 <div class="pt-2">
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
-  npm install tw-elements
+  npm install tw-elements-react
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
@@ -166,34 +108,33 @@ menu:
 <div class="pt-2">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "tailwind.config.js" "" "mobile" >}}{{< twsnippet/code active=true lang="JavaScript" >}}
-  module.exports = {
+  /** @type {import('tailwindcss').Config} */
+
+  export default {
     content: [
-      "./src/**/*.{html,js}",
-      "./node_modules/tw-elements/dist/js/**/*.js"
+      "./src/**/*.{js,ts,jsx,tsx}",
     ],
-    plugins: [require("tw-elements/dist/plugin.cjs")],
-    darkMode: "class"
-  };
+    theme: {
+      extend: {},
+    },
+    plugins: [require('./src/plugin.cjs')],
+    darkMode: "class",
+  }
+  
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-6">
   4. Dynamic components will work after importing the package inside
-  <code>index.js</code>:
+  your components:
 </p>
 
 <div class="pt-2">
-  {{< twsnippet/wrapper "javascript,umd" "" "mobile" >}}
+  {{< twsnippet/wrapper "javascript" "" "mobile" >}}
   <!-- prettier-ignore -->
   {{< twsnippet/code active=true lang="JavaScript" >}}
-  import { Carousel, initTE } from "tw-elements";
-  initTE({ Carousel });
+  import { Carousel } from "tw-elements-react";
   {{< /twsnippet/code >}}
-  <!-- prettier-ignore -->
-  {{< twsnippet/code lang="JavaScript" >}}
-  import 'tw-elements';
-  {{< /twsnippet/code >}}
-  {{< /twsnippet/wrapper >}}
 </div>
 
 <hr class="my-10" />
@@ -299,7 +240,7 @@ menu:
 <div class="pt-2">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
-  npm create vite@latest my-project 
+  npm create vite@latest my-project -- --template react
   cd my-project
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
@@ -336,28 +277,27 @@ menu:
   {{< twsnippet/wrapper "tailwind.config.cjs" "" "mobile" >}}{{< twsnippet/code active=true lang="JavaScript" >}}
   /** @type {import('tailwindcss').Config} */
   module.exports = {
-    content: [
+  content: [
       "./index.html",
       "./src/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
+      "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
+  theme: {
       extend: {},
-    },
-    plugins: [],
+  },
+  darkMode: "class",
+  plugins: [require("tw-elements-react/dist/plugin.cjs")]
   }
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-6">
-  4. Add the necessary Tailwind directives to your <code>style.css</code> file
-  to be able to use Tailwind classes on your website. Unless you changed it,
-  <code>style.css</code> should be in the root directory of your app. You can
-  also remove the default content of the <code>style.css</code> file if you
-  want.
+  4. Add the necessary Tailwind directives to your <code>./src/index.css</code> file
+  to be able to use Tailwind classes on your website.
 </p>
 <div class="pt-2">
   <!-- prettier-ignore -->
-  {{< twsnippet/wrapper "style.css" "" "mobile" >}}{{< twsnippet/code active=true lang="css" >}}
+  {{< twsnippet/wrapper "src/index.css" "" "mobile" >}}{{< twsnippet/code active=true lang="css" >}}
   @tailwind base;
 
   @layer base {
@@ -376,15 +316,13 @@ menu:
 </div>
 
 <p class="mb-2 mt-6">
-  5. Link the css file inside the <code>index.html</code>.
+  5. Attach the Roboto font in <code>index.html</code>.
 </p>
 <div class="pt-2">
   {{< twsnippet/wrapper "index.html" "" "mobile" >}}{{< twsnippet/code active=true lang="HTML" >}}
-  <head>
-    ...
-    <link rel="stylesheet" href="style.css" />
-    ...
-  </head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+    rel="stylesheet" />
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
@@ -401,254 +339,52 @@ menu:
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
-<p class="mb-2 mt-6">7. Install the <code>tw-elements</code> package.</p>
+<p class="mb-2 mt-6">7. Install the <code>tw-elements-react</code> package.</p>
 
 <div class="pt-2">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
-  npm install tw-elements
+  npm install tw-elements-react
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-6">
-  8. Add js files patterns that loads dynamic component classes to the content
-  array inside the <code>tailwind.config.cjs</code>. Extend the default tailwind
-  classes by adding the <code>Tailwind Elements</code> plugin.
-</p>
-
-<div class="pt-2">
-  <!-- prettier-ignore -->
-  {{< twsnippet/wrapper "tailwind.config.cjs" "" "mobile" >}}{{< twsnippet/code active=true lang="js" >}}
-  /** @type {import('tailwindcss').Config} */
-  module.exports = {
-    content: [
-      "./index.html",
-      "./src/**/*.{html,js}",
-      "./node_modules/tw-elements/dist/js/**/*.js",
-    ],
-    plugins: [require("tw-elements/dist/plugin.cjs")],
-    darkMode: "class"
-  };  
-  {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
-</div>
-
-<p class="mb-2 mt-6">
-  9. Now you can start working on your app. Since the package.json created by
-  vite has a type set to <code>module</code>, we are going to use the
-  <code>ES</code>. Lets try to import some code and see if everything is working
-  correctly. Don't forget to call the <code>initTE</code> method. The carousel
+  8. Now you can start working on your app. The carousel
   component should have proper styles, and change the current image after arrow
   click or after some delay.
 </p>
 
-<div
-  class="my-4 rounded-md border-l-[6px] border-solid border-blue-600 bg-blue-100 p-2.5 dark:border-white dark:bg-sky-900 ">
-  <strong>Note:</strong> You can init more than one component at once, for
-  example:
-  <code>initTE({ Carousel, Datepicker, Select, Timepicker });</code>
-</div>
-
 <div class="pt-2">
-  {{< twsnippet/wrapper "index.html,main.js" "" "mobile" >}}
-  {{< twsnippet/code active=true lang="html" >}}
-  <div
-    id="carouselExampleCaptions"
-    class="relative"
-    data-te-carousel-init
-    data-te-carousel-slide>
-    <div
-      class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
-      data-te-carousel-indicators>
-      <button
-        type="button"
-        data-te-target="#carouselExampleCaptions"
-        data-te-slide-to="0"
-        data-te-carousel-active
-        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-        aria-current="true"
-        aria-label="Slide 1"></button>
-      <button
-        type="button"
-        data-te-target="#carouselExampleCaptions"
-        data-te-slide-to="1"
-        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-        aria-label="Slide 2"></button>
-      <button
-        type="button"
-        data-te-target="#carouselExampleCaptions"
-        data-te-slide-to="2"
-        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-        aria-label="Slide 3"></button>
-    </div>
-    <div
-      class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-      <div
-        class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-        data-te-carousel-active
-        data-te-carousel-item
-        style="backface-visibility: hidden">
-        <img
-          src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg"
-          class="block w-full"
-          alt="..." />
-        <div
-          class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-          <h5 class="text-xl">First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div
-        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-        data-te-carousel-item
-        style="backface-visibility: hidden">
-        <img
-          src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg"
-          class="block w-full"
-          alt="..." />
-        <div
-          class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-          <h5 class="text-xl">Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div
-        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-        data-te-carousel-item
-        style="backface-visibility: hidden">
-        <img
-          src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg"
-          class="block w-full"
-          alt="..." />
-        <div
-          class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-          <h5 class="text-xl">Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button
-      class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-      type="button"
-      data-te-target="#carouselExampleCaptions"
-      data-te-slide="prev">
-      <span class="inline-block h-8 w-8">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-6 w-6">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.75 19.5L8.25 12l7.5-7.5" />
-        </svg>
-      </span>
-      <span
-        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-        >Previous</span
-      >
-    </button>
-    <button
-      class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-      type="button"
-      data-te-target="#carouselExampleCaptions"
-      data-te-slide="next">
-      <span class="inline-block h-8 w-8">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-6 w-6">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-        </svg>
-      </span>
-      <span
-        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-        >Next</span
-      >
-    </button>
-  </div>
-  {{< /twsnippet/code >}}
+  {{< twsnippet/wrapper "app.jsx" "" "mobile" >}}
   <!-- prettier-ignore -->
-  {{< twsnippet/code lang="js" >}}
-  import { Carousel, initTE } from "tw-elements";
-  initTE({ Carousel }, true ); // set second parameter to true if you want to use a debugger
+  {{< twsnippet/code active=true lang="html" >}}
+  import React, { useEffect } from "react";
+  import { Datepicker, Input } from "tw-elements";
+
+  return (
+    <div
+      className="relative mb-3"
+      data-te-datepicker-init
+      data-te-input-wrapper-init>
+      <input
+        type="text"
+        className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+        placeholder="Select a date" />
+      <label
+        for="floatingInput"
+        className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+        >Select a date</label
+      >
+      </div>
+    ); 
+  }; 
+  export default App;
   {{< /twsnippet/code >}}
   {{< /twsnippet/wrapper >}}
 </div>
 
 <hr class="my-10" />
 
-<div class="flex flex-row">
-  <!-- <div class="w-full basis-7/12"> -->
-  <div class="w-full">
-    <h2
-      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-      id="cdn"
-      data-te-spy-item>
-      CDN
-    </h2>
-
-    <p class="mb-2">
-      You can easily test Tailwind Elements by adding CDN scripts to your
-      classic HTML template without the need for installing any packages.
-    </p>
-
-    <p class="mb-2 mt-4">
-      Add the stylesheet files below in the <code>head</code> section:
-    </p>
-  </div>
-  <!-- <div class="w-full basis-5/12">
-    {{< youtube cFIdkbIkW_8 >}}
-  </div> -->
-</div>
-
-<div class="pt-2">
-  <!-- prettier-ignore -->
-  {{< twsnippet/wrapper "index.html" "" "mobile" >}}{{< twsnippet/code active=true lang="HTML" >}}
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
-    rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        fontFamily: {
-          sans: ["Roboto", "sans-serif"],
-          body: ["Roboto", "sans-serif"],
-          mono: ["ui-monospace", "monospace"],
-        },
-      },
-      corePlugins: {
-        preflight: false,
-      },
-    };
-  </script>
-  {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
-</div>
-
-<p class="mb-2 mt-4">
-  Require the js bundled file right before the <code>body</code> closing tag.
-  Use the <code>UMD</code> file if used without a bundler.
-</p>
-<div class="pt-2">
-  {{< twsnippet/wrapper "index.html" >}}{{< twsnippet/code active=true lang="HTML" >}}
-  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-  {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
-</div>
-
-<hr class="my-10" />
 
 <div class="flex flex-row">
   <!-- <div class="w-full basis-7/12"> -->
@@ -660,7 +396,7 @@ menu:
       Starter
     </h2>
     <p class="mb-2">
-      In order to quickly test Tailwind Elements simply download our starter.
+      In order to quickly test Tailwind Elements React simply download our starter.
       Keep in mind that this is not an optimized for production version, but
       only a demo for testing.
     </p>
