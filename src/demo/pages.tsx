@@ -16,6 +16,9 @@ import IconsPage from "./pages/content-styles/icons/IconsPage";
 import BadgesPage from "./pages/components/badges/BadgesPage";
 import AvatarPage from "./pages/components/avatar/AvatarPage";
 import PaginationPage from "./pages/navigation/pagination/PaginationPage";
+import ListGroupPage from "./pages/components/listgroup/ListGroupPage";
+import ParagraphsPage from "./pages/components/paragraphs/ParagraphsPage";
+import ProgressPage from "./pages/components/progress/ProgressPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -38,6 +41,21 @@ const componentsPages: Pages[] = [
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  {
+    name: "list group",
+    path: "/components/listgroup",
+    element: <ListGroupPage />,
+  },
+  {
+    name: "paragraphs",
+    path: "/components/paragraphs",
+    element: <ParagraphsPage />,
+  },
+  {
+    name: "Progress",
+    path: "/components/progress",
+    element: <ProgressPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
