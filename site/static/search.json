@@ -115,5 +115,23 @@
     "name": "Breadcrumbs",
     "keywords": ["breadcrumbs"],
     "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/file-input",
+    "name": "File Input",
+    "keywords": ["file", "input"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/radio",
+    "name": "Radio",
+    "keywords": ["radio"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/range",
+    "name": "Range",
+    "keywords": ["range"],
+    "category": "Forms"
   }
 ]

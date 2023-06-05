@@ -16,6 +16,9 @@ import IconsPage from "./pages/content-styles/icons/IconsPage";
 import BadgesPage from "./pages/components/badges/BadgesPage";
 import AvatarPage from "./pages/components/avatar/AvatarPage";
 import PaginationPage from "./pages/navigation/pagination/PaginationPage";
+import FileInputPage from "./pages/forms/file-input/FileInputPage";
+import RadioPage from "./pages/forms/radio/RadioPage";
+import RangePage from "./pages/forms/range/RangePage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -73,7 +76,23 @@ const contentStylesPages: Pages[] = [
 
 const dataPages: Pages[] = [];
 
-const formsPages: Pages[] = [];
+const formsPages: Pages[] = [
+  {
+    name: "file input",
+    path: "/forms/file-input",
+    element: <FileInputPage />,
+  },
+  {
+    name: "radio",
+    path: "/forms/radio",
+    element: <RadioPage />,
+  },
+  {
+    name: "range",
+    path: "/forms/range",
+    element: <RangePage />,
+  },
+];
 
 const methodsPages: Pages[] = [
   { name: "ripple", path: "/methods/ripple", element: <RipplePage /> },
