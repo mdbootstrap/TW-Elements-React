@@ -16,14 +16,14 @@ import IconsPage from "./pages/content-styles/icons/IconsPage";
 import BadgesPage from "./pages/components/badges/BadgesPage";
 import AvatarPage from "./pages/components/avatar/AvatarPage";
 import PaginationPage from "./pages/navigation/pagination/PaginationPage";
+import RatingPage from "./pages/components/rating/RatingPage";
+import SpinnersPage from "./pages/components/spinners/SpinnersPage";
+import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
-import RatingPage from "./pages/components/rating/RatingPage";
-import SpinnersPage from "./pages/components/spinners/SpinnersPage";
-import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 
 interface Pages {
   name: string;
