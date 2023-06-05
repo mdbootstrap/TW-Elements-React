@@ -139,5 +139,23 @@
     "name": "Breadcrumbs",
     "keywords": ["breadcrumbs"],
     "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/components/listgroup",
+    "name": "List Group",
+    "keywords": ["list", "group"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/paragraphs",
+    "name": "Paragraphs",
+    "keywords": ["paragraphs"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/progress",
+    "name": "Progress",
+    "keywords": ["progress"],
+    "category": "Components"
   }
 ]
