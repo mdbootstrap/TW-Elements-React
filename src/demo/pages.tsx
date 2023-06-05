@@ -19,6 +19,9 @@ import PaginationPage from "./pages/navigation/pagination/PaginationPage";
 import ListGroupPage from "./pages/components/listgroup/ListGroupPage";
 import ParagraphsPage from "./pages/components/paragraphs/ParagraphsPage";
 import ProgressPage from "./pages/components/progress/ProgressPage";
+import RatingPage from "./pages/components/rating/RatingPage";
+import SpinnersPage from "./pages/components/spinners/SpinnersPage";
+import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
@@ -39,6 +42,8 @@ interface PagesSection {
 const componentsPages: Pages[] = [
   { name: "button", path: "/components/button", element: <ButtonPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
+  { name: "rating", path: "/components/rating", element: <RatingPage /> },
+  { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
   {
@@ -91,7 +96,9 @@ const contentStylesPages: Pages[] = [
 
 const dataPages: Pages[] = [];
 
-const formsPages: Pages[] = [];
+const formsPages: Pages[] = [
+  { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
+];
 
 const methodsPages: Pages[] = [
   { name: "ripple", path: "/methods/ripple", element: <RipplePage /> },
