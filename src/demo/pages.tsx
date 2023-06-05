@@ -22,13 +22,13 @@ import ProgressPage from "./pages/components/progress/ProgressPage";
 import RatingPage from "./pages/components/rating/RatingPage";
 import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
+import TablesPage from "./pages/data/tables/TablesPage";
+import SwitchPage from "./pages/forms/switch/SwitchPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
-import TablesPage from "./pages/data/tables/TablesPage";
-import SwitchPage from "./pages/forms/switch/SwitchPage";
 
 interface Pages {
   name: string;
