@@ -38,7 +38,8 @@ const CheckboxPage: React.FC = () => {
             type="checkbox"
             value=""
             id="checkboxChecked"
-            checked />
+            defaultChecked
+          />
           <label
             className="inline-block pl-[0.15rem] hover:cursor-pointer"
             htmlFor="checkboxChecked">
@@ -95,7 +96,7 @@ const CheckboxPage: React.FC = () => {
             type="checkbox"
             value=""
             id="flexCheckCheckedDisabled"
-            checked
+            defaultChecked
             disabled />
           <label
             className="inline-block pl-[0.15rem] opacity-50 hover:pointer-events-none"
@@ -177,7 +178,7 @@ const CheckboxPage: React.FC = () => {
             id="checkboxCheckedNoLabel"
             value=""
             aria-label="..."
-            checked />
+            defaultChecked />
         </div>
       </div>
 
