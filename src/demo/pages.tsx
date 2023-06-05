@@ -21,6 +21,8 @@ import PaginationPage from "./pages/navigation/pagination/PaginationPage";
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import TablesPage from "./pages/data/tables/TablesPage";
+import SwitchPage from "./pages/forms/switch/SwitchPage";
 
 interface Pages {
   name: string;
@@ -71,9 +73,13 @@ const contentStylesPages: Pages[] = [
   },
 ];
 
-const dataPages: Pages[] = [];
+const dataPages: Pages[] = [
+  { name: "tables", path: "/data/tables", element: <TablesPage /> },
+];
 
-const formsPages: Pages[] = [];
+const formsPages: Pages[] = [
+  { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
+];
 
 const methodsPages: Pages[] = [
   { name: "ripple", path: "/methods/ripple", element: <RipplePage /> },

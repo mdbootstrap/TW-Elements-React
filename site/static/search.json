@@ -121,5 +121,17 @@
     "name": "Breadcrumbs",
     "keywords": ["breadcrumbs"],
     "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/switch/",
+    "name": "Switch",
+    "keywords": ["toggle"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/tables/",
+    "name": "Tables",
+    "keywords": ["tables"],
+    "category": "Data"
   }
 ]
