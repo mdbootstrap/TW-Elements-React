@@ -36,6 +36,12 @@
     "category": "Getting started"
   },
   {
+    "href": "/docs/react/getting-started/contribute/",
+    "name": "Contribute",
+    "keywords": ["contribute", "pull request", "issues"],
+    "category": "Getting started"
+  },
+  {
     "href": "docs/react/components/badges/",
     "name": "Badges",
     "keywords": ["label", "notifications"],
