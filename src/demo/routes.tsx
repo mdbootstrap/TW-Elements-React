@@ -5,6 +5,7 @@ import demoPages from "./pages";
 import { examplesPages } from "./pages";
 import HomePage from "./HomePage";
 import ThemeSwitcher from "./ThemeSwitcher";
+import Example from "./components/Example";
 
 export default function Routes(): JSX.Element {
   const [isNotExample, setIsNotExample] = useState<boolean>(false);
@@ -25,7 +26,11 @@ export default function Routes(): JSX.Element {
             ))
           )}
           {examplesPages.map(({ name, path, element }) => (
-            <Route key={name} path={path} element={element} />
+            <Route
+              key={name}
+              path={path}
+              element={<Example path={path}>{element}</Example>}
+            />
           ))}
         </Switch>
       </div>

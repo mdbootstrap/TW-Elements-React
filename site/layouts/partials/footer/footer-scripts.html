@@ -576,3 +576,18 @@
     return new te.Tooltip(tooltipTriggerEl);
   });
 </script>
+
+
+<script>
+  const iframes = [...document.querySelectorAll("[data-te-react-iframe]")];
+  
+  window.addEventListener("message", (event) => {
+    const iframeHeight = event.data.height;
+    const path = event.data.path;
+
+    const iframe = iframes.find(frame=> frame.src.includes(path))
+    const offset = iframe.dataset.teReactOffset || 10;
+
+    iframe && (iframe.style.height = iframeHeight + Number(offset) + "px");
+  });
+</script>

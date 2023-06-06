@@ -3,7 +3,7 @@ import { TERipple } from "tw-elements-react";
 
 export default function RippleUnbound(): JSX.Element {
   return (
-    <div className="flex justify-center space-x-2 mt-16">
+    <div className="flex justify-center space-x-2 py-20">
       <TERipple rippleUnbound>
         <button
           type="button"
