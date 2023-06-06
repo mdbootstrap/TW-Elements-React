@@ -27,6 +27,9 @@ import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import LinkPage from "./pages/components/link/LinkPage";
+import HoverEffectPage from "./pages/content-styles/hover-effects/HoverEffectPage";
+import MaskPage from "./pages/content-styles/mask/MaskPage";
 
 interface Pages {
   name: string;
@@ -46,6 +49,7 @@ const componentsPages: Pages[] = [
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  { name: "link", path: "/components/link", element: <LinkPage /> },
   {
     name: "list group",
     path: "/components/listgroup",
@@ -66,6 +70,8 @@ const componentsPages: Pages[] = [
 const contentStylesPages: Pages[] = [
   { name: "images", path: "/content-styles/images", element: <ImagesPage /> },
   { name: "icons", path: "/content-styles/icons", element: <IconsPage /> },
+  { name: "mask", path: "/content-styles/mask", element: <MaskPage /> },
+  { name: "hover effect", path: "/content-styles/hover-effect", element: <HoverEffectPage /> },
   {
     name: "headings",
     path: "/content-styles/headings",
