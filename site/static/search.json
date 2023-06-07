@@ -187,5 +187,17 @@
     "name": "Progress",
     "keywords": ["progress"],
     "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/social-buttons",
+    "name": "Social buttons",
+    "keywords": ["social", "buttons", "button"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/timeline",
+    "name": "Timeline",
+    "keywords": ["timeline"],
+    "category": "Components"
   }
 ]

@@ -27,11 +27,15 @@ import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
+import SocialButtonsPage from "./pages/components/social-buttons/SocialButtonsPage";
+import TimelinePage from "./pages/components/timeline/TimelinePage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import SocialButtonsExamples from "./pages/components/social-buttons/exampleList";
+import TimelineExamples from "./pages/components/timeline/exampleList";
 
 interface Pages {
   name: string;
@@ -65,6 +69,16 @@ const componentsPages: Pages[] = [
     name: "Progress",
     path: "/components/progress",
     element: <ProgressPage />,
+  },
+  {
+    name: "social buttons",
+    path: "/components/social-buttons",
+    element: <SocialButtonsPage />,
+  },
+  {
+    name: "timeline",
+    path: "/components/timeline",
+    element: <TimelinePage />,
   },
 ];
 
@@ -179,6 +193,8 @@ export const examplesPages: Pages[] = [
   ...ButtonExamples,
   ...CollapseExamples,
   ...RippleExamples,
+  ...SocialButtonsExamples,
+  ...TimelineExamples,
 ];
 
 export default demoPages;
