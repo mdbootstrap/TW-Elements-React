@@ -189,6 +189,18 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/cards/",
+    "name": "Cards",
+    "keywords": ["content container"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/placeholders/",
+    "name": "Placeholders",
+    "keywords": ["placeholders"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/buttons",
     "name": "Buttons",
     "keywords": ["buttons"],

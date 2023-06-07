@@ -27,12 +27,17 @@ import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
+import CardsPage from "./pages/components/cards/CardsPage";
+import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import CardsExamples from "./pages/components/cards/exampleList";
+import PlaceholderExamples from "./pages/components/placeholders/exampleList";
+
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
@@ -53,6 +58,12 @@ const componentsPages: Pages[] = [
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  { name: "cards", path: "/components/cards", element: <CardsPage /> },
+  {
+    name: "placeholders",
+    path: "/components/placeholders",
+    element: <PlaceholdersPage />,
+  },
   {
     name: "list group",
     path: "/components/listgroup",
@@ -186,6 +197,8 @@ export const examplesPages: Pages[] = [
   ...ButtonExamples,
   ...CollapseExamples,
   ...RippleExamples,
+  ...CardsExamples,
+  ...PlaceholderExamples,
   ...ButtonGroupExamples,
 ];
 
