@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 //demo pages
-import ButtonPage from "./pages/components/button/ButtonPage";
+import ButtonsPage from "./pages/components/buttons/ButtonsPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
 import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
@@ -29,13 +29,15 @@ import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
 import SocialButtonsPage from "./pages/components/social-buttons/SocialButtonsPage";
 import TimelinePage from "./pages/components/timeline/TimelinePage";
+import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
-import ButtonExamples from "./pages/components/button/exampleList";
+import ButtonExamples from "./pages/components/buttons/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
 import SocialButtonsExamples from "./pages/components/social-buttons/exampleList";
 import TimelineExamples from "./pages/components/timeline/exampleList";
+import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
   name: string;
@@ -49,7 +51,7 @@ interface PagesSection {
 }
 
 const componentsPages: Pages[] = [
-  { name: "button", path: "/components/button", element: <ButtonPage /> },
+  { name: "buttons", path: "/components/buttons", element: <ButtonsPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
   { name: "rating", path: "/components/rating", element: <RatingPage /> },
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
@@ -79,6 +81,11 @@ const componentsPages: Pages[] = [
     name: "timeline",
     path: "/components/timeline",
     element: <TimelinePage />,
+  },
+  {
+    name: "Button group",
+    path: "/components/button-group",
+    element: <ButtonGroupPage />,
   },
 ];
 
@@ -195,6 +202,7 @@ export const examplesPages: Pages[] = [
   ...RippleExamples,
   ...SocialButtonsExamples,
   ...TimelineExamples,
+  ...ButtonGroupExamples,
 ];
 
 export default demoPages;

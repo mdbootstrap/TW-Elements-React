@@ -199,5 +199,17 @@
     "name": "Timeline",
     "keywords": ["timeline"],
     "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/buttons",
+    "name": "Buttons",
+    "keywords": ["buttons"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/button-group",
+    "name": "Button group",
+    "keywords": ["buttons", "button", "group"],
+    "category": "Components"
   }
 ]
