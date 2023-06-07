@@ -27,13 +27,16 @@ import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
+import CardsPage from "./pages/components/cards/CardsPage";
+import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
-import CardsPage from "./pages/components/cards/CardsPage";
-import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
+import CardsExamples from "./pages/components/cards/exampleList";
+import PlaceholderExamples from "./pages/components/placeholders/exampleList";
+
 
 interface Pages {
   name: string;
@@ -183,6 +186,8 @@ export const examplesPages: Pages[] = [
   ...ButtonExamples,
   ...CollapseExamples,
   ...RippleExamples,
+  ...CardsExamples,
+  ...PlaceholderExamples,
 ];
 
 export default demoPages;
