@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 //demo pages
-import ButtonPage from "./pages/components/button/ButtonPage";
+import ButtonsPage from "./pages/components/buttons/ButtonsPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
 import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
@@ -27,11 +27,13 @@ import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
+import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
-import ButtonExamples from "./pages/components/button/exampleList";
+import ButtonExamples from "./pages/components/buttons/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
   name: string;
@@ -45,7 +47,7 @@ interface PagesSection {
 }
 
 const componentsPages: Pages[] = [
-  { name: "button", path: "/components/button", element: <ButtonPage /> },
+  { name: "buttons", path: "/components/buttons", element: <ButtonsPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
   { name: "rating", path: "/components/rating", element: <RatingPage /> },
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
@@ -65,6 +67,11 @@ const componentsPages: Pages[] = [
     name: "Progress",
     path: "/components/progress",
     element: <ProgressPage />,
+  },
+  {
+    name: "Button group",
+    path: "/components/button-group",
+    element: <ButtonGroupPage />,
   },
 ];
 
@@ -179,6 +186,7 @@ export const examplesPages: Pages[] = [
   ...ButtonExamples,
   ...CollapseExamples,
   ...RippleExamples,
+  ...ButtonGroupExamples,
 ];
 
 export default demoPages;
