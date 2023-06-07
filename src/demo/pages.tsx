@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 //demo pages
-import ButtonPage from "./pages/components/button/ButtonPage";
+import ButtonsPage from "./pages/components/buttons/ButtonsPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
 import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
@@ -29,14 +29,16 @@ import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
+import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
-import ButtonExamples from "./pages/components/button/exampleList";
+import ButtonExamples from "./pages/components/buttons/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 
+import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
   name: string;
@@ -50,14 +52,18 @@ interface PagesSection {
 }
 
 const componentsPages: Pages[] = [
-  { name: "button", path: "/components/button", element: <ButtonPage /> },
+  { name: "buttons", path: "/components/buttons", element: <ButtonsPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
   { name: "rating", path: "/components/rating", element: <RatingPage /> },
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
   { name: "cards", path: "/components/cards", element: <CardsPage /> },
-  { name: "placeholders", path: "/components/placeholders", element: <PlaceholdersPage /> },
+  {
+    name: "placeholders",
+    path: "/components/placeholders",
+    element: <PlaceholdersPage />,
+  },
   {
     name: "list group",
     path: "/components/listgroup",
@@ -72,6 +78,11 @@ const componentsPages: Pages[] = [
     name: "Progress",
     path: "/components/progress",
     element: <ProgressPage />,
+  },
+  {
+    name: "Button group",
+    path: "/components/button-group",
+    element: <ButtonGroupPage />,
   },
 ];
 
@@ -188,6 +199,7 @@ export const examplesPages: Pages[] = [
   ...RippleExamples,
   ...CardsExamples,
   ...PlaceholderExamples,
+  ...ButtonGroupExamples,
 ];
 
 export default demoPages;
