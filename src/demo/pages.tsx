@@ -32,6 +32,8 @@ import SwitchPage from "./pages/forms/switch/SwitchPage";
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
+import CardsPage from "./pages/components/cards/CardsPage";
+import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 
 interface Pages {
   name: string;
@@ -51,6 +53,8 @@ const componentsPages: Pages[] = [
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  { name: "cards", path: "/components/cards", element: <CardsPage /> },
+  { name: "placeholders", path: "/components/placeholders", element: <PlaceholdersPage /> },
   {
     name: "list group",
     path: "/components/listgroup",
