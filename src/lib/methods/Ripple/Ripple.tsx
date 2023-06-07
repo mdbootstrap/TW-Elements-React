@@ -74,10 +74,13 @@ const MDBRipple: React.FC<RippleProps> = React.forwardRef<
       }[]
     >([]);
 
-    const classes = clsx(
-      theme.ripple,
-      // rippleUnbound && theme.unbound,
-      className
+    const [rippleWaveClasses, setRippleWaveClasses] = useState<string[]>([]);
+
+    const classes = clsx(theme.ripple, className);
+
+    const rippleClasses = clsx(
+      rippleUnbound ? theme.unbound : theme.rippleOverflow,
+      rippleWaveClasses
     );
 
     const setupColor = () => {
@@ -206,6 +209,17 @@ const MDBRipple: React.FC<RippleProps> = React.forwardRef<
       return diameter * 2;
     };
 
+    const getRoundedClasses = () => {
+      // prettier-ignore
+      if (!children || !React.isValidElement(children) || Array.isArray(children)) {
+        return [];
+      }
+
+      const classes: string[] = children.props.className.split(" ");
+
+      return classes.filter((item) => item.includes("rounded"));
+    };
+
     const getStyles = (e: any) => {
       // eslint-disable-next-line
       // @ts-ignore
@@ -244,6 +258,8 @@ const MDBRipple: React.FC<RippleProps> = React.forwardRef<
         transitionDuration: `${rippleDuration}ms, ${opacity.duration}ms`,
       };
 
+      setRippleWaveClasses(getRoundedClasses());
+
       return { ...styles, backgroundImage: `${setupColor()}` };
     };
 
@@ -276,7 +292,7 @@ const MDBRipple: React.FC<RippleProps> = React.forwardRef<
         {...props}
       >
         {children}
-        <div className={rippleUnbound ? theme.unbound : theme.rippleOverflow}>
+        <div className={rippleClasses}>
           {rippleStyles.map((item, i) => (
             <MDBRippleWave theme={theme} key={i} style={item}></MDBRippleWave>
           ))}

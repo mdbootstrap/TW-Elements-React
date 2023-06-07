@@ -141,6 +141,36 @@
     "category": "Navigation"
   },
   {
+    "href": "/docs/react/forms/file-input",
+    "name": "File Input",
+    "keywords": ["file", "input"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/radio",
+    "name": "Radio",
+    "keywords": ["radio"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/range",
+    "name": "Range",
+    "keywords": ["range"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/switch/",
+    "name": "Switch",
+    "keywords": ["toggle"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/tables/",
+    "name": "Tables",
+    "keywords": ["tables"],
+    "category": "Data"
+  },
+  {
     "href": "/docs/react/components/listgroup",
     "name": "List Group",
     "keywords": ["list", "group"],
@@ -175,5 +205,29 @@
     "name": "Hover effects",
     "keywords": ["hover effects"],
     "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/components/cards/",
+    "name": "Cards",
+    "keywords": ["content container"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/placeholders/",
+    "name": "Placeholders",
+    "keywords": ["placeholders"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/buttons",
+    "name": "Buttons",
+    "keywords": ["buttons"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/button-group",
+    "name": "Button group",
+    "keywords": ["buttons", "button", "group"],
+    "category": "Components"
   }
 ]

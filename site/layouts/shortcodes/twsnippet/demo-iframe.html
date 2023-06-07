@@ -1,13 +1,20 @@
 {{ $id := .Get "id" }}
 {{ $iframe := .Get "iframe" }}
-{{ $height := .Get "height" }}
 {{ $title := .Get "title" }}
+{{ $offset := .Get "offset" }}
 
 <section class="my-5">
   <div
     class="rounded-lg border bg-white dark:border-neutral-600 dark:bg-neutral-800">
     <div class="p-4">
-      <iframe data-te-react-id="{{ $id }}" height="{{ $height }}px" width="100%" src="{{ $.Site.Params.demoUrl }}{{ $iframe }}" title="{{ $title }}"></iframe>
+      <iframe 
+        data-te-react-iframe 
+        data-te-react-offset="{{if eq $offset ""}}10{{ else }}{{ $offset }}{{ end }}" 
+        class="transition-all motion-reduce:transition-none" 
+        width="100%" 
+        src="{{ $.Site.Params.demoUrl }}{{ $iframe }}" 
+        title="{{ $title }}"
+        ></iframe>
     </div>
     <!-- Header -->
     <div class="hidden md:block mt-4 border-t p-4 text-center dark:border-neutral-600">

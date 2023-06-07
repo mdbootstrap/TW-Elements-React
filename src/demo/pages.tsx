@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 //demo pages
-import ButtonPage from "./pages/components/button/ButtonPage";
+import ButtonsPage from "./pages/components/buttons/ButtonsPage";
 import CollapsePage from "./pages/components/collapse/CollapsePage";
 import RipplePage from "./pages/methods/ripple/RipplePage";
 import ColorsPage from "./pages/content-styles/colors/ColorsPage";
@@ -16,6 +16,9 @@ import IconsPage from "./pages/content-styles/icons/IconsPage";
 import BadgesPage from "./pages/components/badges/BadgesPage";
 import AvatarPage from "./pages/components/avatar/AvatarPage";
 import PaginationPage from "./pages/navigation/pagination/PaginationPage";
+import FileInputPage from "./pages/forms/file-input/FileInputPage";
+import RadioPage from "./pages/forms/radio/RadioPage";
+import RangePage from "./pages/forms/range/RangePage";
 import ListGroupPage from "./pages/components/listgroup/ListGroupPage";
 import ParagraphsPage from "./pages/components/paragraphs/ParagraphsPage";
 import ProgressPage from "./pages/components/progress/ProgressPage";
@@ -25,14 +28,23 @@ import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
 import LinkPage from "./pages/components/link/LinkPage";
 import HoverEffectPage from "./pages/content-styles/hover-effects/HoverEffectPage";
 import MaskPage from "./pages/content-styles/mask/MaskPage";
+import TablesPage from "./pages/data/tables/TablesPage";
+import SwitchPage from "./pages/forms/switch/SwitchPage";
+import CardsPage from "./pages/components/cards/CardsPage";
+import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
+import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
-import ButtonExamples from "./pages/components/button/exampleList";
+import ButtonExamples from "./pages/components/buttons/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
 import LinkExamples from "./pages/components/link/exampleList";
 import HoverEffectExamples from "./pages/content-styles/hover-effects/exampleList";
 import MaskExamples from "./pages/content-styles/mask/exampleList";
+import CardsExamples from "./pages/components/cards/exampleList";
+import PlaceholderExamples from "./pages/components/placeholders/exampleList";
+
+import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
   name: string;
@@ -46,13 +58,19 @@ interface PagesSection {
 }
 
 const componentsPages: Pages[] = [
-  { name: "button", path: "/components/button", element: <ButtonPage /> },
+  { name: "buttons", path: "/components/buttons", element: <ButtonsPage /> },
   { name: "collapse", path: "/components/collapse", element: <CollapsePage /> },
   { name: "rating", path: "/components/rating", element: <RatingPage /> },
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
   { name: "link", path: "/components/link", element: <LinkPage /> },
+  { name: "cards", path: "/components/cards", element: <CardsPage /> },
+  {
+    name: "placeholders",
+    path: "/components/placeholders",
+    element: <PlaceholdersPage />,
+  },
   {
     name: "list group",
     path: "/components/listgroup",
@@ -68,13 +86,22 @@ const componentsPages: Pages[] = [
     path: "/components/progress",
     element: <ProgressPage />,
   },
+  {
+    name: "Button group",
+    path: "/components/button-group",
+    element: <ButtonGroupPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
   { name: "images", path: "/content-styles/images", element: <ImagesPage /> },
   { name: "icons", path: "/content-styles/icons", element: <IconsPage /> },
   { name: "mask", path: "/content-styles/mask", element: <MaskPage /> },
-  { name: "hover effect", path: "/content-styles/hover-effect", element: <HoverEffectPage /> },
+  {
+    name: "hover effect",
+    path: "/content-styles/hover-effect",
+    element: <HoverEffectPage />,
+  },
   {
     name: "headings",
     path: "/content-styles/headings",
@@ -103,9 +130,27 @@ const contentStylesPages: Pages[] = [
   },
 ];
 
-const dataPages: Pages[] = [];
+const dataPages: Pages[] = [
+  { name: "tables", path: "/data/tables", element: <TablesPage /> },
+];
 
 const formsPages: Pages[] = [
+  {
+    name: "file input",
+    path: "/forms/file-input",
+    element: <FileInputPage />,
+  },
+  {
+    name: "radio",
+    path: "/forms/radio",
+    element: <RadioPage />,
+  },
+  {
+    name: "range",
+    path: "/forms/range",
+    element: <RangePage />,
+  },
+  { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
   { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
 ];
 
@@ -168,6 +213,9 @@ export const examplesPages: Pages[] = [
   ...LinkExamples,
   ...HoverEffectExamples,
   ...MaskExamples,
+  ...CardsExamples,
+  ...PlaceholderExamples,
+  ...ButtonGroupExamples,
 ];
 
 export default demoPages;
