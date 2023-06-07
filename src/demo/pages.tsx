@@ -22,14 +22,17 @@ import ProgressPage from "./pages/components/progress/ProgressPage";
 import RatingPage from "./pages/components/rating/RatingPage";
 import SpinnersPage from "./pages/components/spinners/SpinnersPage";
 import CheckboxPage from "./pages/forms/checkbox/CheckboxPage";
+import LinkPage from "./pages/components/link/LinkPage";
+import HoverEffectPage from "./pages/content-styles/hover-effects/HoverEffectPage";
+import MaskPage from "./pages/content-styles/mask/MaskPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/button/exampleList";
 import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
-import LinkPage from "./pages/components/link/LinkPage";
-import HoverEffectPage from "./pages/content-styles/hover-effects/HoverEffectPage";
-import MaskPage from "./pages/content-styles/mask/MaskPage";
+import LinkExamples from "./pages/components/link/exampleList";
+import HoverEffectExamples from "./pages/content-styles/hover-effects/exampleList";
+import MaskExamples from "./pages/content-styles/mask/exampleList";
 
 interface Pages {
   name: string;
@@ -162,6 +165,9 @@ export const examplesPages: Pages[] = [
   ...ButtonExamples,
   ...CollapseExamples,
   ...RippleExamples,
+  ...LinkExamples,
+  ...HoverEffectExamples,
+  ...MaskExamples,
 ];
 
 export default demoPages;
