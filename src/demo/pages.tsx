@@ -29,6 +29,8 @@ import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
 import SocialButtonsPage from "./pages/components/social-buttons/SocialButtonsPage";
 import TimelinePage from "./pages/components/timeline/TimelinePage";
+import CardsPage from "./pages/components/cards/CardsPage";
+import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 
 //examples pages
@@ -37,6 +39,9 @@ import CollapseExamples from "./pages/components/collapse/exampleList";
 import RippleExamples from "./pages/methods/ripple/exampleList";
 import SocialButtonsExamples from "./pages/components/social-buttons/exampleList";
 import TimelineExamples from "./pages/components/timeline/exampleList";
+import CardsExamples from "./pages/components/cards/exampleList";
+import PlaceholderExamples from "./pages/components/placeholders/exampleList";
+
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 
 interface Pages {
@@ -57,6 +62,12 @@ const componentsPages: Pages[] = [
   { name: "spinners", path: "/components/spinners", element: <SpinnersPage /> },
   { name: "avatar", path: "/components/avatar", element: <AvatarPage /> },
   { name: "badge", path: "/components/badges", element: <BadgesPage /> },
+  { name: "cards", path: "/components/cards", element: <CardsPage /> },
+  {
+    name: "placeholders",
+    path: "/components/placeholders",
+    element: <PlaceholdersPage />,
+  },
   {
     name: "list group",
     path: "/components/listgroup",
@@ -202,6 +213,8 @@ export const examplesPages: Pages[] = [
   ...RippleExamples,
   ...SocialButtonsExamples,
   ...TimelineExamples,
+  ...CardsExamples,
+  ...PlaceholderExamples,
   ...ButtonGroupExamples,
 ];
 
