@@ -30,6 +30,8 @@ import HoverEffectPage from "./pages/content-styles/hover-effects/HoverEffectPag
 import MaskPage from "./pages/content-styles/mask/MaskPage";
 import TablesPage from "./pages/data/tables/TablesPage";
 import SwitchPage from "./pages/forms/switch/SwitchPage";
+import SocialButtonsPage from "./pages/components/social-buttons/SocialButtonsPage";
+import TimelinePage from "./pages/components/timeline/TimelinePage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
@@ -41,6 +43,8 @@ import RippleExamples from "./pages/methods/ripple/exampleList";
 import LinkExamples from "./pages/components/link/exampleList";
 import HoverEffectExamples from "./pages/content-styles/hover-effects/exampleList";
 import MaskExamples from "./pages/content-styles/mask/exampleList";
+import SocialButtonsExamples from "./pages/components/social-buttons/exampleList";
+import TimelineExamples from "./pages/components/timeline/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 
@@ -85,6 +89,16 @@ const componentsPages: Pages[] = [
     name: "Progress",
     path: "/components/progress",
     element: <ProgressPage />,
+  },
+  {
+    name: "social buttons",
+    path: "/components/social-buttons",
+    element: <SocialButtonsPage />,
+  },
+  {
+    name: "timeline",
+    path: "/components/timeline",
+    element: <TimelinePage />,
   },
   {
     name: "Button group",
@@ -213,6 +227,8 @@ export const examplesPages: Pages[] = [
   ...LinkExamples,
   ...HoverEffectExamples,
   ...MaskExamples,
+  ...SocialButtonsExamples,
+  ...TimelineExamples,
   ...CardsExamples,
   ...PlaceholderExamples,
   ...ButtonGroupExamples,
