@@ -26,16 +26,10 @@ export default function TimelineIcons(): JSX.Element {
             </div>
             <div className="mb-10 ml-6 block max-w-md rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5 dark:bg-neutral-700 dark:shadow-black/10">
               <div className="mb-4 flex justify-between">
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   New Web Design
                 </a>
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   04 / 02 / 2022
                 </a>
               </div>
@@ -84,16 +78,10 @@ export default function TimelineIcons(): JSX.Element {
             </div>
             <div className="mb-10 ml-6 block max-w-md rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5 dark:bg-neutral-700 dark:shadow-black/10">
               <div className="mb-4 flex justify-between">
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   21 000 Job Seekers
                 </a>
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   12 / 01 / 2022
                 </a>
               </div>
@@ -140,16 +128,10 @@ export default function TimelineIcons(): JSX.Element {
             </div>
             <div className="mb-10 ml-6 block max-w-md rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5 dark:bg-neutral-700 dark:shadow-black/10">
               <div className="mb-4 flex justify-between">
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   Awesome Employers
                 </a>
-                <a
-                  href="#!"
-                  className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
-                >
+                <a className="text-sm text-info transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700">
                   21 / 12 / 2021
                 </a>
               </div>

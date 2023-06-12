@@ -12,10 +12,7 @@ export default function TimelinePrimaryColor(): JSX.Element {
             <h4 className="-mt-2 text-xl font-semibold">Title of section 1</h4>
           </div>
           <div className="mb-6 ml-6 pb-6">
-            <a
-              href="#!"
-              className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
-            >
+            <a className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600">
               4 February, 2022
             </a>
             <p className="mb-4 mt-2 text-neutral-600 dark:text-neutral-300">
@@ -41,10 +38,7 @@ export default function TimelinePrimaryColor(): JSX.Element {
             <h4 className="-mt-2 text-xl font-semibold">Title of section 2</h4>
           </div>
           <div className="mb-6 ml-6 pb-6">
-            <a
-              href="#!"
-              className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
-            >
+            <a className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600">
               12 January, 2022
             </a>
             <p className="mb-4 mt-2 text-neutral-600 dark:text-neutral-200">
@@ -72,10 +66,7 @@ export default function TimelinePrimaryColor(): JSX.Element {
             <h4 className="-mt-2 text-xl font-semibold">Title of section 3</h4>
           </div>
           <div className="mb-6 ml-6 pb-6">
-            <a
-              href="#!"
-              className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
-            >
+            <a className="text-sm text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600">
               27 December, 2021
             </a>
             <p className="mb-4 mt-2 text-neutral-600 dark:text-neutral-200">
