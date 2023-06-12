@@ -46,17 +46,14 @@ menu:
           <div>
             <TERipple>
               <div
-                className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat"
-                data-te-ripple-init
-                data-te-ripple-color="light">
+                className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
                 <img
                   src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
                   className="max-w-xs"
                   alt="Louvre" />
-                <a href="#!">
+                <a>
                   <div
-                    className="bg-neutral-50 absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-                  ></div>
+                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
                 </a>
               </div>
             </TERipple>
@@ -68,6 +65,33 @@ menu:
       {{< /twsnippet/wrapper >}}
     </div>
   </section>
+
+  <!-- Section: Note about usage with animation  -->
+<section>
+  <h3 class="mb-3 text-2xl font-semibold leading-normal">
+    Showing the animation effect
+  </h3>
+  <p class="mb-3">
+    As you can see in the above example, you can add any animation to any
+    element on the page by using the following classes:
+  </p>
+  <ul>
+    <li>
+      <code>transition</code>: used to animate the chaged properties on hover,
+    </li>
+
+    <li>
+      <code>duration-x</code>: used to define the duration of the animation
+      where <code>x</code> is the time in milliseconds; e.g.
+      <code>duration-300</code>.
+    </li>
+  </ul>
+  <p>
+    Then, you should be able to add any type of animation by changing the
+    property on hover by using the class:
+    <code>[hover:tw-class-name]</code> e.g. <code>hover:opacity-100</code>.
+  </p>
+</section>
 </section>
 <!-- Section: Basic example -->
 
