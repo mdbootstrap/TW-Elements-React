@@ -189,6 +189,24 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/link/",
+    "name": "Link",
+    "keywords": ["link"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/content-styles/mask/",
+    "name": "Mask",
+    "keywords": ["mask"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/hover-effects/",
+    "name": "Hover effects",
+    "keywords": ["hover effects"],
+    "category": "Content & styles"
+  },
+  {
     "href": "/docs/react/components/social-buttons",
     "name": "Social buttons",
     "keywords": ["social", "buttons", "button"],
