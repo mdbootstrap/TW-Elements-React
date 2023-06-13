@@ -6,6 +6,7 @@ interface ExampleProps {
 }
 
 const Example: React.FC<ExampleProps> = ({ children, path }) => {
+  const listenerNotAdded = useRef(true);
   const exampleRef = useRef<HTMLDivElement>(null);
   let resizeTimeout: ReturnType<typeof setTimeout>;
 
@@ -21,8 +22,23 @@ const Example: React.FC<ExampleProps> = ({ children, path }) => {
 
     resizeTimeout = setTimeout(() => {
       postHeight();
-    }, 20);
+    }, 5);
   });
+
+  const handleDarkMode = (event: MessageEvent) => {
+    const html = document.querySelector("html") as HTMLHtmlElement;
+    event.data.darkmode
+      ? html.classList.add("dark")
+      : html.classList.remove("dark");
+  };
+
+  const receiveMessage = (event: MessageEvent) => {
+    if (event.data.darkmode !== undefined) {
+      handleDarkMode(event);
+      return;
+    }
+    postHeight();
+  };
 
   useEffect(() => {
     postHeight();
@@ -35,6 +51,16 @@ const Example: React.FC<ExampleProps> = ({ children, path }) => {
 
       document.body.classList.remove("overflow-hidden");
       resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (listenerNotAdded.current) {
+      window.addEventListener("message", (event) => receiveMessage(event));
+      listenerNotAdded.current = false;
+    }
+    return () => {
+      window.removeEventListener("message", (event) => receiveMessage(event));
     };
   }, []);
 

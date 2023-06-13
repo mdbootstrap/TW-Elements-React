@@ -577,10 +577,25 @@
   });
 </script>
 
-
+<!-- handle iframes behavior -->
 <script>
   const iframes = [...document.querySelectorAll("[data-te-react-iframe]")];
-  
+
+  // send ready message to iframes when script is loaded, so that they can send their height (to make sure the height was sent)
+  iframes.forEach((iframe) => {
+    iframe.contentWindow.postMessage("", "*");
+  })
+
+  const setIframesTheme = (iframes, darkmode) => {
+    iframes.forEach((iframe) => {
+      iframe.contentWindow.postMessage({ darkmode }, "*");
+    })
+  };
+
+  // listen for theme change
+  window.addEventListener("darkmode",(event)=>setIframesTheme(iframes, event.detail.darkmode))
+
+  // listen for messages from iframes
   window.addEventListener("message", (event) => {
     const iframeHeight = event.data.height;
     const path = event.data.path;
@@ -588,6 +603,12 @@
     const iframe = iframes.find(frame=> frame.src.includes(path))
     const offset = iframe.dataset.teReactOffset || 10;
 
+    setIframesTheme([iframe], localStorage.theme === "dark")
     iframe && (iframe.style.height = iframeHeight + Number(offset) + "px");
+
+    // handle loader and iframe visibility
+    if (!iframe.classList.contains("hidden")) return;
+    iframe.classList.remove("hidden");
+    iframe.parentNode.querySelector("[data-te-react-loeader]").classList.add("hidden");
   });
 </script>
