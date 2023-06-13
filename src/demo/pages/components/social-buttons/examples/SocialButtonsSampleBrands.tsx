@@ -3,12 +3,12 @@ import { TERipple } from "tw-elements-react";
 
 export default function SocialButtonsSampleBrands(): JSX.Element {
   return (
-    <div className="flex flex-wrap items-center justify-center space-x-2">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       {/* <!-- Behance --> */}
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#1769ff" }}
         >
           <svg
@@ -26,7 +26,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#7289da" }}
         >
           <svg
@@ -46,7 +46,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#333" }}
         >
           <svg
@@ -64,7 +64,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#1877f2" }}
         >
           <svg
@@ -82,7 +82,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#c13584" }}
         >
           <svg
@@ -100,7 +100,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#ea4335" }}
         >
           <svg
@@ -122,7 +122,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#0077b5" }}
         >
           <svg
@@ -140,7 +140,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#e60023" }}
         >
           <svg
@@ -162,7 +162,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#45668e" }}
         >
           <svg
@@ -183,7 +183,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#f48024" }}
         >
           <svg
@@ -201,7 +201,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#0088cc" }}
         >
           <svg
@@ -231,7 +231,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#ff0000" }}
         >
           <svg
@@ -249,7 +249,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#6a76ac" }}
         >
           <svg
@@ -269,7 +269,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#f8cc1b" }}
         >
           <svg
@@ -287,7 +287,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#3eb991" }}
         >
           <svg
@@ -307,7 +307,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#0084ff" }}
         >
           <svg
@@ -327,7 +327,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#ea4c89" }}
         >
           <svg
@@ -345,7 +345,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#ff4500" }}
         >
           <svg
@@ -363,7 +363,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#1da1f2" }}
         >
           <svg
@@ -381,7 +381,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#128c7e" }}
         >
           <svg
@@ -399,7 +399,7 @@ export default function SocialButtonsSampleBrands(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "#9146ff" }}
         >
           <svg
