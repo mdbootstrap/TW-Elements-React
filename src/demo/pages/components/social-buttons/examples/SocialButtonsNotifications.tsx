@@ -7,7 +7,7 @@ export default function SocialButtonsNotifications(): JSX.Element {
       <TERipple rippleColor="light">
         <button
           type="button"
-          className="mb-2 flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+          className="flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style={{ backgroundColor: "rgb(24, 119, 242)" }}
         >
           <svg
@@ -31,7 +31,7 @@ export default function SocialButtonsNotifications(): JSX.Element {
         <TERipple rippleColor="light">
           <button
             type="button"
-            className="mb-2 flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+            className="flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
             style={{ backgroundColor: "rgb(62, 185, 145)" }}
           >
             <svg
@@ -53,7 +53,7 @@ export default function SocialButtonsNotifications(): JSX.Element {
         <TERipple rippleColor="light">
           <button
             type="button"
-            className="mb-2 flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+            className="flex rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
             style={{ backgroundColor: "rgb(29, 161, 242)" }}
           >
             <svg
