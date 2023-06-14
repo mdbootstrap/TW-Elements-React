@@ -30,6 +30,7 @@ import SwitchPage from "./pages/forms/switch/SwitchPage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
+import InputPage from "./pages/forms/inputs/InputPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -39,6 +40,7 @@ import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
+import InputExamples from "./pages/forms/inputs/exampleList";
 
 interface Pages {
   name: string;
@@ -83,6 +85,11 @@ const componentsPages: Pages[] = [
     name: "Button group",
     path: "/components/button-group",
     element: <ButtonGroupPage />,
+  },
+  {
+    name: "Inputs",
+    path: "/components/inputs",
+    element: <InputPage />,
   },
 ];
 
@@ -200,6 +207,7 @@ export const examplesPages: Pages[] = [
   ...CardsExamples,
   ...PlaceholderExamples,
   ...ButtonGroupExamples,
+  ...InputExamples,
 ];
 
 export default demoPages;

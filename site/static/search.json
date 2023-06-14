@@ -211,5 +211,11 @@
     "name": "Button group",
     "keywords": ["buttons", "button", "group"],
     "category": "Components"
+  },
+  {
+    "href": "/docs/react/forms/inputs",
+    "name": "Inputs",
+    "keywords": ["inputs", "input", "fields"],
+    "category": "Forms"
   }
 ]
