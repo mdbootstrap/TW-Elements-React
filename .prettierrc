@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "go-template",
+        "bracketSameLine": true
+      }
+    }
+  ],
+  "tabWidth": 2,
+  "singleQuote": false,
+  "jsxSingleQuote": false
+}
