@@ -21,7 +21,7 @@ const useCombinedRefs = (...refs: any) => {
   return targetRef;
 };
 
-const MDBRipple: React.FC<RippleProps> = React.forwardRef<
+const TERipple: React.FC<RippleProps> = React.forwardRef<
   HTMLAllCollection,
   RippleProps
 >(
@@ -302,7 +302,7 @@ const MDBRipple: React.FC<RippleProps> = React.forwardRef<
   }
 );
 
-MDBRipple.defaultProps = {
+TERipple.defaultProps = {
   rippleTag: "div",
   rippleDuration: 500,
   rippleRadius: 0,
@@ -310,4 +310,4 @@ MDBRipple.defaultProps = {
   rippleColorDark: "",
 };
 
-export default MDBRipple;
+export default TERipple;
