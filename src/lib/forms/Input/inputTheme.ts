@@ -40,6 +40,16 @@ const InputTheme = {
   focusedNotchTrailingWhite:
     "shadow-[1px_0_0_#ffffff,_0_-1px_0_0_#ffffff,_0_1px_0_0_#ffffff] border-white",
   counter: "text-right leading-[1.6]",
+  inputSizeLg: "px-3 py-[0.32rem] leading-[2.15]",
+  inputSizeBase: "px-3 py-[0.32rem] leading-[1.6]",
+  inputSizeSm: "px-3 py-[0.33rem] text-xs leading-[1.5]",
+  labelSizeLg: "pt-[0.36rem] leading-[2.15] peer-focus:-translate-y-[1.15rem]",
+  activeLabelSizeLg: "-translate-y-[1.15rem]",
+  labelSizeBase: "pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]",
+  activeLabelSizeBase: "-translate-y-[0.9rem]",
+  labelSizeSm:
+    "pt-[0.36rem] text-xs leading-[1.5] peer-focus:-translate-y-[0.75rem]",
+  activeLabelSizeSm: "-translate-y-[0.75rem]",
 };
 
 export default InputTheme;

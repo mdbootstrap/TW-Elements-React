@@ -9,7 +9,6 @@ export default function InputURL(): JSX.Element {
           type="url"
           id="exampleFormControlInputURL"
           label="URL input"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>

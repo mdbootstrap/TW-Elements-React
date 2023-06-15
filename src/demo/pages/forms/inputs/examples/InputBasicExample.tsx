@@ -9,7 +9,6 @@ export default function InputBasicExample(): JSX.Element {
           type="text"
           id="exampleFormControlInput1"
           label="Example label"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>

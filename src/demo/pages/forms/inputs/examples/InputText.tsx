@@ -9,7 +9,6 @@ export default function InputText(): JSX.Element {
           type="text"
           id="exampleFormControlInputText"
           label="Text input"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>

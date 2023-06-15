@@ -29,6 +29,15 @@ interface InputTheme {
   notchTrailingWhite?: string;
   focusedNotchTrailingWhite?: string;
   counter?: string;
+  inputSizeLg?: string;
+  inputSizeBase?: string;
+  inputSizeSm?: string;
+  labelSizeLg?: string;
+  activeLabelSizeLg?: string;
+  labelSizeBase?: string;
+  activeLabelSizeBase?: string;
+  labelSizeSm?: string;
+  activeLabelSizeSm?: string;
 }
 
 type InputELement = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;

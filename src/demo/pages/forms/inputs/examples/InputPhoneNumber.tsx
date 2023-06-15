@@ -9,7 +9,6 @@ export default function InputPhoneNumber(): JSX.Element {
           type="tel"
           id="exampleFormControlInputTel"
           label="Phone input"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>

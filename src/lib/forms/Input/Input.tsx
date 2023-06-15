@@ -22,15 +22,11 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
       value,
       defaultValue,
       id,
-      labelClass,
-      wrapperClass,
-      wrapperStyle,
       wrapperTag: WrapperTag,
       label,
       onChange,
       children,
       labelRef,
-      labelStyle,
       type,
       onBlur,
       readonly,
@@ -57,18 +53,16 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
 
     const labelReference = labelRef ? labelRef : labelEl;
 
-    const wrapperClasses = clsx(theme.wrapper, wrapperClass);
     const inputClasses = clsx(
       theme.input,
       active && theme.activeInput,
       size === "lg"
-        ? "px-3 py-[0.32rem] leading-[2.15]"
+        ? theme.inputSizeLg
         : size === "base"
-        ? "px-3 py-[0.32rem] leading-[1.6]"
+        ? theme.inputSizeBase
         : size === "sm"
-        ? "px-3 py-[0.33rem] text-xs leading-[1.5]"
-        : "px-3 py-[0.32rem] leading-[1.6]",
-
+        ? theme.inputSizeSm
+        : theme.inputSizeBase,
       className
     );
 
@@ -77,23 +71,20 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
       active && theme.activeLabel,
       active &&
         (size === "lg"
-          ? "-translate-y-[1.15rem]"
+          ? theme.activeLabelSizeLg
           : size === "base"
-          ? "-translate-y-[0.9rem]"
+          ? theme.activeLabelSizeBase
           : size === "sm"
-          ? "-translate-y-[0.75rem]"
-          : "-translate-y-[0.9rem]"),
+          ? theme.activeLabelSizeSm
+          : theme.activeLabelSizeBase),
       size === "lg"
-        ? "pt-[0.36rem] leading-[2.15] peer-focus:-translate-y-[1.15rem]"
+        ? theme.labelSizeLg
         : size === "base"
-        ? "pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]"
+        ? theme.labelSizeBase
         : size === "sm"
-        ? "pt-[0.36rem] text-xs leading-[1.5] peer-focus:-translate-y-[0.75rem]"
-        : "pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]",
-      labelClass
+        ? theme.labelSizeSm
+        : theme.labelSizeBase
     );
-
-    const notchClasses = clsx(theme.notch);
 
     const notchLeadingClasses = clsx(
       theme.notchLeading,
@@ -128,8 +119,6 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
           : theme.focusedNotchTrailingDefault)
     );
 
-    const counterClasses = clsx(theme.counter);
-
     useEffect(() => {
       if (!innerRef.current) return;
 
@@ -161,11 +150,12 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setNewValue(e.target.value);
       onChange?.(e);
+      counter && characterCounter;
     };
 
     const characterCounter = (e: ChangeEvent<HTMLInputElement>) => {
       const inputValue = e.target.value;
-      if (!maxLength && maxLength <= 0) {
+      if (maxLength === undefined || maxLength <= 0) {
         return;
       } else if (inputValue.length <= maxLength) {
         setNewValue(inputValue);
@@ -192,19 +182,16 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
 
     return (
       <WrapperTag>
-        <WrapperTag className={wrapperClasses} style={wrapperStyle}>
+        <WrapperTag className={theme.wrapper}>
           <input
             type={type}
             readOnly={readonly}
             className={inputClasses}
-            onBlur={() => {
-              handleBlur;
+            onBlur={(value) => {
+              handleBlur(value);
               setFocus(false);
             }}
-            onChange={(newValue) => {
-              handleChange(newValue);
-              characterCounter(newValue);
-            }}
+            onChange={handleChange}
             onFocus={() => {
               setWidth;
               setFocus(true);
@@ -217,17 +204,12 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
             {...props}
           />
           {label && (
-            <label
-              className={labelClasses}
-              style={labelStyle}
-              htmlFor={id}
-              ref={labelReference}
-            >
+            <label className={labelClasses} htmlFor={id} ref={labelReference}>
               {label}
             </label>
           )}
 
-          <div className={notchClasses}>
+          <div className={theme.notch}>
             <div className={notchLeadingClasses}></div>
             <div
               className={notchMiddleClasses}
@@ -238,7 +220,7 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
           {children}
         </WrapperTag>
         {counter && maxLength !== undefined && maxLength > 0 && (
-          <div className={counterClasses}>
+          <div className={theme.counter}>
             <span>
               {newValue?.toString().length || 0} / {maxLength}
             </span>

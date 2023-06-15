@@ -9,7 +9,6 @@ export default function InputCharacterCounter(): JSX.Element {
           type="text"
           id="exampleFormControlInputCounter"
           label="Example label"
-          placeholder="Example label"
           counter={true}
           maxLength={20}
         ></TEInput>

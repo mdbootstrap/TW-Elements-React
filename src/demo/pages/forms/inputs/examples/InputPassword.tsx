@@ -9,7 +9,6 @@ export default function InputPassword(): JSX.Element {
           type="password"
           id="exampleFormControlInputPassword"
           label="Password input"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>

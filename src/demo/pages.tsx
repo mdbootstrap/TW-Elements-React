@@ -86,11 +86,6 @@ const componentsPages: Pages[] = [
     path: "/components/button-group",
     element: <ButtonGroupPage />,
   },
-  {
-    name: "Inputs",
-    path: "/components/inputs",
-    element: <InputPage />,
-  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -146,6 +141,11 @@ const formsPages: Pages[] = [
   },
   { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
   { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
+  {
+    name: "Inputs",
+    path: "/components/inputs",
+    element: <InputPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [

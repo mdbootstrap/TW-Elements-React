@@ -9,7 +9,6 @@ export default function InputDisabled(): JSX.Element {
           type="text"
           id="exampleFormControlInput5"
           label="Disabled input"
-          placeholder="Disabled input"
           disabled
         ></TEInput>
       </div>

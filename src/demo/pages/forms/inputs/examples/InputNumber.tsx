@@ -9,7 +9,6 @@ export default function InputNumber(): JSX.Element {
           type="number"
           id="exampleFormControlInputNumber"
           label="Number input"
-          placeholder="Example label"
         ></TEInput>
       </div>
     </div>
