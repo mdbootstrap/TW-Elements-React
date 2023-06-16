@@ -6,16 +6,18 @@ interface CollapseTheme {
   baseTransition?: string;
   collapsing?: string;
   collapsingHorizontal?: string;
+  collapseStyles?: string;
+  scrollStyles?: string;
 }
 
 interface CollapseProps extends HTMLAttributes<HTMLElement> {
   collapseRef?: RefObject<HTMLElement>;
   show?: boolean;
   tag?: ComponentProps<any>;
-  navbar?: boolean;
-  direction?: "vertical" | "horizontal";
   onShow?: any;
   onHide?: any;
+  horizontal?: boolean;
+  scroll?: boolean;
   theme?: CollapseTheme;
 }
 

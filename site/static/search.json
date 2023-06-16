@@ -241,5 +241,11 @@
     "name": "Button group",
     "keywords": ["buttons", "button", "group"],
     "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/collapse",
+    "name": "Collapse",
+    "keywords": ["collapse"],
+    "category": "Components"
   }
 ]

@@ -8,17 +8,19 @@ const MDBCollapse: React.FC<CollapseProps> = ({
   children,
   show,
   id,
-  navbar,
   tag: Tag,
   collapseRef,
-  style,
+  horizontal,
+  scroll,
+  onShow,
+  onHide,
   theme: customTheme,
   ...props
 }): JSX.Element => {
   const [showCollapse, setShowCollapse] = useState<boolean | undefined>(false);
-  const [collapseHeight, setCollapseHeight] = useState<
-    string | number | undefined
-  >(undefined);
+  const [collapseSize, setCollapseSize] = useState<string | number | undefined>(
+    undefined
+  );
   const [transition, setTransition] = useState(false);
 
   const theme = {
@@ -27,9 +29,13 @@ const MDBCollapse: React.FC<CollapseProps> = ({
   };
 
   const classes = clsx(
-    transition ? `${theme.collapsing}` : theme.visible,
+    theme.collapseStyles,
+    theme.visible,
+    transition &&
+      theme.baseTransition &&
+      (horizontal ? `${theme.collapsingHorizontal}` : `${theme.collapsing}`),
     !transition && !showCollapse && theme.hidden,
-    navbar && "navbar-collapse",
+    scroll && theme.scrollStyles,
     className
   );
 
@@ -38,18 +44,25 @@ const MDBCollapse: React.FC<CollapseProps> = ({
 
   const handleResize = useCallback(() => {
     if (showCollapse) {
-      setCollapseHeight(undefined);
+      setCollapseSize(undefined);
     }
   }, [showCollapse]);
 
   useEffect(() => {
-    if (collapseHeight === undefined && showCollapse) {
-      setCollapseHeight(refCollapse?.current?.scrollHeight);
+    if (collapseSize === undefined && showCollapse) {
+      if (horizontal) {
+        setCollapseSize(refCollapse?.current?.scrollWidth);
+      } else {
+        setCollapseSize(refCollapse?.current?.scrollHeight);
+      }
     }
-  }, [collapseHeight, showCollapse, refCollapse]);
+  }, [collapseSize, showCollapse, refCollapse, horizontal]);
 
   useEffect(() => {
-    setShowCollapse(show);
+    if (showCollapse !== show) {
+      show ? onShow?.() : onHide?.();
+      setShowCollapse(show);
+    }
 
     if (showCollapse) {
       setTransition(true);
@@ -62,17 +75,22 @@ const MDBCollapse: React.FC<CollapseProps> = ({
     return () => {
       clearTimeout(timer);
     };
-  }, [show, showCollapse]);
+  }, [show, showCollapse, onShow, onHide]);
 
   useEffect(() => {
     if (showCollapse) {
-      setCollapseHeight(refCollapse?.current?.scrollHeight);
+      if (horizontal) {
+        setCollapseSize(refCollapse?.current?.scrollWidth || 0);
+      } else {
+        setCollapseSize(refCollapse?.current?.scrollHeight || 0);
+      }
     } else {
-      setCollapseHeight(0);
+      setCollapseSize(0);
     }
-  }, [showCollapse, refCollapse]);
+  }, [showCollapse, refCollapse, horizontal]);
 
   useEffect(() => {
+    // console.log(collapseSize, showCollapse);
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -82,7 +100,9 @@ const MDBCollapse: React.FC<CollapseProps> = ({
 
   return (
     <Tag
-      style={{ height: collapseHeight, ...style }}
+      style={{
+        ...(horizontal ? { width: collapseSize } : { height: collapseSize }),
+      }}
       id={id}
       className={classes}
       {...props}
@@ -93,6 +113,11 @@ const MDBCollapse: React.FC<CollapseProps> = ({
   );
 };
 
-MDBCollapse.defaultProps = { tag: "div" };
+MDBCollapse.defaultProps = {
+  tag: "div",
+  scroll: false,
+  horizontal: false,
+  show: false,
+};
 
 export default MDBCollapse;
