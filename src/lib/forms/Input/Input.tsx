@@ -148,9 +148,8 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
     }, [labelReference.current?.clientWidth, setWidth]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setNewValue(e.target.value);
+      counter ? characterCounter(e) : setNewValue(e.target.value);
       onChange?.(e);
-      counter && characterCounter;
     };
 
     const characterCounter = (e: ChangeEvent<HTMLInputElement>) => {

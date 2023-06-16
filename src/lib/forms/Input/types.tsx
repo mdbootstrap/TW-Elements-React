@@ -44,16 +44,12 @@ type InputELement = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
 
 type InputProps = InputELement & {
   label?: React.ReactNode;
-  labelStyle?: React.CSSProperties;
-  labelClass?: string;
   labelRef?: React.RefObject<HTMLLabelElement>;
   ref?: React.Ref<HTMLInputElement>;
   readonly?: boolean;
   disabled?: boolean;
   size?: string;
   wrapperTag?: React.ComponentProps<any>;
-  wrapperClass?: string;
-  wrapperStyle?: React.CSSProperties;
   theme?: InputTheme;
   formWhite?: boolean;
   counter?: boolean;

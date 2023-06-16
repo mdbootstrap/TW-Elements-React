@@ -15,8 +15,8 @@
     </h2>
 
     <!--Section: Code-->
-    {{< twsnippet/no-demo id="api-example41" >}}
-    <section class="!visible hidden" data-te-collapse-item id="api-example41">
+    {{< twsnippet/no-demo id="api-example1" >}}
+    <section class="!visible hidden" data-te-collapse-item id="api-example1">
       <div class="pt-4">
         {{< twsnippet/wrapper "javascript" >}}
         <!-- prettier-ignore -->
@@ -228,9 +228,7 @@
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code class="text-red-500 dark:text-red-300"
-                      >undefined</code
-                    >
+                    <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Reference to label element
@@ -476,15 +474,326 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>wrapper</code>
+                    <code>activeInput</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    relative
+                    placeholder:opacity-100
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Adds classes to the input wrapper.
+                    Sets classes when the input element is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activeLabel</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    scale-[0.8]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets classes of the label when input element is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activeNotchLeading</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-r-0
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets stylesof leading notch when input element is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activeNotchMiddle</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-x-0 border-t border-solid border-t-transparent
+                    dark:border-t-transparent
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of middle notch when the input element is
+                    active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activeNotchTrailing</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-l-0
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of trailing notch when the input element is
+                    active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activelabelSizeBase</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    -translate-y-[0.9rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets label translate styles when
+                    <code>TEInput size="base"</code>and is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activelabelSizeLg</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    -translate-y-[1.15rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets label translate styles when
+                    <code>TEInput size="lg"</code> and is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>activelabelSizeSm</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    -translate-y-[0.75rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets label translate styles when
+                    <code>TEInput size="sm"</code> and is active.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>counter</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    text-right leading-[1.6]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets text alignment and line height of input counter
+                    wrapper.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchLeading</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-r-0
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets stylesof the leading notch when input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchLeadingDefault</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca]
+                    border-primary dark:border-primary
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of default leading notch when input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchLeadingWhite</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[-1px_0_0_#ffffff,_0_1px_0_0_#ffffff,_0_-1px_0_0_#ffffff]
+                    border-white
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of white leading notch when the input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchMiddle</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-x-0 border-t border-solid border-t-transparent
+                    dark:border-t-transparent
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of middle notch when the input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchMiddleDefault</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[0_1px_0_0_#3b71ca] border-primary
+                    dark:border-primary
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of default middle notch when the input element
+                    is focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchMiddleWhite</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[0_1px_0_0_#ffffff] border-white
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of white middle notch when the input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchTrailing</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    border-l-0
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of trailing notch when the input element is
+                    focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchTrailingDefault</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca]
+                    border-primary dark:border-primary
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of default trailing notch when the input element
+                    is focused.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>focusedNotchTrailingWhite</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    shadow-[1px_0_0_#ffffff,_0_-1px_0_0_#ffffff,_0_1px_0_0_#ffffff]
+                    border-white
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles of white trailing notch when the input element
+                    is focused.
                   </td>
                 </tr>
                 <tr
@@ -518,15 +827,52 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>activeInput</code>
+                    <code>inputSizeBase</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    placeholder:opacity-100
+                    px-3 py-[0.32rem] leading-[1.6]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets classes when the input element is active.
+                    Sets input padding and leading styles when
+                    <code>TEInput size="base"</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>inputSizeLg</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    px-3 py-[0.32rem] leading-[2.15]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets input padding and leading styles when
+                    <code>TEInput size="lg"</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>inputSizeSm</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    px-3 py-[0.33rem] text-xs leading-[1.5]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets input padding, text and leading styles when
+                    <code>TEInput size="sm</code>.
                   </td>
                 </tr>
                 <tr
@@ -556,15 +902,54 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>activeLabel</code>
+                    <code>labelSizeBase</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    scale-[0.8]
+                    pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets classes of the label when input element is active.
+                    Sets label styles when
+                    <code>TEInput size="base"</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>labelSizeLg</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    pt-[0.36rem] leading-[2.15]
+                    peer-focus:-translate-y-[1.15rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets label styles when
+                    <code>TEInput size="lg"</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>labelSizeSm</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    pt-[0.36rem] text-xs leading-[1.5]
+                    peer-focus:-translate-y-[0.75rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets label styles when
+                    <code>TEInput size="sm"</code>.
                   </td>
                 </tr>
                 <tr
@@ -611,41 +996,6 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>activeNotchLeading</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-r-0
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets stylesof leading notch when input element is active.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchLeading</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-r-0
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets stylesof the leading notch when input element is
-                    focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
                     <code>notchLeadingDefault</code>
                   </td>
                   <td
@@ -663,25 +1013,6 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>focusedNotchLeadingDefault</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    shadow-[-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca]
-                    border-primary dark:border-primary
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default leading notch when input element is
-                    focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
                     <code>notchLeadingWhite</code>
                   </td>
                   <td
@@ -691,25 +1022,6 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets styles of white leading notch.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchLeadingWhite</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    shadow-[-1px_0_0_#ffffff,_0_1px_0_0_#ffffff,_0_-1px_0_0_#ffffff]
-                    border-white
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white leading notch when the input element is
-                    focused.
                   </td>
                 </tr>
                 <tr
@@ -738,44 +1050,6 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>activeNotchMiddle</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-x-0 border-t border-solid border-t-transparent
-                    dark:border-t-transparent
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of middle notch when the input element is
-                    active.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchMiddle</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-x-0 border-t border-solid border-t-transparent
-                    dark:border-t-transparent
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of middle notch when the input element is
-                    focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
                     <code>notchMiddleDefault</code>
                   </td>
                   <td
@@ -793,25 +1067,6 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>focusedNotchMiddleDefault</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    shadow-[0_1px_0_0_#3b71ca] border-primary
-                    dark:border-primary
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default middle notch when the input element
-                    is focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
                     <code>notchMiddleWhite</code>
                   </td>
                   <td
@@ -821,24 +1076,6 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets styles of white middle notch.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchMiddleWhite</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    shadow-[0_1px_0_0_#ffffff] border-white
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white middle notch when the input element is
-                    focused.
                   </td>
                 </tr>
                 <tr
@@ -867,42 +1104,6 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>activeNotchTrailing</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-l-0
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of trailing notch when the input element is
-                    active.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchTrailing</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    border-l-0
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of trailing notch when the input element is
-                    focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
                     <code>notchTrailingDefault</code>
                   </td>
                   <td
@@ -912,25 +1113,6 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets styles of default trailing notch.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>focusedNotchTrailingDefault</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    shadow-[1px_0_0_#3b71ca,_0_-1px_0_0_#3b71ca,_0_1px_0_0_#3b71ca]
-                    border-primary dark:border-primary
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default trailing notch when the input element
-                    is focused.
                   </td>
                 </tr>
                 <tr
@@ -956,199 +1138,15 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>focusedNotchTrailingWhite</code>
+                    <code>wrapper</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    shadow-[1px_0_0_#ffffff,_0_-1px_0_0_#ffffff,_0_1px_0_0_#ffffff]
-                    border-white
+                    relative
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white trailing notch when the input element
-                    is focused.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>counter</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    text-right leading-[1.6]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets text alignment and line height of input counter
-                    wrapper.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>inputSizeLg</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    px-3 py-[0.32rem] leading-[2.15]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding and leading styles when
-                    <code>TEInput size="lg"</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>inputSizeBase</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    px-3 py-[0.32rem] leading-[1.6]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding and leading styles when
-                    <code>TEInput size="base"</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>inputSizeSm</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    px-3 py-[0.33rem] text-xs leading-[1.5]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding, text and leading styles when
-                    <code>TEInput size="sm</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>labelSizeLg</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    pt-[0.36rem] leading-[2.15]
-                    peer-focus:-translate-y-[1.15rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label styles when
-                    <code>TEInput size="lg"</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>activelabelSizeLg</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    -translate-y-[1.15rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label translate styles when
-                    <code>TEInput size="lg"</code> and is active.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>labelSizeBase</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    pt-[0.30rem] leading-[1.6] peer-focus:-translate-y-[0.9rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label styles when
-                    <code>TEInput size="base"</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>activelabelSizeBase</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    -translate-y-[0.9rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label translate styles when
-                    <code>TEInput size="base"</code>and is active.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>labelSizeSm</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    pt-[0.36rem] text-xs leading-[1.5]
-                    peer-focus:-translate-y-[0.75rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label styles when
-                    <code>TEInput size="sm"</code>.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
-                >
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    <code>activelabelSizeSm</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
-                  >
-                    -translate-y-[0.75rem]
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets label translate styles when
-                    <code>TEInput size="sm"</code> and is active.
+                    Adds classes to the input wrapper.
                   </td>
                 </tr>
               </tbody>
@@ -1162,7 +1160,7 @@
   <hr class="my-5 dark:border-gray-600" />
 
   <!--Section: Events-->
-  <section id="api-section-classes">
+  <section id="api-section-events">
     <!-- Section title -->
     <h2
       class="mb-5 mt-0 text-3xl font-semibold leading-normal"
@@ -1213,8 +1211,7 @@
                     <code>onBlur</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    A callback fired when the <code>TEInput</code> is not
-                    focused.
+                    A callback fired when the <code>TEInput</code> lost focus.
                   </td>
                 </tr>
               </tbody>
@@ -1223,6 +1220,35 @@
         </div>
       </div>
     </div>
+
+    <!--Section: Code-->
+    {{< twsnippet/no-demo id="api-example2" >}}
+    <section class="!visible hidden" data-te-collapse-item id="api-example2">
+      <!-- prettier-ignore -->
+      <div class="pt-4">
+        {{< twsnippet/wrapper "JSX" >}}
+        {{< twsnippet/code active=true lang="jsx" >}}
+        import React from "react";
+        import { TEInput } from "tw-elements-react";
+        
+        export default function InputBasicExample(): JSX.Element {
+          const handleChange = () => {
+            // do something ...
+          }
+          return (
+                <TEInput
+                  type="text"
+                  id="exampleFormControlInput1"
+                  label="Example label"
+                  onChange={handleChange}
+                ></TEInput>
+          );
+        }        
+        {{< /twsnippet/code >}} 
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!--Section: Code-->
   </section>
   <!--Section: Docs content-->
 </section>
