@@ -1,0 +1,251 @@
+[
+  {
+    "href": "/",
+    "name": "About",
+    "keywords": ["introduction", "demo"],
+    "category": "General"
+  },
+  {
+    "href": "/license/",
+    "name": "License",
+    "keywords": ["license"],
+    "category": "General"
+  },
+  {
+    "href": "/docs/react/getting-started/quick-start/",
+    "name": "Quick start",
+    "keywords": ["start", "tutorial"],
+    "category": "Getting started"
+  },
+  {
+    "href": "/docs/react/getting-started/theming/",
+    "name": "Theming",
+    "keywords": ["theme"],
+    "category": "Getting started"
+  },
+  {
+    "href": "/docs/react/getting-started/dark-mode/",
+    "name": "Dark mode",
+    "keywords": ["dark mode"],
+    "category": "Getting started"
+  },
+  {
+    "href": "/docs/react/getting-started/changelog/",
+    "name": "Changelog",
+    "keywords": ["releases", "updates"],
+    "category": "Getting started"
+  },
+  {
+    "href": "/docs/react/getting-started/contribute/",
+    "name": "Contribute",
+    "keywords": ["contribute", "pull request", "issues"],
+    "category": "Getting started"
+  },
+  {
+    "href": "docs/react/components/badges/",
+    "name": "Badges",
+    "keywords": ["label", "notifications"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/components/avatar/",
+    "name": "Avatar",
+    "keywords": ["avatar"],
+    "category": "Components"
+  },
+  {
+    "href": "docs/react/navigation/pagination/",
+    "name": "Pagination",
+    "keywords": ["pages", "paginate", "next", "previous"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/content-styles/headings/",
+    "name": "Headings",
+    "keywords": ["headings"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/icons/",
+    "name": "Icons",
+    "keywords": ["icons"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/images/",
+    "name": "Images",
+    "keywords": ["images"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/colors/",
+    "name": "Colors",
+    "keywords": ["colors"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/dividers/",
+    "name": "Dividers",
+    "keywords": ["dividers"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/figures/",
+    "name": "Figures",
+    "keywords": ["figures"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/methods/ripple/",
+    "name": "Ripple",
+    "keywords": ["ripple", "wave"],
+    "category": "Methods",
+    "priority": {
+      "ripple": 1
+    }
+  },
+  {
+    "href": "/docs/react/components/rating/",
+    "name": "Rating",
+    "keywords": ["feedback", "stars", "emoji"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/spinners/",
+    "name": "Spinners",
+    "keywords": ["loading"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/forms/checkbox/",
+    "name": "Checkbox",
+    "keywords": ["checked"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/content-styles/shadows/",
+    "name": "Shadows",
+    "keywords": ["shadows"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/typography/",
+    "name": "Typography",
+    "keywords": ["typography"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/navigation/breadcrumbs",
+    "name": "Breadcrumbs",
+    "keywords": ["breadcrumbs"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/file-input",
+    "name": "File Input",
+    "keywords": ["file", "input"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/radio",
+    "name": "Radio",
+    "keywords": ["radio"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/range",
+    "name": "Range",
+    "keywords": ["range"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/switch/",
+    "name": "Switch",
+    "keywords": ["toggle"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/tables/",
+    "name": "Tables",
+    "keywords": ["tables"],
+    "category": "Data"
+  },
+  {
+    "href": "/docs/react/components/listgroup",
+    "name": "List Group",
+    "keywords": ["list", "group"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/paragraphs",
+    "name": "Paragraphs",
+    "keywords": ["paragraphs"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/progress",
+    "name": "Progress",
+    "keywords": ["progress"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/link/",
+    "name": "Link",
+    "keywords": ["link"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/content-styles/mask/",
+    "name": "Mask",
+    "keywords": ["mask"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/hover-effects/",
+    "name": "Hover effects",
+    "keywords": ["hover effects"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/components/social-buttons",
+    "name": "Social buttons",
+    "keywords": ["social", "buttons", "button"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/timeline",
+    "name": "Timeline",
+    "keywords": ["timeline"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/cards/",
+    "name": "Cards",
+    "keywords": ["content container"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/placeholders/",
+    "name": "Placeholders",
+    "keywords": ["placeholders"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/buttons",
+    "name": "Buttons",
+    "keywords": ["buttons"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/button-group",
+    "name": "Button group",
+    "keywords": ["buttons", "button", "group"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/forms/inputs",
+    "name": "Inputs",
+    "keywords": ["inputs", "input", "fields"],
+    "category": "Forms"
+  }
+]

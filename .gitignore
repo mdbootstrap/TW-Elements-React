@@ -10,6 +10,10 @@
 /site/static/js/index.min.js.map
 /site/static/js/plugin.js
 /site/static/js/plugin.cjs
+/site/static/js/react/index.min.js
+/site/static/js/react/index.min.js.map
+/site/static/js/react/plugin.js
+/site/static/js/react/plugin.cjs
 
 ## OS Files
 # Windows
