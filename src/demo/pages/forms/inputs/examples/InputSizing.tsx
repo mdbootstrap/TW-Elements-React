@@ -3,7 +3,7 @@ import { TEInput } from "tw-elements-react";
 
 export default function InputSizing(): JSX.Element {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pt-6">
       <div>
         <div className="relative mb-3 xl:w">
           <TEInput
