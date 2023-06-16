@@ -19,7 +19,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.1",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
@@ -31,15 +32,15 @@
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
-    "cross-env": "^7.0.3",
     "clsx": "^1.2.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "fs-extra": "^11.1.1",
     "postcss": "^8.4.23",
-    "shelljs": "^0.8.5",
     "sass": "^1.62.1",
+    "shelljs": "^0.8.5",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
