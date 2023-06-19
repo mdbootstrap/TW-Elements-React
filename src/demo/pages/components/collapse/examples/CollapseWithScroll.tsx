@@ -18,7 +18,7 @@ export default function CollapseWithScroll(): JSX.Element {
         </button>
       </TERipple>
 
-      <TECollapse scroll={true} show={show}>
+      <TECollapse scroll show={show}>
         <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
           terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer

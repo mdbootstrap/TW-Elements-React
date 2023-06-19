@@ -241,8 +241,8 @@ const InputPage = () => {
         </h2>
         {/* <!-- Description --> */}
         <p className="mb-3">
-          Set
-          <code>counter={true}</code> for <code>TEinput</code> and set the
+          Add prop
+          <code>counter</code> and set the
           <code>maxLength</code> attribute to create a counter.
         </p>
         <InputCharacterCounter />
