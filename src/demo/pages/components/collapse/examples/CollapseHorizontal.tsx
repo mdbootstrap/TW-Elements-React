@@ -17,7 +17,7 @@ export default function CollapseHorizontal(): JSX.Element {
           Button
         </button>
       </TERipple>
-      <TECollapse horizontal={true} className="max-w-[400px]" show={show}>
+      <TECollapse horizontal className="max-w-[400px]" show={show}>
         <div className="block rounded-lg w-[400px] bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
           This is some placeholder content for a horizontal collapse. It's
           hidden by default and shown when triggered.
