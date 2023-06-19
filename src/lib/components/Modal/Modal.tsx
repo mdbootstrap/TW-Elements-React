@@ -9,7 +9,7 @@ import Backdrop from "../../shared/backdrop/Backdrop";
 import { useScrollbar } from "../../hooks/useScrollbar";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
 
-const MDBModal: React.FC<ModalProps> = ({
+const TEModal: React.FC<ModalProps> = ({
   show,
   setShow,
   appendToBody,
@@ -30,6 +30,7 @@ const MDBModal: React.FC<ModalProps> = ({
 }) => {
   const theme = { ...modalTheme, ...customTheme };
   const { scrollbarHide, scrollbarReset } = useScrollbar();
+  const { initFocusTrap, removeFocusTrap } = useFocusTrap();
 
   const [isOpenModal, setIsOpenModal] = useState(show || false);
   const [transitionDuration, setTransitionDuration] = useState(0);
@@ -37,8 +38,6 @@ const MDBModal: React.FC<ModalProps> = ({
 
   const modalInnerRef = useRef<HTMLElement>(null);
   const modalReference = modalRef ? modalRef : modalInnerRef;
-
-  const { initFocusTrap, removeFocusTrap } = useFocusTrap();
 
   const modalClasses = clsx(
     theme.wrapper,
@@ -150,7 +149,7 @@ const MDBModal: React.FC<ModalProps> = ({
   return <>{appendToBody ? appendToBodyTemplate : modalTemplate}</>;
 };
 
-MDBModal.defaultProps = {
+TEModal.defaultProps = {
   backdrop: true,
   show: false,
   closeOnEsc: true,
@@ -158,4 +157,4 @@ MDBModal.defaultProps = {
   leaveHiddenModal: true,
 };
 
-export default MDBModal;
+export default TEModal;
