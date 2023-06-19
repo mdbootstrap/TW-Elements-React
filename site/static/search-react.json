@@ -249,6 +249,12 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/components/collapse",
+    "name": "Collapse",
+    "keywords": ["collapse"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/modal/",
     "name": "Modal",
     "keywords": ["dialog", "notification", "popup", "modal"],
