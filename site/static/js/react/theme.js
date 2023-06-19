@@ -46,6 +46,7 @@ class ThemeSwitcher {
     this.customTogglers.forEach((customToggler) => {
       customToggler.checked = true;
     });
+    window.dispatchEvent(new CustomEvent("darkmode", { detail: true }));
   }
 
   setLightTheme() {
@@ -57,6 +58,7 @@ class ThemeSwitcher {
     this.customTogglers.forEach((customToggler) => {
       customToggler.checked = false;
     });
+    window.dispatchEvent(new CustomEvent("darkmode", { detail: false }));
   }
 
   setActiveThemeIcon(theme) {

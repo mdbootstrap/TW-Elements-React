@@ -6,10 +6,12 @@ import TEModalContent from "./components/Modal/ModalContent/ModalContent";
 import TEModalHeader from "./components/Modal/ModalHeader/ModalHeader";
 import TEModalBody from "./components/Modal/ModalBody/ModalBody";
 import TEModalFooter from "./components/Modal/ModalFooter/ModalFooter";
+import TEInput from "./forms/Input/Input";
 
 export {
   TECollapse,
   TERipple,
+  TEInput,
   TEModal,
   TEModalDialog,
   TEModalContent,
