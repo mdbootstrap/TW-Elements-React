@@ -35,6 +35,7 @@ import TimelinePage from "./pages/components/timeline/TimelinePage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
+import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
 
 //examples pages
@@ -48,8 +49,8 @@ import SocialButtonsExamples from "./pages/components/social-buttons/exampleList
 import TimelineExamples from "./pages/components/timeline/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
-
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
+import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
 
 interface Pages {
@@ -107,6 +108,7 @@ const componentsPages: Pages[] = [
     path: "/components/button-group",
     element: <ButtonGroupPage />,
   },
+  { name: "modal", path: "/components/modal", element: <ModalPage /> },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -239,6 +241,7 @@ export const examplesPages: Pages[] = [
   ...CardsExamples,
   ...PlaceholderExamples,
   ...ButtonGroupExamples,
+  ...ModalExamples,
   ...InputExamples,
 ];
 
