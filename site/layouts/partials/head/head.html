@@ -1,5 +1,5 @@
 {{ partial "head/meta.html" . }}
-{{ $styles := resources.Get "css/style.min.css" | postCSS }}
+{{ $styles := resources.Get "css/react/style.min.css" | postCSS }}
 <link rel="stylesheet" href="/css/react/perfect-scrollbar.css" />
 {{ if
   .Site.IsServer
