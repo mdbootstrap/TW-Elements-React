@@ -5,7 +5,6 @@ import {
   TEModalDialog,
   TEModalContent,
   TEModalHeader,
-  TEModalTitle,
   TEModalBody,
   TEModalFooter,
 } from "tw-elements-react";
@@ -74,7 +73,10 @@ export default function PositionsExample(): JSX.Element {
         >
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Modal title</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Modal title
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"
@@ -134,7 +136,10 @@ export default function PositionsExample(): JSX.Element {
         >
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Modal title</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Modal title
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"
@@ -194,7 +199,10 @@ export default function PositionsExample(): JSX.Element {
         >
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Modal title</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Modal title
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"
@@ -254,7 +262,10 @@ export default function PositionsExample(): JSX.Element {
         >
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Modal title</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Modal title
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"

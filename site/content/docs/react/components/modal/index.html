@@ -28,7 +28,7 @@ menu:
   <p class="mb-3">Click the button to launch the modal.</p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example1" iframe="/components/modal/examples/basic-example" title="basic-example" >}}
+  {{< twsnippet/demo-iframe id="example1" iframe="/components/modal/examples/basic-example" title="basic-example" minHeight="250px">}}
 
 
   <section class="!visible hidden" data-te-collapse-item id="example1">
@@ -43,7 +43,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -51,7 +50,7 @@ menu:
       export default function BasicExample(): JSX.Element {
         const [showModal, setShowModal] = useState(false);
         return (
-          <div className="">
+          <div>
             {/* <!-- Button trigger modal --> */}
             <TERipple rippleColor="white">
               <button
@@ -68,7 +67,10 @@ menu:
               <TEModalDialog>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -412,7 +414,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example2" iframe="/components/modal/examples/static-backdrop" title="Static backdrop" >}}
+  {{< twsnippet/demo-iframe id="example2" iframe="/components/modal/examples/static-backdrop" title="Static backdrop" minHeight="250px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example2">
     <div class="pt-4">
@@ -426,7 +428,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -434,7 +435,7 @@ menu:
       export default function StaticBackdrop(): JSX.Element {
         const [showModal, setShowModal] = useState(false);
         return (
-          <div className="">
+          <div>
             {/* <!-- Button trigger modal --> */}
             <TERipple rippleColor="white">
               <button
@@ -451,7 +452,10 @@ menu:
               <TEModalDialog>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -526,7 +530,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example3" iframe="/components/modal/examples/scrolling-long-content" title="Scrolling long content">}}
+  {{< twsnippet/demo-iframe id="example3" iframe="/components/modal/examples/scrolling-long-content" title="Scrolling long content" minHeight="250px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example3">
     <div class="pt-4">
@@ -540,7 +544,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -548,7 +551,7 @@ menu:
       export default function ScrollingLongContent(): JSX.Element {
         const [showModal, setShowModal] = useState(false);
         return (
-          <div className="">
+          <div>
             {/* <!-- Button trigger modal --> */}
             <TERipple rippleColor="white">
               <button
@@ -565,7 +568,10 @@ menu:
               <TEModalDialog>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -647,7 +653,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example4" iframe="/components/modal/examples/modal-dialog-scrollable" title="Modal dialog scrollable">}}
+  {{< twsnippet/demo-iframe id="example4" iframe="/components/modal/examples/modal-dialog-scrollable" title="Modal dialog scrollable" minHeight="250px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example4">
     <div class="pt-4">
@@ -661,7 +667,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -686,7 +691,10 @@ menu:
               <TEModalDialog>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -772,7 +780,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example5" iframe="/components/modal/examples/verticaly-centered" title="Verticaly centered">}}
+  {{< twsnippet/demo-iframe id="example5" iframe="/components/modal/examples/verticaly-centered" title="Verticaly centered" minHeight="350px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example5">
     <div class="pt-4">
@@ -786,7 +794,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -832,7 +839,10 @@ menu:
               <TEModalDialog centered>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -892,7 +902,10 @@ menu:
               <TEModalDialog centered>
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -991,7 +1004,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example6" iframe="/components/modal/examples/sizes-example" title="Sizes example">}}
+  {{< twsnippet/demo-iframe id="example6" iframe="/components/modal/examples/sizes-example" title="Sizes example" minHeight="250px">}}
  
   <section class="!visible hidden" data-te-collapse-item id="example6">
     <div class="pt-4">
@@ -1005,7 +1018,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
       } from "tw-elements-react";
       
@@ -1056,7 +1068,10 @@ menu:
               <TEModalDialog size="xl">
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Extra large modal</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Extra large modal
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1091,7 +1106,10 @@ menu:
               <TEModalDialog size="lg">
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Large modal</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Large modal
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1126,7 +1144,10 @@ menu:
               <TEModalDialog size="sm">
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Small modal</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Small modal
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1187,7 +1208,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example8" iframe="/components/modal/examples/positions-example" title="Positions example">}}
+  {{< twsnippet/demo-iframe id="example8" iframe="/components/modal/examples/positions-example" title="Positions example" minHeight="350px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example8">
     <div class="pt-4">
@@ -1201,7 +1222,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -1270,7 +1290,10 @@ menu:
               >
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1330,7 +1353,10 @@ menu:
               >
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1390,7 +1416,10 @@ menu:
               >
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1450,7 +1479,10 @@ menu:
               >
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!--Modal title--> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"
@@ -1525,7 +1557,7 @@ menu:
   </p>
 
   <!-- prettier-ignore -->
-  {{< twsnippet/demo-iframe id="example7" iframe="/components/modal/examples/fullscreen-modal" title="Fullscreen modal">}}
+  {{< twsnippet/demo-iframe id="example7" iframe="/components/modal/examples/fullscreen-modal" title="Fullscreen modal" minHeight="250px">}}
 
   <section class="!visible hidden" data-te-collapse-item id="example7">
     <div class="pt-4">
@@ -1539,7 +1571,6 @@ menu:
         TEModalDialog,
         TEModalContent,
         TEModalHeader,
-        TEModalTitle,
         TEModalBody,
         TEModalFooter,
       } from "tw-elements-react";
@@ -1564,7 +1595,10 @@ menu:
               <TEModalDialog size="fullscreen">
                 <TEModalContent>
                   <TEModalHeader>
-                    <TEModalTitle>Modal title</TEModalTitle>
+                    {/* <!-- Modal title --> */}
+                    <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                      Modal title
+                    </h5>
                     {/* <!--Close button--> */}
                     <button
                       type="button"

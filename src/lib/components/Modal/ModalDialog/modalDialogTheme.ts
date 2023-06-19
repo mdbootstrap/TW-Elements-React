@@ -1,8 +1,8 @@
 const ModalDialogTheme = {
   centered: "h-[calc(100vh-3.5rem)] flex items-center justify-center",
-  fullscreen: "h-full w-full !m-0",
+  fullscreen: "!h-full w-full !m-0",
   hidden: "translate-y-[-50px] opacity-0",
-  scrollable: " overflow-hidden",
+  scrollable: "h-[calc(100vh-3.5rem)] overflow-hidden",
   show: "translate-y-0 opacity-100",
   sizeDefault: "min-[576px]:max-w-[500px]",
   wrapper:

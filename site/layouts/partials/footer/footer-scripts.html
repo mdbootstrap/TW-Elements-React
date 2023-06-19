@@ -602,6 +602,11 @@
 
     const iframe = iframes.find(frame=> frame.src.includes(path))
     const offset = iframe.dataset.teReactOffset || 10;
+    const minHeight = iframe.dataset.teReactMinHeight;
+
+    if (minHeight) {
+      iframe.style.minHeight = minHeight;
+    }
 
     setIframesTheme([iframe], localStorage.theme === "dark")
     iframe && (iframe.style.height = iframeHeight + Number(offset) + "px");

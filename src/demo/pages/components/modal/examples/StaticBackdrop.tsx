@@ -5,7 +5,6 @@ import {
   TEModalDialog,
   TEModalContent,
   TEModalHeader,
-  TEModalTitle,
   TEModalBody,
   TEModalFooter,
 } from "tw-elements-react";
@@ -13,7 +12,7 @@ import {
 export default function StaticBackdrop(): JSX.Element {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="">
+    <div>
       {/* <!-- Button trigger modal --> */}
       <TERipple rippleColor="white">
         <button
@@ -30,7 +29,10 @@ export default function StaticBackdrop(): JSX.Element {
         <TEModalDialog>
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Modal title</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Modal title
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"

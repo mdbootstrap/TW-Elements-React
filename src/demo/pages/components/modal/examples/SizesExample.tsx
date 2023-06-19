@@ -5,7 +5,6 @@ import {
   TEModalDialog,
   TEModalContent,
   TEModalHeader,
-  TEModalTitle,
   TEModalBody,
 } from "tw-elements-react";
 
@@ -56,7 +55,10 @@ export default function SizesExample(): JSX.Element {
         <TEModalDialog size="xl">
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Extra large modal</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Extra large modal
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"
@@ -91,7 +93,10 @@ export default function SizesExample(): JSX.Element {
         <TEModalDialog size="lg">
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Large modal</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Large modal
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"
@@ -126,7 +131,10 @@ export default function SizesExample(): JSX.Element {
         <TEModalDialog size="sm">
           <TEModalContent>
             <TEModalHeader>
-              <TEModalTitle>Small modal</TEModalTitle>
+              {/* <!--Modal title--> */}
+              <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
+                Small modal
+              </h5>
               {/* <!--Close button--> */}
               <button
                 type="button"

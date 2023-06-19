@@ -10,7 +10,7 @@ import FullscreenModal from "./examples/FullscreenModal";
 
 export default function ModalPage(): JSX.Element {
   return (
-    <div className="container my-12 mx-5">
+    <div className="container my-12 mx-5 w-auto">
       {/* <!-- Section: Simple notification --> */}
       <section>
         {/* <!-- Title --> */}
