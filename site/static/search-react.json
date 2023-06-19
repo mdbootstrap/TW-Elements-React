@@ -247,5 +247,11 @@
     "name": "Inputs",
     "keywords": ["inputs", "input", "fields"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/components/collapse",
+    "name": "Collapse",
+    "keywords": ["collapse"],
+    "category": "Components"
   }
 ]
