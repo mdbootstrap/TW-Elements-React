@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { TECollapse, TERipple } from "tw-elements-react";
 
 export default function CollapseWithScroll(): JSX.Element {
-  const [showShow, setShowShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const toggleShow = () => setShowShow(!showShow);
+  const toggleShow = () => setShow(!show);
 
   return (
-    <>
+    <div className="px-3 h-[160px]">
       <TERipple rippleColor="light">
         <button
           type="button"
@@ -18,7 +18,7 @@ export default function CollapseWithScroll(): JSX.Element {
         </button>
       </TERipple>
 
-      <TECollapse scroll={true} show={showShow}>
+      <TECollapse scroll={true} show={show}>
         <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
           terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
@@ -31,6 +31,6 @@ export default function CollapseWithScroll(): JSX.Element {
           bird on it squid single-origin coffee nulla assumenda shoreditch et.
         </div>
       </TECollapse>
-    </>
+    </div>
   );
 }

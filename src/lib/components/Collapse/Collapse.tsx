@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { CollapseProps } from "./types";
 import collapseTheme from "./collapseTheme";
 
-const MDBCollapse: React.FC<CollapseProps> = ({
+const TECollapse: React.FC<CollapseProps> = ({
   className,
   children,
   show,
@@ -90,7 +90,6 @@ const MDBCollapse: React.FC<CollapseProps> = ({
   }, [showCollapse, refCollapse, horizontal]);
 
   useEffect(() => {
-    // console.log(collapseSize, showCollapse);
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -113,11 +112,11 @@ const MDBCollapse: React.FC<CollapseProps> = ({
   );
 };
 
-MDBCollapse.defaultProps = {
+TECollapse.defaultProps = {
   tag: "div",
   scroll: false,
   horizontal: false,
   show: false,
 };
 
-export default MDBCollapse;
+export default TECollapse;

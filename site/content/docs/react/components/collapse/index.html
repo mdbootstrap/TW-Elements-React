@@ -41,13 +41,9 @@ menu:
       import { TECollapse, TERipple } from "tw-elements-react";
       
       export default function CollapseBasicExample(): JSX.Element {
-        const [showShow, setShowShow] = useState(false);
+        const [show, setShow] = useState(false);
       
-        const toggleShow = () => setShowShow(!showShow);
-      
-        const customTheme = {
-          visible: "",
-        };
+        const toggleShow = () => setShow(!show);
       
         return (
           <>
@@ -70,7 +66,7 @@ menu:
               </button>
             </TERipple>
       
-            <TECollapse show={showShow} theme={customTheme}>
+            <TECollapse show={show}>
               <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
                 Some placeholder content for the collapse component. This panel is
                 hidden by default but revealed when the user activates the relevant
@@ -384,9 +380,9 @@ menu:
       import { TECollapse, TERipple } from "tw-elements-react";
       
       export default function CollapseHorizontal(): JSX.Element {
-        const [showShow, setShowShow] = useState(false);
+        const [show, setShow] = useState(false);
       
-        const toggleShow = () => setShowShow(!showShow);
+        const toggleShow = () => setShow(!show);
       
         return (
           <>
@@ -399,7 +395,7 @@ menu:
                 Button
               </button>
             </TERipple>
-            <TECollapse horizontal={true} show={showShow}>
+            <TECollapse horizontal={true}>
               <div className="block rounded-lg w-[400px] bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
                 This is some placeholder content for a horizontal collapse. It's
                 hidden by default and shown when triggered.
@@ -541,9 +537,9 @@ menu:
       import { TECollapse, TERipple } from "tw-elements-react";
       
       export default function CollapseWithScroll(): JSX.Element {
-        const [showShow, setShowShow] = useState(false);
+        const [show, setShow] = useState(false);
       
-        const toggleShow = () => setShowShow(!showShow);
+        const toggleShow = () => setShow(!show);
       
         return (
           <>
@@ -557,7 +553,7 @@ menu:
               </button>
             </TERipple>
       
-            <TECollapse scroll={true} show={showShow}>
+            <TECollapse scroll={true} show={show}>
               <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
                 terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer

@@ -14,7 +14,7 @@ export default function CollapseMultipleTargets(): JSX.Element {
   };
 
   return (
-    <>
+    <div className="px-3 h-[460px] sm:h-[350px] md:h-[250px]">
       <div className="mb-4 flex items-center justify-center space-y-1 md:space-x-1 md:space-y-0">
         <TERipple rippleColor="light">
           <button
@@ -65,6 +65,6 @@ export default function CollapseMultipleTargets(): JSX.Element {
           </TECollapse>
         </div>
       </div>
-    </>
+    </div>
   );
 }

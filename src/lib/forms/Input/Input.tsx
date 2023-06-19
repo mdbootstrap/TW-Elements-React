@@ -11,7 +11,7 @@ import React, {
 import type { InputProps } from "./types";
 import InputTheme from "./inputTheme";
 
-const MDBInput: React.FC<InputProps> = React.forwardRef<
+const TEInput: React.FC<InputProps> = React.forwardRef<
   HTMLInputElement,
   InputProps
 >(
@@ -230,7 +230,7 @@ const MDBInput: React.FC<InputProps> = React.forwardRef<
   }
 );
 
-MDBInput.defaultProps = {
+TEInput.defaultProps = {
   wrapperTag: "div",
   readonly: false,
   size: "base",
@@ -239,4 +239,4 @@ MDBInput.defaultProps = {
   formWhite: false,
 };
 
-export default MDBInput;
+export default TEInput;
