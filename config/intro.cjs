@@ -1,4 +1,4 @@
-const intro = (version: string) => `/*!
+const intro = (version) => `/*!
 * Taliwind Elements ${version}
 * 
 * Tailwind Elements is an open-source UI kit of advanced components for TailwindCSS.
