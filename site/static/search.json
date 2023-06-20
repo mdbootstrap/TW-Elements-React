@@ -241,5 +241,17 @@
     "name": "Button group",
     "keywords": ["buttons", "button", "group"],
     "category": "Components"
+  },
+  {
+    "href": "/docs/react/navigation/tabs",
+    "name": "Tabs",
+    "keywords": ["tabs"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/navigation/pills",
+    "name": "Pills",
+    "keywords": ["pills"],
+    "category": "Navigation"
   }
 ]
