@@ -37,6 +37,8 @@ import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 import TabsPage from "./pages/navigation/tabs/TabsPage";
 import PillsPage from "./pages/navigation/pills/PillsPage";
+import ModalPage from "./pages/components/modal/ModalPage";
+import InputPage from "./pages/forms/inputs/InputPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -49,10 +51,11 @@ import SocialButtonsExamples from "./pages/components/social-buttons/exampleList
 import TimelineExamples from "./pages/components/timeline/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
-
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 import TabsExamples from "./pages/navigation/tabs/exampleList";
 import PillsExamples from "./pages/navigation/pills/exampleList";
+import ModalExamples from "./pages/components/modal/exampleList";
+import InputExamples from "./pages/forms/inputs/exampleList";
 
 interface Pages {
   name: string;
@@ -109,6 +112,7 @@ const componentsPages: Pages[] = [
     path: "/components/button-group",
     element: <ButtonGroupPage />,
   },
+  { name: "modal", path: "/components/modal", element: <ModalPage /> },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -170,6 +174,11 @@ const formsPages: Pages[] = [
   },
   { name: "switch", path: "/forms/switch", element: <SwitchPage /> },
   { name: "checkbox", path: "/forms/checkbox", element: <CheckboxPage /> },
+  {
+    name: "Inputs",
+    path: "/components/inputs",
+    element: <InputPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -248,6 +257,8 @@ export const examplesPages: Pages[] = [
   ...ButtonGroupExamples,
   ...TabsExamples,
   ...PillsExamples,
+  ...ModalExamples,
+  ...InputExamples,
 ];
 
 export default demoPages;

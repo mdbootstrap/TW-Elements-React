@@ -253,5 +253,26 @@
     "name": "Pills",
     "keywords": ["pills"],
     "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/inputs",
+    "name": "Inputs",
+    "keywords": ["inputs", "input", "fields"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/components/collapse",
+    "name": "Collapse",
+    "keywords": ["collapse"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/modal/",
+    "name": "Modal",
+    "keywords": ["dialog", "notification", "popup", "modal"],
+    "category": "Components",
+    "priority": {
+      "modal": 1
+    }
   }
 ]

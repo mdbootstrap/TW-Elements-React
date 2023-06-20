@@ -1,8 +1,8 @@
-import fs from "fs-extra";
-// import EOL from 'os';
-import shell from "shelljs";
-// import { version } from '../package.json';
-// import intro from "./intro";
+const fs = require("fs-extra");
+const { EOL } = require("os");
+const shell = require("shelljs");
+const version = require("../package.json").version;
+// const intro = require("./intro.cjs");
 
 // prettier-ignore
 const distName = process.env.mode === "demo" ? "dist-demo" : process.env.mode === "docs" ? "dist-docs" : "dist";
@@ -64,54 +64,32 @@ if (process.env.mode === "demo" || process.env.mode === "docs") {
   // });
 
   // build
-  // fs.copy(`./src/files/package.json`, `./${distName}/package.json`, (err) => {
-  //   if (err) throw err;
+  fs.copy(`./src/files/package.json`, `./${distName}/package.json`, (err) => {
+    if (err) throw err;
 
-  //   // package.json version update
-  //   const contentApp = fs.readFileSync(`./${distName}/package.json`, {
-  //     encoding: "utf-8",
-  //   });
-  //   const lines = contentApp.split(/\r?\n/g);
-  //   const versionIndex = lines.findIndex((line: string) => line.match(/version/));
-  //   lines[versionIndex] = `  "version": "${version}",`;
-  //   fs.writeFileSync(`./${distName}/package.json`, lines.join(EOL), {
-  //     encoding: "utf-8",
-  //   });
-  // });
+    // package.json version update
+    const contentApp = fs.readFileSync(`./${distName}/package.json`, {
+      encoding: "utf-8",
+    });
+    const lines = contentApp.split(/\r?\n/g);
+    const versionIndex = lines.findIndex((line) => line.match(/version/));
 
-  fs.copy(
-    `./src/files/index.html`,
-    `./${distName}/index.html`,
-    (err: NodeJS.ErrnoException | null | undefined): void => {
-      if (err) throw err;
-    }
-  );
-  fs.copy(
-    `./src/files/README.md`,
-    `./${distName}/README.md`,
-    (err: NodeJS.ErrnoException | null | undefined): void => {
-      if (err) throw err;
-    }
-  );
-  fs.copy(
-    `./src/plugin.cjs`,
-    `./${distName}/plugin.cjs`,
-    (err: NodeJS.ErrnoException | null | undefined): void => {
-      if (err) throw err;
-    }
-  );
-  fs.copy(
-    `./src/lib`,
-    `./${distName}/src/lib`,
-    (err: NodeJS.ErrnoException | null | undefined): void => {
-      if (err) throw err;
-    }
-  );
-  fs.copy(
-    `./src/scss`,
-    `./${distName}/src/scss`,
-    (err: NodeJS.ErrnoException | null | undefined): void => {
-      if (err) throw err;
-    }
-  );
+    lines[versionIndex] = `  "version": "${version}",`;
+    fs.writeFileSync(`./${distName}/package.json`, lines.join(EOL), {
+      encoding: "utf-8",
+    });
+  });
+
+  fs.copy(`./src/files/README.md`, `./${distName}/README.md`, (err) => {
+    if (err) throw err;
+  });
+  fs.copy(`./src/plugin.cjs`, `./${distName}/plugin.cjs`, (err) => {
+    if (err) throw err;
+  });
+  fs.copy(`./src/lib`, `./${distName}/src/lib`, (err) => {
+    if (err) throw err;
+  });
+  fs.copy(`./src/scss`, `./${distName}/src/scss`, (err) => {
+    if (err) throw err;
+  });
 }
