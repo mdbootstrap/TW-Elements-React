@@ -34,7 +34,7 @@ export default function Routes(): JSX.Element {
           ))}
         </Switch>
       </div>
-      {isNotExample && <ThemeSwitcher />}
+      <ThemeSwitcher isNotExample={isNotExample} />
     </>
   );
 }
