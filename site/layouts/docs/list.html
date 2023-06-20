@@ -1,11 +1,13 @@
 {{ $hidden_sidenav := .Params.hidden_sidenav }}
-
+{{ $docs_main := .Params.docs_main }}
+{{ $api_file_exists := fileExists (printf "/content/%s/a.html" .File.Dir) }}
+{{ $scrollspy_file_exists := fileExists (printf "/content/%s/index-ss.html" .File.Dir) }}
 
 <html lang="{{ .Language.Lang }}">
   <head>
     {{ partial "head/head.html" . }}
   </head>
-  <body class="dark:bg-neutral-800">
+  <body class="dark:bg-neutral-800 overflow-x-hidden">
     {{ partial "header/header.html" . }}
 
 
@@ -43,15 +45,18 @@
       >
       {{ partial "sidenav/standard.html" . }}
     </nav>
-    <div class="mt-10" id="page-content">
+    <div
+      class="{{ if ne $hidden_sidenav true }}xl:!pl-60{{ end }}"
+      id="page-content">
       <div
-        class="{{ if eq $hidden_sidenav true }}
+        class="{{ if and (eq $hidden_sidenav true) (ne $docs_main true) }}
           mx-auto w-1/2
-        {{ else }}
+        {{ else }} {{ if ne $docs_main true }}
           max-w-[540px] sm:max-w-[604px] md:max-w-[720px] lg:max-w-[972px]
-          xl:max-w-full xl:px-12 2xl:max-w-[1400px] mx-auto
+          xl:max-w-full xl:px-12 2xl:max-w-[1400px] mx-auto {{ end }}
         {{ end }} flex">
         <div class="flex w-full flex-col ">
+        {{ if (or ($api_file_exists) (isset .Params "custom_links")) }}
           <ul
             id="docs-nav-pills"
             class="mx-4 mt-3 flex"
@@ -101,7 +106,7 @@
               {{ end }}
             {{ end }}
           </ul>
-
+        {{ end }}
           <div
             id="docsTabsOverview"
             role="tabpanel"
@@ -142,8 +147,6 @@
             sidenavInstance.show();
           }
         };
-
-        setMode();
 
         // Event listeners
         window.addEventListener("resize", setMode);
