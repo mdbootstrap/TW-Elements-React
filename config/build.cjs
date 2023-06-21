@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const { EOL } = require("os");
 const shell = require("shelljs");
 const version = require("../package.json").version;
-// const intro = require("./intro.cjs");
+const intro = require("./intro.cjs");
 
 // prettier-ignore
 const distName = process.env.mode === "demo" ? "dist-demo" : process.env.mode === "docs" ? "dist-docs" : "dist";
@@ -14,54 +14,58 @@ if (process.env.mode === "demo" || process.env.mode === "docs") {
   });
 } else {
   // add disclaimer to js files
-  // const umdJsWithDisclaimer =
-  //   intro(version) +
-  //   fs.readFileSync(`./${distName}/js/tw-elements.umd.min.js`, {
-  //     encoding: "utf-8",
-  //   });
+  const umdJsWithDisclaimer =
+    intro(version) +
+    fs.readFileSync(`./${distName}/js/tw-elements-react.umd.min.js`, {
+      encoding: "utf-8",
+    });
 
-  // fs.writeFileSync(
-  //   `./${distName}/js/tw-elements.umd.min.js`,
-  //   umdJsWithDisclaimer,
-  //   {
-  //     encoding: "utf-8",
-  //   }
-  // );
+  fs.writeFileSync(
+    `./${distName}/js/tw-elements-react.umd.min.js`,
+    umdJsWithDisclaimer,
+    {
+      encoding: "utf-8",
+    }
+  );
 
-  // const esJsWithDisclaimer =
-  //   intro(version) +
-  //   fs.readFileSync(`./${distName}/js/tw-elements.es.min.js`, {
-  //     encoding: "utf-8",
-  //   });
+  const esJsWithDisclaimer =
+    intro(version) +
+    fs.readFileSync(`./${distName}/js/tw-elements-react.es.min.js`, {
+      encoding: "utf-8",
+    });
 
-  // fs.writeFileSync(
-  //   `./${distName}/js/tw-elements.es.min.js`,
-  //   esJsWithDisclaimer,
-  //   {
-  //     encoding: "utf-8",
-  //   }
-  // );
+  fs.writeFileSync(
+    `./${distName}/js/tw-elements-react.es.min.js`,
+    esJsWithDisclaimer,
+    {
+      encoding: "utf-8",
+    }
+  );
 
   // build index.min.css from tailwind.scss
   shell.exec(
-    `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements.min.css --minify`
+    `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`
   );
 
   // .map file
   shell.exec(
-    `sass ./${distName}/css/tw-elements.min.css ./${distName}/css/tw-elements.min.css --style compressed`
+    `sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`
   );
 
   // add disclaimer to css file
-  // const cssWithDisclaimer =
-  //   intro(version) +
-  //   fs.readFileSync(`./${distName}/css/tw-elements.min.css`, {
-  //     encoding: "utf-8",
-  //   });
+  const cssWithDisclaimer =
+    intro(version) +
+    fs.readFileSync(`./${distName}/css/tw-elements-react.min.css`, {
+      encoding: "utf-8",
+    });
 
-  // fs.writeFileSync(`./${distName}/css/tw-elements.min.css`, cssWithDisclaimer, {
-  //   encoding: "utf-8",
-  // });
+  fs.writeFileSync(
+    `./${distName}/css/tw-elements-react.min.css`,
+    cssWithDisclaimer,
+    {
+      encoding: "utf-8",
+    }
+  );
 
   // build
   fs.copy(`./src/files/package.json`, `./${distName}/package.json`, (err) => {

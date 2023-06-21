@@ -1,7 +1,7 @@
 const intro = (version) => `/*!
-* Taliwind Elements ${version}
+* Taliwind Elements React ${version}
 * 
-* Tailwind Elements is an open-source UI kit of advanced components for TailwindCSS.
+* Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
 * Copyright © 2023 MDBootstrap.com
 * 
 * Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -11,4 +11,4 @@ const intro = (version) => `/*!
 */
 `;
 
-export default intro;
+module.exports = intro;

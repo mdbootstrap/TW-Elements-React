@@ -27,7 +27,7 @@ export default defineConfig({
     lib: process.env.mode !== "docs" && {
       entry: path.resolve(__dirname, entryPath),
       name: "te",
-      formats: process.env.buildFile ? ["umd"] : ["es"],
+      formats: ["es", "umd"],
       fileName: (format) => `js/${packageName}.${format}.min.js`,
     },
     sourcemap: true,
