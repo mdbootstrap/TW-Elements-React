@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import dts from "vite-plugin-dts";
+import { externalizeDeps } from "vite-plugin-externalize-deps";
 
 const entryPath = `src/lib/index.tsx`;
 const packageName = "tw-elements-react";
@@ -13,7 +15,15 @@ export default defineConfig({
     "process.env": {},
     initiatedComponents: [],
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    dts({
+      copyDtsFiles: false,
+      entryRoot: entryPath,
+      outputDir: `./${outDir}/types/dts`,
+    }),
+    externalizeDeps(),
+  ],
   resolve: {
     alias: {
       "tw-elements-react": path.resolve("./src/lib/index.tsx"),
