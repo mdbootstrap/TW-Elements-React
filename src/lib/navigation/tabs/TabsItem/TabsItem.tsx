@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useContext, useEffect } from "react";
 import type { TabsItemProps } from "./types";
-import { TabsContext } from "../tabs-context";
+import { TabsContext } from "../context/TabsContext";
 import TabsItemTheme from "./tabsItemTheme";
 
 const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
@@ -14,10 +14,8 @@ const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
       wrapperClass,
       active,
       disabled,
-      color,
+      color = "primary",
       children,
-      onShow,
-      onHide,
       theme: customTheme,
       tag: Tag,
       ...props
@@ -37,63 +35,57 @@ const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
       wrapperClass
     );
 
+    const tabsColors = {
+      primary: {
+        tabs: theme.activePrimaryTabsLink,
+        pills: theme.activePrimaryPillsLink,
+      },
+      secondary: {
+        tabs: theme.activeSecondaryTabsLink,
+        pills: theme.activeSecondaryPillsLink,
+      },
+      success: {
+        tabs: theme.activeSuccessTabsLink,
+        pills: theme.activeSuccessPillsLink,
+      },
+      danger: {
+        tabs: theme.activeDangerTabsLink,
+        pills: theme.activeDangerPillsLink,
+      },
+      warning: {
+        tabs: theme.activeWarningTabsLink,
+        pills: theme.activeWarningPillsLink,
+      },
+      info: {
+        tabs: theme.activeInfoTabsLink,
+        pills: theme.activeInfoPillsLink,
+      },
+      light: {
+        tabs: theme.activeLightTabsLink,
+        pills: theme.activeLightPillsLink,
+      },
+      dark: {
+        tabs: theme.activeDarkTabsLink,
+        pills: theme.activeDarkPillsLink,
+      },
+    };
+
     const classes = clsx(
-      pills ? theme.pillsLinkStyles : theme.tabsLinkStyles,
+      pills ? theme.pillsLink : theme.tabsLink,
       disabled
         ? pills
-          ? theme.disabledPillsLinkStyles
-          : theme.disabledTabsLinkStyles
+          ? theme.disabledPillsLink
+          : theme.disabledTabsLink
         : "",
       pills && !disabled
         ? active
-          ? color === "primary"
-            ? theme.activePrimaryPillsLink
-            : color === "secondary"
-            ? theme.activeSecondaryPillsLink
-            : color === "success"
-            ? theme.activeSuccessPillsLink
-            : color === "danger"
-            ? theme.activeDangerPillsLink
-            : color === "warning"
-            ? theme.activeWarningPillsLink
-            : color === "info"
-            ? theme.activeInfoPillsLink
-            : color === "light"
-            ? theme.activeLightPillsLink
-            : color === "dark"
-            ? theme.activeDarkPillsLink
-            : theme.activePrimaryPillsLink
-          : theme.inactivePillsLinkStyles
+          ? tabsColors[color].pills
+          : theme.inactivePillsLink
         : active
-        ? color === "primary"
-          ? theme.activePrimaryTabsLink
-          : color === "secondary"
-          ? theme.activeSecondaryTabsLink
-          : color === "success"
-          ? theme.activeSuccessTabsLink
-          : color === "danger"
-          ? theme.activeDangerTabsLink
-          : color === "warning"
-          ? theme.activeWarningTabsLink
-          : color === "info"
-          ? theme.activeInfoTabsLink
-          : color === "light"
-          ? theme.activeLightTabsLink
-          : color === "dark"
-          ? theme.activeDarkTabsLink
-          : theme.activePrimaryTabsLink
-        : theme.inactiveTabsLinkStyles,
+        ? tabsColors[color].tabs
+        : theme.inactiveTabsLink,
       className
     );
-
-    useEffect(() => {
-      if (active) {
-        onShow?.();
-      } else {
-        onHide?.();
-      }
-      // eslint-disable-next-line
-    }, [active, disabled]);
 
     return (
       <li className={wrapperClasses} role="presentation" ref={ref} {...props}>

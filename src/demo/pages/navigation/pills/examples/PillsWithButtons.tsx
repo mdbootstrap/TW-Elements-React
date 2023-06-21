@@ -12,9 +12,8 @@ export default function PillsWithButtons(): JSX.Element {
   const handleButtonClick = (value: string) => {
     if (value === buttonActive) {
       return;
-    } else {
-      setButtonActive(value);
     }
+    setButtonActive(value);
   };
 
   return (

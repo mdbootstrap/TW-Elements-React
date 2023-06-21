@@ -1,5 +1,5 @@
 const TabsPaneTheme = {
-  tabsPaneStyles: "transition-opacity duration-150 ease-linear",
+  tabsPane: "transition-opacity duration-150 ease-linear",
   isShown: "block",
   isHidden: "hidden",
   activeTabsPane: "opacity-100",

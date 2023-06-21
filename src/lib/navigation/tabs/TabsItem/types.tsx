@@ -2,12 +2,12 @@ interface TabsItemTheme {
   fillTabsItem?: string;
   justifyTabsItem?: string;
   verticalTabsItem?: string;
-  tabsLinkStyles?: string;
-  pillsLinkStyles?: string;
-  inactiveTabsLinkStyles?: string;
-  inactivePillsLinkStyles?: string;
-  disabledTabsLinkStyles?: string;
-  disabledPillsLinkStyles?: string;
+  tabsLink?: string;
+  pillsLink?: string;
+  inactiveTabsLink?: string;
+  inactivePillsLink?: string;
+  disabledTabsLink?: string;
+  disabledPillsLink?: string;
   activePrimaryPillsLink?: string;
   activeSecondaryPillsLink?: string;
   activeSuccessPillsLink?: string;
@@ -33,9 +33,15 @@ interface TabsItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
   wrapperClass?: string;
   active?: boolean;
   disabled?: boolean;
-  color?: string;
-  onShow?: () => any;
-  onHide?: () => any;
+  color?:
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
 }
 
 export { TabsItemProps };

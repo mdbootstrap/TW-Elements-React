@@ -12,9 +12,8 @@ export default function TabsFill(): JSX.Element {
   const handleFillClick = (value: string) => {
     if (value === fillActive) {
       return;
-    } else {
-      setFillActive(value);
     }
+    setFillActive(value);
   };
 
   return (

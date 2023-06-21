@@ -12,9 +12,8 @@ export default function PillsJustify(): JSX.Element {
   const handleJustifyClick = (value: string) => {
     if (value === justifyActive) {
       return;
-    } else {
-      setJustifyActive(value);
     }
+    setJustifyActive(value);
   };
 
   return (

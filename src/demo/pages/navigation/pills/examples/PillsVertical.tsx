@@ -12,9 +12,8 @@ export default function PillsVertical(): JSX.Element {
   const handleVerticalClick = (value: string) => {
     if (value === verticalActive) {
       return;
-    } else {
-      setVerticalActive(value);
     }
+    setVerticalActive(value);
   };
 
   return (

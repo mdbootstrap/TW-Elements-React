@@ -3,16 +3,16 @@ const TabsItemTheme = {
   justifyTabsItem: "flex-grow basis-0 text-center",
   verticalTabsItem: "flex-grow text-center",
   disabledTabsItem: "disabled pointer-events-none",
-  tabsLinkStyles:
+  tabsLink:
     "mt-2 block cursor-pointer border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight hover:isolate hover:border-x-0 hover:bg-neutral-100 dark:hover:bg-transparent focus:isolate",
-  pillsLinkStyles:
+  pillsLink:
     "mt-2 block cursor-pointer rounded bg-neutral-100 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 dark:bg-neutral-700 dark:text-white md:mr-4",
-  inactiveTabsLinkStyles:
+  inactiveTabsLink:
     "border-transparent text-neutral-500 focus:border-transparent dark:text-neutral-400",
-  inactivePillsLinkStyles:
+  inactivePillsLink:
     "bg-neutral-100 dark:bg-neutral-700 dark:text-white md:mr-4",
-  disabledTabsLinkStyles: "!text-neutral-400 dark:!text-neutral-600",
-  disabledPillsLinkStyles:
+  disabledTabsLink: "!text-neutral-400 dark:!text-neutral-600",
+  disabledPillsLink:
     "!bg-neutral-200 !text-neutral-400 dark:!text-neutral-500 dark:!bg-neutral-600",
   activePrimaryPillsLink:
     "!bg-primary-100 !text-primary-700 dark:text-primary-700 ",

@@ -1,9 +1,9 @@
 import { BaseComponent } from "../../types/baseComponent";
 
 interface TabsTheme {
-  defaultTabsStyles?: string;
-  verticalTabsStyles?: string;
-  pillsTabsStyles?: string;
+  defaultTabs?: string;
+  verticalTabs?: string;
+  pillsTabs?: string;
 }
 
 interface TabsProps extends BaseComponent {

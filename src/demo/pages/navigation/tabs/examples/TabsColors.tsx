@@ -21,9 +21,8 @@ export default function TabsColors(): JSX.Element {
   const handleColorsClick = (value: object) => {
     if (value === colorsActive) {
       return;
-    } else {
-      setColorsActive({ ...colorsActive, ...value });
     }
+    setColorsActive({ ...colorsActive, ...value });
   };
 
   return (

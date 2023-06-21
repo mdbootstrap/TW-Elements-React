@@ -1,7 +1,7 @@
 import { BaseComponent } from "../../../types/baseComponent";
 
 interface TabsPaneTheme {
-  tabsPaneStyles?: string;
+  tabsPane?: string;
   isShown?: string;
   isHidden?: string;
   activeTabsPane?: string;
@@ -13,6 +13,10 @@ interface TabsPaneProps extends BaseComponent {
   tag?: React.ComponentProps<any>;
   ref?: React.Ref<any>;
   theme?: TabsPaneTheme;
+  onShow?: () => any;
+  onHide?: () => any;
+  onShown?: () => any;
+  onHidden?: () => any;
 }
 
 export { TabsPaneProps };

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import type { TabsProps } from "./types";
 import tabsTheme from "./tabsTheme";
-import { TabsContext } from "./tabs-context";
+import { TabsContext } from "./context/TabsContext";
 
 const TETabs: React.FC<TabsProps> = React.forwardRef<
   HTMLUListElement,
@@ -29,11 +29,11 @@ const TETabs: React.FC<TabsProps> = React.forwardRef<
     const classes = clsx(
       pills
         ? vertical
-          ? theme.verticalTabsStyles
-          : theme.pillsTabsStyles
+          ? theme.verticalTabs
+          : theme.pillsTabs
         : vertical
-        ? theme.verticalTabsStyles
-        : theme.defaultTabsStyles,
+        ? theme.verticalTabs
+        : theme.defaultTabs,
       className
     );
 

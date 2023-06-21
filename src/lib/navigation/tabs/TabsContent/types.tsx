@@ -1,7 +1,7 @@
 import { BaseComponent } from "../../../types/baseComponent";
 
 interface TabsContentTheme {
-  tabsContentStyles?: string;
+  tabsContent?: string;
 }
 
 interface TabsContentProps extends BaseComponent {

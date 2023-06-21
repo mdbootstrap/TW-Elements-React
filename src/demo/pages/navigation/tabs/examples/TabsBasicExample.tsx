@@ -12,9 +12,8 @@ export default function TabsBasicExample(): JSX.Element {
   const handleBasicClick = (value: string) => {
     if (value === basicActive) {
       return;
-    } else {
-      setBasicActive(value);
     }
+    setBasicActive(value);
   };
 
   return (

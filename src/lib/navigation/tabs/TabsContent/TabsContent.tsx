@@ -11,7 +11,7 @@ const TETabsContent: React.FC<TabsContentProps> = React.forwardRef<
     ...TabsContentTheme,
     ...customTheme,
   };
-  const classes = clsx(theme.tabsContentStyles, className);
+  const classes = clsx(theme.tabsContent, className);
 
   return (
     <Tag className={classes} ref={ref} {...props}>

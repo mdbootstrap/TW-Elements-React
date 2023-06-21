@@ -12,9 +12,8 @@ export default function PillsBasicExample(): JSX.Element {
   const handleBasicClick = (value: string) => {
     if (value === basicActive) {
       return;
-    } else {
-      setBasicActive(value);
     }
+    setBasicActive(value);
   };
 
   return (

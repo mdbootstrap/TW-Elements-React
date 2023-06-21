@@ -468,12 +468,12 @@
                     <td
                       class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                     >
-                    string
+                    "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark"
                     </td>
                     <td
                       class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                     >
-                      <code class="text-red-500 dark:text-red-300">'primary'</code>
+                      <code class="text-red-500 dark:text-red-300">"primary"</code>
                     </td>
                     <td class="px-6 py-4 max-lg:whitespace-nowrap">
                         Defines the color of the <code>TETabsItem</code>. Can be <code>'primary'</code>, <code>'secondary'</code>, <code>'success'</code>, <code>'info'</code>, <code>'warning'</code>, <code>'danger'</code>, <code>'light'</code> or <code>'dark'</code>.
@@ -823,7 +823,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>defaultTabsStyles</code>
+                    <code>defaultTabs</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -840,7 +840,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>pillsTabsStyles</code>
+                    <code>pillsTabs</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -857,7 +857,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>verticalTabsStyles</code>
+                    <code>verticalTabs</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -910,7 +910,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>tabsContentStyles</code>
+                    <code>tabsContent</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1235,7 +1235,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>disabledPillsLinkStyles</code>
+                    <code>disabledPillsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1269,7 +1269,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>disabledTabsLinkStyles</code>
+                    <code>disabledTabsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1303,7 +1303,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>inactivePillsLinkStyles</code>
+                    <code>inactivePillsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1320,7 +1320,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>inactiveTabsLinkStyles</code>
+                    <code>inactiveTabsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1354,7 +1354,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>pillsLinkStyles</code>
+                    <code>pillsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1371,7 +1371,7 @@
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code>tabsLinkStyles</code>
+                    <code>tabsLink</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
@@ -1503,6 +1503,23 @@
                     Adds display styles to the <code>TETabsPane</code> component when it is shown.
                   </td>
                 </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>tabsPane</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                  transition-opacity duration-150 ease-linear
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Adds transition styles to the <code>TETabsPane</code> component.
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1524,7 +1541,7 @@
       Events
     </h2>
 
-    <h3 class="my-5 text-2xl font-semibold leading-normal">TETabsItem</h3>
+    <h3 class="my-5 text-2xl font-semibold leading-normal">TETabsPane</h3>
 
     <div class="flex flex-col">
       <div class="overflow-x-auto">
@@ -1556,7 +1573,19 @@
                     <code>onHide</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    A callback fired when the <code>TETabsItem</code> is hidden. 
+                    A callback fired when the <code>TETabsPane</code> is hidden. 
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>onHidden</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    A callback fired when the <code>TETabsPane</code> is hidden (will wait for CSS transitions to complete).
                   </td>
                 </tr>
                 <tr
@@ -1568,7 +1597,19 @@
                     <code>onShow</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    A callback fired when the <code>TETabsItem</code> is shown.
+                    A callback fired when the <code>TETabsPane</code> is shown.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code>onShown</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    A callback fired when the <code>TETabsPane</code> is shown (will wait for CSS transitions to complete).
                   </td>
                 </tr>
               </tbody>
@@ -1599,9 +1640,8 @@
           const handleBasicClick = (value: string) => {
             if (value === basicActive) {
               return;
-            } else {
-              setBasicActive(value);
-            }
+            } 
+            setBasicActive(value);
           };
 
           const handleBasicHide = () => {
