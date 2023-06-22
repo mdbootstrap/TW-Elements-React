@@ -1658,14 +1658,12 @@
                 <TETabsItem
                   onClick={() => handleBasicClick("tab1")}
                   active={basicActive === "tab1"}
-                  onHide={handleBasicHide}
                 >
                   Home
                 </TETabsItem>
                 <TETabsItem
                   onClick={() => handleBasicClick("tab2")}
                   active={basicActive === "tab2"}
-                  onShow={handleBasicShow}
                 >
                   Profile
                 </TETabsItem>
@@ -1685,8 +1683,8 @@
               </TETabs>
         
               <TETabsContent>
-                <TETabsPane show={basicActive === "tab1"}>Tab 1 content</TETabsPane>
-                <TETabsPane show={basicActive === "tab2"}>Tab 2 content</TETabsPane>
+                <TETabsPane show={basicActive === "tab1"} onHide={handleBasicHide}>Tab 1 content</TETabsPane>
+                <TETabsPane show={basicActive === "tab2"} onShow={handleBasicShow}>Tab 2 content</TETabsPane>
                 <TETabsPane show={basicActive === "tab3"}>Tab 3 content</TETabsPane>
                 <TETabsPane show={basicActive === "tab4"}>Tab 4 content</TETabsPane>
               </TETabsContent>
