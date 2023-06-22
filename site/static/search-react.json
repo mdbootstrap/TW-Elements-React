@@ -274,5 +274,11 @@
     "priority": {
       "modal": 1
     }
+  },
+  {
+    "href": "/docs/standard/integrations/next-integration/",
+    "name": "Next integration",
+    "keywords": ["Next", "integration"],
+    "category": "Integrations"
   }
 ]
