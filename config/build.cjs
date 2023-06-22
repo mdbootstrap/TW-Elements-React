@@ -43,18 +43,20 @@ if (process.env.mode === "demo" || process.env.mode === "docs") {
   );
 
   // build index.min.css from tailwind.scss
-  const command1 = `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`;
-  // shell.exec(
-  //   `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`
-  // );
+  // const command1 = `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`;
+  const result1 = shell.exec(
+    `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`
+  );
+  console.log(result1);
 
   // .map file
-  const command2 =`sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`;
-  // shell.exec(
-  //   `sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`
-  // );
+  // const command2 =`sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`;
+  const result2 = shell.exec(
+    `sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`
+  );
+  console.log(result2);
 
-  if(shell.exec(command1).code === 0 && shell.exec(command2).code === 0) {
+  if(result1.code === 0 && result2.code === 0) {
     console.log("CSS build success");
 
     // add disclaimer to css file
