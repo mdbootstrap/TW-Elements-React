@@ -37,6 +37,8 @@ import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
+import SearchPage from "./pages/forms/search/SearchPage";
+import FooterPage from "./pages/navigation/footer/FooterPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -52,6 +54,9 @@ import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
+import SearchExamples from "./pages/forms/search/exampleList";
+import FooterExamples from "./pages/navigation/footer/exampleList";
+
 
 interface Pages {
   name: string;
@@ -175,6 +180,11 @@ const formsPages: Pages[] = [
     path: "/components/inputs",
     element: <InputPage />,
   },
+  {
+    name: "Search",
+    path: "/components/search",
+    element: <SearchPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -191,6 +201,11 @@ const navigationPages: Pages[] = [
     name: "pagination",
     path: "/navigation/pagination",
     element: <PaginationPage />,
+  },
+  {
+    name: "footer",
+    path: "/navigation/footer",
+    element: <FooterPage />,
   },
 ];
 
@@ -243,6 +258,8 @@ export const examplesPages: Pages[] = [
   ...ButtonGroupExamples,
   ...ModalExamples,
   ...InputExamples,
+  ...SearchExamples,
+  ...FooterExamples,
 ];
 
 export default demoPages;

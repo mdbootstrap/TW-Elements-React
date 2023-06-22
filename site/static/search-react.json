@@ -262,5 +262,17 @@
     "priority": {
       "modal": 1
     }
+  },
+  {
+    "href": "/docs/react/navigation/footer/",
+    "name": "Footer",
+    "keywords": ["copyrights"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/search/",
+    "name": "Search",
+    "keywords": ["search"],
+    "category": "Forms"
   }
 ]
