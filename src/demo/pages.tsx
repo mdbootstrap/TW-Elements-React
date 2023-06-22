@@ -35,6 +35,8 @@ import TimelinePage from "./pages/components/timeline/TimelinePage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
+import TabsPage from "./pages/navigation/tabs/TabsPage";
+import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
 
@@ -50,6 +52,8 @@ import TimelineExamples from "./pages/components/timeline/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
+import TabsExamples from "./pages/navigation/tabs/exampleList";
+import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
 
@@ -192,6 +196,16 @@ const navigationPages: Pages[] = [
     path: "/navigation/pagination",
     element: <PaginationPage />,
   },
+  {
+    name: "tabs",
+    path: "/navigation/tabs",
+    element: <TabsPage />,
+  },
+  {
+    name: "pills",
+    path: "/navigation/pills",
+    element: <PillsPage />,
+  },
 ];
 
 const designBlocksPages: Pages[] = [];
@@ -241,6 +255,8 @@ export const examplesPages: Pages[] = [
   ...CardsExamples,
   ...PlaceholderExamples,
   ...ButtonGroupExamples,
+  ...TabsExamples,
+  ...PillsExamples,
   ...ModalExamples,
   ...InputExamples,
 ];
