@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import type { TabsItemProps } from "./types";
 import { TabsContext } from "../context/TabsContext";
 import TabsItemTheme from "./tabsItemTheme";
