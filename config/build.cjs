@@ -43,29 +43,37 @@ if (process.env.mode === "demo" || process.env.mode === "docs") {
   );
 
   // build index.min.css from tailwind.scss
-  shell.exec(
-    `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`
-  );
+  const command1 = `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`;
+  // shell.exec(
+  //   `npx tailwindcss -i ./src/scss/tailwind.scss -o ./${distName}/css/tw-elements-react.min.css --minify`
+  // );
 
   // .map file
-  shell.exec(
-    `sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`
-  );
+  const command2 =`sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`;
+  // shell.exec(
+  //   `sass ./${distName}/css/tw-elements-react.min.css ./${distName}/css/tw-elements-react.min.css --style compressed`
+  // );
 
-  // add disclaimer to css file
-  const cssWithDisclaimer =
+  if(shell.exec(command1).code === 0 && shell.exec(command2).code === 0) {
+    console.log("CSS build success");
+
+    // add disclaimer to css file
+    const cssWithDisclaimer =
     intro(version) +
     fs.readFileSync(`./${distName}/css/tw-elements-react.min.css`, {
       encoding: "utf-8",
     });
 
-  fs.writeFileSync(
-    `./${distName}/css/tw-elements-react.min.css`,
-    cssWithDisclaimer,
-    {
-      encoding: "utf-8",
-    }
-  );
+    fs.writeFileSync(
+      `./${distName}/css/tw-elements-react.min.css`,
+      cssWithDisclaimer,
+      {
+        encoding: "utf-8",
+      }
+    );
+  } else {
+    console.log("Error: CSS build failed");
+  }
 
   // build
   fs.copy(`./src/files/package.json`, `./${distName}/package.json`, (err) => {
