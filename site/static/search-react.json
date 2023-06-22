@@ -165,6 +165,24 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/form-templates/",
+    "name": "Form templates",
+    "keywords": ["form", "templates"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/login-form/",
+    "name": "Login form",
+    "keywords": ["login", "form"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/registration-form/",
+    "name": "Registration form",
+    "keywords": ["registration", "form"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/data/tables/",
     "name": "Tables",
     "keywords": ["tables"],

@@ -37,6 +37,9 @@ import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
+import FormTemplatesPage from "./pages/forms/form-templates/FormTemplatesPage";
+import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
+import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -52,6 +55,9 @@ import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
+import FormTemplatesExamples from "./pages/forms/form-templates/exampleList";
+import LoginFormExamples from "./pages/forms/login-form/exampleList";
+import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 
 interface Pages {
   name: string;
@@ -175,6 +181,21 @@ const formsPages: Pages[] = [
     path: "/components/inputs",
     element: <InputPage />,
   },
+  {
+    name: "form templates",
+    path: "/forms/form-templates",
+    element: <FormTemplatesPage />,
+  },
+  {
+    name: "login form",
+    path: "/forms/login-form",
+    element: <LoginFormPage />,
+  },
+  {
+    name: "registration form",
+    path: "/forms/registration-form",
+    element: <RegistrationFormPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -243,6 +264,9 @@ export const examplesPages: Pages[] = [
   ...ButtonGroupExamples,
   ...ModalExamples,
   ...InputExamples,
+  ...FormTemplatesExamples,
+  ...LoginFormExamples,
+  ...RegistrationFormExamples,
 ];
 
 export default demoPages;
