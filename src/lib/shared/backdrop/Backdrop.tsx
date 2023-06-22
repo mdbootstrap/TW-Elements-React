@@ -18,9 +18,9 @@ import backdropTheme from "./backdropTheme";
 
 const BackdropComponent: React.FC<BackdropProps> = ({
   className,
-  appendToBody,
+  appendToBody = false,
   show,
-  animate,
+  animate = true,
   theme: customTheme,
   ...props
 }) => {
@@ -83,11 +83,6 @@ const BackdropComponent: React.FC<BackdropProps> = ({
   );
 
   return <>{appendToBody ? appendToBodyTemplate : backdropTemplate}</>;
-};
-
-BackdropComponent.defaultProps = {
-  appendToBody: false,
-  animate: true,
 };
 
 export default BackdropComponent;

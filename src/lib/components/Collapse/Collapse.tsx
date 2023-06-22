@@ -17,12 +17,12 @@ import collapseTheme from "./collapseTheme";
 const TECollapse: React.FC<CollapseProps> = ({
   className,
   children,
-  show,
+  show = false,
   id,
-  tag: Tag,
+  tag: Tag = "div",
   collapseRef,
-  horizontal,
-  scroll,
+  horizontal = false,
+  scroll = false,
   onShow,
   onHide,
   theme: customTheme,
@@ -121,13 +121,6 @@ const TECollapse: React.FC<CollapseProps> = ({
       {children}
     </Tag>
   );
-};
-
-TECollapse.defaultProps = {
-  tag: "div",
-  scroll: false,
-  horizontal: false,
-  show: false,
 };
 
 export default TECollapse;

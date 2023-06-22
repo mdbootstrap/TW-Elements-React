@@ -21,14 +21,14 @@ import { useScrollbar } from "../../hooks/useScrollbar";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
 
 const TEModal: React.FC<ModalProps> = ({
-  show,
+  show = false,
   setShow,
-  appendToBody,
-  backdrop,
+  appendToBody = false,
+  backdrop = false,
   staticBackdrop,
-  closeOnEsc,
+  closeOnEsc = true,
   scrollable = false,
-  leaveHiddenModal,
+  leaveHiddenModal = true,
   modalRef,
   children,
   className,
@@ -66,7 +66,7 @@ const TEModal: React.FC<ModalProps> = ({
   };
 
   const handleBackdropClick = (e: Event) => {
-    if (e.target !== modalReference.current) {
+    if (e.target !== modalReference.current || !backdrop) {
       return;
     }
 
@@ -158,14 +158,6 @@ const TEModal: React.FC<ModalProps> = ({
   );
 
   return <>{appendToBody ? appendToBodyTemplate : modalTemplate}</>;
-};
-
-TEModal.defaultProps = {
-  backdrop: true,
-  show: false,
-  closeOnEsc: true,
-  appendToBody: false,
-  leaveHiddenModal: true,
 };
 
 export default TEModal;

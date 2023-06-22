@@ -13,10 +13,10 @@ const TETabs: React.FC<TabsProps> = React.forwardRef<
       className,
       children,
       theme: customTheme,
-      fill,
-      justify,
-      vertical,
-      pills,
+      fill = false,
+      justify = false,
+      vertical = false,
+      pills = false,
       ...props
     },
     ref
@@ -53,12 +53,5 @@ const TETabs: React.FC<TabsProps> = React.forwardRef<
     );
   }
 );
-
-TETabs.defaultProps = {
-  fill: false,
-  justify: false,
-  vertical: false,
-  pills: false,
-};
 
 export default TETabs;

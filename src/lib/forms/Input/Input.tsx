@@ -29,21 +29,21 @@ const TEInput: React.FC<InputProps> = React.forwardRef<
   (
     {
       className,
-      size,
+      size = "base",
       value,
       defaultValue,
       id,
-      wrapperTag: WrapperTag,
+      wrapperTag: WrapperTag = "div",
       label,
       onChange,
       children,
       labelRef,
       type,
       onBlur,
-      readonly,
+      readonly = false,
       theme: customTheme,
-      formWhite,
-      counter,
+      formWhite = false,
+      counter = false,
       maxLength,
       ...props
     },
@@ -240,14 +240,5 @@ const TEInput: React.FC<InputProps> = React.forwardRef<
     );
   }
 );
-
-TEInput.defaultProps = {
-  wrapperTag: "div",
-  readonly: false,
-  size: "base",
-  disabled: false,
-  counter: false,
-  formWhite: false,
-};
 
 export default TEInput;
