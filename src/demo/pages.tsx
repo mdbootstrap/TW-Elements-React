@@ -39,6 +39,7 @@ import TabsPage from "./pages/navigation/tabs/TabsPage";
 import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
+import ScrollBackToTopButtonPage from "./pages/components/scroll-back-to-top-button/ScrollBackToTopButtonPage";
 import AccordionPage from "./pages/components/accordion/AccordionPage";
 import FormTemplatesPage from "./pages/forms/form-templates/FormTemplatesPage";
 import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
@@ -62,6 +63,7 @@ import TabsExamples from "./pages/navigation/tabs/exampleList";
 import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
+import ScrollBackToTopButtonExamples from "./pages/components/scroll-back-to-top-button/exampleList";
 import AccordionExamples from "./pages/components/accordion/exampleList";
 import FormTemplatesExamples from "./pages/forms/form-templates/exampleList";
 import LoginFormExamples from "./pages/forms/login-form/exampleList";
@@ -125,6 +127,11 @@ const componentsPages: Pages[] = [
     element: <ButtonGroupPage />,
   },
   { name: "modal", path: "/components/modal", element: <ModalPage /> },
+  {
+    name: "scroll back to top button",
+    path: "/components/scroll-back-to-top-button",
+    element: <ScrollBackToTopButtonPage />,
+  },
   {
     name: "accordion",
     path: "/components/accordion",
@@ -301,6 +308,7 @@ export const examplesPages: Pages[] = [
   ...PillsExamples,
   ...ModalExamples,
   ...InputExamples,
+  ...ScrollBackToTopButtonExamples,
   ...AccordionExamples,
   ...FormTemplatesExamples,
   ...LoginFormExamples,
