@@ -7,7 +7,7 @@ export default function RippleImage(): JSX.Element {
       <TERipple>
         <img
           src="https://tecdn.b-cdn.net/img/new/standard/city/043.jpg"
-          className="h-auto max-w-sm"
+          className="h-auto max-w-sm cursor-pointer"
           alt=""
         />
       </TERipple>

@@ -601,6 +601,9 @@
     const path = event.data.path;
 
     const iframe = iframes.find(frame=> frame.src.includes(path))
+    if (!iframe) {
+      return
+    }
     const offset = iframe.dataset.teReactOffset || 10;
     const minHeight = iframe.dataset.teReactMinHeight;
 
