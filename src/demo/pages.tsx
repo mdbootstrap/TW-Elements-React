@@ -40,6 +40,12 @@ import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
 import ScrollBackToTopButtonPage from "./pages/components/scroll-back-to-top-button/ScrollBackToTopButtonPage";
+import AccordionPage from "./pages/components/accordion/AccordionPage";
+import FormTemplatesPage from "./pages/forms/form-templates/FormTemplatesPage";
+import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
+import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
+import SearchPage from "./pages/forms/search/SearchPage";
+import FooterPage from "./pages/navigation/footer/FooterPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -58,6 +64,12 @@ import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
 import ScrollBackToTopButtonExamples from "./pages/components/scroll-back-to-top-button/exampleList";
+import AccordionExamples from "./pages/components/accordion/exampleList";
+import FormTemplatesExamples from "./pages/forms/form-templates/exampleList";
+import LoginFormExamples from "./pages/forms/login-form/exampleList";
+import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
+import SearchExamples from "./pages/forms/search/exampleList";
+import FooterExamples from "./pages/navigation/footer/exampleList";
 
 interface Pages {
   name: string;
@@ -119,6 +131,11 @@ const componentsPages: Pages[] = [
     name: "scroll back to top button",
     path: "/components/scroll-back-to-top-button",
     element: <ScrollBackToTopButtonPage />,
+  },
+  {
+    name: "accordion",
+    path: "/components/accordion",
+    element: <AccordionPage />,
   },
 ];
 
@@ -186,6 +203,26 @@ const formsPages: Pages[] = [
     path: "/components/inputs",
     element: <InputPage />,
   },
+  {
+    name: "form templates",
+    path: "/forms/form-templates",
+    element: <FormTemplatesPage />,
+  },
+  {
+    name: "login form",
+    path: "/forms/login-form",
+    element: <LoginFormPage />,
+  },
+  {
+    name: "registration form",
+    path: "/forms/registration-form",
+    element: <RegistrationFormPage />,
+  },
+  {
+    name: "Search",
+    path: "/components/search",
+    element: <SearchPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -202,6 +239,11 @@ const navigationPages: Pages[] = [
     name: "pagination",
     path: "/navigation/pagination",
     element: <PaginationPage />,
+  },
+  {
+    name: "footer",
+    path: "/navigation/footer",
+    element: <FooterPage />,
   },
   {
     name: "tabs",
@@ -267,6 +309,12 @@ export const examplesPages: Pages[] = [
   ...ModalExamples,
   ...InputExamples,
   ...ScrollBackToTopButtonExamples,
+  ...AccordionExamples,
+  ...FormTemplatesExamples,
+  ...LoginFormExamples,
+  ...RegistrationFormExamples,
+  ...SearchExamples,
+  ...FooterExamples,
 ];
 
 export default demoPages;

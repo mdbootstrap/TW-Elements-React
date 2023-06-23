@@ -165,6 +165,24 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/form-templates/",
+    "name": "Form templates",
+    "keywords": ["form", "templates"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/login-form/",
+    "name": "Login form",
+    "keywords": ["login", "form"],
+    "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/registration-form/",
+    "name": "Registration form",
+    "keywords": ["registration", "form"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/data/tables/",
     "name": "Tables",
     "keywords": ["tables"],
@@ -274,6 +292,24 @@
     "priority": {
       "modal": 1
     }
+  },
+  {
+    "href": "/docs/react/components/accordion/",
+    "name": "Accordion",
+    "keywords": ["accordion","collapse"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/navigation/footer/",
+    "name": "Footer",
+    "keywords": ["copyrights"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/forms/search/",
+    "name": "Search",
+    "keywords": ["search"],
+    "category": "Forms"
   },
   {
     "href": "/docs/standard/integrations/next-integration/",
