@@ -24,7 +24,7 @@ const TEModal: React.FC<ModalProps> = ({
   show = false,
   setShow,
   appendToBody = false,
-  backdrop = false,
+  backdrop = true,
   staticBackdrop,
   closeOnEsc = true,
   scrollable = false,
