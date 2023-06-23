@@ -280,5 +280,11 @@
     "name": "Next integration",
     "keywords": ["Next", "integration"],
     "category": "Integrations"
+  },
+  {
+    "href": "/docs/react/components/scroll-back-to-top-button/",
+    "name": "Scroll back to top button",
+    "keywords": ["scroll", "back", "top", "button"],
+    "category": "Components"
   }
 ]
