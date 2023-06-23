@@ -7,37 +7,17 @@ export default function RegisterForm(): JSX.Element {
       <form>
         <div className="grid grid-cols-2 gap-4">
           {/* <!--First name input--> */}
-          <TEInput
-            id="exampleInput1"
-            type="email"
-            label="First name"
-            className="mb-6"
-          ></TEInput>
+          <TEInput type="email" label="First name" className="mb-6"></TEInput>
 
           {/* <!--Last name input--> */}
-          <TEInput
-            id="exampleInput2"
-            type="password"
-            label="Last name"
-            className="mb-6"
-          ></TEInput>
+          <TEInput type="password" label="Last name" className="mb-6"></TEInput>
         </div>
 
         {/* <!--Email input--> */}
-        <TEInput
-          type="email"
-          id="exampleInput3"
-          label="Email address"
-          className="mb-6"
-        ></TEInput>
+        <TEInput type="email" label="Email address" className="mb-6"></TEInput>
 
         {/* <!--Password input--> */}
-        <TEInput
-          type="password"
-          id="exampleInput4"
-          label="Password"
-          className="mb-6"
-        ></TEInput>
+        <TEInput type="password" label="Password" className="mb-6"></TEInput>
 
         {/* <!--Subscribe newsletter checkbox--> */}
         <div className="mb-6 flex min-h-[1.5rem] items-center justify-center pl-[1.5rem]">
@@ -58,7 +38,7 @@ export default function RegisterForm(): JSX.Element {
         {/* <!--Submit button--> */}
         <TERipple rippleColor="light" className="w-full">
           <button
-            type="submit"
+            type="button"
             className="block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]]"
           >
             Sign up

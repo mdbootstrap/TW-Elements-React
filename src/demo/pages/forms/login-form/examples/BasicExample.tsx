@@ -86,20 +86,16 @@ export default function BasicExample(): JSX.Element {
 
               {/* <!-- Email input --> */}
               <TEInput
-                id="exampleInputEmail1"
                 type="email"
                 label="Email address"
-                placeholder="Enter email"
                 size="lg"
                 className="mb-6"
               ></TEInput>
 
               {/* <!--Password input--> */}
               <TEInput
-                id="exampleInputPassword1"
                 type="password"
                 label="Password"
-                placeholder="Enter password"
                 className="mb-6"
                 size="lg"
               ></TEInput>

@@ -29,7 +29,6 @@ export default function ExampleV2(): JSX.Element {
                       {/* <!--Username input--> */}
                       <TEInput
                         type="text"
-                        id="exampleFormControlInput1"
                         label="Username"
                         className="mb-4"
                       ></TEInput>
@@ -37,7 +36,6 @@ export default function ExampleV2(): JSX.Element {
                       {/* <!--Password input--> */}
                       <TEInput
                         type="password"
-                        id="exampleFormControlInput2"
                         label="Password"
                         className="mb-4"
                       ></TEInput>

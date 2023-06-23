@@ -6,14 +6,9 @@ export default function LoginForm(): JSX.Element {
     <div className="block max-w-sm rounded-lg bg-white p-6 m-3 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
       <form>
         {/* <!--E-mail input--> */}
-        <TEInput
-          id="exampleInputEmail1"
-          type="email"
-          label="Email address"
-          placeholder="Enter email"
-        >
+        <TEInput type="email" label="Email address">
           <small
-            id="emailHelp"
+            id="emailHelp2"
             className="absolute w-full text-neutral-500 dark:text-neutral-200"
           >
             We'll never share your email with anyone else.
@@ -22,10 +17,8 @@ export default function LoginForm(): JSX.Element {
 
         {/* <!--Password input--> */}
         <TEInput
-          id="exampleInputPassword1"
           type="password"
           label="Password"
-          placeholder="Enter password"
           className="mt-12 mb-6"
         ></TEInput>
 
@@ -58,7 +51,7 @@ export default function LoginForm(): JSX.Element {
         {/* <!--Submit button--> */}
         <TERipple rippleColor="light" className="w-full">
           <button
-            type="submit"
+            type="button"
             className="block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]]"
           >
             Sign in
