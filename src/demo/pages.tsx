@@ -35,11 +35,15 @@ import TimelinePage from "./pages/components/timeline/TimelinePage";
 import CardsPage from "./pages/components/cards/CardsPage";
 import PlaceholdersPage from "./pages/components/placeholders/PlaceholdersPage";
 import ButtonGroupPage from "./pages/components/button-group/ButtonGroupPage";
+import TabsPage from "./pages/navigation/tabs/TabsPage";
+import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
 import FormTemplatesPage from "./pages/forms/form-templates/FormTemplatesPage";
 import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
+import SearchPage from "./pages/forms/search/SearchPage";
+import FooterPage from "./pages/navigation/footer/FooterPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -53,11 +57,15 @@ import TimelineExamples from "./pages/components/timeline/exampleList";
 import CardsExamples from "./pages/components/cards/exampleList";
 import PlaceholderExamples from "./pages/components/placeholders/exampleList";
 import ButtonGroupExamples from "./pages/components/button-group/exampleList";
+import TabsExamples from "./pages/navigation/tabs/exampleList";
+import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
 import FormTemplatesExamples from "./pages/forms/form-templates/exampleList";
 import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
+import SearchExamples from "./pages/forms/search/exampleList";
+import FooterExamples from "./pages/navigation/footer/exampleList";
 
 interface Pages {
   name: string;
@@ -196,6 +204,11 @@ const formsPages: Pages[] = [
     path: "/forms/registration-form",
     element: <RegistrationFormPage />,
   },
+  {
+    name: "Search",
+    path: "/components/search",
+    element: <SearchPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -212,6 +225,21 @@ const navigationPages: Pages[] = [
     name: "pagination",
     path: "/navigation/pagination",
     element: <PaginationPage />,
+  },
+  {
+    name: "footer",
+    path: "/navigation/footer",
+    element: <FooterPage />,
+  },
+  {
+    name: "tabs",
+    path: "/navigation/tabs",
+    element: <TabsPage />,
+  },
+  {
+    name: "pills",
+    path: "/navigation/pills",
+    element: <PillsPage />,
   },
 ];
 
@@ -262,11 +290,15 @@ export const examplesPages: Pages[] = [
   ...CardsExamples,
   ...PlaceholderExamples,
   ...ButtonGroupExamples,
+  ...TabsExamples,
+  ...PillsExamples,
   ...ModalExamples,
   ...InputExamples,
   ...FormTemplatesExamples,
   ...LoginFormExamples,
   ...RegistrationFormExamples,
+  ...SearchExamples,
+  ...FooterExamples,
 ];
 
 export default demoPages;

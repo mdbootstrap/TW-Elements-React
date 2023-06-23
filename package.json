@@ -3,12 +3,19 @@
   "version": "1.0.0-alpha1",
   "type": "module",
   "license": "AGPL",
+  "main": "dist/js/tw-elements-react.umd.min.js",
+  "module": "dist/js/tw-elements-react.es.min.js",
+  "style": "dist/css/tw-elements-react.min.css",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "start": "vite --open",
     "dev": "vite",
-    "build": "vite build && cross-env --env.buildFile=umd vite build && ts-node config/build.ts && npm run copy:te-files && cd ./site && npm run build:tailwind",
-    "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo ts-node config/build.ts",
-    "build:docs": "cross-env --env.mode=docs vite build && cross-env --env.mode=docs ts-node config/build.ts && cd dist-docs && mdb publish --override",
+    "build": "vite build && node config/build.cjs && npm run copy:te-files && cd ./site && npm run build:tailwind",
+    "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo node config/build.cjs",
+    "build:docs": "cross-env --env.mode=docs vite build && cross-env --env.mode=docs node config/build.cjs && cd dist-docs && mdb publish --override",
     "copy:te-files": "node helpers/copyTeFiles.cjs",
     "docs:install": "npm install && cd ./site && npm install && cd ../ && npm run build",
     "docs:start": "cd ./site && npm start",
@@ -43,6 +50,8 @@
     "shelljs": "^0.8.5",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-externalize-deps": "^0.5.0"
   }
 }

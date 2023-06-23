@@ -8,11 +8,11 @@ const MDBModalDialog: React.FC<ModalDialogProps> = ({
   className,
   centered,
   position,
-  animationDirection,
+  animationDirection = "top",
   children,
   size,
   theme: customTheme,
-  tag: Tag,
+  tag: Tag = "div",
   ...props
 }) => {
   const theme = { ...modalDialogTheme, ...customTheme };
@@ -66,7 +66,5 @@ const MDBModalDialog: React.FC<ModalDialogProps> = ({
     </Tag>
   );
 };
-
-MDBModalDialog.defaultProps = { tag: "div", animationDirection: "top" };
 
 export default MDBModalDialog;

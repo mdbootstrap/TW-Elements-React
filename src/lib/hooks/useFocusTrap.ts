@@ -1,4 +1,13 @@
-import { useRef } from "react";
+/*
+--------------------------------------------------------------------------
+Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
+Copyright © 2023 MDBootstrap.com
+
+Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+In addition, a custom license may be available upon request, subject to the terms and conditions of that license. Please contact tailwind@mdbootstrap.com for more information on obtaining a custom license.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+--------------------------------------------------------------------------
+*/
 
 type FocusableElement =
   | HTMLButtonElement
@@ -8,12 +17,12 @@ type FocusableElement =
   | HTMLTextAreaElement;
 
 const useFocusTrap = () => {
-  const trapElement = useRef<HTMLElement | null>(null);
-  const firstFocusableElement = useRef<FocusableElement | null>(null);
-  const lastFocusableElement = useRef<FocusableElement | null>(null);
+  let trapElement: HTMLElement | null = null;
+  let firstFocusableElement: FocusableElement | null = null;
+  let lastFocusableElement: FocusableElement | null = null;
 
   function initFocusTrap(element: HTMLElement) {
-    trapElement.current = element;
+    trapElement = element;
     calculateFocusTrap();
 
     window.addEventListener("keydown", focusFirstElement);
@@ -23,7 +32,7 @@ const useFocusTrap = () => {
 
   function calculateFocusTrap() {
     const focusable = Array.from(
-      trapElement.current?.querySelectorAll(
+      trapElement?.querySelectorAll(
         'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
       ) as NodeListOf<FocusableElement>
     ).filter((el: FocusableElement) => {
@@ -37,11 +46,11 @@ const useFocusTrap = () => {
 
     if (focusable.length === 0) return;
 
-    firstFocusableElement.current = focusable[0];
+    firstFocusableElement = focusable[0];
 
-    lastFocusableElement.current = focusable[focusable.length - 1];
+    lastFocusableElement = focusable[focusable.length - 1];
 
-    lastFocusableElement.current?.addEventListener("keydown", (event) =>
+    lastFocusableElement?.addEventListener("keydown", (event) =>
       handleLastElementKeydown(event as KeyboardEvent)
     );
   }
@@ -56,7 +65,7 @@ const useFocusTrap = () => {
   function focusTrap() {
     if (!firstFocusableElement) return;
 
-    firstFocusableElement.current?.focus();
+    firstFocusableElement?.focus();
   }
 
   function focusFirstElement(e: KeyboardEvent, trap = false) {
@@ -69,7 +78,7 @@ const useFocusTrap = () => {
   }
 
   function removeFocusTrap() {
-    lastFocusableElement.current?.removeEventListener("keydown", (event) =>
+    lastFocusableElement?.removeEventListener("keydown", (event) =>
       handleLastElementKeydown(event as KeyboardEvent)
     );
   }

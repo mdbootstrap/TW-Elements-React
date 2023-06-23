@@ -130,7 +130,7 @@ menu:
   {{< twsnippet/no-demo id="example5" >}}
   <section class="!visible hidden" data-te-collapse-item id="example5">
     <div class="pt-4">
-      {{< twsnippet/wrapper "ThemeSwitcher.jsx" >}}
+      {{< twsnippet/wrapper "ThemeSwitcher.tsx" >}}
       <!-- prettier-ignore -->
       {{< twsnippet/code active=true lang="jsx" >}}
       import React, { useRef, useEffect, useState } from "react";
@@ -171,7 +171,7 @@ menu:
         const [showDropdown, setShowDropdown] = useState<boolean>(false);
       
         const dropdownMenuClasses = clsx(
-          "min-w-max absolute bg-white text-base z-[1000] overflow-hidden float-left list-none text-left rounded-lg shadow-lg m-0 bg-clip-padding border-none [&[data-te-dropdown-show]]:block dark:bg-neutral-800",
+          "min-w-max absolute bg-white text-base z-[1000] overflow-hidden float-left list-none text-left rounded-lg shadow-lg m-0 bg-clip-padding border-none dark:bg-neutral-800",
           showDropdown ? "block -translate-x-full -translate-y-full" : "hidden"
         );
       
@@ -221,13 +221,12 @@ menu:
               id="theme-switcher"
               ref={switcher}
             >
-              <div className="relative" data-te-dropdown-ref>
+              <div className="relative">
                 <button
                   ref={switcherButton}
                   className="w-[30px] h-[30px] text-neutral-800 dark:text-white uppercase rounded-full hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-700 focus:bg-neutral-300 dark:focus:bg-neutral-700 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center justify-center whitespace-nowrap motion-reduce:transition-none"
                   type="button"
                   id="themeSwitcher"
-                  data-te-dropdown-toggle-ref
                   aria-expanded="false"
                   onClick={() => setShowDropdown(!showDropdown)}
                 >
@@ -236,7 +235,6 @@ menu:
                 <ul
                   className={dropdownMenuClasses}
                   aria-labelledby="themeSwitcher"
-                  data-te-dropdown-menu-ref
                 >
                   <li>
                     <a
@@ -245,7 +243,6 @@ menu:
                         activeTheme === "light" ? { color: "rgb(101,144,213)" } : {}
                       }
                       data-theme="light"
-                      data-te-dropdown-item-ref
                       onClick={setLightTheme}
                     >
                       <div className="pointer-events-none">
@@ -266,7 +263,6 @@ menu:
                         activeTheme === "dark" ? { color: "rgb(101,144,213)" } : {}
                       }
                       data-theme="dark"
-                      data-te-dropdown-item-ref
                       onClick={setDarkTheme}
                     >
                       <div className="pointer-events-none">
