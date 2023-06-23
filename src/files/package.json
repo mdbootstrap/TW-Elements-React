@@ -1,13 +1,13 @@
 {
-  "name": "tw-elements",
+  "name": "tw-elements-react",
   "version": "<packageVersion>",
   "type": "module",
-  "homepage": "https://tailwind-elements.com/",
-  "repository": "https://github.com/mdbootstrap/Tailwind-Elements",
+  "homepage": "https://tailwind-elements.com/docs/react",
+  "repository": "https://github.com/mdbootstrap/Tailwind-Elements-React",
   "author": "MDBootstrap",
   "license": "AGPL",
-  "style": "./css/tw-elements.min.css",
+  "style": "./css/tw-elements-react.min.css",
   "sass": "./src/scss/tailwind.scss",
-  "main": "./js/tw-elements.umd.min.js",
-  "module": "./js/tw-elements.es.min.js"
+  "main": "./js/tw-elements-react.umd.min.js",
+  "module": "./js/tw-elements-react.es.min.js"
 }

@@ -1,11 +1,11 @@
 <!-- TE -->
-<script type="module" src="/js/tw-elements.umd.min.js?v=1.0.0-beta2"></script>
+<script type="module" src="/js/react/tw-elements.umd.min.js?v=1.0.0-beta2"></script>
 <!-- THEME SWITCHER -->
-<script type="text/javascript" src="/js/theme.js"></script>
+<script type="text/javascript" src="/js/react/theme.js"></script>
 <!-- PRISM -->
-<script type="text/javascript" src="/js/new-prism.js"></script>
-<link rel="stylesheet" href="/css/new-prism.css" />
-<script type="module" src="/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="/js/react/new-prism.js"></script>
+<link rel="stylesheet" href="/css/react/new-prism.css" />
+<script type="module" src="/js/react/perfect-scrollbar.min.js"></script>
 
 <script type="module">
   class Search {
@@ -285,7 +285,7 @@
     const searchCount = document.getElementById("te-search-count");
 
     let searchJsonFile;
-    searchJsonFile = "search.json";
+    searchJsonFile = "search-react.json";
 
     var scripts = document.getElementsByTagName("script"),
       src = scripts[scripts.length - 1].src;
@@ -574,5 +574,49 @@
 
   const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new te.Tooltip(tooltipTriggerEl);
+  });
+</script>
+
+<!-- handle iframes behavior -->
+<script>
+  const iframes = [...document.querySelectorAll("[data-te-react-iframe]")];
+
+  // send ready message to iframes when script is loaded, so that they can send their height (to make sure the height was sent)
+  iframes.forEach((iframe) => {
+    iframe.contentWindow.postMessage("", "*");
+  })
+
+  const setIframesTheme = (iframes, darkmode) => {
+    iframes.forEach((iframe) => {
+      iframe.contentWindow.postMessage({ darkmode }, "*");
+    })
+  };
+
+  // listen for theme change
+  window.addEventListener("darkmode",(event)=>setIframesTheme(iframes, event.detail.darkmode))
+
+  // listen for messages from iframes
+  window.addEventListener("message", (event) => {
+    const iframeHeight = event.data.height;
+    const path = event.data.path;
+
+    const iframe = iframes.find(frame=> frame.src.includes(path))
+    if (!iframe) {
+      return
+    }
+    const offset = iframe.dataset.teReactOffset || 10;
+    const minHeight = iframe.dataset.teReactMinHeight;
+
+    if (minHeight) {
+      iframe.style.minHeight = minHeight;
+    }
+
+    setIframesTheme([iframe], localStorage.theme === "dark")
+    iframe && (iframe.style.height = iframeHeight + Number(offset) + "px");
+
+    // handle loader and iframe visibility
+    if (!iframe.classList.contains("hidden")) return;
+    iframe.classList.remove("hidden");
+    iframe.parentNode.querySelector("[data-te-react-loeader]").classList.add("hidden");
   });
 </script>

@@ -1,0 +1,343 @@
+---
+title: "Next integration"
+date: 2021-04-29T16:00:58+02:00
+draft: false
+main_title: "Tailwind Elements React Next integration"
+subheading: ""
+seo_title: "Tailwind Elements React integration with Next - Free Examples & Tutorial"
+description: "This article shows you how to integrate Next application with Tailwind Elements React. Free download, open source license."
+image: "https://tecdn.b-cdn.net/img/docs/integrations/next.webp"
+url: "docs/react/integrations/next-integration/"
+menu:
+  integrations:
+    name: "Next"
+---
+
+<!-- Section: Basic example -->
+
+<section id="section-prerequisites">
+  <!-- Title -->
+  <h2
+    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+    id="prerequisites"
+    data-te-spy-item>
+    Prerequisites
+  </h2>
+
+  <!-- Description -->
+  <p class="mb-5">
+    Before starting the project make sure to install the following utilities:
+  </p>
+
+  <ul class="ml-4 list-disc">
+    <li>
+      <a
+        class="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+        href="https://nodejs.org/en/"
+        target="_blank"
+        >Node LTS</a
+      >
+      (14.x.x or higher recommended)
+    </li>
+    <li>
+      Code editor. We recommend
+      <a
+        class="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+        href="https://code.visualstudio.com/"
+        target="_blank"
+        >VSCode</a
+      >
+    </li>
+  </ul>
+</section>
+
+<hr class="my-5 dark:border-neutral-600" />
+
+<!-- Section: Creating Next app-->
+<section id="section-next-app">
+  <!-- Section title-->
+  <h2
+    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+    id="next-application"
+    data-te-spy-item>
+    Creating a new Next application
+  </h2>
+
+  <!-- Description -->
+  <p class="mb-5">
+    Let's create a fresh Next application so that we can go through all the
+    steps together.
+  </p>
+
+  <h2 class="text-lg font-bold">Step 1</h2>
+  <p class="mb-5">Create new project</p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "Terminal" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="plaintext" type="terminal" >}}
+        npx create-next-app@latest
+        cd my-project
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+</section>
+
+<hr class="mb-5 dark:border-neutral-600" />
+
+<!-- Creating and configuring Tailwind & Tailwind Elements-->
+<section id="section-tailwind">
+  <!-- Section title-->
+  <h2
+    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+    id="tailwind"
+    data-te-spy-item>
+    Installing and configuring Tailwind CSS and Tailwind Elements React
+  </h2>
+
+  <!-- Description -->
+  <h2 class="mt-5 text-lg font-bold">Step 1</h2>
+  <p class="mb-5">Install and initialize Tailwind CSS (if you haven't already)</p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "Terminal" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="plaintext" type="terminal" >}}
+        npm install -D tailwindcss postcss autoprefixer
+        npx tailwindcss init -p
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+
+  <p class="mb-2">If you have created a new next app, then the file structure should look similar to this</p>
+
+  <!-- prettier-ignore -->
+  <div class="my-4">
+    <pre class="dark:bg-neutral-600">
+      <code class="type-markdown language-markdown">
+        my-project/
+        ├── node_modules/
+        ├── public/
+        ├── src/        
+        │   ├── pages/ - needs to be created
+        │   ├── app/
+        │   │   ├── favicon.ico
+        │   │   ├── globals.css
+        │   │   ├── layout.tsx
+        │   │   └── page.tsx
+        │   ├── index.css
+        │   ├── ...
+        │   └── index.js
+        ├── package-lock.json
+        ├── package.json
+        ├── next.config.js
+        ├── tsconfig.config.js
+        ├── ...
+        └── tailwind.config.js
+      </code>
+    </pre>
+  </div>
+
+  <h2 class="text-lg font-bold">Step 2</h2>
+  <p class="mb-5">Install Tailwind Elements React.</p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "Terminal" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="plaintext" type="terminal" >}}
+        npm install tw-elements-react
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 3</h2>
+  <p class="mb-5">
+    Add the paths to all of your template files in your
+    <code>tailwind.config.cjs</code> file.
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "tailwind.config.cjs" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="JavaScript" >}}
+        /** @type {import('tailwindcss').Config} */
+        module.exports = {
+        content: [
+            "./app/**/*.{js,ts,jsx,tsx}",
+            "./pages/**/*.{js,ts,jsx,tsx}",
+            "./components/**/*.{js,ts,jsx,tsx}",
+            "./node_modules/tw-elements-react/dist/js/**/*.js",
+
+            // Or if using `src` directory:
+            "./src/**/*.{js,ts,jsx,tsx}",
+            "./node_modules/tw-elements-react/dist/js/**/*.js"
+        ],
+        theme: {
+            extend: {},
+        },
+        darkMode: "class",
+        plugins: [require("tw-elements-react/dist/plugin.cjs")]
+        }
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+  
+  <h2 class="text-lg font-bold">Step 4</h2>
+  <p class="mb-5">
+    Add the <code>@tailwind</code> directives for each of Tailwind’s layers to
+    your <code>./src/app/global.css</code> file. There will be more rules if you picked to install tailwind when creating the next app. You can remove them if you want. If you leave them the darkmode may not work properly.
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "global.css" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="CSS" >}}
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 5</h2>
+  <p class="mb-5">
+    Change the <code>inter</code> font to the <code>Roboto</code> font in <code>layout.tsx</code>.
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "layout.tsx" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="JavaScript" >}}
+        import "./globals.css";
+        import { Roboto } from "next/font/google";
+        
+        const roboto = Roboto({ weight: "400", subsets: ["latin"] });
+        
+        export const metadata = {
+          title: "Create Next App",
+          description: "Generated by create next app",
+        };
+        
+        export default function RootLayout({
+          children,
+        }: {
+          children: React.ReactNode;
+        }) {
+          return (
+            <html lang="en">
+              <body className={roboto.className}>{children}</body>
+            </html>
+          );
+        }
+        {{< /twsnippet/code >}}
+    {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 6</h2>
+  <p class="mb-5">
+    Import globally in <code>layout.tsx</code> Tailwind Elements React CSS file (you could do it also in specific component which are using TE React).
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "layout.tsx" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="JavaScript" >}}
+        import "tw-elements-react/dist/css/tw-elements-react.min.css";
+    {{< /twsnippet/code >}}
+    {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 7</h2>
+  <p class="mb-5">
+    Go to the <code>src/pages</code> folder and create a new, standalone file with name of your component (for example <code>MyComponent.tsx</code>. Inside import TE React components which you want to use. Our components need to be used in client mode so let's not forget to add <code>"use client"</code> before anything we do in this file.
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "MyComponent.tsx" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="jsx" >}}
+        "use client";
+        import React, { useState } from "react";
+        import { TECollapse, TERipple } from "tw-elements-react";
+        
+        export default function CollapseBasicExample(): JSX.Element {
+          const [show, setShow] = useState(false);
+        
+          const toggleShow = () => setShow(!show);
+        
+          return (
+            <>
+              <TERipple rippleColor="light">
+                <a
+                  className="inline-block rounded bg-primary mr-2 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                  role="button"
+                  onClick={toggleShow}
+                >
+                  Link
+                </a>
+              </TERipple>
+              <TERipple rippleColor="light">
+                <button
+                  type="button"
+                  className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                  onClick={toggleShow}
+                >
+                  Button
+                </button>
+              </TERipple>
+        
+              <TECollapse show={show}>
+                <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
+                  Some placeholder content for the collapse component. This panel is
+                  hidden by default but revealed when the user activates the relevant
+                  trigger.
+                </div>
+              </TECollapse>
+            </>
+          );
+        }
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 8</h2>
+  <p class="mb-5">
+    Import (for example in <code>src/app/page.tsx</code>) newly created component wrapping it into <code>dynamic</code> import with <code>ssr</code> object set to <code>false</code>.
+  </p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "src/app/page.tsx" "" "mobile" >}}
+      {{< twsnippet/code active=true lang="jsx" >}}
+      import dynamic from "next/dynamic";
+
+      const DynamicComponent = dynamic(() => import("../pages/MyComponent"), { ssr: false });
+      
+      const Home = () => {
+        return (
+          <>
+            <DynamicComponent />
+          </>
+        );
+      };
+
+      export default Home;
+    {{< /twsnippet/code >}}
+    {{< /twsnippet/wrapper >}}
+  </div>
+
+  <h2 class="text-lg font-bold">Step 9</h2>
+  <p class="mb-5">Start the app and see if everything's fine</p>
+
+  <div class="pb-4">
+    <!--prettier-ignore-->
+    {{< twsnippet/wrapper "Terminal" "" "mobile" >}}
+        {{< twsnippet/code active=true lang="plaintext" type="terminal" >}}
+        npm run dev
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+  </div>
+</section>
+<!--/Creating and configuring Tailwind & Tailwind Elements-->
+
+

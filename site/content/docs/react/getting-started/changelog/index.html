@@ -1,0 +1,594 @@
+---
+title: "Changelog"
+date: 2023-02-09T10:00:00+02:00
+draft: false
+main_title: "Changelog"
+subheading: ""
+seo_title: "Tailwind Elements React Changelog"
+description: "Track live progress on updates for our Tailwind CSS React UI Kit - see the latest changelog for all our components, pages, plugins and more."
+image: "https://tecdn.b-cdn.net/img/components-big.jpg"
+video: "https://www.youtube.com/watch?v=-GmnyjgI4Jc&ab_channel=Keepcoding"
+url: "docs/react/getting-started/changelog/"
+menu:
+  gettingstarted:
+    name: "Changelog"
+    weight: 5
+---
+
+<style>
+  .markdown-body {
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+  .markdown-body h2 {
+    padding-bottom: 0.3em;
+    line-height: 1.25;
+    font-weight: 500;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .markdown-body h2 {
+    font-size: 1.5em;
+  }
+  .markdown-body h3 {
+    font-size: 1.25em;
+  }
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4,
+  .markdown-body h5,
+  .markdown-body h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .markdown-body ul,
+  .markdown-body ol {
+    padding-left: 2em;
+    list-style-type: disc;
+  }
+  .markdown-body p,
+  .markdown-body blockquote,
+  .markdown-body ul,
+  .markdown-body ol,
+  .markdown-body dl,
+  .markdown-body table,
+  .markdown-body pre,
+  .markdown-body details {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  .markdown-body ul li {
+    margin-bottom: 4px;
+  }
+  .markdown-body code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    white-space: break-spaces;
+    background-color: rgba(157, 164, 173, 0.4);
+    border-radius: 6px;
+    color: black;
+  }
+  .markdown-body a {
+    color: #248aff;
+    text-decoration: none;
+  }
+  .markdown-body a:hover {
+    text-decoration: underline;
+  }
+  .dark .markdown-body a {
+    color: #58a6ff;
+  }
+  .dark .markdown-body h2 {
+    border-bottom: 1px solid rgb(75, 85, 99);
+  }
+  .dark .markdown-body code {
+    background-color: rgba(110, 118, 129, 0.4);
+    color: white;
+  }
+</style>
+
+<!-- <section>
+  <p class="pb-4">
+    <span class="font-bold">Don't miss Tailwind Elements React updates!</span> Join
+    our mailing list & receive information whenever a new update is released.
+  </p>
+  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <form
+    action="https://app.convertkit.com/forms/2294171/subscriptions"
+    method="post"
+    data-sv-form="2294171"
+    data-uid="d600f0821d"
+    data-format="inline"
+    data-version="5"
+    data-options='{"settings":{"after_subscribe":{"action":"redirect","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":"https://mdbootstrap.com/confirm/"},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":"https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+    <div class="mb-4 flex justify-start gap-2">
+      <div class="relative w-full max-w-[400px]" data-te-input-wrapper-init>
+        <input
+          type="email"
+          required=""
+          id="email"
+          name="email_address"
+          placeholder="Enter your email"
+          class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+          required />
+        <label
+          for="tailwind-updates-form"
+          class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-gray-200 dark:peer-focus:text-gray-200"
+          >Your email address
+        </label>
+      </div>
+      <div>
+        <button
+          type="submit"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+          class="inline-block min-w-[90px] rounded bg-blue-600 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg">
+          Join now
+        </button>
+      </div>
+    </div>
+  </form>
+  <p class="text-sm text-gray-500 dark:text-gray-400">
+    By subscribing you agree to receive the newsletter & commercial information
+    from the data administrator StartupFlow s.c. Kijowska 7, Warsaw.
+    <a
+      href="https://mdbootstrap.com/general/privacy-policy/"
+      class="text-blue-400 dark:text-blue-300"
+      target="_blank"
+      >Policy</a
+    >
+  </p>
+</section>
+
+<hr class="my-10 dark:border-gray-600" /> -->
+
+<section>
+  <h2 class="text-3xl font-semibold leading-tight">New release coming soon</h2>
+  <div class="relative h-12">
+    <div id="progressPlaceholder" class="absolute w-full">
+      <p class="animate-pulse">
+        <span
+          class="inline-block min-h-[1em] w-1/3 flex-auto cursor-wait bg-current align-middle text-base text-neutral-700 opacity-50 dark:text-neutral-50"></span>
+      </p>
+      <p class="animate-pulse">
+        <span
+          class="inline-block min-h-[1em] w-full flex-auto cursor-wait bg-current align-middle text-base text-neutral-700 opacity-50 dark:text-neutral-50"></span>
+      </p>
+    </div>
+    <p
+      id="upcomingReleaseData"
+      class="absolute hidden text-gray-500 opacity-0 transition-opacity dark:text-gray-400"></p>
+
+    <div
+      id="upcomingReleaseProgressBar"
+      class="absolute bottom-0 mb-1 hidden h-1 w-full bg-neutral-200 opacity-0 transition-opacity dark:bg-neutral-600">
+      <div class="h-1 bg-primary" style="width: 45%"></div>
+    </div>
+  </div>
+
+  <p class="mt-4">
+    We're working hard on resolving issues & introducing new improvements in the
+    upcoming release.
+  </p>
+  <p class="font-semibold">In the meantime we invite you to:</p>
+
+  <ul class="ml-6 mt-2 list-disc">
+    <li>
+      Track our
+      <a
+        href="https://github.com/orgs/mdbootstrap/projects/3/"
+        target="_blank"
+        class="font-semibold text-primary dark:text-primary-400"
+        >live progress</a
+      >
+    </li>
+    <li>
+      Motivate us with some
+      <a
+        href="https://github.com/mdbootstrap/Tailwind-Elements-React/discussions/categories/kind-words-general-feedback"
+        target="_blank"
+        class="font-semibold text-primary dark:text-primary-400"
+        >words of encouragament</a
+      >
+    </li>
+    <li>
+      Share your
+      <a
+        href="https://github.com/mdbootstrap/Tailwind-Elements-React/discussions/categories/share-ideas-request-features"
+        target="_blank"
+        class="font-semibold text-primary dark:text-primary-400"
+        >ideas & feature requests</a
+      >
+    </li>
+    <li>
+      Engage, discuss & have fun in our
+      <a
+        href="https://github.com/mdbootstrap/Tailwind-Elements-React/discussions"
+        target="_blank"
+        class="font-semibold text-primary dark:text-primary-400"
+        >open-source community</a
+      >
+    </li>
+  </ul>
+</section>
+
+<hr class="mb-14 mt-10 dark:border-gray-600" />
+
+<section id="changelog">
+  <section
+    id="v1.0.0-alpha1"
+    class="mb-6 rounded-lg border border-gray-300 p-5 dark:border-gray-600">
+    <a
+      href="https://github.com/mdbootstrap/tailwind-elements/releases/tag/v1.0.0-beta2">
+      <h2
+        class="inline-block text-[32px] font-semibold hover:underline"
+        data-te-spy-item>
+        v1.0.0-alpha1
+      </h2>
+    </a>
+    <p class="-mt-2 mb-8 font-normal text-gray-500 dark:text-gray-400">
+      released 26.06.2023
+    </p>
+
+    <!-- Github common content -->
+    <div class="markdown-body">
+      <p>
+        This release marks the beginning of our React journey, featuring a collection of React components and numerous pages with JSX code snippets.
+      </p>
+      <p>
+        We have integrated our components dark theme, providing a visually appealing experience. Additionally, all components are fully customizable, allowing you to tailor them to your project's unique requirements.
+      </p>
+      <p>
+        To enhance the user experience, we've introduced a new code example display on our website. This feature showcases the functionality of our components in a manner that closely resembles their usage in real-world projects.
+      </p>
+      <p></p>
+      <h3>New components</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/1"
+            >#1</a
+          >: Colors - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/1"
+            >#1</a
+          >: Dividers - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/1"
+            >#1</a
+          >: Figures - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/3"
+            >#3</a
+          >: Headings - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/3"
+            >#3</a
+          >: Icons - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/3"
+            >#3</a
+          >: Images - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/4"
+            >#4</a
+          >: Shadows - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/4"
+            >#4</a
+          >: Typography - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/4"
+            >#4</a
+          >: Breadcrumbs - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/5"
+            >#5</a
+          >: Pagination - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/5"
+            >#5</a
+          >: Avatar - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/5"
+            >#5</a
+          >: Badges - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/6"
+            >#6</a
+          >: List Group - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/6"
+            >#6</a
+          >: Paragraphs - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/6"
+            >#6</a
+          >: Progress - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/7"
+            >#7</a
+          >: Rating - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/7"
+            >#7</a
+          >: Spinners - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/7"
+            >#7</a
+          >: Checkbox - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/8"
+            >#8</a
+          >: File Input - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/8"
+            >#8</a
+          >: Radio - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/8"
+            >#8</a
+          >: Range - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/9"
+            >#9</a
+          >: Switch - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/9"
+            >#9</a
+          >: Tables - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/10"
+            >#10</a
+          >: Ripple - by @juujisai
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/11"
+            >#11</a
+          >: Inputs - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/13"
+            >#13</a
+          >: Collapse - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/15"
+            >#15</a
+          >: Modal - by @juujisai
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/24"
+            >#24</a
+          >: Hover Effects - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/24"
+            >#24</a
+          >: Masks - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/24"
+            >#24</a
+          >: Link - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/25"
+            >#25</a
+          >: Buttons - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/25"
+            >#25</a
+          >: Button group - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/26"
+            >#26</a
+          >: Cards - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/26"
+            >#26</a
+          >: Placeholders - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/27"
+            >#27</a
+          >: Social Buttons - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/27"
+            >#27</a
+          >: Timeline - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/47"
+            >#47</a
+          >: Tabs - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/48"
+            >#48</a
+          >: Pills - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/54"
+            >#54</a
+          >: Footer - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/54"
+            >#54</a
+          >: Search - by @bwsky-a
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/55"
+            >#55</a
+          >: Form templates - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/55"
+            >#55</a
+          >: Login form - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/55"
+            >#55</a
+          >: Registration form - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/57"
+            >#57</a
+          >: Accordion - by @iprzybysz
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/issues/61"
+            >#61</a
+          >: Scroll back to top button - by @iprzybysz
+        </li>
+      </ul>
+      <h3>Docs</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/pull/31"
+            >#31</a
+          >,
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/pull/32"
+            >#32</a
+          >,
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/pull/64"
+            >#64</a
+          >: Add and update documentation pages - by @juujisai        
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/issues/19"
+            >#19</a
+          >: Add JSX language to prism - by @juujisai   
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/issues/33"
+            >#33</a
+          > 
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/issues/36"
+            >#36</a
+          >: Add iframes shortcode with automated height update and darkmode - by @juujisai   
+        </li>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/issues/50"
+            >#50</a
+          >: Site/static - move react static files to new directory - by @juujisai   
+        </li>
+      </ul>
+      <h3>Fixed & improved</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/mdbootstrap/Tailwind-Elements/issues/42"
+            >#42</a
+          >: Ripple - when element inside has margin, the ripple has wrong size - by @juujisai
+        </li>
+      </ul>
+    </div>
+    <!-- Github common content -->
+  </section>
+  <!-- Release data -->
+
+</section>
+
+<script type="module">
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+  const octokit = new Octokit();
+
+  const response = await octokit.request(
+    "GET /repos/mdbootstrap/tailwind-elements-react/milestones"
+  );
+
+  if ((response.status === 200) & (response.data.length !== 0)) {
+    const upcomingReleaseElement = document.querySelector(
+      "#upcomingReleaseData"
+    );
+    const upcomingReleaseProgressBar = document.querySelector(
+      "#upcomingReleaseProgressBar"
+    );
+
+    Array.prototype.hasMin = function (attr) {
+      return (
+        (this.length &&
+          this.reduce(function (prev, curr) {
+            return prev[attr] < curr[attr] ? prev : curr;
+          })) ||
+        null
+      );
+    };
+
+    const milestoneData = response.data.hasMin("number");
+    const progressPlaceholder = document.querySelector("#progressPlaceholder");
+    const progress =
+      (milestoneData.closed_issues /
+        (milestoneData.closed_issues + milestoneData.open_issues)) *
+      100;
+    progressPlaceholder.classList.add("hidden");
+    upcomingReleaseElement.classList.remove("hidden");
+    upcomingReleaseProgressBar.classList.remove("hidden");
+
+    setTimeout(() => {
+      upcomingReleaseElement.classList.add("opacity-100");
+      upcomingReleaseProgressBar.classList.add("opacity-100");
+      upcomingReleaseProgressBar.children[0].style.width = `${progress}%`;
+
+      if (milestoneData.due_on === null) {
+        upcomingReleaseElement.innerHTML = milestoneData.title;
+      } else {
+        const dueOn = new Date(milestoneData.due_on);
+        const dueOnDate = ("0" + dueOn.getDate()).slice(-2);
+        const dueOnMonth = ("0" + (dueOn.getMonth() + 1)).slice(-2);
+        const dueOnYear = dueOn.getFullYear();
+
+        upcomingReleaseElement.innerHTML = `${milestoneData.title} planned for ${dueOnDate}.${dueOnMonth}.${dueOnYear}`;
+      }
+    }, 10);
+  }
+</script>
+
+<script>
+  const changelog = document.querySelector("#changelog");
+  const changelogItems = changelog.querySelectorAll("li");
+
+  changelogItems.forEach((item) => {
+    const users = item.innerText.replaceAll(", ", "").split("@");
+    users.shift();
+
+    users.forEach((user) => {
+      item.innerHTML = item.innerHTML.replace(
+        `@${user}`,
+        `<a class="user-mention" href="https://github.com/${user}">@${user}</a>`
+      );
+    });
+  });
+</script>

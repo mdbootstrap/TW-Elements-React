@@ -5,11 +5,16 @@
 # Compiled files
 /site/assets/css/style.css
 /site/assets/css/style.min.css
+/site/assets/css/react/style.min.css
 /site/config/dev/config.toml
 /site/static/js/index.min.js
 /site/static/js/index.min.js.map
 /site/static/js/plugin.js
 /site/static/js/plugin.cjs
+/site/static/js/react/index.min.js
+/site/static/js/react/index.min.js.map
+/site/static/js/react/plugin.js
+/site/static/js/react/plugin.cjs
 
 ## OS Files
 # Windows
