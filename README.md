@@ -516,7 +516,7 @@ A collection of stunning components made with attention to the smallest details.
 
 ---
 
-## Design blocks (Coming soon)
+## Design blocks
 
 Responsive Landing page blocks built with Tailwind CSS. Plenty of design blocks examples such as Teams, services, projects, faq, and many more.
 
@@ -659,11 +659,11 @@ Responsive Landing page blocks built with Tailwind CSS. Plenty of design blocks 
 
 ---
 
-## Installation (Coming soon)
+## Installation
 
 ##### NPM
 
-1. Before starting the project make sure to install [Node.js (LTS)](https://nodejs.org/en/ "Node.js (LTS)") and [TailwindCSS](https://tailwindcss.com/ "TailwindCSS").
+1. Before starting the project make sure to install [Node.js (LTS)](https://nodejs.org/en/ "Node.js (LTS)") version 14+, 16+ and [TailwindCSS](https://tailwindcss.com/ "TailwindCSS").
 
 2. Run the following command to install the package via NPM:
 
@@ -671,7 +671,13 @@ Responsive Landing page blocks built with Tailwind CSS. Plenty of design blocks 
 npm install tw-elements-react
 ```
 
-3. Tailwind Elements is a plugin and should be included inside the **tailwind.config.js** file. It is also recommended to extend the content array with a js file that loads dynamic component classes:
+3. Add the Tailwind Elements React css file to your main js/tsx file
+
+```javascript
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
+```
+
+4. Tailwind Elements is a plugin and should be included inside the **tailwind.config.js** file. It is also recommended to extend the content array with a js file that loads dynamic component classes:
 
 ```javascript
 module.exports = {
@@ -688,10 +694,10 @@ module.exports = {
 };
 ```
 
-4.  Dynamic components will work after importing the package:
+5.  Components will work after importing the package:
 
-```
-import { TESidenav } from 'tw-elements-react';
+```javascript
+import { TECollapse } from "tw-elements-react";
 ```
 
 ##### MDB GO / CLI
@@ -710,25 +716,7 @@ npm install -g mdb-cli
 mdb login
 ```
 
-3. Initialize a project and choose **Tailwind Elements** from the list:
-
-```
-mdb init tailwind-elements-free
-```
-
-4. Install the dependencies (inside the project directory):
-
-```
-npm install
-```
-
-5. Run the app:
-
-```
-npm start
-```
-
-6. Publish when you're ready:
+3. Publish when you're ready:
 
 ```
 mdb publish
