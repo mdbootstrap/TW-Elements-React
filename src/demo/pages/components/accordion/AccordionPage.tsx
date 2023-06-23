@@ -5,7 +5,7 @@ import AccordionAlwaysOpen from "./examples/AccordionAlwaysOpen";
 
 const AccordionPage = () => {
   return (
-    <div className="container my-12 mx-5">
+    <div className="container my-12 px-5">
       {/* <!-- Section: Basic example --> */}
       <section>
         {/* <!-- Title --> */}

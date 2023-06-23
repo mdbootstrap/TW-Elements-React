@@ -19,7 +19,7 @@ export default function AccordionFlush(): JSX.Element {
             <button
               className={`${
                 activeElement === "element1" &&
-                `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+                `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
               } group relative flex w-full items-center rounded-none border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
               type="button"
               onClick={() => handleClick("element1")}
@@ -72,7 +72,7 @@ export default function AccordionFlush(): JSX.Element {
           <button
             className={`${
               activeElement === "element2" &&
-              `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+              `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
             } group relative flex w-full items-center rounded-none border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
             type="button"
             onClick={() => handleClick("element2")}
@@ -124,7 +124,7 @@ export default function AccordionFlush(): JSX.Element {
           <button
             className={`${
               activeElement === "element3"
-                ? `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+                ? `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
                 : `transition-none rounded-b-[15px]`
             } group relative flex w-full items-center rounded-none border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
             type="button"

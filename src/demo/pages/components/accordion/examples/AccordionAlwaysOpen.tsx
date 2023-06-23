@@ -20,7 +20,7 @@ export default function AccordionAlwaysOpen(): JSX.Element {
             <button
               className={`${
                 show.collapse1 &&
-                `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+                `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
               } group relative flex w-full items-center rounded-t-[15px] border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
               type="button"
               onClick={() =>
@@ -75,7 +75,7 @@ export default function AccordionAlwaysOpen(): JSX.Element {
           <button
             className={`${
               show.collapse2
-                ? `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+                ? `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
                 : `transition-none rounded-b-[15px]`
             } group relative flex w-full items-center rounded-t-[15px] border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
             type="button"
@@ -128,7 +128,7 @@ export default function AccordionAlwaysOpen(): JSX.Element {
           <button
             className={`${
               show.collapse3
-                ? `bg-white text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:bg-neutral-800 dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
+                ? `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
                 : `transition-none rounded-b-[15px]`
             } group relative flex w-full items-center rounded-t-[15px] border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white`}
             type="button"
