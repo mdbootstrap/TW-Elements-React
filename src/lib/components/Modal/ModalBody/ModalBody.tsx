@@ -7,24 +7,27 @@ import { ModalContext } from "../context/ModalContext";
 const TEModalBody: React.FC<ModalBodyProps> = React.forwardRef<
   HTMLAllCollection,
   ModalBodyProps
->(({ className, children, theme: customTheme, tag: Tag, ...props }, ref) => {
-  const theme = { ...modalBodyTheme, ...customTheme };
+>(
+  (
+    { className, children, theme: customTheme, tag: Tag = "div", ...props },
+    ref
+  ) => {
+    const theme = { ...modalBodyTheme, ...customTheme };
 
-  const { scrollable } = useContext(ModalContext);
+    const { scrollable } = useContext(ModalContext);
 
-  const classes = clsx(
-    theme.wrapper,
-    scrollable && theme.scrollable,
-    className
-  );
+    const classes = clsx(
+      theme.wrapper,
+      scrollable && theme.scrollable,
+      className
+    );
 
-  return (
-    <Tag className={classes} {...props} ref={ref}>
-      {children}
-    </Tag>
-  );
-});
-
-TEModalBody.defaultProps = { tag: "div" };
+    return (
+      <Tag className={classes} {...props} ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
 
 export default TEModalBody;

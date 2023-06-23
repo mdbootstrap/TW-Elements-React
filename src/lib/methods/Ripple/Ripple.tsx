@@ -39,13 +39,13 @@ const TERipple: React.FC<RippleProps> = React.forwardRef<
   (
     {
       className,
-      rippleTag: Tag,
+      rippleTag: Tag = "div",
       rippleCentered,
-      rippleDuration,
+      rippleDuration = 500,
       rippleUnbound,
-      rippleRadius,
-      rippleColor,
-      rippleColorDark,
+      rippleRadius = 0,
+      rippleColor = "dark",
+      rippleColorDark = "",
       children,
       onMouseDown,
       theme: customTheme,
@@ -312,13 +312,5 @@ const TERipple: React.FC<RippleProps> = React.forwardRef<
     );
   }
 );
-
-TERipple.defaultProps = {
-  rippleTag: "div",
-  rippleDuration: 500,
-  rippleRadius: 0,
-  rippleColor: "dark",
-  rippleColorDark: "",
-};
 
 export default TERipple;

@@ -243,6 +243,18 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/navigation/tabs",
+    "name": "Tabs",
+    "keywords": ["tabs"],
+    "category": "Navigation"
+  },
+  {
+    "href": "/docs/react/navigation/pills",
+    "name": "Pills",
+    "keywords": ["pills"],
+    "category": "Navigation"
+  },
+  {
     "href": "/docs/react/forms/inputs",
     "name": "Inputs",
     "keywords": ["inputs", "input", "fields"],
@@ -274,5 +286,11 @@
     "name": "Search",
     "keywords": ["search"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/standard/integrations/next-integration/",
+    "name": "Next integration",
+    "keywords": ["Next", "integration"],
+    "category": "Integrations"
   }
 ]

@@ -3,6 +3,13 @@
   "version": "1.0.0-alpha1",
   "type": "module",
   "license": "AGPL",
+  "main": "dist/js/tw-elements-react.umd.min.js",
+  "module": "dist/js/tw-elements-react.es.min.js",
+  "style": "dist/css/tw-elements-react.min.css",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "start": "vite --open",
     "dev": "vite",
@@ -43,6 +50,8 @@
     "shelljs": "^0.8.5",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-externalize-deps": "^0.5.0"
   }
 }

@@ -9,8 +9,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import { useRef } from "react";
-
 type FocusableElement =
   | HTMLButtonElement
   | HTMLAnchorElement
@@ -19,12 +17,12 @@ type FocusableElement =
   | HTMLTextAreaElement;
 
 const useFocusTrap = () => {
-  const trapElement = useRef<HTMLElement | null>(null);
-  const firstFocusableElement = useRef<FocusableElement | null>(null);
-  const lastFocusableElement = useRef<FocusableElement | null>(null);
+  let trapElement: HTMLElement | null = null;
+  let firstFocusableElement: FocusableElement | null = null;
+  let lastFocusableElement: FocusableElement | null = null;
 
   function initFocusTrap(element: HTMLElement) {
-    trapElement.current = element;
+    trapElement = element;
     calculateFocusTrap();
 
     window.addEventListener("keydown", focusFirstElement);
@@ -34,7 +32,7 @@ const useFocusTrap = () => {
 
   function calculateFocusTrap() {
     const focusable = Array.from(
-      trapElement.current?.querySelectorAll(
+      trapElement?.querySelectorAll(
         'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])'
       ) as NodeListOf<FocusableElement>
     ).filter((el: FocusableElement) => {
@@ -48,11 +46,11 @@ const useFocusTrap = () => {
 
     if (focusable.length === 0) return;
 
-    firstFocusableElement.current = focusable[0];
+    firstFocusableElement = focusable[0];
 
-    lastFocusableElement.current = focusable[focusable.length - 1];
+    lastFocusableElement = focusable[focusable.length - 1];
 
-    lastFocusableElement.current?.addEventListener("keydown", (event) =>
+    lastFocusableElement?.addEventListener("keydown", (event) =>
       handleLastElementKeydown(event as KeyboardEvent)
     );
   }
@@ -67,7 +65,7 @@ const useFocusTrap = () => {
   function focusTrap() {
     if (!firstFocusableElement) return;
 
-    firstFocusableElement.current?.focus();
+    firstFocusableElement?.focus();
   }
 
   function focusFirstElement(e: KeyboardEvent, trap = false) {
@@ -80,7 +78,7 @@ const useFocusTrap = () => {
   }
 
   function removeFocusTrap() {
-    lastFocusableElement.current?.removeEventListener("keydown", (event) =>
+    lastFocusableElement?.removeEventListener("keydown", (event) =>
       handleLastElementKeydown(event as KeyboardEvent)
     );
   }
