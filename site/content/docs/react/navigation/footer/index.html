@@ -32,17 +32,17 @@ menu:
   <p class="mb-3">
     Additional navigation on the page includes basic support content such as
     <a
-      href="https://tailwind-elements.com/docs/standard/components/link/"
+      href="https://tailwind-elements.com/docs/react/components/link/"
       class="text-primary dark:text-primary-400"
       >links</a
     >,
     <a
-      href="https://tailwind-elements.com/docs/standard/components/buttons/"
+      href="https://tailwind-elements.com/docs/react/components/buttons/"
       class="text-primary dark:text-primary-400"
       >buttons</a
     >, company information, copyright and
     <a
-      href="https://tailwind-elements.com/docs/standard/forms/form-templates/"
+      href="https://tailwind-elements.com/docs/react/forms/form-templates/"
       class="text-primary dark:text-primary-400"
       >forms</a
     >. The footer can be easily customized to fit your style and is responsive
@@ -791,9 +791,9 @@ menu:
       export default function FooterAdvancedExample(): JSX.Element {
           return (
               <footer className="bg-neutral-900 text-center text-white">
-                  <div className="container px-6 pt-6">
+                  <div className="container px-6 pt-6 mx-auto">
                       {/* <!-- Social media icons container --> */}
-                      <div className="mb-6 flex justify-center">
+                      <div className="mb-6 flex justify-center w-full">
                           <TERipple rippleColor="light">
                               <a
       
@@ -920,11 +920,14 @@ menu:
       
                                   {/* <!-- Newsletter sign-up input field --> */}
                                   <div className="relative md:mb-6">
-                                      <TEInput
-                                          className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] text-neutral-200 outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                          id="exampleFormControlInput1"
-                                          label="Email address"
-                                      ></TEInput>
+                                    <TEInput
+                                      theme={{
+                                        label:
+                                          "pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate text-white transition-all duration-200 ease-out peer-focus:scale-[0.8] peer-focus:text-primary motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary",
+                                      }}
+                                      id="exampleFormControlInput1"
+                                      label="Email address"
+                                    ></TEInput>
                                   </div>
       
                                   {/* <!-- Newsletter sign-up submit button --> */}
@@ -1421,7 +1424,7 @@ menu:
     this example, you can add two columns filled with text. For more advanced
     text options have a look at the
     <a
-      href="https://tailwind-elements.com/docs/standard/components/typography/"
+      href="https://tailwind-elements.com/docs/react/components/typography/"
       class="text-primary dark:text-primary-400"
       >typography</a
     >
@@ -1541,7 +1544,7 @@ menu:
   <p class="mb-3">
     The footer can also contain
     <a
-      href="https://tailwind-elements.com/docs/standard/components/images/"
+      href="https://tailwind-elements.com/docs/content-styles/components/images/"
       class="text-primary dark:text-primary-400"
       >images</a
     >
@@ -1676,7 +1679,7 @@ menu:
   <p class="mb-3">
     Social media
     <a
-      href="https://tailwind-elements.com/docs/standard/components/icons/"
+      href="https://tailwind-elements.com/docs/content-styles/components/icons/"
       class="text-primary dark:text-primary-400"
       >icons</a
     >
@@ -1895,8 +1898,8 @@ menu:
       export default function FooterButtonsDarkExample(): JSX.Element {
           return (
               <footer className="bg-neutral-900 text-center text-white">
-                  <div className="container px-6 pt-6">
-                      <div className="mb-6 flex justify-center">
+                  <div className="container px-6 pt-6 mx-auto">
+                      <div className="mb-6 flex justify-center w-full">
                           <TERipple rippleColor="light">
                               <a
       
@@ -2055,9 +2058,9 @@ menu:
       export default function FooterCtaExample(): JSX.Element {
           return (
               <footer className="text-center text-white bg-blue-900">
-                  <div className="container p-6">
+                  <div className="container p-6 mx-auto">
                       <div className="">
-                          <span className="flex items-center justify-center">
+                          <span className="flex items-center justify-center w-full">
                               <span className="mr-4">Register for free</span>
                               <TERipple rippleColor="light">
                                   <button
@@ -2130,8 +2133,7 @@ menu:
       
                               <div className="relative md:mb-6">
                                   <TEInput
-                                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-secondary-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                      id="exampleFormControlInput1"
+                                    id="exampleFormControlInput1"
                                       label="Email address"
                                   ></TEInput>
                               </div>
