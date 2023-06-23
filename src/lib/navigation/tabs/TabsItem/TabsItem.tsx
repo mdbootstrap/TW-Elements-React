@@ -12,12 +12,12 @@ const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
     {
       className,
       wrapperClass,
-      active,
-      disabled,
+      active = false,
+      disabled = false,
       color = "primary",
       children,
       theme: customTheme,
-      tag: Tag,
+      tag: Tag = "a",
       ...props
     },
     ref
@@ -96,7 +96,5 @@ const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
     );
   }
 );
-
-TETabsItem.defaultProps = { tag: "a", active: false, disabled: false };
 
 export default TETabsItem;

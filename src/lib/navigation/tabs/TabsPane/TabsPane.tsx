@@ -27,8 +27,8 @@ const TETabsPane: React.FC<TabsPaneProps> = React.forwardRef<
   (
     {
       className,
-      tag: Tag,
-      show,
+      tag: Tag = "div",
+      show = false,
       theme: customTheme,
       onShow,
       onShown,
@@ -94,7 +94,5 @@ const TETabsPane: React.FC<TabsPaneProps> = React.forwardRef<
     );
   }
 );
-
-TETabsPane.defaultProps = { tag: "div", show: false };
 
 export default TETabsPane;

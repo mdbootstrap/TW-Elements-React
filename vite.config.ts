@@ -8,6 +8,18 @@ const entryPath = `src/lib/index.tsx`;
 const packageName = "tw-elements-react";
 const outDir = process.env.mode === "docs" ? "dist-docs" : "dist";
 
+const libPlugins = [
+  react(),
+  dts({
+    copyDtsFiles: false,
+    entryRoot: entryPath,
+    outputDir: `./${outDir}/types/dts`,
+  }),
+  externalizeDeps(),
+];
+
+const docsPlugins = [react()];
+
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
@@ -15,15 +27,7 @@ export default defineConfig({
     "process.env": {},
     initiatedComponents: [],
   },
-  plugins: [
-    react(),
-    dts({
-      copyDtsFiles: false,
-      entryRoot: entryPath,
-      outputDir: `./${outDir}/types/dts`,
-    }),
-    externalizeDeps(),
-  ],
+  plugins: process.env.mode === "docs" ? docsPlugins : libPlugins,
   resolve: {
     alias: {
       "tw-elements-react": path.resolve("./src/lib/index.tsx"),

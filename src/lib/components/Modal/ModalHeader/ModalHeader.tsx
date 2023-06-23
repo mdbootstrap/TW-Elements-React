@@ -6,17 +6,20 @@ import modalHeaderTheme from "./modalHeaderTheme";
 const TEModalHeader: React.FC<ModalHeaderProps> = React.forwardRef<
   HTMLAllCollection,
   ModalHeaderProps
->(({ className, children, theme: customTheme, tag: Tag, ...props }, ref) => {
-  const theme = { ...modalHeaderTheme, ...customTheme };
-  const classes = clsx(theme.wrapper, className);
+>(
+  (
+    { className, children, theme: customTheme, tag: Tag = "div", ...props },
+    ref
+  ) => {
+    const theme = { ...modalHeaderTheme, ...customTheme };
+    const classes = clsx(theme.wrapper, className);
 
-  return (
-    <Tag className={classes} {...props} ref={ref}>
-      {children}
-    </Tag>
-  );
-});
-
-TEModalHeader.defaultProps = { tag: "div" };
+    return (
+      <Tag className={classes} {...props} ref={ref}>
+        {children}
+      </Tag>
+    );
+  }
+);
 
 export default TEModalHeader;
