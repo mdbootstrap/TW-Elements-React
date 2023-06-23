@@ -274,5 +274,11 @@
     "priority": {
       "modal": 1
     }
+  },
+  {
+    "href": "/docs/react/components/accordion/",
+    "name": "Accordion",
+    "keywords": ["accordion","collapse"],
+    "category": "Components"
   }
 ]

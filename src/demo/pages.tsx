@@ -39,6 +39,7 @@ import TabsPage from "./pages/navigation/tabs/TabsPage";
 import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
+import AccordionPage from "./pages/components/accordion/AccordionPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -56,6 +57,7 @@ import TabsExamples from "./pages/navigation/tabs/exampleList";
 import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
+import AccordionExamples from "./pages/components/accordion/exampleList";
 
 interface Pages {
   name: string;
@@ -113,6 +115,11 @@ const componentsPages: Pages[] = [
     element: <ButtonGroupPage />,
   },
   { name: "modal", path: "/components/modal", element: <ModalPage /> },
+  {
+    name: "accordion",
+    path: "/components/accordion",
+    element: <AccordionPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -259,6 +266,7 @@ export const examplesPages: Pages[] = [
   ...PillsExamples,
   ...ModalExamples,
   ...InputExamples,
+  ...AccordionExamples,
 ];
 
 export default demoPages;
