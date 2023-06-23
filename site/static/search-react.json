@@ -294,6 +294,12 @@
     }
   },
   {
+    "href": "/docs/react/components/accordion/",
+    "name": "Accordion",
+    "keywords": ["accordion","collapse"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/navigation/footer/",
     "name": "Footer",
     "keywords": ["copyrights"],

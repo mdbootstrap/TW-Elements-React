@@ -39,6 +39,7 @@ import TabsPage from "./pages/navigation/tabs/TabsPage";
 import PillsPage from "./pages/navigation/pills/PillsPage";
 import ModalPage from "./pages/components/modal/ModalPage";
 import InputPage from "./pages/forms/inputs/InputPage";
+import AccordionPage from "./pages/components/accordion/AccordionPage";
 import FormTemplatesPage from "./pages/forms/form-templates/FormTemplatesPage";
 import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
@@ -61,6 +62,7 @@ import TabsExamples from "./pages/navigation/tabs/exampleList";
 import PillsExamples from "./pages/navigation/pills/exampleList";
 import ModalExamples from "./pages/components/modal/exampleList";
 import InputExamples from "./pages/forms/inputs/exampleList";
+import AccordionExamples from "./pages/components/accordion/exampleList";
 import FormTemplatesExamples from "./pages/forms/form-templates/exampleList";
 import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
@@ -123,6 +125,11 @@ const componentsPages: Pages[] = [
     element: <ButtonGroupPage />,
   },
   { name: "modal", path: "/components/modal", element: <ModalPage /> },
+  {
+    name: "accordion",
+    path: "/components/accordion",
+    element: <AccordionPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -294,6 +301,7 @@ export const examplesPages: Pages[] = [
   ...PillsExamples,
   ...ModalExamples,
   ...InputExamples,
+  ...AccordionExamples,
   ...FormTemplatesExamples,
   ...LoginFormExamples,
   ...RegistrationFormExamples,
