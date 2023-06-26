@@ -1,5 +1,5 @@
 const intro = (version) => `/*!
-* Taliwind Elements React ${version}
+* Tailwind Elements React ${version}
 * 
 * Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
 * Copyright © 2023 MDBootstrap.com
