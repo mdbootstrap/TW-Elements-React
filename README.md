@@ -716,7 +716,25 @@ npm install -g mdb-cli
 mdb login
 ```
 
-3. Publish when you're ready:
+3. Initialize a project and choose **Tailwind Elements React** from the list:
+
+```
+mdb init tailwind-elements-react
+```
+
+4. Install the dependencies (inside the project directory):
+
+```
+npm install
+```
+
+5. Run the app:
+
+```
+npm start
+```
+
+6. Publish when you're ready:
 
 ```
 mdb publish
