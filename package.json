@@ -8,7 +8,7 @@
   "style": "dist/css/tw-elements-react.min.css",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist/*"
+    "dist/**/*"
   ],
   "scripts": {
     "start": "vite --open",
