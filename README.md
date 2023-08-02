@@ -1,4 +1,4 @@
-# Tailwind Elements React [<img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" width="45" align="right" alt="Tailwind-elements">](https://tailwind-elements.com/docs/react/)<a href="https://www.npmjs.com/package/tw-elements"><img src="https://img.shields.io/npm/dt/tw-elements.svg" alt="Total Downloads"></a> <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/releases"><img src="https://img.shields.io/npm/v/tw-elements.svg" alt="Latest Release"></a> <a href="https://twitter.com/intent/tweet/?text=Thanks+@TailwindElement+for+creating+an+amazing+collection+of+open+source+components+for+@tailwindcss%20https://tailwind-elements.com/docs/react/&hashtags=tailwindCSS,bootstrap,webdesign,react,100DaysOfCode,DevCommunity"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Let%20us%20know%20you%20were%20here%21&"></a>
+# Tailwind Elements React [<img src="https://tecdn.b-cdn.net/img/logo/te-react-logo.webp" width="45" align="right" alt="Tailwind-elements">](https://tailwind-elements.com/docs/react/)<a href="https://www.npmjs.com/package/tw-elements"><img src="https://img.shields.io/npm/dt/tw-elements.svg" alt="Total Downloads"></a> <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/releases"><img src="https://img.shields.io/npm/v/tw-elements.svg" alt="Latest Release"></a> <a href="https://twitter.com/intent/tweet/?text=Thanks+@TailwindElement+for+creating+an+amazing+collection+of+open+source+components+for+@tailwindcss%20https://tailwind-elements.com/docs/react/&hashtags=tailwindCSS,bootstrap,webdesign,react,100DaysOfCode,DevCommunity"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Let%20us%20know%20you%20were%20here%21&"></a>
 
 Tailwind Elements React is a huge collection of free, interactive React components for Tailwind CSS.
 
@@ -7,7 +7,7 @@ Tailwind Elements React is a huge collection of free, interactive React componen
     <tr>
       <td>
           <a href="https://tailwind-elements.com/docs/react/" alt="Tailwind Elements tutorials" rel="dofollow">
-          		<img width="600" src="https://tecdn.b-cdn.net/img/components-big.jpg">
+          		<img width="600" src="https://tecdn.b-cdn.net/img/react-big.jpg">
           </a>
       </td>
       <td>    
