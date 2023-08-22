@@ -70,7 +70,8 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
-
+import ProductOverviewPage from "./pages/ecommerce/product-overview/ProductOverviewPage";
+import ProductListPage from "./pages/ecommerce/product-list/ProductListPage";
 interface Pages {
   name: string;
   path: string;
@@ -138,7 +139,10 @@ const componentsPages: Pages[] = [
     element: <AccordionPage />,
   },
 ];
-
+const ecommercePages: Pages[]=[
+  { name: "productoverview", path: "/ecommerce/productoverview", element: <ProductOverviewPage /> },
+  { name: "productlist", path: "/ecommerce/productlist", element: <ProductListPage /> },
+]
 const contentStylesPages: Pages[] = [
   { name: "images", path: "/content-styles/images", element: <ImagesPage /> },
   { name: "icons", path: "/content-styles/icons", element: <IconsPage /> },
@@ -264,6 +268,10 @@ const demoPages: PagesSection[] = [
   {
     section: "components",
     pages: componentsPages,
+  },
+  {
+    section: "ecommerce",
+    pages: ecommercePages,
   },
   {
     section: "content styles",
