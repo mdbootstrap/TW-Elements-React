@@ -1,0 +1,419 @@
+---
+---
+
+<!-- Section: Docs content-->
+<section>
+  <!--Section: Import-->
+  <section id="api-section-import">
+    <!--Title-->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal text-gray-800 dark:text-gray-200"
+      id="import"
+      data-te-spy-item>
+      Import
+    </h2>
+
+    <!--Section: Code-->
+    {{< twsnippet/no-demo id="api-example41" >}}
+    <section class="!visible hidden" data-te-collapse-item id="api-example41">
+      <div class="pt-4">
+        {{< twsnippet/wrapper "javascript" >}}
+        <!-- prettier-ignore -->
+        {{< twsnippet/code active=true lang="js" >}}
+        import { TETooltip } from "tw-elements-react";
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!--Section: Code-->
+  </section>
+  <!--Section: Import-->
+
+  <hr class="mb-5 dark:border-gray-600" />
+
+  <!-- Section: Options-->
+  <section id="api-section-properties">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Properties
+    </h2>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TETooltip
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>disableMouseDown</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>false</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Disables mousedown event.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>options</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   Object
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Allows to change the default Popper config, <a href='https://popper.js.org/docs/v2/modifiers/' class="text-primary dark:text-primary-400">see Popper's configuration</a>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>placement</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'top'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets the position of the tooltip. Available properties: <code>"top"
+                        | "auto"
+                        | "auto-start"
+                        | "auto-end"
+                        | "bottom"
+                        | "right"
+                        | "left"
+                        | "top-start"
+                        | "top-end"
+                        | "bottom-start"
+                        | "bottom-end"
+                        | "right-start"
+                        | "right-end"
+                        | "left-start"
+                        | "left-end"</code> 
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'button'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Define tag of the wrapper element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>title</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String / HTML
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines the tooltip text.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tooltipTag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'div'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Define tag of the <code>TETooltip</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>wrapperClass</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Add custom class to the tooltip wrapper.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>wrapperProps</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Object
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Add custom properties to the tooltip wrapper.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Properties-->
+
+  <hr class="my-5 dark:border-neutral-600" />
+  <!-- Section: Classes-->
+  <section id="api-section-classes">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Classes
+    </h2>
+
+    <p class="mb-3">Custom classes can be passed via <code>theme</code> prop. Create an object with classes like below and pass it to the prop.</p>
+    
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>fade</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    transition-opacity ease-linear motion-reduce:transition-none
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets animation effect for the tooltip.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>tooltip</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    z-[1080] block p-1 not-italic font-normal no-underline underline-offset-auto normal-case leading-6 tracking-normal break-normal whitespace-normal
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets the default tooltip classes.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>tooltipInner</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    text-sm max-w-[200px] py-1.5 px-4 text-white text-center bg-[#6d6d6d] rounded-[0.25rem]
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets the default tooltip inner classes.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Classes-->
+
+  <hr class="my-5 dark:border-neutral-600" />
+
+  <!-- Section: Events-->
+  <section id="api-section-events">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Events
+    </h2>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Event type
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onHide</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This event is fired immediately when the hide method has been called.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onShow</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This event fires immediately when the show instance method is called.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Code-->
+    {{< twsnippet/no-demo id="api-example6" >}}
+    <section
+      class="!visible hidden"
+      data-te-collapse-item
+      id="api-example6">
+      <!-- prettier-ignore -->
+      <div class="pt-4">
+        {{< twsnippet/wrapper "JSX" >}}
+        {{< twsnippet/code active=true lang="jsx" >}}
+        import React from "react";
+        import { TETooltip } from "tw-elements-react";
+        
+        export default function TooltipEventsExample(): JSX.Element {
+          return (
+            <div className="text-center">
+              <TETooltip
+                title="Hi! I'm a tooltip!"
+                onShow={() => console.log("show")}
+                wrapperClass="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+              >
+                Tooltip
+              </TETooltip>
+            </div>
+          );
+        }        
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!-- Section: Code-->
+    <!-- Section: Events-->
+  </section>
+  <!-- Section: Docs content-->
+</section>
