@@ -1,4 +1,4 @@
-const tooltipTheme = {
+const TooltipTheme = {
   tooltip:
     "z-[1080] block p-1 not-italic font-normal no-underline underline-offset-auto normal-case leading-6 tracking-normal break-normal whitespace-normal",
   tooltipInner:
@@ -6,4 +6,4 @@ const tooltipTheme = {
   fade: "transition-opacity ease-linear motion-reduce:transition-none",
 };
 
-export default tooltipTheme;
+export default TooltipTheme;

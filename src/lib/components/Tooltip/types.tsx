@@ -2,7 +2,7 @@ import { SyntheticEvent } from "react";
 import { BaseComponent } from "../../types/BaseComponent";
 import { placement } from "../../../types/placement";
 
-interface CollapseTheme {
+interface TooltipTheme {
   tooltip?: string;
   tooltipInner?: string;
   fade?: string;
@@ -17,7 +17,7 @@ interface TooltipProps extends BaseComponent {
   title?: React.ReactNode;
   wrapperProps?: Record<string, unknown>;
   wrapperClass?: string;
-  theme?: CollapseTheme;
+  theme?: TooltipTheme;
   onShow?: (e: SyntheticEvent) => any;
   onHide?: (e: SyntheticEvent) => any;
   onMouseEnter?: (e: SyntheticEvent) => any;
