@@ -222,7 +222,7 @@ const TERipple: React.FC<RippleProps> = React.forwardRef<
 
     const getRoundedClasses = () => {
       // prettier-ignore
-      if (!children || !React.isValidElement(children) || Array.isArray(children)) {
+      if (!children || !React.isValidElement(children) || Array.isArray(children) || !children.props.className) {
         return [];
       }
 
