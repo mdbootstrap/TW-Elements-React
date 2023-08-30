@@ -46,6 +46,7 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import PopoverPage from "./pages/components/popover/PopoverPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -70,6 +71,7 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import PopoverExamples from "./pages/components/popover/exampleList";
 
 interface Pages {
   name: string;
@@ -136,6 +138,11 @@ const componentsPages: Pages[] = [
     name: "accordion",
     path: "/components/accordion",
     element: <AccordionPage />,
+  },
+  {
+    name: "popover",
+    path: "/components/popover",
+    element: <PopoverPage />,
   },
 ];
 
@@ -315,6 +322,7 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...PopoverExamples,
 ];
 
 export default demoPages;
