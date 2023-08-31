@@ -46,19 +46,19 @@ menu:
         return (
           <div className="text-center">
             <p className="mb-0">
-              Hover the link to see the{" "}
+              Hover the link to see the
               <TETooltip
                 tag="a"
                 title="Hi! I'm a tooltip!"
-                wrapperProps={{ href: "!#" }}
-                wrapperClass="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600 pointer-events-auto cursor-pointer"
+                wrapperProps={{ href: '#' }}
+                className="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600 pointer-events-auto cursor-pointer"
               >
                 tooltip
               </TETooltip>
             </p>
           </div>
         );
-      }          
+      }      
       {{< /twsnippet/code >}}
       {{< /twsnippet/wrapper >}}
     </div>
@@ -404,31 +404,31 @@ menu:
       
       export default function TooltipFourDirections(): JSX.Element {
         return (
-          <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-1 justify-center">
+          <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-1 justify-center items-center">
             <TETooltip
               title="Tooltip on top"
-              wrapperClass="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+              className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
             >
               Tooltip on top
             </TETooltip>
             <TETooltip
               title="Tooltip on right"
               placement="right"
-              wrapperClass="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+              className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
             >
               Tooltip on right
             </TETooltip>
             <TETooltip
               title="Tooltip on bottom"
               placement="bottom"
-              wrapperClass="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+              className="max-w-[180px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
             >
               Tooltip on bottom
             </TETooltip>
             <TETooltip
               title="Tooltip on left"
               placement="left"
-              wrapperClass="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+              className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
             >
               Tooltip on left
             </TETooltip>
@@ -459,20 +459,20 @@ menu:
       
       export default function TooltipWithHTML(): JSX.Element {
         return (
-          <>
+          <div className="flex justify-center items-center">
             <TETooltip
-              wrapperClass="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
               title={
                 <>
                   <em>Tooltip</em> <u>with</u> <b>HTML</b>
                 </>
               }
+              className="rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
             >
               Tooltip with HTML
             </TETooltip>
-          </>
+          </div>
         );
-      }        
+      }      
       {{< /twsnippet/code >}}
       {{< /twsnippet/wrapper >}}
     </div>
@@ -518,7 +518,7 @@ menu:
             <TETooltip
               title="Disabled tooltip"
               tag="span"
-              wrapperClass="inline-block"
+              className="inline-block"
               tabIndex={0}
             >
               <button

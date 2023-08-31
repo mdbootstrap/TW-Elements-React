@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
-import { BaseComponent } from "../../types/BaseComponent";
-import { placement } from "../../../types/placement";
+import { BaseComponent } from "../../types/baseComponent";
+import { placement } from "../../types/placement";
 
 interface TooltipTheme {
   tooltip?: string;
@@ -16,7 +16,7 @@ interface TooltipProps extends BaseComponent {
   tooltipTag?: React.ComponentProps<any>;
   title?: React.ReactNode;
   wrapperProps?: Record<string, unknown>;
-  wrapperClass?: string;
+  tooltipClassName?: string;
   theme?: TooltipTheme;
   onShow?: (e: SyntheticEvent) => any;
   onHide?: (e: SyntheticEvent) => any;

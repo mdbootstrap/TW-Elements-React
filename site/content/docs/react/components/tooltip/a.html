@@ -199,6 +199,24 @@
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tooltipClassName</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Add custom class to the tooltip element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
                     <code>tooltipTag</code>
                   </td>
                   <td
@@ -211,24 +229,6 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Define tag of the <code>TETooltip</code> element.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>wrapperClass</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    String
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>-</code>
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Add custom class to the tooltip wrapper.
                   </td>
                 </tr>
                 <tr
@@ -419,7 +419,7 @@
               <TETooltip
                 title="Hi! I'm a tooltip!"
                 onShow={() => console.log("show")}
-                wrapperClass="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+                className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
               >
                 Tooltip
               </TETooltip>

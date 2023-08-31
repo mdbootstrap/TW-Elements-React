@@ -7,7 +7,7 @@ export default function TooltipDisabled(): JSX.Element {
       <TETooltip
         title="Disabled tooltip"
         tag="span"
-        wrapperClass="inline-block"
+        className="inline-block"
         tabIndex={0}
       >
         <button

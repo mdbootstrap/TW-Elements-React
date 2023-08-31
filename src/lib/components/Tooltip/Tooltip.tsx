@@ -26,7 +26,7 @@ const TETooltip: React.FC<TooltipProps> = ({
   placement = "top",
   title,
   wrapperProps,
-  wrapperClass,
+  tooltipClassName,
   theme: customTheme,
   onShow,
   onHide,
@@ -50,7 +50,7 @@ const TETooltip: React.FC<TooltipProps> = ({
     theme.tooltip,
     theme.fade,
     isFaded ? "opacity-100" : "opacity-0",
-    className
+    tooltipClassName
   );
 
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
@@ -115,7 +115,7 @@ const TETooltip: React.FC<TooltipProps> = ({
   return (
     <>
       <Tag
-        className={wrapperClass}
+        className={className}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         ref={setReferenceElement}
