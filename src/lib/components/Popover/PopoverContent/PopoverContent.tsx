@@ -9,29 +9,51 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React from "react";
+import React, { useContext } from "react";
+import ReactDOM from "react-dom";
 import clsx from "clsx";
-import type { PopoverHeaderProps } from "./types";
-import PopoverHeaderTheme from "./PopoverHeaderTheme";
+import type { PopoverContentProps } from "../PopoverContent/types";
+import { PopoverContext } from "../context/PopoverContext";
+import PopoverContentTheme from "./PopoverContentTheme";
 
-const TEPopoverHeader: React.FC<PopoverHeaderProps> = ({
+const TEPopoverContent: React.FC<PopoverContentProps> = ({
   className,
   children,
-  tag: Tag = "h3",
   theme: customTheme,
-  ...props
+  popperStyle,
+  popperTag: PopperTag = "div",
 }): JSX.Element => {
+  const { attachELements, isOpenState, setPopperElement, styles, attributes } =
+    useContext(PopoverContext);
+
   const theme = {
-    ...PopoverHeaderTheme,
+    ...PopoverContentTheme,
     ...customTheme,
   };
-  const classes = clsx(theme.popoverHeader, className);
+
+  const classes = clsx(
+    theme.popoverContent,
+    theme.fade,
+    attachELements && isOpenState ? "opacity-100" : "opacity-0",
+    className
+  );
 
   return (
-    <Tag className={classes} {...props}>
-      {children}
-    </Tag>
+    <>
+      {(attachELements || isOpenState) &&
+        ReactDOM.createPortal(
+          <PopperTag
+            className={classes}
+            ref={setPopperElement}
+            style={{ ...styles.popper, ...popperStyle }}
+            {...attributes.popper}
+          >
+            {children}
+          </PopperTag>,
+          document.body
+        )}
+    </>
   );
 };
 
-export default TEPopoverHeader;
+export default TEPopoverContent;

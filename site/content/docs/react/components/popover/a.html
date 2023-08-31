@@ -20,7 +20,13 @@
         {{< twsnippet/wrapper "javascript" >}}
         <!-- prettier-ignore -->
         {{< twsnippet/code active=true lang="js" >}}
-        import { TEPopover, TEPopoverHeader, TEPopoverBody } from "tw-elements-react";
+        import {
+          TEPopover,
+          TEPopoverToggler,
+          TEPopoverContent,
+          TEPopoverHeader,
+          TEPopoverBody,
+        } from "tw-elements-react";
         {{< /twsnippet/code >}}
         {{< /twsnippet/wrapper >}}
       </div>
@@ -77,42 +83,6 @@
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>btnChildren</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    ReactNode
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>-</code>
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Render elements to button children.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>btnClassName</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    String
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>-</code>
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Add custom classes to button element.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
                     <code>dismiss</code>
                   </td>
                   <td
@@ -142,7 +112,7 @@
                     <code>false</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Set dismiss on the next click.
+                    Set open popover on mounted component.
                   </td>
                 </tr>
                 <tr
@@ -175,7 +145,7 @@
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>'top'</code>
+                    <code>'right'</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets the position of the tooltip. Available properties: <code>"top"
@@ -195,6 +165,122 @@
                         | "left-end"</code> 
                   </td>
                 </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'div'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEPopover</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEPopoverToggler
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'button'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEPopoverToggler</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEPopoverContent
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
@@ -424,7 +510,7 @@
 
     <h3
       class="mb-5 mt-3 text-2xl font-semibold leading-normal">
-      TEPopover
+      TEPopoverContent
     </h3>
 
     <div class="flex flex-col">
@@ -461,21 +547,21 @@
                     transition-opacity ease-linear motion-reduce:transition-none
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets animation effect for the popover.
+                    Sets animation effect for the popover content.
                   </td>
                 </tr>
                 <tr
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>popover</code>
+                    <code>popoverContent</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
                     z-[1070] p-1 block max-w-[267px] rounded break-words text-sm not-italic font-normal text-left no-underline underline-offset-auto normal-case leading-6 tracking-normal break-normal whitespace-normal dark:text-white data-[popper-reference-hidden='true']:hidden
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles to the popover element. 
+                    Sets styles to the popover content element. 
                   </td>
                 </tr>
               </tbody>
@@ -652,24 +738,35 @@
         {{< twsnippet/wrapper "JSX" >}}
         {{< twsnippet/code active=true lang="jsx" >}}
         import React from "react";
-        import { TEPopover, TEPopoverHeader, TEPopoverBody } from "tw-elements-react";
+        import {
+          TEPopover,
+          TEPopoverHeader,
+          TEPopoverBody,
+          TEPopoverToggler,
+          TEPopoverContent,
+          TERipple,
+        } from "tw-elements-react";
         
-        export default function PopoverEventsExample(): JSX.Element {
+        export default function PopoverBasicExample(): JSX.Element {
           return (
-            <div className="text-center">
-              <TEPopover
-                btnClassName="inline-block rounded bg-danger px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
-                btnChildren="Click to toggle popover"
-                onShow={() => console.log("Popover is shown")}
-              >
+            <TEPopover 
+              className="py-10 md:text-center"
+              onShow={() => console.log("Popover showed")}>
+              <TERipple rippleColor="light">
+                <TEPopoverToggler className="inline-block rounded bg-danger px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
+                  Click to toggle popover
+                </TEPopoverToggler>
+              </TERipple>
+        
+              <TEPopoverContent>
                 <TEPopoverHeader>Popover title</TEPopoverHeader>
                 <TEPopoverBody>
                   And here's some amazing content. It's very engaging. Right?
                 </TEPopoverBody>
-              </TEPopover>
-            </div>
+              </TEPopoverContent>
+            </TEPopover>
           );
-        }
+        }        
         {{< /twsnippet/code >}}
         {{< /twsnippet/wrapper >}}
       </div>

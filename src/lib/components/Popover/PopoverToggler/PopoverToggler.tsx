@@ -9,29 +9,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React from "react";
-import clsx from "clsx";
-import type { PopoverHeaderProps } from "./types";
-import PopoverHeaderTheme from "./PopoverHeaderTheme";
+import React, { useContext } from "react";
+import type { PopoverTogglerProps } from "./types";
+import { PopoverContext } from "../context/PopoverContext";
 
-const TEPopoverHeader: React.FC<PopoverHeaderProps> = ({
-  className,
+const TEPopoverToggler: React.FC<PopoverTogglerProps> = ({
   children,
-  tag: Tag = "h3",
-  theme: customTheme,
+  tag: Tag = "button",
   ...props
 }): JSX.Element => {
-  const theme = {
-    ...PopoverHeaderTheme,
-    ...customTheme,
-  };
-  const classes = clsx(theme.popoverHeader, className);
+  const { handleBtnClick, setReferenceElement } = useContext(PopoverContext);
 
   return (
-    <Tag className={classes} {...props}>
+    <Tag onClick={handleBtnClick} ref={setReferenceElement} {...props}>
       {children}
     </Tag>
   );
 };
 
-export default TEPopoverHeader;
+export default TEPopoverToggler;

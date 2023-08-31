@@ -80,10 +80,11 @@ const PopoverPage = () => {
         <p className="mb-3">
           Elements with the <code>disabled</code> attribute aren’t interactive,
           meaning users cannot focus, hover, or click them to trigger a popover
-          (or tootlip). As a workaround, you’ll want to trigger the popover from
-          a wrapper <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>,
-          ideally made keyboard-focusable using <code>tabIndex={0}</code>, and
-          override the <code>pointer-events</code> on the disabled element.
+          (or tootlip). As a workaround, you’ll want to trigger the{" "}
+          <code>TEPopoverToggler</code> from a wrapper <code>&lt;div&gt;</code>{" "}
+          or <code>&lt;span&gt;</code>, ideally made keyboard-focusable using{" "}
+          <code>tabIndex={0}</code>, and override the{" "}
+          <code>pointer-events</code> on the disabled element.
         </p>
 
         <PopoverDisabled />

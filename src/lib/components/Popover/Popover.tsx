@@ -9,29 +9,21 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import clsx from "clsx";
 import React, { useCallback, useEffect, useState } from "react";
 import type { PopoverProps } from "./types";
-import ReactDOM from "react-dom";
 import { usePopper } from "react-popper";
-import PopoverTheme from "./popoverTheme";
+import { PopoverContext } from "./context/PopoverContext";
 
 const TEPopover: React.FC<PopoverProps> = ({
-  className,
-  btnClassName,
-  btnChildren,
   children,
-  tag: Tag = "button",
+  tag: Tag = "div",
   onShow,
   onHide,
-  popperTag: PopperTag = "div",
   isOpen = false,
   placement = "right",
   dismiss = false,
   options,
-  poperStyle,
   onClick,
-  theme: customTheme,
   ...props
 }): JSX.Element => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement>();
@@ -42,20 +34,7 @@ const TEPopover: React.FC<PopoverProps> = ({
   });
   const [isOpenState, setIsOpenState] = useState<boolean>(isOpen ?? false);
   const [attachELements, setAttachELements] = useState(false);
-
   const [isClickOutside, setIsClickOutside] = useState(false);
-
-  const theme = {
-    ...PopoverTheme,
-    ...customTheme,
-  };
-
-  const classes = clsx(
-    theme.popover,
-    theme.fade,
-    attachELements && isOpenState ? "opacity-100" : "opacity-0",
-    className
-  );
 
   const handleBtnClick = (e: any) => {
     if (isOpenState && !dismiss) {
@@ -118,29 +97,19 @@ const TEPopover: React.FC<PopoverProps> = ({
   }, [handleClickOutside, isOpenState]);
 
   return (
-    <>
-      <Tag
-        onClick={handleBtnClick}
-        className={btnClassName}
-        {...props}
-        ref={setReferenceElement}
-      >
-        {btnChildren}
-      </Tag>
-
-      {(attachELements || isOpenState) &&
-        ReactDOM.createPortal(
-          <PopperTag
-            className={classes}
-            ref={setPopperElement}
-            style={{ ...styles.popper, ...poperStyle }}
-            {...attributes.popper}
-          >
-            {children}
-          </PopperTag>,
-          document.body
-        )}
-    </>
+    <PopoverContext.Provider
+      value={{
+        handleBtnClick,
+        setReferenceElement,
+        attachELements,
+        isOpenState,
+        setPopperElement,
+        styles,
+        attributes,
+      }}
+    >
+      <Tag {...props}>{children}</Tag>
+    </PopoverContext.Provider>
   );
 };
 
