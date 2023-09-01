@@ -80,6 +80,7 @@ import DropdownExamples from "./pages/components/dropdown/exampleList";
 import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
+import CarouselPage from "./pages/components/carousel/CarouselPage";
 
 interface Pages {
   name: string;
@@ -162,6 +163,11 @@ const componentsPages: Pages[] = [
     path: "/components/tooltip",
     element: <TooltipPage />,
   },
+  {
+    name: "carousel",
+    path: "/components/carousel",
+    element: <CarouselPage />
+  }
 ];
 
 const contentStylesPages: Pages[] = [
