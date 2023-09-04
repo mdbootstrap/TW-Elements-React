@@ -165,6 +165,12 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/textarea/",
+    "name": "Textarea",
+    "keywords": ["textarea"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/forms/form-templates/",
     "name": "Form templates",
     "keywords": ["form", "templates"],

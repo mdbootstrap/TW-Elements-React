@@ -11,6 +11,7 @@ import TETabs from "./navigation/tabs/Tabs";
 import TETabsItem from "./navigation/tabs/TabsItem/TabsItem";
 import TETabsContent from "./navigation/tabs/TabsContent/TabsContent";
 import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
+import TETextarea from "./forms/Textarea/Textarea";
 
 export {
   TECollapse,
@@ -26,4 +27,5 @@ export {
   TETabsItem,
   TETabsContent,
   TETabsPane,
+  TETextarea,
 };
