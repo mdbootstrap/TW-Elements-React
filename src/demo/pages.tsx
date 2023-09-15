@@ -46,6 +46,7 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import ChartPage from "./pages/data/chart/ChartPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -70,6 +71,7 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import ChartExamples from "./pages/data/chart/exampleList";
 
 interface Pages {
   name: string;
@@ -178,6 +180,7 @@ const contentStylesPages: Pages[] = [
 
 const dataPages: Pages[] = [
   { name: "tables", path: "/data/tables", element: <TablesPage /> },
+  { name: "chart", path: "/data/chart", element: <ChartPage /> },
 ];
 
 const formsPages: Pages[] = [
@@ -315,6 +318,7 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...ChartExamples,
 ];
 
 export default demoPages;
