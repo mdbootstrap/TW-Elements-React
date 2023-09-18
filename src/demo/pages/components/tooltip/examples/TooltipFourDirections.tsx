@@ -3,20 +3,22 @@ import { TETooltip } from "tw-elements-react";
 
 export default function TooltipFourDirections(): JSX.Element {
   return (
-    <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-1 justify-center items-center py-10">
+    <div className="grid grid-cols-1 place-items-center gap-1 text-center sm:gap-0 sm:flex sm:space-x-1 sm:justify-center">
       <TETooltip
         title="Tooltip on top"
         className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
       >
         Tooltip on top
       </TETooltip>
-      <TETooltip
-        title="Tooltip on right"
-        placement="right"
-        className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
-      >
-        Tooltip on right
-      </TETooltip>
+      <div className="w-full text-left sm:w-auto">
+        <TETooltip
+          title="Tooltip on right"
+          placement="right"
+          className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+        >
+          Tooltip on right
+        </TETooltip>
+      </div>
       <TETooltip
         title="Tooltip on bottom"
         placement="bottom"
@@ -24,13 +26,15 @@ export default function TooltipFourDirections(): JSX.Element {
       >
         Tooltip on bottom
       </TETooltip>
-      <TETooltip
-        title="Tooltip on left"
-        placement="left"
-        className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
-      >
-        Tooltip on left
-      </TETooltip>
+      <div className="w-full text-right sm:w-auto">
+        <TETooltip
+          title="Tooltip on left"
+          placement="left"
+          className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+        >
+          Tooltip on left
+        </TETooltip>
+      </div>
     </div>
   );
 }

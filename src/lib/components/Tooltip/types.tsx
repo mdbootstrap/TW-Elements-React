@@ -17,7 +17,7 @@ interface TooltipProps extends BaseComponent {
   wrapperProps?: Record<string, unknown>;
   tooltipClassName?: string;
   theme?: TooltipTheme;
-  container?: string;
+  container?: string | boolean;
   trigger?: "hover" | "click" | "focus";
   offset?: [number, number];
   fallbackPlacements?: placement[];
