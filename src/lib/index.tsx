@@ -12,8 +12,6 @@ import TETabsItem from "./navigation/tabs/TabsItem/TabsItem";
 import TETabsContent from "./navigation/tabs/TabsContent/TabsContent";
 import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
 import TEPopover from "./components/Popover/Popover";
-import TEPopoverHeader from "./components/Popover/PopoverHeader/PopoverHeader";
-import TEPopoverBody from "./components/Popover/PopoverBody/PopoverBody";
 import TEPopoverToggler from "./components/Popover/PopoverToggler/PopoverToggler";
 import TEPopoverContent from "./components/Popover/PopoverContent/PopoverContent";
 
@@ -32,8 +30,6 @@ export {
   TETabsContent,
   TETabsPane,
   TEPopover,
-  TEPopoverHeader,
-  TEPopoverBody,
   TEPopoverToggler,
   TEPopoverContent,
 };

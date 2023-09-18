@@ -1,7 +1,6 @@
 import React from "react";
 import {
   TEPopover,
-  TEPopoverBody,
   TEPopoverContent,
   TEPopoverToggler,
   TERipple,
@@ -9,7 +8,7 @@ import {
 
 export default function PopoverFourDirections(): JSX.Element {
   return (
-    <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-1 justify-center items-center py-24">
+    <div className="grid grid-cols-1 gap-1 text-center sm:gap-0 sm:flex sm:space-x-1 sm:justify-center py-24">
       <TEPopover placement="top">
         <TERipple rippleColor="light">
           <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
@@ -18,12 +17,12 @@ export default function PopoverFourDirections(): JSX.Element {
         </TERipple>
 
         <TEPopoverContent>
-          <TEPopoverBody className="rounded-t-lg">
+          <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
             Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-          </TEPopoverBody>
+          </div>
         </TEPopoverContent>
       </TEPopover>
-      <TEPopover placement="right">
+      <TEPopover placement="right" className="text-left">
         <TERipple rippleColor="light">
           <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
             Popover on right
@@ -31,9 +30,9 @@ export default function PopoverFourDirections(): JSX.Element {
         </TERipple>
 
         <TEPopoverContent>
-          <TEPopoverBody className="rounded-t-lg">
+          <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
             Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-          </TEPopoverBody>
+          </div>
         </TEPopoverContent>
       </TEPopover>
       <TEPopover placement="bottom">
@@ -44,12 +43,12 @@ export default function PopoverFourDirections(): JSX.Element {
         </TERipple>
 
         <TEPopoverContent>
-          <TEPopoverBody className="rounded-t-lg">
+          <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
             Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-          </TEPopoverBody>
+          </div>
         </TEPopoverContent>
       </TEPopover>
-      <TEPopover placement="left">
+      <TEPopover placement="left" className="text-right">
         <TERipple rippleColor="light">
           <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
             Popover on left
@@ -57,9 +56,9 @@ export default function PopoverFourDirections(): JSX.Element {
         </TERipple>
 
         <TEPopoverContent>
-          <TEPopoverBody className="rounded-t-lg">
+          <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
             Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-          </TEPopoverBody>
+          </div>
         </TEPopoverContent>
       </TEPopover>
     </div>

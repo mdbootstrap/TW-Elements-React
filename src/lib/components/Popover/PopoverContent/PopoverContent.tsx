@@ -22,6 +22,7 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
   theme: customTheme,
   popperStyle,
   popperTag: PopperTag = "div",
+  container = false,
 }): JSX.Element => {
   const { attachELements, isOpenState, setPopperElement, styles, attributes } =
     useContext(PopoverContext);
@@ -50,7 +51,7 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
           >
             {children}
           </PopperTag>,
-          document.body
+          container ? document.querySelector(container) : document.body
         )}
     </>
   );

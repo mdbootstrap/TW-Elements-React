@@ -22,19 +22,43 @@ const TEPopover: React.FC<PopoverProps> = ({
   isOpen = false,
   placement = "right",
   dismiss = false,
-  options,
+  popperConfig,
+  offset = [0, 0],
+  fallbackPlacements = ["top", "bottom", "right", "left"],
+  boundary = "clippingParents",
   onClick,
   ...props
 }): JSX.Element => {
+  const [isOpenState, setIsOpenState] = useState<boolean>(isOpen ?? false);
+  const [attachELements, setAttachElements] = useState(false);
+  const [isClickOutside, setIsClickOutside] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement>();
   const [popperElement, setPopperElement] = useState<HTMLElement>();
+
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement,
-    ...options,
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset,
+        },
+      },
+      {
+        name: "flip",
+        options: {
+          fallbackPlacements,
+        },
+      },
+      {
+        name: "preventOverflow",
+        options: {
+          boundary,
+        },
+      },
+    ],
+    ...popperConfig,
   });
-  const [isOpenState, setIsOpenState] = useState<boolean>(isOpen ?? false);
-  const [attachELements, setAttachELements] = useState(false);
-  const [isClickOutside, setIsClickOutside] = useState(false);
 
   const handleBtnClick = (e: any) => {
     if (isOpenState && !dismiss) {
@@ -79,7 +103,7 @@ const TEPopover: React.FC<PopoverProps> = ({
 
   useEffect(() => {
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
-      setAttachELements(isOpenState);
+      setAttachElements(isOpenState);
     }, 150);
 
     return () => {

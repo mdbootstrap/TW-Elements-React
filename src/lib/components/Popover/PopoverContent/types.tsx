@@ -9,6 +9,7 @@ interface PopoverContentProps extends BaseComponent {
   poperStyle?: React.CSSProperties;
   popperTag?: React.ComponentProps<any>;
   theme?: PopoverContentTheme;
+  container?: string | boolean;
 }
 
 export { PopoverContentProps };

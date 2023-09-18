@@ -42,8 +42,6 @@ menu:
       import React from "react";
       import {
         TEPopover,
-        TEPopoverHeader,
-        TEPopoverBody,
         TEPopoverToggler,
         TEPopoverContent,
         TERipple,
@@ -59,10 +57,12 @@ menu:
             </TERipple>
       
             <TEPopoverContent>
-              <TEPopoverHeader>Popover title</TEPopoverHeader>
-              <TEPopoverBody>
+              <h3 className="py-2 px-4 mb-0 shadow-[0_0px_3px_0_rgba(0,0,0,0.07)] bg-white bg-clip-padding rounded-t-lg border border-b-2 border-neutral-100 font-medium empty:hidden dark:border-x-0 dark:border-t-0 dark:border-neutral-500 dark:bg-neutral-700">
+                Popover title
+              </h3>
+              <div className="p-4 text-[#212529] rounded-b-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                 And here's some amazing content. It's very engaging. Right?
-              </TEPopoverBody>
+              </div>
             </TEPopoverContent>
           </TEPopover>
         );
@@ -99,10 +99,10 @@ menu:
         Triggering popovers on hidden elements will not work.
     </li>
     <li>
-        Popovers for <code>.disabled</code> or <code>disabled</code> elements must be triggered on a wrapper element.
+        Popovers for <code>disabled</code> elements must be triggered on a wrapper element.
     </li>
     <li>
-        When triggered from hyperlinks that span multiple lines, popovers will be centered. Use <code>whitespace-nowrap</code> class on your <code>&lt;a&gt;</code> to avoid this behavior.
+        When triggered from hyperlinks that span multiple lines, popovers will be centered. Use <code>whitespace-nowrap</code> class on your <code>&lt;a&gt;</code> elements to avoid this behavior.
     </li>
     <li>
         Popovers must be hidden before their corresponding elements have been removed from the DOM.
@@ -173,7 +173,7 @@ menu:
       <a
         data-te-toggle="tooltip"
         title="Share via Twitter"
-        href="https://twitter.com/intent/tweet?text=500%2B%20open-source%20components%20for%20%23TailwindCSS%20%F0%9F%A4%A9%0Ahttps%3A//tailwind-elements.com/%0A%0ACongrats%20%40MDBootstrap%20%40ascensus_mdb%20%40dawidadach%20for%20this%20awesome%20design%20collection!%0A%0AI%20will%20keep%20using%20it%20in%20my%20projects%20for%20sure!%0A%0A%23uiux%20%23webdevelopment%20%23HTML%20%23CSS%20%23design%20%23Webdesign%20%23programming%20"
+        href="https://twitter.com/intent/tweet?text=500%2B%20open-source%20components%20for%20%23TailwindCSS%20%F0%9F%A4%A9%0Ahttps%3A//tailwind-elements.com/%0A%0ACongrats%20%40TailwindElement%20%40ascensus_mdb%20%40dawidadach%20for%20this%20awesome%20design%20collection!%0A%0AI%20will%20keep%20using%20it%20in%20my%20projects%20for%20sure!%0A%0A%23uiux%20%23webdevelopment%20%23HTML%20%23CSS%20%23design%20%23Webdesign%20%23programming%20"
         target="_blank"
         class="mx-2 flex items-center">
         <svg
@@ -191,7 +191,7 @@ menu:
       <a
         data-te-toggle="tooltip"
         title="Share via Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tailwind-elements.com/docs/standard/components/accordion/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tailwind-elements.com/docs/standard/components/tooltip/"
         target="_blank"
         class="mx-2 flex items-center">
         <svg
@@ -404,7 +404,6 @@ menu:
       import React from "react";
       import {
         TEPopover,
-        TEPopoverBody,
         TEPopoverContent,
         TEPopoverToggler,
         TERipple,
@@ -412,7 +411,7 @@ menu:
       
       export default function PopoverFourDirections(): JSX.Element {
         return (
-          <div className="flex flex-col space-y-1 sm:flex-row sm:space-y-0 sm:space-x-1 justify-center items-center py-24">
+          <div className="flex space-x-1">
             <TEPopover placement="top">
               <TERipple rippleColor="light">
                 <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
@@ -421,9 +420,9 @@ menu:
               </TERipple>
       
               <TEPopoverContent>
-                <TEPopoverBody className="rounded-t-lg">
+                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                   Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </TEPopoverBody>
+                </div>
               </TEPopoverContent>
             </TEPopover>
             <TEPopover placement="right">
@@ -434,9 +433,9 @@ menu:
               </TERipple>
       
               <TEPopoverContent>
-                <TEPopoverBody className="rounded-t-lg">
+                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                   Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </TEPopoverBody>
+                </div>
               </TEPopoverContent>
             </TEPopover>
             <TEPopover placement="bottom">
@@ -447,9 +446,9 @@ menu:
               </TERipple>
       
               <TEPopoverContent>
-                <TEPopoverBody className="rounded-t-lg">
+                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                   Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </TEPopoverBody>
+                </div>
               </TEPopoverContent>
             </TEPopover>
             <TEPopover placement="left">
@@ -460,9 +459,9 @@ menu:
               </TERipple>
       
               <TEPopoverContent>
-                <TEPopoverBody className="rounded-t-lg">
+                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                   Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </TEPopoverBody>
+                </div>
               </TEPopoverContent>
             </TEPopover>
           </div>
@@ -510,8 +509,6 @@ menu:
       import React from "react";
       import {
         TEPopover,
-        TEPopoverHeader,
-        TEPopoverBody,
         TEPopoverToggler,
         TEPopoverContent,
         TERipple,
@@ -527,10 +524,10 @@ menu:
             </TERipple>
       
             <TEPopoverContent>
-              <TEPopoverHeader>Dismissible popover</TEPopoverHeader>
-              <TEPopoverBody>
-                And here's some amazing content. It's very engaging. Right?
-              </TEPopoverBody>
+              <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
+                Dismissible popover And here's some amazing content. It's very
+                engaging. Right?
+              </div>
             </TEPopoverContent>
           </TEPopover>
         );
@@ -574,7 +571,6 @@ menu:
       import React from "react";
       import {
         TEPopover,
-        TEPopoverBody,
         TEPopoverContent,
         TEPopoverToggler,
       } from "tw-elements-react";
@@ -593,7 +589,9 @@ menu:
             </TEPopoverToggler>
       
             <TEPopoverContent>
-              <TEPopoverBody className="rounded-t-lg">Disabled popover</TEPopoverBody>
+              <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
+                Disabled popover
+              </div>
             </TEPopoverContent>
           </TEPopover>
         );
@@ -642,7 +640,7 @@ menu:
   If you are looking for more advanced options, try
   <a
     class="text-primary dark:text-primary-400"
-    href="https://mdbootstrap.com/docs/standard/components/popovers/"
+    href="https://mdbootstrap.com/docs/react/components/popovers/"
     >Bootstrap Popover</a
   >
   from MDBootstrap.
