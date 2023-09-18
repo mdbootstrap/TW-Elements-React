@@ -9,8 +9,7 @@ interface TooltipTheme {
 }
 
 interface TooltipProps extends BaseComponent {
-  disableMouseDown?: boolean;
-  options?: Record<string, unknown>;
+  popperConfig?: Record<string, unknown>;
   placement?: placement;
   tag?: React.ComponentProps<any>;
   tooltipTag?: React.ComponentProps<any>;
@@ -18,8 +17,16 @@ interface TooltipProps extends BaseComponent {
   wrapperProps?: Record<string, unknown>;
   tooltipClassName?: string;
   theme?: TooltipTheme;
+  container?: string;
+  trigger?: "hover" | "click" | "focus";
+  offset?: [number, number];
+  fallbackPlacements?: placement[];
+  boundary?: "clippingParents" | "scrollParent" | "viewport" | "window";
+  enabled?: boolean;
   onShow?: (e: SyntheticEvent) => any;
+  onShown?: (e: SyntheticEvent) => any;
   onHide?: (e: SyntheticEvent) => any;
+  onHidden?: (e: SyntheticEvent) => any;
   onMouseEnter?: (e: SyntheticEvent) => any;
   onMouseLeave?: (e: SyntheticEvent) => any;
 }

@@ -9,7 +9,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, { useState, useEffect, useCallback, SyntheticEvent } from "react";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  SyntheticEvent,
+} from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
 import { usePopper } from "react-popper";
@@ -19,98 +25,169 @@ import tooltipTheme from "./tooltipTheme";
 const TETooltip: React.FC<TooltipProps> = ({
   className,
   children,
-  disableMouseDown = false,
   tag: Tag = "button",
   tooltipTag: TooltipTag = "div",
-  options,
+  popperConfig,
   placement = "top",
   title,
   wrapperProps,
   tooltipClassName,
   theme: customTheme,
+  container = false,
+  trigger = "hover focus",
+  offset = [0, 0],
+  fallbackPlacements = ["top", "right", "bottom", "left"],
+  boundary = "clippingParents",
+  enabled = true,
   onShow,
+  onShown,
   onHide,
+  onHidden,
   onMouseEnter,
   onMouseLeave,
   ...props
 }) => {
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
-  const [isOpenState, setIsOpenState] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const [isFaded, setIsFaded] = useState(false);
   const [isReadyToHide, setIsReadyToHide] = useState(false);
+  const popperElement = useRef(null);
+  const referenceElement = useRef(null);
 
   const theme = {
     ...tooltipTheme,
     ...customTheme,
   };
 
-  const classes = clsx(
+  const tooltipClasses = clsx(
     theme.tooltip,
     theme.fade,
     isFaded ? "opacity-100" : "opacity-0",
     tooltipClassName
   );
 
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement,
-    ...options,
-  });
+  const { styles, attributes } = usePopper(
+    referenceElement.current,
+    popperElement.current,
+    {
+      placement,
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset,
+          },
+        },
+        {
+          name: "flip",
+          options: {
+            fallbackPlacements,
+          },
+        },
+        {
+          name: "preventOverflow",
+          options: {
+            boundary,
+          },
+        },
+      ],
+      ...popperConfig,
+    }
+  );
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
     let secondTimer: ReturnType<typeof setTimeout>;
 
-    if (isOpenState || isClicked) {
+    if ((isOpen || isFocused) && enabled) {
       setIsReadyToHide(true);
-      timer = setTimeout(() => {
+      timer = setTimeout((e: SyntheticEvent) => {
         setIsFaded(true);
+        if (trigger !== "focus") {
+          !isFocused && onShown?.(e);
+        } else {
+          onShown?.(e);
+        }
       }, 4);
     } else {
       setIsFaded(false);
-
-      secondTimer = setTimeout(() => {
+      secondTimer = setTimeout((e: SyntheticEvent) => {
         setIsReadyToHide(false);
+        isFaded && onHidden?.(e);
       }, 300);
     }
     return () => {
       clearTimeout(timer);
       clearTimeout(secondTimer);
     };
-  }, [isOpenState, isClicked]);
+  }, [isOpen, isFocused, enabled]);
 
   const handleOnMouseEnter = (e: SyntheticEvent) => {
-    onShow?.(e);
-    !e.defaultPrevented && setIsOpenState(true);
     onMouseEnter?.(e);
+    if (
+      enabled === false ||
+      (isFocused === false && trigger === "focus") ||
+      trigger === "click" ||
+      (trigger.includes("focus") &&
+        trigger.includes("click") &&
+        !trigger.includes("hover"))
+    ) {
+      return;
+    }
+    !isFocused && onShow?.(e);
+    !e.defaultPrevented && setIsOpen(true);
   };
 
   const handleOnMouseLeave = (e: SyntheticEvent) => {
-    onHide?.(e);
-    !e.defaultPrevented && setIsOpenState(false);
     onMouseLeave?.(e);
+    if (
+      enabled === false ||
+      (isFocused === true && trigger === "focus") ||
+      !isOpen ||
+      (trigger.includes("focus") &&
+        trigger.includes("click") &&
+        !trigger.includes("hover"))
+    ) {
+      return;
+    }
+    !isFocused && onHide?.(e);
+    !e.defaultPrevented && setIsOpen(false);
   };
 
   const handleClick = useCallback(
-    (e: MouseEvent) => {
-      if (e.target === referenceElement) {
-        setIsClicked(true);
-      } else {
-        setIsClicked(false);
+    (e: MouseEvent | SyntheticEvent) => {
+      if (trigger.includes("click") || trigger.includes("focus")) {
+        if (e.target === referenceElement.current) {
+          if (trigger.includes("focus")) {
+            !isFocused && !isOpen && onShow?.(e);
+            setIsFocused(true);
+          } else if (trigger.includes("click")) {
+            !isOpen && onShow?.(e);
+            setIsOpen(true);
+          }
+        } else {
+          if (trigger.includes("focus")) {
+            isFocused && onHide?.(e);
+            setIsFocused(false);
+          } else if (trigger.includes("click")) {
+            isOpen && onHide?.(e);
+            setIsOpen(false);
+          }
+        }
       }
     },
-    [referenceElement]
+    [referenceElement, trigger, isOpen, isFocused]
   );
 
   useEffect(() => {
-    if (!disableMouseDown) {
-      document.addEventListener("mousedown", handleClick);
-      return () => {
-        document.removeEventListener("mousedown", handleClick);
-      };
+    if (!enabled) {
+      return;
     }
-  }, [handleClick, disableMouseDown]);
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, [handleClick, enabled]);
 
   return (
     <>
@@ -118,7 +195,7 @@ const TETooltip: React.FC<TooltipProps> = ({
         className={className}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
-        ref={setReferenceElement}
+        ref={referenceElement}
         {...wrapperProps}
       >
         {children}
@@ -127,8 +204,8 @@ const TETooltip: React.FC<TooltipProps> = ({
       {isReadyToHide &&
         ReactDOM.createPortal(
           <TooltipTag
-            ref={setPopperElement}
-            className={classes}
+            ref={popperElement}
+            className={tooltipClasses}
             style={styles.popper}
             {...attributes.popper}
             role="tooltip"
@@ -136,7 +213,7 @@ const TETooltip: React.FC<TooltipProps> = ({
           >
             <div className={theme.tooltipInner}>{title}</div>
           </TooltipTag>,
-          document.body
+          container ? document.querySelector(container) : document.body
         )}
     </>
   );
