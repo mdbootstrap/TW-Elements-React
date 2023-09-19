@@ -45,12 +45,15 @@ menu:
       
       export default function InputBasicExample(): JSX.Element {
         return (
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
               <TEInput
                 type="text"
                 id="exampleFormControlInput1"
                 label="Example label"
-                ></TEInput>
-              
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -372,7 +375,7 @@ menu:
   <!-- Title -->
   <h2
     class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="size"
+    id="sizing"
     data-te-spy-item
   >
     Sizing
@@ -396,8 +399,9 @@ menu:
       
       export default function InputSizing(): JSX.Element {
         return (
+          <div className="flex justify-center pt-6">
             <div>
-              <div className="relative mb-3 xl:w-96">
+              <div className="relative mb-3 xl:w">
                 <TEInput
                   type="text"
                   id="exampleFormControlInput2"
@@ -422,6 +426,7 @@ menu:
                 ></TEInput>
               </div>
             </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -460,14 +465,18 @@ menu:
       
       export default function InputDisabled(): JSX.Element {
         return (
-            <TEInput
-              type="text"
-              id="exampleFormControlInput5"
-              label="Disabled input"
-              disabled
-            ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="text"
+                id="exampleFormControlInput5"
+                label="Disabled input"
+                disabled
+              ></TEInput>
+            </div>
+          </div>
         );
-      }
+      }      
       {{< /twsnippet/code >}}
       {{< /twsnippet/wrapper >}}
     </div>
@@ -505,13 +514,17 @@ menu:
       
       export default function InputReadOnly(): JSX.Element {
         return (
-            <TEInput
-              type="text"
-              id="exampleFormControlInput50"
-              label="Readonly input"
-              value="Readonly input here..."
-              readOnly
-            ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="text"
+                id="exampleFormControlInput50"
+                label="Readonly input"
+                value="Readonly input here..."
+                readOnly
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -550,11 +563,15 @@ menu:
       
       export default function InputText(): JSX.Element {
         return (
-          <TEInput
-            type="text"
-            id="exampleFormControlInputText"
-            label="Text input"
-          ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="text"
+                id="exampleFormControlInputText"
+                label="Text input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -594,11 +611,15 @@ menu:
       
       export default function InputEmail(): JSX.Element {
         return (
-            <TEInput
-              type="email"
-              id="exampleFormControlInputEmail"
-              label="Email input"
-            ></TEInput>   
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="email"
+                id="exampleFormControlInputEmail"
+                label="Email input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -637,11 +658,15 @@ menu:
       
       export default function InputPassword(): JSX.Element {
         return (
-            <TEInput
-              type="password"
-              id="exampleFormControlInputPassword"
-              label="Password input"
-            ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="password"
+                id="exampleFormControlInputPassword"
+                label="Password input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -679,12 +704,16 @@ menu:
       import { TEInput } from "tw-elements-react";
       
       export default function InputNumber(): JSX.Element {
-        return (       
-          <TEInput
-            type="number"
-            id="exampleFormControlInputNumber"
-            label="Number input"
-          ></TEInput>
+        return (
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="number"
+                id="exampleFormControlInputNumber"
+                label="Number input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -723,11 +752,15 @@ menu:
       
       export default function InputPhoneNumber(): JSX.Element {
         return (
-          <TEInput
-            type="tel"
-            id="exampleFormControlInputTel"
-            label="Phone input"
-          ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="tel"
+                id="exampleFormControlInputTel"
+                label="Phone input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -766,11 +799,15 @@ menu:
       
       export default function InputURL(): JSX.Element {
         return (
-          <TEInput
-            type="url"
-            id="exampleFormControlInputURL"
-            label="URL input"
-          ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="url"
+                id="exampleFormControlInputURL"
+                label="URL input"
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -812,15 +849,15 @@ menu:
       
       export default function InputHelperText(): JSX.Element {
         return (
-              <TEInput
-                type="text"
-                id="exampleFormControlInputHelper"
-                label="Input"
-              >
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput type="text" id="exampleFormControlInputHelper" label="Input">
                 <div className="absolute w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary">
                   Text helper
                 </div>
               </TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
@@ -860,13 +897,17 @@ menu:
       
       export default function InputCharacterCounter(): JSX.Element {
         return (
-          <TEInput
-            type="text"
-            id="exampleFormControlInputCounter"
-            label="Example label"
-            counter
-            maxLength={20}
-          ></TEInput>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96 pt-5">
+              <TEInput
+                type="text"
+                id="exampleFormControlInputCounter"
+                label="Example label"
+                counter
+                maxLength={20}
+              ></TEInput>
+            </div>
+          </div>
         );
       }      
       {{< /twsnippet/code >}}
