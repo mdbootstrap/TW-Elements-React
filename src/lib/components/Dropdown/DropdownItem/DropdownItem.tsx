@@ -12,57 +12,36 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 import React, { useContext, MouseEvent } from "react";
 import { DropdownItemProps } from "./types";
 import { DropdownContext } from "../context/DropdownContext";
-import DropdownItemTheme from "./DrodpownItemTheme";
-import { DrodpownItemChild } from "./DropdownItemChild/DropdownItemChild";
 
 const TEDropdownItem: React.FC<DropdownItemProps> = ({
   tag: Tag = "li",
-  className,
-  theme: customTheme,
-  childTag: ChildTag,
   onClick,
-  link,
-  linkClasses,
-  divider,
-  header,
-  disabled,
   children,
-  href,
   preventCloseOnClick,
   ...props
 }) => {
-  const theme = {
-    ...customTheme,
-    ...DropdownItemTheme,
-  };
-
-  const { setIsOpenState, onHide, setActiveIndex } =
+  const { autoClose, setIsOpenState, onHide, onHidden, setActiveIndex } =
     useContext(DropdownContext);
 
   const handleClose = (e: MouseEvent<HTMLElement>) => {
-    onHide?.(e);
-    onClick?.(e);
-    if (disabled || preventCloseOnClick || e.defaultPrevented) {
+    if (preventCloseOnClick || e.defaultPrevented) {
       return;
     }
 
-    setTimeout(() => setActiveIndex(-1), 300);
-    setIsOpenState(false);
+    if (autoClose === true || autoClose === "inside") {
+      onHide?.(e);
+      onClick?.(e);
+
+      setTimeout(() => {
+        setActiveIndex(-1), onHidden?.(e);
+      }, 300);
+      setIsOpenState(false);
+    }
   };
 
   return (
-    <Tag onClick={handleClose} className={className} {...props}>
-      <DrodpownItemChild
-        className={linkClasses}
-        theme={theme}
-        link={link}
-        href={href}
-        childTag={ChildTag}
-        children={children}
-        divider={divider}
-        header={header}
-        disabled={disabled}
-      />
+    <Tag onClick={handleClose} {...props}>
+      {children}
     </Tag>
   );
 };

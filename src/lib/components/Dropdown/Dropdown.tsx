@@ -9,7 +9,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import type { DropdownProps } from "./types";
 import { DropdownContext } from "./context/DropdownContext";
@@ -21,9 +21,12 @@ const TEDropdown: React.FC<DropdownProps> = ({
   animation = true,
   isOpen = false,
   onHide,
+  onHidden,
   onShow,
+  onShown,
   children,
-  options,
+  autoClose = true,
+  alwaysOpen,
   theme: customTheme,
   ...props
 }) => {
@@ -33,6 +36,10 @@ const TEDropdown: React.FC<DropdownProps> = ({
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
+
+  useEffect(() => {
+    setIsOpenState(isOpen);
+  }, [isOpen]);
 
   const theme = {
     ...customTheme,
@@ -52,9 +59,12 @@ const TEDropdown: React.FC<DropdownProps> = ({
         popperElement,
         setIsOpenState,
         referenceElement,
-        options,
+        autoClose,
+        alwaysOpen,
         onHide,
+        onHidden,
         onShow,
+        onShown,
       }}
     >
       <Tag className={classes} {...props}>

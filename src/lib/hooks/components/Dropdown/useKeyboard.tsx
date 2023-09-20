@@ -15,8 +15,15 @@ import { isHtmlElement } from "../../../components/Dropdown/helpers/typeguards";
 import { DropdownContext } from "../../../components/Dropdown/context/DropdownContext";
 
 export const useKeyboard = (children: ReactElement[] | ReactElement) => {
-  const { activeIndex, isOpenState, setIsOpenState, setActiveIndex, onHide } =
-    useContext(DropdownContext);
+  const {
+    activeIndex,
+    autoClose,
+    isOpenState,
+    setIsOpenState,
+    setActiveIndex,
+    onHide,
+    onHidden,
+  } = useContext(DropdownContext);
 
   const handleKeyboard = useCallback(
     (e: KeyboardEvent) => {
@@ -60,9 +67,9 @@ export const useKeyboard = (children: ReactElement[] | ReactElement) => {
         setActiveIndex((prev) => (skip ? prev + 2 : prev + 1));
       }
 
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && (autoClose === true || autoClose === "inside")) {
         const el: HTMLElement | null = document.querySelector(
-          '[data-active="true"]'
+          '[data-te-active="true"]'
         );
         const child = el?.firstElementChild as HTMLElement | null | undefined;
 
@@ -76,20 +83,32 @@ export const useKeyboard = (children: ReactElement[] | ReactElement) => {
           return;
         }
         setIsOpenState(false);
-        setTimeout(() => setActiveIndex(-1), 300);
+        setTimeout(() => {
+          setActiveIndex(-1), onHidden?.(e);
+        }, 300);
       }
 
-      if (e.key === "Escape") {
+      if (e.key === "Escape" && autoClose === true) {
         onHide?.(e);
         if (e.defaultPrevented) {
           return;
         }
 
         setIsOpenState(false);
-        setTimeout(() => setActiveIndex(-1), 300);
+        setTimeout(() => {
+          setActiveIndex(-1), onHidden?.(e);
+        }, 300);
       }
     },
-    [children, setIsOpenState, setActiveIndex, activeIndex, onHide]
+    [
+      children,
+      setIsOpenState,
+      setActiveIndex,
+      activeIndex,
+      autoClose,
+      onHide,
+      onHidden,
+    ]
   );
 
   useEffect(() => {
@@ -106,7 +125,7 @@ export const useKeyboard = (children: ReactElement[] | ReactElement) => {
 
   useEffect(() => {
     const el: HTMLElement | null = document.querySelector(
-      '[data-active="true"]'
+      '[data-te-active="true"]'
     );
     const child = el?.firstElementChild as HTMLElement | null | undefined;
 

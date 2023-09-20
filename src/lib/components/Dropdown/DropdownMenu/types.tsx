@@ -10,7 +10,6 @@ interface DropdownMenuTheme {
 export interface DropdownMenuProps extends BaseComponent {
   appendToBody?: boolean;
   responsive?:
-    | ""
     | "sm-start"
     | "md-start"
     | "lg-start"
@@ -21,10 +20,12 @@ export interface DropdownMenuProps extends BaseComponent {
     | "lg-end"
     | "xl-end"
     | "xxl-end";
-  position?: "" | "dropup" | "dropright" | "dropleft";
-  alignment?: "" | "end";
+  position?: "dropup" | "dropright" | "dropleft";
+  alignment?: "start" | "end";
   tag?: ComponentProps<any>;
   children: ReactElement[] | ReactElement;
-  alwaysOpen?: boolean;
   theme?: DropdownMenuTheme;
+  popperConfig?: Record<string, unknown>;
+  display?: "dynamic" | "static";
+  offset?: [number, number] | (() => any);
 }

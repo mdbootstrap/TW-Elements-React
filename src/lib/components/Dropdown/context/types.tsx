@@ -11,6 +11,9 @@ export interface DropdownContextProps {
   setPopperElement: Dispatch<SetStateAction<HTMLElement | null>>;
   setReferenceElement: Dispatch<SetStateAction<HTMLElement | null>>;
   onHide?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
+  onHidden?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   onShow?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
-  options?: Record<string, unknown>;
+  onShown?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
+  autoClose?: boolean | string;
+  alwaysOpen?: boolean;
 }

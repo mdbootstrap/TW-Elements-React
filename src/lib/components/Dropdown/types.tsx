@@ -8,10 +8,13 @@ interface DropdownTheme {
 export interface DropdownProps extends BaseComponent {
   animation?: boolean;
   isOpen?: boolean;
-  options?: Record<string, unknown>;
   children?: ReactNode;
   tag?: ComponentProps<any>;
   theme?: DropdownTheme;
+  autoClose?: boolean | string;
+  alwaysOpen?: boolean;
   onHide?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
+  onHidden?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   onShow?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
+  onShown?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
 }

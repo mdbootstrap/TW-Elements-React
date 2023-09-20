@@ -32,11 +32,13 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
   tag: Tag = "ul",
   children,
   appendToBody = false,
-  alwaysOpen,
   theme: customTheme,
   responsive,
   position,
-  alignment,
+  alignment = "start",
+  popperConfig,
+  display = "dynamic",
+  offset = [0, 0],
   ...props
 }) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -53,7 +55,7 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     animation,
     referenceElement,
     popperElement,
-    options,
+    alwaysOpen,
   } = useContext(DropdownContext);
 
   const { show, isFadeIn, isFadeOut } = useFade();
@@ -103,15 +105,13 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
         ([key, value]) => responsive === key && windowWidth >= value
       );
 
-      return matchingBreakpoint && responsive?.endsWith("-end")
-        ? "end"
-        : "start";
+      return matchingBreakpoint
+        ? matchingBreakpoint?.[0].split("-")[1]
+        : alignment;
     };
 
-    if (responsive) {
-      setNewAlignment(responsiveAlignment());
-    }
-  }, [responsive, windowWidth]);
+    setNewAlignment(responsiveAlignment());
+  }, [responsive, alignment, windowWidth, newAlignment]);
 
   useEffect(() => {
     const calculatePlacement = () => {
@@ -123,7 +123,7 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
         return "left-start";
       }
 
-      const isEnd = (popperElement && alignment) || newAlignment === "end";
+      const isEnd = popperElement && newAlignment === "end";
 
       if (position === "dropup") {
         return isEnd ? "top-end" : "top-start";
@@ -135,24 +135,49 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     setPlacement(calculatePlacement());
   }, [position, alignment, newAlignment, popperElement]);
 
-  const { styles } = usePopper(referenceElement, popperElement, {
-    placement: placement,
-    modifiers: [flip],
-    ...options,
-  });
+  const { styles } = usePopper(
+    referenceElement,
+    popperElement,
+    display === "dynamic"
+      ? {
+          placement: placement,
+          modifiers: [
+            flip,
+            {
+              name: "offset",
+              options: {
+                offset,
+              },
+            },
+          ],
+          ...popperConfig,
+        }
+      : {
+          modifiers: [
+            {
+              name: "applyStyles",
+              enabled: false,
+            },
+          ],
+        }
+  );
 
   const menu = (
     <Tag
       className={classes}
       ref={setPopperElement}
-      style={{ position: "absolute", zIndex: 1000, ...styles.popper }}
-      alignment={responsive ? newAlignment : alignment}
+      style={{
+        position: "absolute",
+        zIndex: 1000,
+        ...(display === "dynamic" ? styles.popper : {}),
+      }}
+      alignment={newAlignment}
       {...props}
     >
       {Children.map(children, (child, idx) =>
         cloneElement(child, {
           tabIndex: idx,
-          "data-active": activeIndex === idx && true,
+          "data-te-active": activeIndex === idx && true,
         })
       )}
     </Tag>

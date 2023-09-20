@@ -24,21 +24,32 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
     setIsOpenState,
     setReferenceElement,
     isOpenState,
+    autoClose,
+    alwaysOpen,
     setActiveIndex,
     onHide,
+    onHidden,
     onShow,
+    onShown,
   } = useContext(DropdownContext);
 
   const handleOpenToggle = (e: MouseEvent<HTMLElement>) => {
     onClick?.(e);
+
+    if (isOpenState && (autoClose === "outside" || autoClose === "inside")) {
+      return;
+    }
+
     isOpenState ? onHide?.(e) : onShow?.(e);
 
-    if (e.defaultPrevented) {
+    if (e.defaultPrevented || alwaysOpen) {
       return;
     }
     setIsOpenState((prev) => !prev);
 
-    setTimeout(() => setActiveIndex(-1), 300);
+    setTimeout(() => {
+      setActiveIndex(-1), isOpenState ? onHidden?.(e) : onShown?.(e);
+    }, 300);
   };
 
   useClickOutside();

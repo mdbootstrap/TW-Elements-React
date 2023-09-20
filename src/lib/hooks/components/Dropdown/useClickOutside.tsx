@@ -20,7 +20,9 @@ export const useClickOutside = () => {
     setActiveIndex,
     popperElement,
     referenceElement,
+    autoClose,
     onHide,
+    onHidden,
   } = useContext(DropdownContext);
 
   const handleClickOutside = useCallback(
@@ -37,7 +39,9 @@ export const useClickOutside = () => {
       onHide?.(e);
       setIsOpenState(false);
 
-      setTimeout(() => setActiveIndex(-1), 300);
+      setTimeout(() => {
+        setActiveIndex(-1), onHidden?.(e);
+      }, 300);
     },
     [
       isOpenState,
@@ -46,12 +50,17 @@ export const useClickOutside = () => {
       popperElement,
       referenceElement,
       onHide,
+      onHidden,
     ]
   );
 
   useEffect(() => {
+    if (autoClose === false || autoClose === "inside") {
+      return;
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [handleClickOutside]);
+  }, [handleClickOutside, autoClose]);
 };
