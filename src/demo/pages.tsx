@@ -46,6 +46,8 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import AnimationsPage from "./pages/content-styles/animations/AnimationsPage";
+import AnimationsExtendedPage from "./pages/content-styles/animations-extended/AnimationsExtendedPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -70,6 +72,8 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import AnimationsExamples from "./pages/content-styles/animations/exampleList";
+import AnimationsExtendedExamples from "./pages/content-styles/animations-extended/exampleList";
 
 interface Pages {
   name: string;
@@ -173,6 +177,16 @@ const contentStylesPages: Pages[] = [
     name: "typography",
     path: "/content-styles/typography",
     element: <TypographyPage />,
+  },
+  {
+    name: "animations",
+    path: "/content-styles/animations",
+    element: <AnimationsPage />,
+  },
+  {
+    name: "animations extended",
+    path: "/content-styles/animations-extended",
+    element: <AnimationsExtendedPage />,
   },
 ];
 
@@ -315,6 +329,8 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...AnimationsExamples,
+  ...AnimationsExtendedExamples,
 ];
 
 export default demoPages;

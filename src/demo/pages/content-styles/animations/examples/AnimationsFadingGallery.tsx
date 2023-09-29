@@ -1,0 +1,73 @@
+import React from "react";
+import { TEAnimation } from "tw-elements-react";
+
+export default function AnimationsFadingGallery(): JSX.Element {
+  return (
+    <div className="grid grid-cols-3 gap-4">
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+        delay={300}
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+        delay={500}
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+        delay={300}
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+      <TEAnimation
+        animation="[fade-in_1s_ease-in-out]"
+        start="onScroll"
+        repeatOnScroll
+        delay={500}
+      >
+        <img
+          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          className="rounded"
+        />
+      </TEAnimation>
+    </div>
+  );
+}

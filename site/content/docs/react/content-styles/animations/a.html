@@ -1,0 +1,420 @@
+---
+---
+
+<!-- Section: Docs content-->
+<section>
+  <!--Section: Import-->
+  <section id="api-section-import">
+    <!--Title-->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal text-gray-800 dark:text-gray-200"
+      id="import"
+      data-te-spy-item>
+      Import
+    </h2>
+
+    <!--Section: Code-->
+    {{< twsnippet/no-demo id="api-example41" >}}
+    <section class="!visible hidden" data-te-collapse-item id="api-example41">
+      <div class="pt-4">
+        {{< twsnippet/wrapper "javascript" >}}
+        <!-- prettier-ignore -->
+        {{< twsnippet/code active=true lang="js" >}}
+        import { TEAnimation } from "tw-elements-react";
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!--Section: Code-->
+  </section>
+  <!--Section: Import-->
+
+  <hr class="mb-5 dark:border-gray-600" />
+
+  <!-- Section: Options-->
+  <section id="api-section-properties">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Properties
+    </h2>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEAnimation
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>animation</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    string 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets animation.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>animationRef</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    React.RefObject 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Refetence to <code>TEAnimation</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>delay</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    number
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set animation delay.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>interval</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    number
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set the time interval between animations.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>offset</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    number
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>0</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set offset for animate on scroll.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>repeat</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean | number
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>false</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set animation repeat - set <code>true</code> to repeat infinity or enter the number of times the animation should repeat.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>repeatOnScroll</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code></code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Start the animation each time the item appears on the screen. This option works only with animate on scroll.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>reset</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set to reset the animation after it finishes.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>reverse</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Plays animation forwards first, then backwards.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>showOnLoad</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Shows element and starts the animation when the page loads. This option works only with animate on scroll.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>start</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    string
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'onClick'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set how to run the animation - <code>onClick</code>, <code>onHover</code>, <code>onScroll</code> or <code>onLoad</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>toggle</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    boolean 
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>null</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Mannualy toggle the animation. Set <code>true</code> to start the animation or <code>false</code> to stop the animation. It only works when <code>start='manually'</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Properties-->
+
+  <hr class="my-5 dark:border-neutral-600" />
+
+  <!-- Section: Events-->
+  <section id="api-section-events">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Events
+    </h2>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Event type
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onStart</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This callback fires before the animation starts.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onEnd</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This callback starts immediately after the animation has finished..
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onShow</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    If you use animate on scroll this callback will start when the element appears on the screen.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onHide</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    If you use animate on scroll this callback will start after the element disappears from the screen.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Code-->
+    {{< twsnippet/no-demo id="api-example6" >}}
+    <section
+      class="!visible hidden"
+      data-te-collapse-item
+      id="api-example6">
+      <!-- prettier-ignore -->
+      <div class="pt-4">
+        {{< twsnippet/wrapper "JSX" >}}
+        {{< twsnippet/code active=true lang="jsx" >}}
+        import React from "react";
+        import { TEAnimation } from "tw-elements-react";
+        
+        export default function AnimationsEventsExample(): JSX.Element {
+          return (
+            <div className="flex justify-center">
+              <TEAnimation
+                animation="[slide-right_1s_ease-in-out]"
+                reset
+                onStart={() => console.log("onStart")}
+                onEnd={() => console.log("onEnd")}
+                className="[&>svg]:w-11 w-11"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                </svg>
+              </TEAnimation>
+            </div>
+          );
+        }
+        
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!-- Section: Code-->
+    <!-- Section: Events-->
+  </section>
+  <!-- Section: Docs content-->
+</section>

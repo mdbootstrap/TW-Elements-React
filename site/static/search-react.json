@@ -78,6 +78,18 @@
     "category": "Content & styles"
   },
   {
+    "href": "/docs/react/content-styles/animations/",
+    "name": "Animations",
+    "keywords": ["animations"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/animations-extended/",
+    "name": "Animations extended",
+    "keywords": ["animations", "extended"],
+    "category": "Content & styles"
+  },
+  {
     "href": "/docs/react/content-styles/colors/",
     "name": "Colors",
     "keywords": ["colors"],
