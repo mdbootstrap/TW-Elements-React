@@ -96,8 +96,8 @@ const TETooltip: React.FC<TooltipProps> = ({
   );
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    let secondTimer: ReturnType<typeof setTimeout>;
+    let timer: number;
+    let secondTimer: number;
 
     if ((isOpen || isFocused) && enabled) {
       setIsReadyToHide(true);
@@ -122,46 +122,42 @@ const TETooltip: React.FC<TooltipProps> = ({
     };
   }, [isOpen, isFocused, enabled]);
 
-  const handleOnMouseEnter = (e: SyntheticEvent) => {
-    onMouseEnter?.(e);
-    if (
-      enabled === false ||
-      (isFocused === false && trigger === "focus") ||
-      trigger === "click" ||
-      (trigger.includes("focus") &&
-        trigger.includes("click") &&
-        !trigger.includes("hover"))
-    ) {
-      return;
-    }
-    !isFocused && onShow?.(e);
-    !e.defaultPrevented && setIsOpen(true);
-  };
+  const handleMouseAndClick = useCallback(
+    (
+      e: SyntheticEvent | React.MouseEvent,
+      eventType: "mouseenter" | "mouseleave" | "mousedown"
+    ) => {
+      if (!enabled) return;
 
-  const handleOnMouseLeave = (e: SyntheticEvent) => {
-    onMouseLeave?.(e);
-    if (
-      enabled === false ||
-      (isFocused === true && trigger === "focus") ||
-      !isOpen ||
-      (trigger.includes("focus") &&
-        trigger.includes("click") &&
-        !trigger.includes("hover"))
-    ) {
-      return;
-    }
-    !isFocused && onHide?.(e);
-    !e.defaultPrevented && setIsOpen(false);
-  };
+      eventType === "mouseenter" && onMouseEnter?.(e);
+      eventType === "mouseleave" && onMouseLeave?.(e);
 
-  const handleClick = useCallback(
-    (e: MouseEvent | SyntheticEvent) => {
-      if (trigger.includes("click") || trigger.includes("focus")) {
+      if (
+        ((eventType === "mouseenter" || eventType === "mouseleave") &&
+          trigger !== "click" &&
+          trigger !== "focus") ||
+        (eventType === "mouseleave" && trigger.includes("click"))
+      ) {
+        if (
+          (eventType === "mouseenter" && isFocused) ||
+          (eventType === "mouseleave" && !isOpen)
+        ) {
+          return;
+        }
+        if (eventType === "mouseenter") {
+          !isFocused && onShow?.(e);
+          !e.defaultPrevented && setIsOpen(true);
+        } else {
+          !isFocused && onHide?.(e);
+          !e.defaultPrevented && setIsOpen(false);
+        }
+      } else if (eventType === "mousedown") {
         if (e.target === referenceElement.current) {
           if (trigger.includes("focus")) {
             !isFocused && !isOpen && onShow?.(e);
             setIsFocused(true);
-          } else if (trigger.includes("click")) {
+          }
+          if (trigger.includes("click")) {
             !isOpen && onShow?.(e);
             setIsOpen(true);
           }
@@ -169,32 +165,42 @@ const TETooltip: React.FC<TooltipProps> = ({
           if (trigger.includes("focus")) {
             isFocused && onHide?.(e);
             setIsFocused(false);
-          } else if (trigger.includes("click")) {
+          }
+          if (trigger.includes("click")) {
             isOpen && onHide?.(e);
             setIsOpen(false);
           }
         }
       }
     },
-    [referenceElement, trigger, isOpen, isFocused]
+    [enabled, trigger, isOpen, isFocused]
   );
 
   useEffect(() => {
     if (!enabled) {
       return;
     }
-    document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
+
+    const handleEvent = (event: any) => {
+      handleMouseAndClick(event, "mousedown");
     };
-  }, [handleClick, enabled]);
+
+    document.addEventListener("mousedown", handleEvent);
+    return () => {
+      document.removeEventListener("mousedown", handleEvent);
+    };
+  }, [enabled, handleMouseAndClick]);
 
   return (
     <>
       <Tag
         className={className}
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
+        onMouseEnter={(e: SyntheticEvent) =>
+          handleMouseAndClick(e, "mouseenter")
+        }
+        onMouseLeave={(e: SyntheticEvent) =>
+          handleMouseAndClick(e, "mouseleave")
+        }
         ref={referenceElement}
         {...wrapperProps}
       >

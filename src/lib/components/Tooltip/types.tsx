@@ -1,6 +1,7 @@
 import { SyntheticEvent } from "react";
 import { BaseComponent } from "../../types/baseComponent";
 import { placement } from "../../types/placement";
+import { Boundary } from "@popperjs/core";
 
 interface TooltipTheme {
   tooltip?: string;
@@ -21,7 +22,7 @@ interface TooltipProps extends BaseComponent {
   trigger?: "hover" | "click" | "focus";
   offset?: [number, number];
   fallbackPlacements?: placement[];
-  boundary?: "clippingParents" | "scrollParent" | "viewport" | "window";
+  boundary?: Boundary;
   enabled?: boolean;
   onShow?: (e: SyntheticEvent) => any;
   onShown?: (e: SyntheticEvent) => any;
