@@ -3,15 +3,11 @@ import AnimationsBasicExample from "./examples/AnimationsBasicExample";
 import AnimationsAll from "./examples/AnimationsAll";
 import AnimationsOnClick from "./examples/AnimationsOnClick";
 import AnimationsOnHover from "./examples/AnimationsOnHover";
-import AnimationsOnScroll from "./examples/AnimationsOnScroll";
 import AnimationsOnLoad from "./examples/AnimationsOnLoad";
 import AnimationsManually from "./examples/AnimationsManually";
-import AnimationsRepeatOnScroll from "./examples/AnimationsRepeatOnScroll";
-import AnimationsShowOnLoad from "./examples/AnimationsShowOnLoad";
 import AnimationsLaunchingExternal from "./examples/AnimationsLaunchingExternal";
 import AnimationsStartManually from "./examples/AnimationsStartManually";
 import AnimationsChangeType from "./examples/AnimationsChangeType";
-import AnimationsFadingGallery from "./examples/AnimationsFadingGallery";
 import AnimationsListGroup from "./examples/AnimationsListGroup";
 
 export default [
@@ -36,11 +32,6 @@ export default [
     element: <AnimationsOnHover />,
   },
   {
-    name: "AnimationsShowOnLoad",
-    path: "/content-styles/animations/examples/animations-show-on-load",
-    element: <AnimationsShowOnLoad />,
-  },
-  {
     name: "AnimationsOnLoad",
     path: "/content-styles/animations/examples/animations-on-load",
     element: <AnimationsOnLoad />,
@@ -49,16 +40,6 @@ export default [
     name: "AnimationsManually",
     path: "/content-styles/animations/examples/animations-manually",
     element: <AnimationsManually />,
-  },
-  {
-    name: "AnimationsOnScroll",
-    path: "/content-styles/animations/examples/animations-on-scroll",
-    element: <AnimationsOnScroll />,
-  },
-  {
-    name: "AnimationsRepeatOnScroll",
-    path: "/content-styles/animations/examples/animations-repeat-on-scroll",
-    element: <AnimationsRepeatOnScroll />,
   },
   {
     name: "AnimationsLaunchingExternal",
@@ -74,11 +55,6 @@ export default [
     name: "AnimationsChangeType",
     path: "/content-styles/animations/examples/animations-change-type",
     element: <AnimationsChangeType />,
-  },
-  {
-    name: "AnimationsFadingGallery",
-    path: "/content-styles/animations/examples/animations-fading-gallery",
-    element: <AnimationsFadingGallery />,
   },
   {
     name: "AnimationsListGroup",

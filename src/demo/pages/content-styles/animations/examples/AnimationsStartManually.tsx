@@ -3,15 +3,12 @@ import { TEAnimation, TERipple } from "tw-elements-react";
 
 export default function AnimationsStartManually(): JSX.Element {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
 
   const handleStart = () => {
-    console.log("handleStart");
     setToggle(true);
   };
 
   const handleStop = () => {
-    console.log("handleStop");
     setToggle(false);
   };
 
