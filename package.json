@@ -24,8 +24,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-popper": "^2.3.0",
     "react-router-dom": "^6.11.1",
     "ts-node": "^10.9.1"
   },
