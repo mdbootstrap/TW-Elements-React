@@ -219,7 +219,9 @@ const TETooltip: React.FC<TooltipProps> = ({
           >
             <div className={theme.tooltipInner}>{title}</div>
           </TooltipTag>,
-          container ? document.querySelector(container) : document.body
+          container
+            ? (document.querySelector(container as string) as Element)
+            : document.body
         )}
     </>
   );
