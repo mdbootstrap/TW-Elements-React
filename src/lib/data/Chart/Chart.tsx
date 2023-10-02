@@ -11,6 +11,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import React, { useRef, useEffect, useState } from "react";
 import type { ChartProps } from "./types";
+import type { Chart } from "chart.js";
 import {
   defaultOptions,
   setupOptions,
@@ -37,11 +38,12 @@ const TEChart: React.FC<ChartProps> = ({
   ...props
 }) => {
   const [darkModeTheme, setDarkModeTheme] = useState<string | undefined>(
-    getColorMode(disableDarkMode, darkMode)
+    getColorMode(disableDarkMode || false, darkMode || "")
   );
 
-  const chartInstance = useRef(null);
+  const chartInstance = useRef<Chart | undefined>(undefined);
   const chartEl = useRef(null);
+  const observer = useRef<MutationObserver | null>(null);
 
   const chartReference = chartRef ? chartRef : chartEl;
   const defaultOptionsDark = getDarkConfig(
@@ -72,21 +74,29 @@ const TEChart: React.FC<ChartProps> = ({
   }, [chartReference, type, datalabels]);
 
   useEffect(() => {
-    updateChart(
-      chartInstance.current,
-      data,
-      setupOptions(chartOptions, type, defaultOptions)
-    );
-  }, [options, darkOptions, chartOptions, data]);
+    if (chartInstance.current) {
+      updateChart(
+        chartInstance.current,
+        data,
+        setupOptions(chartOptions, type, defaultOptions)
+      );
+    }
+  }, [options, darkOptions, chartOptions, data, chartInstance.current]);
 
   useEffect(() => {
-    if (disableDarkMode || darkMode) {
+    if (disableDarkMode) {
+      return;
+    } else if (darkMode) {
       setDarkModeTheme(darkMode);
       return;
     }
+
     const html = document.querySelector("html");
-    if (!html) return;
-    const observer = new MutationObserver((mutations) => {
+    if (!html || observer.current !== null) {
+      return;
+    }
+
+    observer.current = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (
           mutation.attributeName === "class" &&
@@ -98,9 +108,10 @@ const TEChart: React.FC<ChartProps> = ({
         }
       });
     });
-    observer.observe(html, { attributes: true });
+    observer.current.observe(html, { attributes: true });
     return () => {
-      observer.disconnect();
+      observer.current?.disconnect();
+      observer.current = null;
     };
   }, [disableDarkMode, darkMode]);
 

@@ -124,9 +124,11 @@ const updateChart = (
   chart.update();
 };
 
-const getColorMode = (disableDarkMode: boolean, darkMode: string) => {
+const getColorMode = (disableDarkMode: boolean, darkMode: string): string => {
+  let themeMode = "";
+
   if (!disableDarkMode) {
-    const themeMode =
+    themeMode =
       darkMode === "dark"
         ? "dark"
         : darkMode
@@ -135,9 +137,8 @@ const getColorMode = (disableDarkMode: boolean, darkMode: string) => {
           (document.querySelector("html")?.classList.contains("dark")
             ? "dark"
             : "light");
-
-    return themeMode;
   }
+  return themeMode;
 };
 
 const getDarkConfig = (
