@@ -47,6 +47,7 @@ import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFo
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
+import TextareaPage from "./pages/forms/textarea/TextareaPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -72,6 +73,7 @@ import RegistrationFormExamples from "./pages/forms/registration-form/exampleLis
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
+import TextareaExamples from "./pages/forms/textarea/exampleList";
 
 interface Pages {
   name: string;
@@ -230,6 +232,11 @@ const formsPages: Pages[] = [
     path: "/components/search",
     element: <SearchPage />,
   },
+  {
+    name: "Textarea",
+    path: "/forms/textarea",
+    element: <TextareaPage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -323,6 +330,7 @@ export const examplesPages: Pages[] = [
   ...SearchExamples,
   ...FooterExamples,
   ...TooltipExamples,
+  ...TextareaExamples,
 ];
 
 export default demoPages;

@@ -77,7 +77,7 @@ menu:
 
 <h2 class="font-bold my-4">Prerequisites</h2>
 
-<p class="mb-2">
+<p class="mb-2" id="download-npm-step-1">
   1. Before starting the project make sure to install
   <a
     href="https://nodejs.org/en/"
@@ -109,7 +109,7 @@ menu:
 </a>
 
 <div class="!visible" id="collapseExample" data-te-collapse-item data-te-collapse-show>
-  <div class="pt-2">
+  <div class="pt-2" id="download-npm-step-2">
     {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
     npx create-react-app my-app
     {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -117,7 +117,7 @@ menu:
 
   <p class="mb-2">3. Navigate to app's directory
 
-  <div class="pt-2">
+  <div class="pt-2" id="download-npm-step-3">
     {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
     cd my-app
     {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -125,7 +125,7 @@ menu:
 
   <p class="mb-2">4. Install and initialize tailwind
 
-  <div class="pt-2">
+  <div class="pt-2" id="download-npm-step-4">
     <!-- prettier-ignore -->
     {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
     npm install -D tailwindcss postcss autoprefixer
@@ -137,7 +137,7 @@ menu:
     5. Add the necessary Tailwind directives to your <code>./src/index.css</code> file
     to be able to use Tailwind classes on your website.
   </p>
-  <div class="pt-2">
+  <div class="pt-2" id="download-npm-step-5">
     <!-- prettier-ignore -->
     {{< twsnippet/wrapper "src/index.css" "" "mobile" >}}{{< twsnippet/code active=true lang="css" >}}
     @tailwind base;
@@ -183,7 +183,7 @@ menu:
   </div>
 
 <p class="mb-2">1. Run the following command to install the package via NPM:</p>
-<div class="pt-2">
+<div class="pt-2" id="download-npm-step-6">
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm install tw-elements-react
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -195,7 +195,7 @@ menu:
   <code>content</code> array with a js files pattern that loads dynamic
   component classes:
 </p>
-<div class="pt-2">
+<div class="pt-2" id="download-npm-step-7">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "tailwind.config.js" "" "mobile" >}}{{< twsnippet/code active=true lang="JavaScript" >}}
   /** @type {import('tailwindcss').Config} */
@@ -216,7 +216,7 @@ menu:
 
 <p class="mb-2 mt-6">3. Import TE React css file. Add the following line in your <code>index.js</code> file.</p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-npm-step-8">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "src/index.js" "" "mobile" >}}{{< twsnippet/code active=true lang="js" >}}
   import "tw-elements-react/dist/css/tw-elements-react.min.css";
@@ -227,7 +227,7 @@ menu:
   4. Now you can start working on your app. Dynamic components will work after importing the package inside your components.For example, the collapse component will have proper styles, and toggle the content on button click when we add the code bellow to the App.js file.
 </p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-npm-step-9">
   {{< twsnippet/wrapper "src/App.js" "" "mobile" >}}
   <!-- prettier-ignore -->
   {{< twsnippet/code active=true lang="jsx" >}}
@@ -275,7 +275,7 @@ menu:
 
   <p class="mb-2 mt-6">5. Start the app if you haven't already</p>
 
-  <div class="pt-2">
+  <div class="pt-2" id="download-npm-step-10">
     <!-- prettier-ignore -->
     {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="terminal" type="terminal" >}}
     npm start
@@ -303,14 +303,14 @@ menu:
 <p class="mb-2 mt-4">
   1. To start using MDB GO / CLI install it with one command:
 </p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-1">
   {{< twsnippet/wrapper "terminal" "!bg-[#BB2E3E] !text-white dark:!bg-rose-300 dark:!text-rose-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm install -g mdb-cli
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-4">2. Log into the CLI using your MDB account:</p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-2">
   {{< twsnippet/wrapper "terminal" "!bg-[#4A24AA] !text-white dark:!bg-violet-300 dark:!text-violet-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   mdb login
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -320,7 +320,7 @@ menu:
   3. Initialize a project and choose <strong>Tailwind Elements React</strong> from the
   list:
 </p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-3">
   {{< twsnippet/wrapper "terminal" "!bg-[#4A24AA] !text-white dark:!bg-violet-300 dark:!text-violet-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   mdb init tailwind-elements-react
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -329,21 +329,21 @@ menu:
 <p class="mb-2 mt-4">
   4. Install the dependencies (inside the project directory):
 </p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-4">
   {{< twsnippet/wrapper "terminal" "!bg-[#BB2E3E] !text-white dark:!bg-rose-300 dark:!text-rose-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm install
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-4">5. Run the app:</p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-5">
   {{< twsnippet/wrapper "terminal" "!bg-[#BB2E3E] !text-white dark:!bg-rose-300 dark:!text-rose-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm start
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
 </div>
 
 <p class="mb-2 mt-4">6. Publish when you're ready:</p>
-<div class="pt-2">
+<div class="pt-2" id="download-mdbgo-step-6">
   {{< twsnippet/wrapper "terminal" "!bg-[#4A24AA] !text-white dark:!bg-violet-300 dark:!text-violet-900" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   mdb publish
   {{< /twsnippet/code >}}{{< /twsnippet/wrapper >}}
@@ -363,8 +363,8 @@ menu:
     <div
       class="mb-4 rounded-md border-l-[6px] border-solid border-blue-600 bg-blue-100 p-2.5 dark:text-gray-600">
       <strong>Note:</strong> Make sure that you have
-      <code>Node.js version 14+, 16+</code> installed. Please update if your
-      package manager asks for it.
+      <code>Node.js version 16.17.0 + / 18.1.0 +</code> installed. Please update if your package
+      manager asks for it. If you are expecting issues with <code>vite.config.js</code> and you don't want to update the npm, try using the <code>4.3.9</code> version of vite.
     </div>
     <p class="my-3">
       Vite (French word for "fast", pronounced /vit/) is a build tool that aims
@@ -380,7 +380,7 @@ menu:
   skip this step if you already have it installed.
 </p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-1">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm create vite@latest my-project -- --template react-ts
@@ -394,7 +394,7 @@ menu:
   <code>tailwind.config.js</code> file.
 </p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-2">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm install -D tailwindcss postcss autoprefixer 
@@ -415,7 +415,7 @@ menu:
   inside the <code>vite.config.js</code> file.
 </p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-3">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "tailwind.config.js" "" "mobile" >}}{{< twsnippet/code active=true lang="JavaScript" >}}
   /** @type {import('tailwindcss').Config} */
@@ -438,7 +438,7 @@ menu:
   4. Add the necessary Tailwind directives to your <code>./src/index.css</code> file
   to be able to use Tailwind classes on your website.
 </p>
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-4">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "src/index.css" "" "mobile" >}}{{< twsnippet/code active=true lang="css" >}}
   @tailwind base;
@@ -460,7 +460,7 @@ menu:
 
 <p class="mb-2 mt-6">5. Install the <code>tw-elements-react</code> package.</p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-5">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
   npm install tw-elements-react
@@ -469,7 +469,7 @@ menu:
 
 <p class="mb-2 mt-6">6. Import TE React css file. Add the following line in your <code>main.tsx</code> file.</p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-6">
   <!-- prettier-ignore -->
   {{< twsnippet/wrapper "src/main.tsx" "" "mobile" >}}{{< twsnippet/code active=true lang="js" >}}
   import "tw-elements-react/dist/css/tw-elements-react.min.css";
@@ -481,7 +481,7 @@ menu:
   component should have proper styles, and toggle the content on button click.
 </p>
 
-<div class="pt-2">
+<div class="pt-2" id="download-vite-step-7">
   {{< twsnippet/wrapper "app.tsx" "" "mobile" >}}
   <!-- prettier-ignore -->
   {{< twsnippet/code active=true lang="jsx" >}}
@@ -531,7 +531,7 @@ menu:
     8. Tailwind Elements React should be connected properly to the vite app. You can start the app by running the following command. 
   </p>
   
-  <div class="pt-2">
+  <div class="pt-2" id="download-vite-step-8">
     <!-- prettier-ignore -->
     {{< twsnippet/wrapper "terminal" "" "mobile" >}}{{< twsnippet/code active=true lang="Plaintext" type="terminal" >}}
     npm run dev

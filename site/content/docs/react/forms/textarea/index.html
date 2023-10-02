@@ -1,17 +1,17 @@
 ---
-title: "Hover effects"
+title: "Textarea"
 date: 2023-03-07T16:00:58+02:00
-draft: "false"
-main_title: "Hover effects"
-subheading: "Tailwind CSS React Hover Effects"
-seo_title: "Tailwind CSS React Hover Effects - Free Examples & Tutorial"
-description: "Responsive hover effects built with Tailwind CSS. Hover effect appears when the user positions the computer cursor over an element without activating it."
-image: "https://tecdn.b-cdn.net/img/docs/content-and-styles/hover-effects.webp"
+draft: false
+main_title: "Textarea"
+subheading: "Tailwind CSS React Textarea"
+seo_title: "Tailwind CSS React Textarea - Free Examples & Tutorial"
+description: "Use responsive Textarea component with helper examples for Tailwind CSS React Textarea with a default height & border, and a resize option. Easy to customize."
+image: "https://tecdn.b-cdn.net/img/docs/forms/textarea.webp"
 video: "https://www.youtube.com/watch?v=-GmnyjgI4Jc&ab_channel=Keepcoding"
-url: "docs/react/content-styles/hover-effects/"
+url: "docs/react/forms/textarea/"
 menu:
-  contentstyles:
-    name: "Hover effects"
+  forms:
+    name: "Textarea"
 ---
 
 <!-- Section: Basic example -->
@@ -24,74 +24,38 @@ menu:
   >
     Basic example
   </h2>
-
   <!-- Description -->
   <p class="mb-3">
-    Hover effect appears when a user positions computer cursor over an element
-    without activating it.
+    Text fields allow users to enter text into the user interface. They
+    typically appear in forms and dialog boxes. <code>TETextarea</code>
+    component extended user <code>TEInput</code> so that more of the text
+    is visible.
   </p>
 
-  {{< twsnippet/demo-iframe id="example1" iframe="/content-styles/hover-effects/examples/hover-effects-basic-example" title="Hover effect basic example" >}}
-
   <!-- prettier-ignore -->
+  {{< twsnippet/demo-iframe id="example1" iframe="/forms/textarea/examples/textarea-basic-example" title="Textarea Basic Example" >}}
+
   <section class="!visible hidden" data-te-collapse-item id="example1">
+    <!-- prettier-ignore -->
     <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
+      {{< twsnippet/wrapper "JSX" >}} 
       {{< twsnippet/code active=true lang="jsx" >}}
-      import React from 'react';
-      import { TERipple } from 'tw-elements-react';
+      import React from "react";
+      import { TETextarea } from "tw-elements-react";
       
-      export default function HoverEffectBasicExample(): JSX.Element {
+      export default function TextareaBasicExample(): JSX.Element {
         return (
-          <div>
-            <TERipple>
-              <div
-                className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                <img
-                  src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                  className="max-w-xs"
-                  alt="Louvre" />
-                <a>
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
-                </a>
-              </div>
-            </TERipple>
+          <div className="flex justify-center">
+            <div className="relative mb-3 xl:w-96">
+              <TETextarea id="textareaExample" label="Message" rows={4}></TETextarea>
+            </div>
           </div>
         );
-      }
-      
+      }      
       {{< /twsnippet/code >}}
       {{< /twsnippet/wrapper >}}
     </div>
   </section>
-
-  <!-- Section: Note about usage with animation  -->
-<section>
-  <h3 class="mb-3 text-2xl font-semibold leading-normal">
-    Showing the animation effect
-  </h3>
-  <p class="mb-3">
-    As you can see in the above example, you can add any animation to any
-    element on the page by using the following classes:
-  </p>
-  <ul>
-    <li>
-      <code>transition</code>: used to animate the chaged properties on hover,
-    </li>
-
-    <li>
-      <code>duration-x</code>: used to define the duration of the animation
-      where <code>x</code> is the time in milliseconds; e.g.
-      <code>duration-300</code>.
-    </li>
-  </ul>
-  <p>
-    Then, you should be able to add any type of animation by changing the
-    property on hover by using the class:
-    <code>[hover:tw-class-name]</code> e.g. <code>hover:opacity-100</code>.
-  </p>
-</section>
 </section>
 <!-- Section: Basic example -->
 
@@ -358,426 +322,73 @@ menu:
 </section>
 <!-- Section: Sharing request-->
 
-
-
-<!-- Section: Color -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="color"
-    data-te-spy-item
-  >
-    Color
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Change the color and opacity by manipulating color and
-    <code>.hover:opacity-*</code> classes. Have a look at our
-    <a
-      href="https://tailwind-elements.com/docs/standard/components/mask/"
-      class="text-primary dark:text-primary-400"
-      >masks</a
-    >
-    docs to learn more.
-  </p>
-
-  <!-- prettier-ignore -->
-  {{< twsnippet/demo id="example2">}}
-  <div class="grid grid-cols-3 gap-4">
-    <div class="mb-4">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50"
-        ></div>
-      </div>
-    </div>
-    <div class="mb-4">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-purple-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-20"
-        ></div>
-      </div>
-    </div>
-    <div class="mb-4">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-green-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70"
-        ></div>
-      </div>
-    </div>
-  </div>
-  <div class="grid grid-cols-3 gap-4">
-    <div class="mb-4 md:mb-0">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"
-        ></div>
-      </div>
-    </div>
-    <div class="mb-4 md:mb-0">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-white bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-40"
-        ></div>
-      </div>
-    </div>
-    <div class="mb-4 md:mb-0">
-      <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-        <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          class="max-w-xs"
-          alt="Louvre"
-        />
-        <div
-          class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-400 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-60"
-        ></div>
-      </div>
-    </div>
-  </div>
-  {{< /twsnippet/demo >}}
-
-  <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example2">
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from 'react';
-  
-      export default function App() {
-        return (
-          <div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="mb-4">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-indigo-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50"></div>
-                </div>
-              </div>
-              <div className="mb-4">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-purple-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-20"></div>
-                </div>
-              </div>
-              <div className="mb-4">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-green-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-70"></div>
-                </div>
-              </div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="mb-4 md:mb-0">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
-                </div>
-              </div>
-              <div className="mb-4 md:mb-0">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-white bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-40"></div>
-                </div>
-              </div>
-              <div className="mb-4 md:mb-0">
-                <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                  <img
-                    src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-                    className="max-w-xs"
-                    alt="Louvre" />
-                  <div
-                    className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-blue-400 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-60"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      }
-
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Color -->
-
-<!-- Section: Gradient -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="gradient"
-    data-te-spy-item
-  >
-    Gradient
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">Set a fancy gradient as an overlay.</p>
-
-  <!-- prettier-ignore -->
-  {{< twsnippet/demo id="example3">}}
-  <div class="flex justify-center">
-    <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-      <img
-        src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-        class="max-w-xs"
-        alt="Louvre"
-      />
-      <div
-        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70"
-      ></div>
-    </div>
-  </div>
-  {{< /twsnippet/demo >}}
-
-  <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example3">
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from 'react';
-  
-      export default function App() {
-        return (
-          <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-            <img
-              src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-              className="max-w-xs"
-              alt="Louvre" />
-            <div
-              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70"></div>
-          </div>
-        );
-      }
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Gradient -->
-
-<!-- Section: Zoom -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="zoom"
-    data-te-spy-item
-  >
-    Zoom
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Use <code>.hover:scale-110</code> class to any element to apply zoom.
-  </p>
-
-  <!-- prettier-ignore -->
-  {{< twsnippet/demo id="example4">}}
-  <div class="flex justify-center">
-    <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-      <img
-        src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-        class="max-w-xs transition duration-300 ease-in-out hover:scale-110"
-        alt="Louvre"
-      />
-    </div>
-  </div>
-  {{< /twsnippet/demo >}}
-
-  <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example4">
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from 'react';
-  
-      export default function App() {
-        return (
-          <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-            <img
-              src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-              className="max-w-xs transition duration-300 ease-in-out hover:scale-110"
-              alt="Louvre" />
-          </div>
-        );
-      }
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Zoom -->
-
-<!-- Section: Shadow -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="shadow"
-    data-te-spy-item
-  >
-    Shadow
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Use <code>.hover:shadow-lg</code> class to any element to apply the effect.
-  </p>
-
-  <!-- prettier-ignore -->
-  {{< twsnippet/demo id="example5">}}
-  <div class="flex justify-center">
-    <img
-      src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-      class="max-w-xs transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30"
-      alt="Louvre"
-    />
-  </div>
-  {{< /twsnippet/demo >}}
-
-  <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example5">
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from 'react';
-  
-      export default function App() {
-        return (
-          <img
-          src="https://tecdn.b-cdn.net/img/new/fluid/city/113.webp"
-          className="max-w-xs transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30"
-          alt="Louvre" />
-        );
-      }
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Shadow -->
-
 <hr class="mb-5 dark:border-neutral-600" />
 
-<!-- Section: Related resources -->
 <section id="section-related-resources">
-  <!-- Title -->
   <h2 class="mb-5 mt-0 text-3xl font-semibold leading-normal" data-te-spy-item>
     Related resources
   </h2>
 
-  <!-- Resources -->
   <div class="justify-content-start w-100 my-5 text-start">
     <!-- Extended docs -->
     <a
-      href="https://mdbootstrap.com/docs/standard/extended/mega-menu/#section-dropdown-on-hover"
+      href="https://tailwind-elements.com/docs/react/content-styles/typography/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Dropdown on hover</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Typography</a
     >
-
     <a
-      href="https://mdbootstrap.com/docs/standard/extended/search-expanding/"
+      href="https://tailwind-elements.com/docs/react/components/paragraphs/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Expanding Search Bar</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Paragraphs</a
     >
-
-    <!-- How to? -->
     <a
-      href="https://mdbootstrap.com/how-to/bootstrap/image-responsive/"
+      href="https://tailwind-elements.com/docs/react/forms/inputs/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >How to make Bootstrap image responsive</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Inputs</a
     >
-
     <a
-      href="https://mdbootstrap.com/how-to/bootstrap/image-center/"
+      href="https://tailwind-elements.com/docs/react/content-styles/icons/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >How to center image</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Icons</a
     >
-
-    <!-- Main docs -->
     <a
-      href="https://tailwind-elements.com/docs/standard/components/images/"
+      href="https://tailwind-elements.com/docs/react/forms/login-form/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Images</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Login Form</a
+    > 
+    <a
+      href="https://tailwind-elements.com/docs/react/forms/registration-form/"
+      type="button"
+      data-te-ripple-init
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Registration form</a
     >
-
     <a
-      href="https://tailwind-elements.com/docs/standard/components/gallery/"
+      href="https://tailwind-elements.com/docs/react/forms/form-templates/"
       type="button"
       data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Gallery</a
+      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg peer-focus:text-primary dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 dark:peer-focus:text-primary"
+      >Form templates</a
     >
   </div>
-  <!-- Resources -->
 </section>
-<!-- Section: Related resources -->
 
 <p>
   If you are looking for more advanced options, try
   <a
     class="text-primary dark:text-primary-400"
-    href="https://mdbootstrap.com/docs/standard/content-styles/hover-effects/"
-    >Bootstrap Hover effects</a
+    href="https://mdbootstrap.com/docs/standard/forms/input-fields/#subsection-textarea"
+    >Bootstrap Textarea</a
   >
   from MDBootstrap.
 </p>
