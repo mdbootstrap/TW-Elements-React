@@ -1,6 +1,6 @@
 import React from "react";
 
-interface InputTheme {
+interface TextareaTheme {
   wrapper?: string;
   input?: string;
   activeInput?: string;
@@ -40,21 +40,25 @@ interface InputTheme {
   activeLabelSizeSm?: string;
 }
 
-type InputELement = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
+type TextareaElement = Omit<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  "size"
+>;
 
-type InputProps = InputELement & {
+type TextareaProps = TextareaElement & {
+  contrast?: boolean;
   label?: React.ReactNode;
+  labelClass?: string;
   labelRef?: React.RefObject<HTMLLabelElement>;
   labelID?: string;
-  ref?: React.Ref<HTMLInputElement>;
+  inputRef?: React.RefObject<any>;
   readonly?: boolean;
-  disabled?: boolean;
-  size?: string;
-  wrapperTag?: React.ComponentProps<any>;
-  theme?: InputTheme;
   formWhite?: boolean;
   counter?: boolean;
-  maxLength?: number;
+  size?: string;
+  wrapperTag?: React.ComponentProps<any>;
+  wrapperClass?: string;
+  theme?: TextareaTheme;
 };
 
-export { InputProps };
+export { TextareaProps };

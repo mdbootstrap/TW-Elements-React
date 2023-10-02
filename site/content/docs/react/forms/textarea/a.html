@@ -21,7 +21,7 @@
         {{< twsnippet/wrapper "javascript" >}}
         <!-- prettier-ignore -->
         {{< twsnippet/code active=true lang="js" >}}
-        import { TEInput } from "tw-elements-react";
+        import { TETextarea } from "tw-elements-react";
         {{< /twsnippet/code >}}
         {{< /twsnippet/wrapper >}}
       </div>
@@ -43,7 +43,7 @@
       Properties
     </h2>
 
-    <h3 class="mb-5 mt-0 text-2xl font-semibold leading-normal">TEInput</h3>
+    <h3 class="mb-5 mt-0 text-2xl font-semibold leading-normal">TETextarea</h3>
 
     <div class="flex flex-col">
       <div class="overflow-x-auto">
@@ -99,7 +99,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Default value of the <code>TEInput</code>
+                    Default value of the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -121,7 +121,7 @@
                     <code class="text-red-500 dark:text-red-300">false</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Makes the <code>TEInput</code> disabled
+                    Makes the <code>TETextarea</code> disabled
                   </td>
                 </tr>
                 <tr
@@ -143,7 +143,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Defines an id for the <code>TEInput</code>
+                    Defines an id for the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -165,7 +165,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Reference to input element.
+                    If present, changes the color of ripple in dark mode
                   </td>
                 </tr>
                 <tr
@@ -187,7 +187,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Defines a label text for the <code>TEInput</code>
+                    Defines a label text for the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -253,7 +253,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Specifies the name for the <code>TEInput</code>
+                    Specifies the name for the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -275,7 +275,7 @@
                     <code class="text-red-500 dark:text-red-300">false</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Makes the <code>TEInput</code> read only
+                    Makes the <code>TETextarea</code> read only
                   </td>
                 </tr>
                 <tr
@@ -297,7 +297,7 @@
                     <code class="text-red-500 dark:text-red-300">base</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets the size of the <code>TEInput</code>
+                    Sets the size of the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -319,7 +319,7 @@
                     <code class="text-red-500 dark:text-red-300">-</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets the value for the <code>TEInput</code>
+                    Sets the value for the <code>TETextarea</code>
                   </td>
                 </tr>
                 <tr
@@ -441,6 +441,11 @@
       with classes like below and pass it to the prop.
     </p>
 
+    <div
+      class="my-3 rounded-md border-l-[6px] border-solid border-info-400 bg-info-100 p-4 dark:border-info-300 dark:bg-info-300/30 ">
+      <strong>Note:</strong> <code>TETextarea</code> component extends the <code>TEInput</code> component so they have the same classes.
+    </div>
+
     <div class="flex flex-col">
       <div class="overflow-x-auto">
         <div class="inline-block min-w-full py-2">
@@ -482,7 +487,7 @@
                     placeholder:opacity-100
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets classes when the input element is active.
+                    Sets classes when the textarea element is active.
                   </td>
                 </tr>
                 <tr
@@ -499,7 +504,7 @@
                     scale-[0.8]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets classes of the label when input element is active.
+                    Sets classes of the label when textarea element is active.
                   </td>
                 </tr>
                 <tr
@@ -516,7 +521,7 @@
                     border-r-0
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets stylesof leading notch when input element is active.
+                    Sets stylesof leading notch when textarea element is active.
                   </td>
                 </tr>
                 <tr
@@ -534,7 +539,7 @@
                     dark:border-t-transparent
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of middle notch when the input element is
+                    Sets styles of middle notch when the textarea element is
                     active.
                   </td>
                 </tr>
@@ -552,7 +557,7 @@
                     border-l-0
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of trailing notch when the input element is
+                    Sets styles of trailing notch when the textarea element is
                     active.
                   </td>
                 </tr>
@@ -571,7 +576,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label translate styles when
-                    <code>TEInput size="base"</code>and is active.
+                    <code>TETextarea size="base"</code>and is active.
                   </td>
                 </tr>
                 <tr
@@ -589,7 +594,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label translate styles when
-                    <code>TEInput size="lg"</code> and is active.
+                    <code>TETextarea size="lg"</code> and is active.
                   </td>
                 </tr>
                 <tr
@@ -607,7 +612,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label translate styles when
-                    <code>TEInput size="sm"</code> and is active.
+                    <code>TETextarea size="sm"</code> and is active.
                   </td>
                 </tr>
                 <tr
@@ -624,7 +629,7 @@
                     text-right leading-[1.6]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets text alignment and line height of input counter
+                    Sets text alignment and line height of textarea counter
                     wrapper.
                   </td>
                 </tr>
@@ -642,7 +647,7 @@
                     border-r-0
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets stylesof the leading notch when input element is
+                    Sets stylesof the leading notch when textarea element is
                     focused.
                   </td>
                 </tr>
@@ -661,7 +666,7 @@
                     border-primary dark:border-primary
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default leading notch when input element is
+                    Sets styles of default leading notch when textarea element is
                     focused.
                   </td>
                 </tr>
@@ -680,7 +685,7 @@
                     border-white
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white leading notch when the input element is
+                    Sets styles of white leading notch when the textarea element is
                     focused.
                   </td>
                 </tr>
@@ -699,7 +704,7 @@
                     dark:border-t-transparent
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of middle notch when the input element is
+                    Sets styles of middle notch when the textarea element is
                     focused.
                   </td>
                 </tr>
@@ -718,7 +723,7 @@
                     dark:border-primary
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default middle notch when the input element
+                    Sets styles of default middle notch when the textarea element
                     is focused.
                   </td>
                 </tr>
@@ -736,7 +741,7 @@
                     shadow-[0_1px_0_0_#ffffff] border-white
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white middle notch when the input element is
+                    Sets styles of white middle notch when the textarea element is
                     focused.
                   </td>
                 </tr>
@@ -754,7 +759,7 @@
                     border-l-0
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of trailing notch when the input element is
+                    Sets styles of trailing notch when the textarea element is
                     focused.
                   </td>
                 </tr>
@@ -773,7 +778,7 @@
                     border-primary dark:border-primary
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of default trailing notch when the input element
+                    Sets styles of default trailing notch when the textarea element
                     is focused.
                   </td>
                 </tr>
@@ -792,7 +797,7 @@
                     border-white
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets styles of white trailing notch when the input element
+                    Sets styles of white trailing notch when the textarea element
                     is focused.
                   </td>
                 </tr>
@@ -818,7 +823,7 @@
                     dark:peer-focus:text-primary
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets classes the to the input element.
+                    Sets classes the to the textarea element.
                   </td>
                 </tr>
                 <tr
@@ -835,8 +840,8 @@
                     px-3 py-[0.32rem] leading-[1.6]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding and leading styles when
-                    <code>TEInput size="base"</code>.
+                    Sets textarea padding and leading styles when
+                    <code>TETextarea size="base"</code>.
                   </td>
                 </tr>
                 <tr
@@ -853,8 +858,8 @@
                     px-3 py-[0.32rem] leading-[2.15]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding and leading styles when
-                    <code>TEInput size="lg"</code>.
+                    Sets textarea padding and leading styles when
+                    <code>TETextarea size="lg"</code>.
                   </td>
                 </tr>
                 <tr
@@ -871,8 +876,8 @@
                     px-3 py-[0.33rem] text-xs leading-[1.5]
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets input padding, text and leading styles when
-                    <code>TEInput size="sm</code>.
+                    Sets textarea padding, text and leading styles when
+                    <code>TETextarea size="sm</code>.
                   </td>
                 </tr>
                 <tr
@@ -911,7 +916,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label styles when
-                    <code>TEInput size="base"</code>.
+                    <code>TETextarea size="base"</code>.
                   </td>
                 </tr>
                 <tr
@@ -930,7 +935,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label styles when
-                    <code>TEInput size="lg"</code>.
+                    <code>TETextarea size="lg"</code>.
                   </td>
                 </tr>
                 <tr
@@ -949,7 +954,7 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Sets label styles when
-                    <code>TEInput size="sm"</code>.
+                    <code>TETextarea size="sm"</code>.
                   </td>
                 </tr>
                 <tr
@@ -1146,7 +1151,7 @@
                     relative
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Adds classes to the input wrapper.
+                    Adds classes to the textarea wrapper.
                   </td>
                 </tr>
               </tbody>
@@ -1199,7 +1204,7 @@
                     <code>onChange</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    A callback fired when the <code>TEInput</code> changed.
+                    A callback fired when the <code>TETextarea</code> changed.
                   </td>
                 </tr>
                 <tr
@@ -1211,7 +1216,7 @@
                     <code>onBlur</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    A callback fired when the <code>TEInput</code> lost focus.
+                    A callback fired when the <code>TETextarea</code> lost focus.
                   </td>
                 </tr>
               </tbody>
@@ -1229,19 +1234,20 @@
         {{< twsnippet/wrapper "JSX" >}}
         {{< twsnippet/code active=true lang="jsx" >}}
         import React from "react";
-        import { TEInput } from "tw-elements-react";
+        import { TETextarea } from "tw-elements-react";
         
-        export default function InputBasicExample(): JSX.Element {
-          const handleChange = () => {
-            // do something ...
-          }
+        export default function TextareaEventsExample(): JSX.Element {
           return (
-                <TEInput
-                  type="text"
-                  id="exampleFormControlInput1"
-                  label="Example label"
-                  onChange={handleChange}
-                ></TEInput>
+            <div className="flex justify-center">
+              <div className="relative mb-3 md:w-96 pt-5">
+                <TETextarea
+                  id="textareaExample"
+                  label="Message"
+                  rows={4}
+                  onChange={() => console.log("change")}
+                ></TETextarea>
+              </div>
+            </div>
           );
         }        
         {{< /twsnippet/code >}} 
