@@ -13,7 +13,7 @@ import { useEffect, useState, useContext } from "react";
 import { DropdownContext } from "../../../components/Dropdown/context/DropdownContext";
 
 export const useFade = () => {
-  const { isOpenState } = useContext(DropdownContext);
+  const { isOpenState, animation } = useContext(DropdownContext);
 
   const [isFadeIn, setIsFadeIn] = useState(false);
   const [isFadeOut, setIsFadeOut] = useState(false);
@@ -21,6 +21,7 @@ export const useFade = () => {
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
+    const duration = animation ? 300 : 0;
 
     if (!isOpenState) {
       setIsFadeOut(true);
@@ -29,7 +30,7 @@ export const useFade = () => {
       timer = setTimeout(() => {
         setIsFadeOut(false);
         setShow(false);
-      }, 300);
+      }, duration);
     }
 
     if (isOpenState) {
