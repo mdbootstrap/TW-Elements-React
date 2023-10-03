@@ -11,6 +11,7 @@ import TETabs from "./navigation/tabs/Tabs";
 import TETabsItem from "./navigation/tabs/TabsItem/TabsItem";
 import TETabsContent from "./navigation/tabs/TabsContent/TabsContent";
 import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
+import TEChart from "./data/Chart/Chart";
 import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
 
@@ -28,6 +29,7 @@ export {
   TETabsItem,
   TETabsContent,
   TETabsPane,
+  TEChart,
   TETooltip,
   TETextarea,
 };

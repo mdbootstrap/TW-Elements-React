@@ -46,6 +46,7 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import ChartPage from "./pages/data/chart/ChartPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
 import TextareaPage from "./pages/forms/textarea/TextareaPage";
 
@@ -72,6 +73,7 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
 
@@ -187,6 +189,7 @@ const contentStylesPages: Pages[] = [
 
 const dataPages: Pages[] = [
   { name: "tables", path: "/data/tables", element: <TablesPage /> },
+  { name: "chart", path: "/data/chart", element: <ChartPage /> },
 ];
 
 const formsPages: Pages[] = [
@@ -329,6 +332,7 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...ChartExamples,
   ...TooltipExamples,
   ...TextareaExamples,
 ];

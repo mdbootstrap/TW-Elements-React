@@ -189,6 +189,12 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/data/charts/",
+    "name": "Charts",
+    "keywords": ["charts"],
+    "category": "Data"
+  },
+  {
     "href": "/docs/react/data/tables/",
     "name": "Tables",
     "keywords": ["tables"],
