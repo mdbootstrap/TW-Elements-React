@@ -11,6 +11,10 @@ import TETabs from "./navigation/tabs/Tabs";
 import TETabsItem from "./navigation/tabs/TabsItem/TabsItem";
 import TETabsContent from "./navigation/tabs/TabsContent/TabsContent";
 import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
+import TEDropdown from "./components/Dropdown/Dropdown";
+import TEDropdownToggle from "./components/Dropdown/DropdownToggle.tsx/DropdownToggle";
+import TEDropdownMenu from "./components/Dropdown/DropdownMenu/DropdownMenu";
+import TEDropdownItem from "./components/Dropdown/DropdownItem/DropdownItem";
 import TEChart from "./data/Chart/Chart";
 import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
@@ -29,6 +33,10 @@ export {
   TETabsItem,
   TETabsContent,
   TETabsPane,
+  TEDropdown,
+  TEDropdownToggle,
+  TEDropdownMenu,
+  TEDropdownItem,
   TEChart,
   TETooltip,
   TETextarea,

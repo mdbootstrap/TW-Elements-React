@@ -303,6 +303,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/dropdown",
+    "name": "Dropdown",
+    "keywords": ["dropdown"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/modal/",
     "name": "Modal",
     "keywords": ["dialog", "notification", "popup", "modal"],

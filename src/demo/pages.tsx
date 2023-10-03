@@ -46,6 +46,7 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import DropdownPage from "./pages/components/dropdown/DropdownPage";
 import ChartPage from "./pages/data/chart/ChartPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
 import TextareaPage from "./pages/forms/textarea/TextareaPage";
@@ -73,6 +74,7 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import DropdownExamples from "./pages/components/dropdown/exampleList";
 import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
@@ -142,6 +144,11 @@ const componentsPages: Pages[] = [
     name: "accordion",
     path: "/components/accordion",
     element: <AccordionPage />,
+  },
+  {
+    name: "dropdown",
+    path: "/components/dropdown",
+    element: <DropdownPage />,
   },
   {
     name: "tooltip",
@@ -332,6 +339,7 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...DropdownExamples,
   ...ChartExamples,
   ...TooltipExamples,
   ...TextareaExamples,
