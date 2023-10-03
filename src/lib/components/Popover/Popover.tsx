@@ -9,72 +9,133 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  SyntheticEvent,
+} from "react";
 import type { PopoverProps } from "./types";
-import { usePopper } from "react-popper";
 import { PopoverContext } from "./context/PopoverContext";
 
 const TEPopover: React.FC<PopoverProps> = ({
   children,
   tag: Tag = "div",
+  isOpen = false,
+  enabled = true,
+  trigger = "click",
   onShow,
   onHide,
-  isOpen = false,
-  placement = "right",
-  dismiss = false,
-  popperConfig,
-  offset = [0, 0],
-  fallbackPlacements = ["top", "bottom", "right", "left"],
-  boundary = "clippingParents",
-  onClick,
+  onShown,
+  onHidden,
+  onMouseEnter,
+  onMouseLeave,
+
   ...props
 }): JSX.Element => {
   const [isOpenState, setIsOpenState] = useState<boolean>(isOpen ?? false);
-  const [attachELements, setAttachElements] = useState(false);
-  const [isClickOutside, setIsClickOutside] = useState(false);
-  const [referenceElement, setReferenceElement] = useState<HTMLElement>();
-  const [popperElement, setPopperElement] = useState<HTMLElement>();
+  const [isFocused, setIsFocused] = useState(false);
+  const [isReadyToHide, setIsReadyToHide] = useState(false);
+  const [isFaded, setIsFaded] = useState(false);
 
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement,
-    modifiers: [
-      {
-        name: "offset",
-        options: {
-          offset,
-        },
-      },
-      {
-        name: "flip",
-        options: {
-          fallbackPlacements,
-        },
-      },
-      {
-        name: "preventOverflow",
-        options: {
-          boundary,
-        },
-      },
-    ],
-    ...popperConfig,
-  });
+  const referenceElement = useRef(null);
 
-  const handleBtnClick = (e: any) => {
-    if (isOpenState && !dismiss) {
-      onHide?.();
-    } else if (!isOpenState) {
-      onShow?.();
-    }
-    if (dismiss) {
-      setIsClickOutside(true);
-      setIsOpenState(true);
+  useEffect(() => {
+    let timer: number;
+    let secondTimer: number;
+
+    if ((isOpenState || isFocused) && enabled) {
+      setIsReadyToHide(true);
+      timer = setTimeout((e: SyntheticEvent) => {
+        setIsFaded(true);
+        !isFaded && onShown?.(e);
+      }, 150);
     } else {
-      setIsOpenState(!isOpenState);
+      setIsFaded(false);
+      secondTimer = setTimeout((e: SyntheticEvent) => {
+        setIsReadyToHide(false);
+        isFaded && onHidden?.(e);
+      }, 150);
+    }
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(secondTimer);
+    };
+  }, [isOpenState, isFocused, enabled, trigger]);
+
+  const handleMouseAndClick = useCallback(
+    (
+      e: SyntheticEvent | React.MouseEvent,
+      eventType: "mouseenter" | "mouseleave" | "mousedown"
+    ) => {
+      if (!enabled) return;
+
+      eventType === "mouseenter" && onMouseEnter?.(e);
+      eventType === "mouseleave" && onMouseLeave?.(e);
+
+      if (
+        (eventType === "mouseleave" && !trigger.includes("click")) ||
+        ((eventType === "mouseenter" || eventType === "mouseleave") &&
+          trigger !== "click" &&
+          trigger !== "focus")
+      ) {
+        if (
+          (eventType === "mouseenter" && isFocused) ||
+          (eventType === "mouseleave" && !isOpenState) ||
+          (trigger.includes("click") &&
+            trigger.includes("focus") &&
+            !trigger.includes("hover"))
+        ) {
+          return;
+        }
+        if (eventType === "mouseenter") {
+          !isFocused && onShow?.(e);
+          !e.defaultPrevented && setIsOpenState(true);
+        } else {
+          !isFocused && onHide?.(e);
+          !e.defaultPrevented && setIsOpenState(false);
+        }
+      } else if (eventType === "mousedown") {
+        if (e.target === referenceElement.current) {
+          if (trigger === "click") {
+            !isOpenState && onShow?.(e);
+            isOpenState && onHide?.(e);
+            setIsOpenState((prevState) => !prevState);
+          } else if (trigger.includes("focus")) {
+            !isFocused && !isOpenState && onShow?.(e);
+            setIsFocused(true);
+          } else if (trigger.includes("click")) {
+            !isFocused && !isOpenState && onShow?.(e);
+            isFocused && onHide?.(e);
+            setIsFocused((prev) => !prev);
+            isFocused && setIsOpenState(false);
+          }
+        } else {
+          if (trigger.includes("focus")) {
+            isFocused && onHide?.(e);
+            setIsFocused(false);
+          }
+        }
+      }
+    },
+    [enabled, trigger, isOpenState, isFocused]
+  );
+
+  useEffect(() => {
+    if (!enabled) {
+      return;
     }
 
-    onClick && onClick(e);
-  };
+    const handleEvent = (event: any) => {
+      handleMouseAndClick(event, "mousedown");
+    };
+
+    document.addEventListener("mousedown", handleEvent);
+    return () => {
+      document.removeEventListener("mousedown", handleEvent);
+    };
+  }, [enabled, handleMouseAndClick]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -82,54 +143,16 @@ const TEPopover: React.FC<PopoverProps> = ({
     }
   }, [isOpen]);
 
-  const handleClickOutside = useCallback(
-    (e: any) => {
-      if (
-        isClickOutside &&
-        popperElement &&
-        popperElement !== null &&
-        isOpenState &&
-        referenceElement &&
-        referenceElement !== null
-      ) {
-        if (!referenceElement.contains(e.target as Node)) {
-          setIsOpenState(false);
-          onHide?.();
-        }
-      }
-    },
-    [isClickOutside, isOpenState, popperElement, referenceElement, onHide]
-  );
-
-  useEffect(() => {
-    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
-      setAttachElements(isOpenState);
-    }, 150);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isOpenState]);
-
-  useEffect(() => {
-    if (isOpenState) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [handleClickOutside, isOpenState]);
-
   return (
     <PopoverContext.Provider
       value={{
-        handleBtnClick,
-        setReferenceElement,
-        attachELements,
+        referenceElement,
+
         isOpenState,
-        setPopperElement,
-        styles,
-        attributes,
+
+        isReadyToHide,
+        isFaded,
+        handleMouseAndClick,
       }}
     >
       <Tag {...props}>{children}</Tag>

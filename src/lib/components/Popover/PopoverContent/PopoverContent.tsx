@@ -9,22 +9,29 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
 import type { PopoverContentProps } from "../PopoverContent/types";
 import { PopoverContext } from "../context/PopoverContext";
 import PopoverContentTheme from "./PopoverContentTheme";
+import { usePopper } from "react-popper";
 
 const TEPopoverContent: React.FC<PopoverContentProps> = ({
   className,
   children,
   theme: customTheme,
-  popperStyle,
   popperTag: PopperTag = "div",
   container = false,
+  placement = "right",
+  popperConfig,
+  offset = [0, 0],
+  fallbackPlacements = ["top", "bottom", "right", "left"],
+  boundary = "clippingParents",
 }): JSX.Element => {
-  const { attachELements, isOpenState, setPopperElement, styles, attributes } =
+  const popperElement = useRef(null);
+
+  const { isReadyToHide, isFaded, referenceElement } =
     useContext(PopoverContext);
 
   const theme = {
@@ -35,23 +42,54 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
   const classes = clsx(
     theme.popoverContent,
     theme.fade,
-    attachELements && isOpenState ? "opacity-100" : "opacity-0",
+    isFaded ? "opacity-100" : "opacity-0",
     className
+  );
+
+  const { styles, attributes } = usePopper(
+    referenceElement.current,
+    popperElement.current,
+    {
+      placement,
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset,
+          },
+        },
+        {
+          name: "flip",
+          options: {
+            fallbackPlacements,
+          },
+        },
+        {
+          name: "preventOverflow",
+          options: {
+            boundary,
+          },
+        },
+      ],
+      ...popperConfig,
+    }
   );
 
   return (
     <>
-      {(attachELements || isOpenState) &&
+      {isReadyToHide &&
         ReactDOM.createPortal(
           <PopperTag
             className={classes}
-            ref={setPopperElement}
-            style={{ ...styles.popper, ...popperStyle }}
+            ref={popperElement}
+            style={{ ...styles.popper }}
             {...attributes.popper}
           >
             {children}
           </PopperTag>,
-          container ? document.querySelector(container) : document.body
+          container
+            ? (document.querySelector(container as string) as Element)
+            : document.body
         )}
     </>
   );

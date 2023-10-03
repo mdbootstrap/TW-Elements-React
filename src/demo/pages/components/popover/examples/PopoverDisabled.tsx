@@ -7,7 +7,7 @@ import {
 
 export default function PopoverDisabled(): JSX.Element {
   return (
-    <TEPopover className="py-10 md:text-center">
+    <TEPopover className="py-10 md:text-center" trigger="hover focus">
       <TEPopoverToggler className="inline-block" tag="span">
         <button
           type="button"

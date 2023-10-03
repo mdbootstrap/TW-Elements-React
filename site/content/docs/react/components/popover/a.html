@@ -24,8 +24,6 @@
           TEPopover,
           TEPopoverToggler,
           TEPopoverContent,
-          TEPopoverHeader,
-          TEPopoverBody,
         } from "tw-elements-react";
         {{< /twsnippet/code >}}
         {{< /twsnippet/wrapper >}}
@@ -83,38 +81,7 @@
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>boundary</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    string | element
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>'clippingParents'</code>
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Overflow constraint boundary of the tooltip (applies only
-                      to Popper's preventOverflow modifier). Accepts the values
-                      of
-                      <code>'viewport'</code>, <code>'window'</code>,
-                      <code>'scrollParent'</code>, or an HTMLElement reference
-                      (via JavaScript only). For more information refer to
-                      Popper's
-                      <a
-                        rel="nofollow"
-                        target="_blank"
-                        class="text-primary dark:text-primary-400"
-                        href="https://popper.js.org/docs/v2/utils/detect-overflow/#boundary"
-                        >detectOverflow docs</a
-                      >.
-                  </td>
-                </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>dismiss</code>
+                    <code>enabled</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
@@ -122,10 +89,10 @@
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>false</code>
+                    <code>true</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Set dismiss on the next click.
+                    Gives an element’s popover the ability to be shown. Popovers are enabled by default.
                   </td>
                 </tr>
                 <tr
@@ -147,108 +114,6 @@
                   </td>
                 </tr>
                 <tr
-                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                <td
-                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                  <code>fallbackPlacement</code>
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                  String/Array
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                  <code>["top", "right", "bottom", "left"]</code>
-                </td>
-                <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                  Allow to specify which position Popper will use on
-                    fallback. For more information refer to Popper's
-                    <a
-                      rel="nofollow"
-                      target="_blank"
-                      class="text-primary dark:text-primary-400"
-                      href="https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements"
-                      >behavior docs</a
-                    >.
-                </td>
-              </tr>
-              <tr
-                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                <td
-                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                  <code>offset</code>
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                  Array
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                  <code>[0, 0]</code>
-                </td>
-                <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                  Offset of the tooltip relative to its target. For more
-                    information refer to Popper's
-                    <a
-                      rel="nofollow"
-                      target="_blank"
-                      class="text-primary dark:text-primary-400"  
-                      href="https://popper.js.org/docs/v2/modifiers/offset/#options"
-                      >offset docs</a
-                    >.
-                </td>
-              </tr>
-              <tr
-                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                <td
-                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                  <code>popperConfig</code>
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                 Object
-                </td>
-                <td
-                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                  <code>-</code>
-                </td>
-                <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                  Allows to change the default Popper config, <a href='https://popper.js.org/docs/v2/modifiers/' class="text-primary dark:text-primary-400">see Popper's configuration</a>.
-                </td>
-              </tr>
-                <tr
-                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
-                  <td
-                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>placement</code>
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                   String
-                  </td>
-                  <td
-                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>'right'</code>
-                  </td>
-                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Sets the position of the tooltip. Available properties: <code>"top"
-                        | "auto"
-                        | "auto-start"
-                        | "auto-end"
-                        | "bottom"
-                        | "right"
-                        | "left"
-                        | "top-start"
-                        | "top-end"
-                        | "bottom-start"
-                        | "bottom-end"
-                        | "right-start"
-                        | "right-end"
-                        | "left-start"
-                        | "left-end"</code> 
-                  </td>
-                </tr>
-                <tr
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
@@ -264,6 +129,26 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                     Defines tag of the <code>TEPopover</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>trigger</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'click'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    How popover is triggered - <code>click</code> |
+                        <code>hover</code> | <code>focus</code>. You may pass multiple triggers;
+                        separate them with a space.
                   </td>
                 </tr>
               </tbody>
@@ -368,41 +253,156 @@
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>container</code>
+                    <code>boundary</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    string/element/boolean
+                    string | element
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>false</code>
+                    <code>'clippingParents'</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Appends the tooltip to a specific element. Example:
-                      <code>container: 'body'</code>. This option is
-                      particularly useful in that it allows you to position the
-                      tooltip in the flow of the document near the triggering
-                      element - which will prevent the tooltip from floating
-                      away from the triggering element during a window resize.
+                    Overflow constraint boundary of the popover (applies only
+                      to Popper's preventOverflow modifier). Accepts the values
+                      of
+                      <code>'viewport'</code>, <code>'window'</code>,
+                      <code>'scrollParent'</code>, or an HTMLElement reference
+                      (via JavaScript only). For more information refer to
+                      Popper's
+                      <a
+                        rel="nofollow"
+                        target="_blank"
+                        class="text-primary dark:text-primary-400"
+                        href="https://popper.js.org/docs/v2/utils/detect-overflow/#boundary"
+                        >detectOverflow docs</a
+                      >.
                   </td>
                 </tr>
                 <tr
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 font-medium dark:border-neutral-500">
-                    <code>popperStyle</code>
+                    <code>container</code>
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    Object
+                    string/boolean
                   </td>
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
-                    <code>{}</code>
+                    <code>false</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    Set styles to popper element.
+                    Appends the popover to a specific element. Example:
+                      <code>container: 'body'</code>. This option is
+                      particularly useful in that it allows you to position the
+                      popover in the flow of the document near the triggering
+                      element - which will prevent the popover from floating
+                      away from the triggering element during a window resize.
+                  </td>
+                </tr>
+                <tr
+                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                <td
+                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                  <code>fallbackPlacement</code>
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  String/Array
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  <code>["top", "right", "bottom", "left"]</code>
+                </td>
+                <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                  Allow to specify which position Popper will use on
+                    fallback. For more information refer to Popper's
+                    <a
+                      rel="nofollow"
+                      target="_blank"
+                      class="text-primary dark:text-primary-400"
+                      href="https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements"
+                      >behavior docs</a
+                    >.
+                </td>
+              </tr>
+              <tr
+                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                <td
+                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                  <code>offset</code>
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  Array
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  <code>[0, 0]</code>
+                </td>
+                <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                  Offset of the popover relative to its target. For more
+                    information refer to Popper's
+                    <a
+                      rel="nofollow"
+                      target="_blank"
+                      class="text-primary dark:text-primary-400"  
+                      href="https://popper.js.org/docs/v2/modifiers/offset/#options"
+                      >offset docs</a
+                    >.
+                </td>
+              </tr>
+              <tr
+                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                <td
+                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                  <code>popperConfig</code>
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                 Object
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  <code>-</code>
+                </td>
+                <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                  Allows to change the default Popper config, <a href='https://popper.js.org/docs/v2/modifiers/' class="text-primary dark:text-primary-400">see Popper's configuration</a>.
+                </td>
+              </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>placement</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'right'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets the position of the popover. Available properties: <code>"top"
+                        | "auto"
+                        | "auto-start"
+                        | "auto-end"
+                        | "bottom"
+                        | "right"
+                        | "left"
+                        | "top-start"
+                        | "top-end"
+                        | "bottom-start"
+                        | "bottom-end"
+                        | "right-start"
+                        | "right-end"
+                        | "left-start"
+                        | "left-end"</code> 
                   </td>
                 </tr>
                 <tr
@@ -556,14 +556,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
+                 <tr
                   class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
                     <code>onHide</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    This event is fired immediately when the hide method has been called. It can be triggered in <code>TEPopover</code> element.
+                    This event is fired immediately when the hide method has been called.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onHidden</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to complete).
                   </td>
                 </tr>
                 <tr
@@ -573,7 +583,17 @@
                     <code>onShow</code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
-                    This event fires immediately when the show instance method is called. It can be triggered in <code>TEPopover</code> element.
+                    This event fires immediately when the show instance method is called.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onShown</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete).
                   </td>
                 </tr>
               </tbody>
@@ -596,8 +616,6 @@
         import React from "react";
         import {
           TEPopover,
-          TEPopoverHeader,
-          TEPopoverBody,
           TEPopoverToggler,
           TEPopoverContent,
           TERipple,
@@ -605,9 +623,7 @@
         
         export default function PopoverBasicExample(): JSX.Element {
           return (
-            <TEPopover 
-              className="py-10 md:text-center"
-              onShow={() => console.log("Popover showed")}>
+            <TEPopover className="py-10 md:text-center" onShow={() => console.log("onShow")}>
               <TERipple rippleColor="light">
                 <TEPopoverToggler className="inline-block rounded bg-danger px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
                   Click to toggle popover
@@ -615,10 +631,12 @@
               </TERipple>
         
               <TEPopoverContent>
-                <TEPopoverHeader>Popover title</TEPopoverHeader>
-                <TEPopoverBody>
+                <h3 className="py-2 px-4 mb-0 shadow-[0_0px_3px_0_rgba(0,0,0,0.07)] bg-white bg-clip-padding rounded-t-lg border border-b-2 border-neutral-100 font-medium empty:hidden dark:border-x-0 dark:border-t-0 dark:border-neutral-500 dark:bg-neutral-700">
+                  Popover title
+                </h3>
+                <div className="p-4 text-[#212529] rounded-b-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
                   And here's some amazing content. It's very engaging. Right?
-                </TEPopoverBody>
+                </div>
               </TEPopoverContent>
             </TEPopover>
           );

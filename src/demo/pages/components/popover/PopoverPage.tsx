@@ -59,8 +59,8 @@ const PopoverPage = () => {
         {/* <!-- Description --> */}
         <p className="mb-3">
           {" "}
-          Use the <code>dismiss</code> property to dismiss on the next click of
-          a different element than the toggle element.{" "}
+          Use <code>trigger="focus"</code> to dismiss on the next click of a
+          different element than the toggle element.{" "}
         </p>
         <PopoverDismiss />
       </section>
