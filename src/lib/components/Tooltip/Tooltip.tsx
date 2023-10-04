@@ -21,6 +21,7 @@ import clsx from "clsx";
 import { usePopper } from "react-popper";
 import type { TooltipProps } from "./types";
 import tooltipTheme from "./tooltipTheme";
+import { useTransition } from "../../hooks/useTransition";
 
 const TETooltip: React.FC<TooltipProps> = ({
   className,
@@ -95,31 +96,27 @@ const TETooltip: React.FC<TooltipProps> = ({
     }
   );
 
-  useEffect(() => {
-    let timer: number;
-    let secondTimer: number;
+  const { onTransitionStart, onTransitionEnd } = useTransition(
+    referenceElement,
+    setIsReadyToHide
+  );
 
+  useEffect(() => {
     if ((isOpen || isFocused) && enabled) {
-      setIsReadyToHide(true);
-      timer = setTimeout((e: SyntheticEvent) => {
+      onTransitionStart((e) => {
         setIsFaded(true);
         if (trigger !== "focus") {
-          !isFocused && onShown?.(e);
+          !isFocused && onShown?.(e as SyntheticEvent);
         } else {
-          onShown?.(e);
+          onShown?.(e as SyntheticEvent);
         }
-      }, 4);
+      });
     } else {
       setIsFaded(false);
-      secondTimer = setTimeout((e: SyntheticEvent) => {
-        setIsReadyToHide(false);
-        isFaded && onHidden?.(e);
-      }, 300);
+      onTransitionEnd((e) => {
+        isFaded && onHidden?.(e as SyntheticEvent);
+      });
     }
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(secondTimer);
-    };
   }, [isOpen, isFocused, enabled]);
 
   const handleMouseAndClick = useCallback(
@@ -140,7 +137,10 @@ const TETooltip: React.FC<TooltipProps> = ({
       ) {
         if (
           (eventType === "mouseenter" && isFocused) ||
-          (eventType === "mouseleave" && !isOpen)
+          (eventType === "mouseleave" && !isOpen) ||
+          (trigger.includes("click") &&
+            trigger.includes("focus") &&
+            !trigger.includes("hover"))
         ) {
           return;
         }
