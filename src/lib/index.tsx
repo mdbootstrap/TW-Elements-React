@@ -14,6 +14,13 @@ import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
 import TEPopover from "./components/Popover/Popover";
 import TEPopoverToggler from "./components/Popover/PopoverToggler/PopoverToggler";
 import TEPopoverContent from "./components/Popover/PopoverContent/PopoverContent";
+import TEDropdown from "./components/Dropdown/Dropdown";
+import TEDropdownToggle from "./components/Dropdown/DropdownToggle.tsx/DropdownToggle";
+import TEDropdownMenu from "./components/Dropdown/DropdownMenu/DropdownMenu";
+import TEDropdownItem from "./components/Dropdown/DropdownItem/DropdownItem";
+import TEChart from "./data/Chart/Chart";
+import TETooltip from "./components/Tooltip/Tooltip";
+import TETextarea from "./forms/Textarea/Textarea";
 
 export {
   TECollapse,
@@ -32,4 +39,11 @@ export {
   TEPopover,
   TEPopoverToggler,
   TEPopoverContent,
+  TEDropdown,
+  TEDropdownToggle,
+  TEDropdownMenu,
+  TEDropdownItem,
+  TEChart,
+  TETooltip,
+  TETextarea,
 };

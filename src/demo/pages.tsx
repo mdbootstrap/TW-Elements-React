@@ -47,6 +47,10 @@ import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFo
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
 import PopoverPage from "./pages/components/popover/PopoverPage";
+import DropdownPage from "./pages/components/dropdown/DropdownPage";
+import ChartPage from "./pages/data/chart/ChartPage";
+import TooltipPage from "./pages/components/tooltip/TooltipPage";
+import TextareaPage from "./pages/forms/textarea/TextareaPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -72,6 +76,10 @@ import RegistrationFormExamples from "./pages/forms/registration-form/exampleLis
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
 import PopoverExamples from "./pages/components/popover/exampleList";
+import DropdownExamples from "./pages/components/dropdown/exampleList";
+import ChartExamples from "./pages/data/chart/exampleList";
+import TooltipExamples from "./pages/components/tooltip/exampleList";
+import TextareaExamples from "./pages/forms/textarea/exampleList";
 
 interface Pages {
   name: string;
@@ -144,6 +152,16 @@ const componentsPages: Pages[] = [
     path: "/components/popover",
     element: <PopoverPage />,
   },
+  {
+    name: "dropdown",
+    path: "/components/dropdown",
+    element: <DropdownPage />,
+  },
+  {
+    name: "tooltip",
+    path: "/components/tooltip",
+    element: <TooltipPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -185,6 +203,7 @@ const contentStylesPages: Pages[] = [
 
 const dataPages: Pages[] = [
   { name: "tables", path: "/data/tables", element: <TablesPage /> },
+  { name: "chart", path: "/data/chart", element: <ChartPage /> },
 ];
 
 const formsPages: Pages[] = [
@@ -229,6 +248,11 @@ const formsPages: Pages[] = [
     name: "Search",
     path: "/components/search",
     element: <SearchPage />,
+  },
+  {
+    name: "Textarea",
+    path: "/forms/textarea",
+    element: <TextareaPage />,
   },
 ];
 
@@ -323,6 +347,10 @@ export const examplesPages: Pages[] = [
   ...SearchExamples,
   ...FooterExamples,
   ...PopoverExamples,
+  ...DropdownExamples,
+  ...ChartExamples,
+  ...TooltipExamples,
+  ...TextareaExamples,
 ];
 
 export default demoPages;

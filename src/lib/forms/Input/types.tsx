@@ -45,6 +45,7 @@ type InputELement = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
 type InputProps = InputELement & {
   label?: React.ReactNode;
   labelRef?: React.RefObject<HTMLLabelElement>;
+  labelID?: string;
   ref?: React.Ref<HTMLInputElement>;
   readonly?: boolean;
   disabled?: boolean;
