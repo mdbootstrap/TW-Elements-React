@@ -267,6 +267,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/popover/",
+    "name": "Popover",
+    "keywords": ["popover"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/buttons",
     "name": "Buttons",
     "keywords": ["buttons"],
