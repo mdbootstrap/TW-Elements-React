@@ -1,15 +1,19 @@
 import React, { useState, useEffect, SyntheticEvent } from "react";
 
 const useTransition = (
-  referenceElement: React.RefObject<any>,
+  referenceElement:
+    | React.MutableRefObject<HTMLElement | null>
+    | HTMLElement
+    | null,
   setShow: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
 
   useEffect(() => {
-    if (referenceElement.current) {
-      const element = referenceElement.current;
-      const { transitionDuration } = window.getComputedStyle(element);
+    if (referenceElement !== null) {
+      const { transitionDuration } = window.getComputedStyle(
+        referenceElement as HTMLElement
+      );
       const time = Number(transitionDuration.replace("s", "")) * 1000;
       setTransitionDuration(time);
     } else {
@@ -17,10 +21,10 @@ const useTransition = (
     }
   }, [referenceElement]);
 
-  const onTransitionStart = (callback: (e?: SyntheticEvent) => any) => {
+  const onTransitionStart = (callback?: (e?: SyntheticEvent) => any) => {
     setShow(true);
     const timer = setTimeout(() => {
-      callback();
+      callback?.();
     }, transitionDuration);
 
     return () => {
@@ -28,10 +32,10 @@ const useTransition = (
     };
   };
 
-  const onTransitionEnd = (callback: (e?: SyntheticEvent) => any) => {
+  const onTransitionEnd = (callback?: (e?: SyntheticEvent) => any) => {
     const timer = setTimeout(() => {
       setShow(false);
-      callback();
+      callback?.();
     }, transitionDuration);
 
     return () => {

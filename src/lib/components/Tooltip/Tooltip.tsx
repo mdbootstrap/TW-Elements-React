@@ -97,7 +97,7 @@ const TETooltip: React.FC<TooltipProps> = ({
   );
 
   const { onTransitionStart, onTransitionEnd } = useTransition(
-    referenceElement,
+    popperElement.current,
     setIsReadyToHide
   );
 

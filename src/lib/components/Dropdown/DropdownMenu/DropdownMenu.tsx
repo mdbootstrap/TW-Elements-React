@@ -21,8 +21,8 @@ import { createPortal } from "react-dom";
 import { DropdownMenuProps } from "./types";
 import { DropdownContext } from "../context/DropdownContext";
 import { useKeyboard } from "../../../hooks/components/Dropdown/useKeyboard";
-import { useFade } from "../../../hooks/components/Dropdown/useFade";
 import { usePopper } from "react-popper";
+import { useTransition } from "../../../hooks/useTransition";
 import { Placement, flip } from "@popperjs/core";
 import clsx from "clsx";
 import DropdownMenuTheme from "./DrodpownMenuTheme";
@@ -48,9 +48,12 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
   const [placement, setPlacement] = useState<Placement | undefined>(
     "bottom-start"
   );
+  const [isFaded, setIsFaded] = useState(false);
+  const [show, setShow] = useState(false);
 
   const {
     activeIndex,
+    isOpenState,
     setPopperElement,
     animation,
     referenceElement,
@@ -58,7 +61,10 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     alwaysOpen,
   } = useContext(DropdownContext);
 
-  const { show, isFadeIn, isFadeOut } = useFade();
+  const { onTransitionStart, onTransitionEnd } = useTransition(
+    popperElement,
+    setShow
+  );
 
   useKeyboard(children);
 
@@ -69,14 +75,26 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
 
   const classes = clsx(
     theme.menu,
-    animation === true &&
-      ((isFadeIn && theme.animationIn) || (isFadeOut && theme.animationOut)),
+    animation && theme.fade,
+    isFaded ? "opacity-100" : "opacity-0",
     className
   );
 
   const handleResize = useCallback(() => {
     setWindowWidth(window.innerWidth);
   }, []);
+
+  useEffect(() => {
+    if (isOpenState) {
+      onTransitionStart(() => {
+        setIsFaded(true);
+      });
+    } else {
+      setIsFaded(false);
+
+      onTransitionEnd();
+    }
+  }, [isOpenState]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
