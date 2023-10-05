@@ -3,12 +3,12 @@ import clsx from "clsx";
 import type { ModalDialogProps } from "./types";
 import modalDialogTheme from "./modalDialogTheme";
 import { ModalContext } from "../context/ModalContext";
+import { useTransition } from "../../../hooks/useTransition";
 
 const MDBModalDialog: React.FC<ModalDialogProps> = ({
   className,
   centered,
   position,
-  animationDirection = "top",
   children,
   size,
   theme: customTheme,
@@ -22,9 +22,7 @@ const MDBModalDialog: React.FC<ModalDialogProps> = ({
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const interval = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const dialogTransitionTimeRef = useRef<number>(0);
 
   const classes = clsx(
     theme.wrapper,
@@ -36,28 +34,22 @@ const MDBModalDialog: React.FC<ModalDialogProps> = ({
     className
   );
 
+  const { transitionDuration, onTransitionStart } = useTransition(
+    dialogRef.current
+  );
+
   useEffect(() => {
-    if (dialogRef.current) {
-      const { transitionDuration } = window.getComputedStyle(dialogRef.current);
-      const time = Number(transitionDuration.replace("s", "")) * 1000;
-      dialogTransitionTimeRef.current = time;
-      setTransitionDuration(time);
-    }
-  }, []);
+    setTransitionDuration(transitionDuration);
+  }, [transitionDuration]);
 
   useEffect(() => {
     if (isOpenModal) {
-      interval.current = setTimeout(() => {
+      onTransitionStart(() => {
         setIsOpen(isOpenModal);
-      }, 50);
+      });
     } else {
       setIsOpen(isOpenModal);
     }
-    return () => {
-      if (interval.current) {
-        clearInterval(interval.current);
-      }
-    };
   }, [isOpenModal]);
 
   return (

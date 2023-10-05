@@ -5,7 +5,7 @@ const useTransition = (
     | React.MutableRefObject<HTMLElement | null>
     | HTMLElement
     | null,
-  setShow: React.Dispatch<React.SetStateAction<boolean>>
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
 
@@ -22,7 +22,7 @@ const useTransition = (
   }, [referenceElement]);
 
   const onTransitionStart = (callback?: (e?: SyntheticEvent) => any) => {
-    setShow(true);
+    setShow?.(true);
     const timer = setTimeout(() => {
       callback?.();
     }, transitionDuration);
@@ -34,7 +34,7 @@ const useTransition = (
 
   const onTransitionEnd = (callback?: (e?: SyntheticEvent) => any) => {
     const timer = setTimeout(() => {
-      setShow(false);
+      setShow?.(false);
       callback?.();
     }, transitionDuration);
 
