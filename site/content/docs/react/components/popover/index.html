@@ -90,16 +90,7 @@ menu:
   <!-- napisz mi punktowaną listę używając klas tailwindowych -->
   <ul class="list-disc list-inside ml-5">
     <li>
-        Popovers are opt-in for performance reasons, so <strong>you must initialize them yourself</strong>.
-    </li>
-    <li>
-        Zero-length <code>TEPopoverHeader</code> and <code>TEPopoverBody</code> values will never show a popover.
-    </li>
-    <li>
         Triggering popovers on hidden elements will not work.
-    </li>
-    <li>
-        Popovers for <code>disabled</code> elements must be triggered on a wrapper element.
     </li>
     <li>
         When triggered from hyperlinks that span multiple lines, popovers will be centered. Use <code>whitespace-nowrap</code> class on your <code>&lt;a&gt;</code> elements to avoid this behavior.
@@ -484,13 +475,6 @@ menu:
     Use <code>trigger="focus"</code> to dismiss on the next click of a
     different element than the toggle element.
   </p>
-
-  <div
-    class="mt-5 rounded-md border-l-[6px] border-solid border-danger-400 bg-danger-100 p-4 dark:border-danger-300 dark:bg-danger-300/30 ">
-      <strong>Specific markup required for dismiss-on-next-click:</strong> 
-      <br />
-      For proper cross-browser and cross-platform behavior, you must use the <code>&lt;a&gt;</code> tag, not the <button> tag, and you also must include a <code>tabIndex</code> attribute.
-    </div>
 
   <!-- prettier-ignore  -->
   {{< twsnippet/demo-iframe id="example3" iframe="/components/popover/examples/popover-dismiss" title="Popover Dismiss on next click" >}}
