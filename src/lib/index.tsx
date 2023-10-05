@@ -11,6 +11,9 @@ import TETabs from "./navigation/tabs/Tabs";
 import TETabsItem from "./navigation/tabs/TabsItem/TabsItem";
 import TETabsContent from "./navigation/tabs/TabsContent/TabsContent";
 import TETabsPane from "./navigation/tabs/TabsPane/TabsPane";
+import TEPopover from "./components/Popover/Popover";
+import TEPopoverToggler from "./components/Popover/PopoverToggler/PopoverToggler";
+import TEPopoverContent from "./components/Popover/PopoverContent/PopoverContent";
 import TEDropdown from "./components/Dropdown/Dropdown";
 import TEDropdownToggle from "./components/Dropdown/DropdownToggle.tsx/DropdownToggle";
 import TEDropdownMenu from "./components/Dropdown/DropdownMenu/DropdownMenu";
@@ -33,6 +36,9 @@ export {
   TETabsItem,
   TETabsContent,
   TETabsPane,
+  TEPopover,
+  TEPopoverToggler,
+  TEPopoverContent,
   TEDropdown,
   TEDropdownToggle,
   TEDropdownMenu,
