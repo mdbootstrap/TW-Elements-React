@@ -13,6 +13,7 @@ import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { CollapseProps } from "./types";
 import collapseTheme from "./collapseTheme";
+import { useTransition } from "../../hooks/useTransition";
 
 const TECollapse: React.FC<CollapseProps> = ({
   className,
@@ -42,9 +43,7 @@ const TECollapse: React.FC<CollapseProps> = ({
   const classes = clsx(
     theme.collapseStyles,
     theme.visible,
-    transition &&
-      theme.baseTransition &&
-      (horizontal ? `${theme.collapsingHorizontal}` : `${theme.collapsing}`),
+    horizontal ? `${theme.collapsingHorizontal}` : `${theme.collapsing}`,
     !transition && !showCollapse && theme.hidden,
     scroll && theme.scrollStyles,
     className
@@ -52,6 +51,11 @@ const TECollapse: React.FC<CollapseProps> = ({
 
   const collapseEl = useRef<HTMLElement>(null);
   const refCollapse = collapseRef ?? collapseEl;
+
+  const { onTransitionStart, onTransitionEnd } = useTransition(
+    refCollapse.current,
+    setTransition
+  );
 
   const handleResize = useCallback(() => {
     if (showCollapse) {
@@ -76,16 +80,10 @@ const TECollapse: React.FC<CollapseProps> = ({
     }
 
     if (showCollapse) {
-      setTransition(true);
+      onTransitionStart();
     }
 
-    const timer = setTimeout(() => {
-      setTransition(false);
-    }, 350);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    onTransitionEnd();
   }, [show, showCollapse, onShow, onHide]);
 
   useEffect(() => {
