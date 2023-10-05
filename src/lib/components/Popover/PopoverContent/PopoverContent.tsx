@@ -9,13 +9,20 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, { useContext, useRef } from "react";
+import React, {
+  useContext,
+  useRef,
+  useEffect,
+  useState,
+  SyntheticEvent,
+} from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
 import type { PopoverContentProps } from "../PopoverContent/types";
 import { PopoverContext } from "../context/PopoverContext";
 import PopoverContentTheme from "./PopoverContentTheme";
 import { usePopper } from "react-popper";
+import { useTransition } from "../../../hooks/useTransition";
 
 const TEPopoverContent: React.FC<PopoverContentProps> = ({
   className,
@@ -29,10 +36,20 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
   fallbackPlacements = ["top", "bottom", "right", "left"],
   boundary = "clippingParents",
 }): JSX.Element => {
+  const [isReadyToHide, setIsReadyToHide] = useState(false);
+  const [isFaded, setIsFaded] = useState(false);
+
   const popperElement = useRef(null);
 
-  const { isReadyToHide, isFaded, referenceElement } =
-    useContext(PopoverContext);
+  const {
+    referenceElement,
+    isOpenState,
+    isFocused,
+    enabled,
+    trigger,
+    onShown,
+    onHidden,
+  } = useContext(PopoverContext);
 
   const theme = {
     ...PopoverContentTheme,
@@ -74,6 +91,26 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
       ...popperConfig,
     }
   );
+
+  const { onTransitionStart, onTransitionEnd } = useTransition(
+    popperElement.current,
+    setIsReadyToHide
+  );
+
+  useEffect(() => {
+    if ((isOpenState || isFocused) && enabled) {
+      onTransitionStart((e) => {
+        setIsFaded(true);
+        !isFaded && onShown?.(e as SyntheticEvent);
+      });
+    } else {
+      setIsFaded(false);
+      onTransitionEnd((e) => {
+        setIsReadyToHide(false);
+        isFaded && onHidden?.(e as SyntheticEvent);
+      });
+    }
+  }, [isOpenState, isFocused, enabled, trigger]);
 
   return (
     <>
