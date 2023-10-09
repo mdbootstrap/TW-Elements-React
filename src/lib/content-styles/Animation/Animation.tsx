@@ -29,6 +29,7 @@ const TEAnimation: React.FC<AnimationProps> = ({
   repeatOnScroll,
   showOnLoad,
   animationRef,
+  beginHidden,
   onStart,
   onEnd,
   onShow,
@@ -37,18 +38,49 @@ const TEAnimation: React.FC<AnimationProps> = ({
 }) => {
   const [toggleAnimation, setToggleAnimation] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
+
   const initialRender = useRef(0);
   const isAnimationing = useRef(false);
-
   const animationInnerRef = useRef(null);
+  const timeoutToggleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutIntervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutScrollRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutOnLoadRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutShowOnLoadRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+
   const classes = clsx(toggleAnimation && `animate-${animation}`, className);
 
   const animationReference = animationRef ? animationRef : animationInnerRef;
+
+  const addEvent = (
+    eventElement: HTMLElement | Window,
+    event: string,
+    listener: () => void
+  ) => {
+    eventElement.addEventListener(event, listener);
+  };
+
+  const removeEvent = (
+    eventElement: HTMLElement | Window,
+    event: string,
+    listener: () => void
+  ) => {
+    eventElement.removeEventListener(event, listener);
+  };
+
+  const eventTypes = {
+    onHover: "mouseover",
+    onClick: "click",
+    onScroll: "scroll",
+  };
 
   const handleToggleAnimation = useCallback(() => {
     if (isAnimationing.current && start !== "manually") {
       return;
     }
+    beginHidden && setIsVisible(true);
     isAnimationing.current = true;
 
     if (start === "onScroll") {
@@ -58,13 +90,17 @@ const TEAnimation: React.FC<AnimationProps> = ({
     }
 
     if (delay) {
-      setTimeout(() => {
+      if (timeoutToggleRef.current !== null) {
+        clearTimeout(timeoutToggleRef.current);
+      }
+
+      timeoutToggleRef.current = setTimeout(() => {
         setToggleAnimation((prevToggleAnimation) => !prevToggleAnimation);
       }, delay);
     } else {
       setToggleAnimation((prevToggleAnimation) => !prevToggleAnimation);
     }
-  }, [start, delay]);
+  }, [start, delay, beginHidden]);
 
   const removeEventListeners = useCallback(() => {
     if (
@@ -73,18 +109,18 @@ const TEAnimation: React.FC<AnimationProps> = ({
       !repeatOnScroll &&
       (!reset || interval)
     ) {
-      if (start === "onHover") {
-        animationReference.current.removeEventListener(
-          "mouseover",
-          handleToggleAnimation
-        );
-      } else if (start === "onClick") {
-        animationReference.current.removeEventListener(
-          "click",
-          handleToggleAnimation
-        );
-      } else if (start === "onScroll") {
-        window.removeEventListener("scroll", handleAnimationOnScroll);
+      const element = animationReference.current;
+
+      switch (start) {
+        case "onHover":
+        case "onClick":
+          removeEvent(element, eventTypes[start], handleToggleAnimation);
+          break;
+        case "onScroll":
+          removeEvent(window, eventTypes[start], handleAnimationOnScroll);
+          break;
+        default:
+          break;
       }
 
       if (delay || (!reverse && !interval)) {
@@ -129,7 +165,11 @@ const TEAnimation: React.FC<AnimationProps> = ({
     }
 
     if (interval) {
-      setTimeout(() => {
+      if (timeoutIntervalRef.current !== null) {
+        clearTimeout(timeoutIntervalRef.current);
+      }
+
+      timeoutIntervalRef.current = setTimeout(() => {
         setToggleAnimation((prevToggleAnimation) => !prevToggleAnimation);
         onStart?.();
       }, interval);
@@ -154,7 +194,11 @@ const TEAnimation: React.FC<AnimationProps> = ({
 
     if (shouldStartAnimation && !isVisible) {
       if (delay) {
-        setTimeout(() => {
+        if (timeoutScrollRef.current !== null) {
+          clearTimeout(timeoutScrollRef.current);
+        }
+
+        timeoutScrollRef.current = setTimeout(() => {
           setIsVisible(true);
         }, delay);
       } else {
@@ -171,59 +215,61 @@ const TEAnimation: React.FC<AnimationProps> = ({
   useEffect(() => {
     const element = animationReference.current;
 
-    if (start === "manually") {
-      return;
-    }
+    switch (start) {
+      case "onHover":
+      case "onClick":
+        addEvent(element, eventTypes[start], handleToggleAnimation);
+        break;
+      case "onScroll":
+        addEvent(window, eventTypes[start], handleAnimationOnScroll);
+        break;
+      case "onLoad":
+        if (timeoutOnLoadRef.current !== null) {
+          clearTimeout(timeoutOnLoadRef.current);
+        }
 
-    if (start === "onHover") {
-      element.addEventListener("mouseover", handleToggleAnimation);
-    }
-
-    if (start === "onClick") {
-      element.addEventListener("click", handleToggleAnimation);
-    }
-
-    if (start === "onLoad") {
-      if (delay) {
-        setTimeout(() => {
+        if (delay) {
+          timeoutOnLoadRef.current = setTimeout(() => {
+            setToggleAnimation(true);
+          }, delay);
+        } else {
           setToggleAnimation(true);
-        }, delay);
-      } else {
-        setToggleAnimation(true);
-      }
-    }
-
-    if (start === "onScroll") {
-      window.addEventListener("scroll", handleAnimationOnScroll);
+        }
+        break;
+      default:
+        break;
     }
 
     return () => {
-      if (start === "onHover") {
-        element.removeEventListener("mouseover", handleToggleAnimation);
-      }
+      switch (start) {
+        case "onHover":
+        case "onClick":
+          removeEvent(element, eventTypes[start], handleToggleAnimation);
+          break;
+        case "onScroll":
+          if (showOnLoad) {
+            if (timeoutShowOnLoadRef.current !== null) {
+              clearTimeout(timeoutShowOnLoadRef.current);
+            }
 
-      if (start === "onClick") {
-        element.removeEventListener("click", handleToggleAnimation);
-      }
-
-      if (start === "onLoad") {
-        setToggleAnimation(false);
-        onStart?.();
-        isAnimationing.current = true;
-      }
-
-      if (start === "onScroll") {
-        if (showOnLoad) {
-          if (delay) {
-            setTimeout(() => {
+            if (delay) {
+              timeoutShowOnLoadRef.current = setTimeout(() => {
+                setIsVisible(true);
+              }, delay);
+            } else {
               setIsVisible(true);
-            }, delay);
-          } else {
-            setIsVisible(true);
+            }
+            handleToggleAnimation();
           }
-          handleToggleAnimation();
-        }
-        window.removeEventListener("scroll", handleAnimationOnScroll);
+          removeEvent(window, eventTypes[start], handleAnimationOnScroll);
+          break;
+        case "onLoad":
+          setToggleAnimation(false);
+          onStart?.();
+          isAnimationing.current = true;
+          break;
+        default:
+          break;
       }
     };
   }, [animationReference, start, delay, showOnLoad]);
@@ -240,7 +286,7 @@ const TEAnimation: React.FC<AnimationProps> = ({
 
   useEffect(() => {
     if (initialRender.current < 2) {
-      initialRender.current += 1;
+      initialRender.current++;
       return;
     }
 
@@ -264,7 +310,11 @@ const TEAnimation: React.FC<AnimationProps> = ({
           : null,
         animationDirection: reverse ? "alternate" : null,
         visibility:
-          start === "onScroll" ? (isVisible ? "visible" : "hidden") : null,
+          start === "onScroll" || beginHidden
+            ? isVisible
+              ? "visible"
+              : "hidden"
+            : null,
       }}
       {...props}
     >

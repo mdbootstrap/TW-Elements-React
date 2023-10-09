@@ -21,7 +21,7 @@ export default function AnimationsFadingGallery(): JSX.Element {
         delay={300}
       >
         <img
-          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          src="https://tecdn.b-cdn.net/img/new/standard/city/042.webp"
           className="rounded"
         />
       </TEAnimation>
@@ -32,7 +32,7 @@ export default function AnimationsFadingGallery(): JSX.Element {
         delay={500}
       >
         <img
-          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          src="https://tecdn.b-cdn.net/img/new/standard/city/043.webp"
           className="rounded"
         />
       </TEAnimation>
@@ -42,7 +42,7 @@ export default function AnimationsFadingGallery(): JSX.Element {
         repeatOnScroll
       >
         <img
-          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          src="https://tecdn.b-cdn.net/img/new/standard/city/044.webp"
           className="rounded"
         />
       </TEAnimation>
@@ -53,7 +53,7 @@ export default function AnimationsFadingGallery(): JSX.Element {
         delay={300}
       >
         <img
-          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          src="https://tecdn.b-cdn.net/img/new/standard/city/045.webp"
           className="rounded"
         />
       </TEAnimation>
@@ -64,7 +64,7 @@ export default function AnimationsFadingGallery(): JSX.Element {
         delay={500}
       >
         <img
-          src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
+          src="https://tecdn.b-cdn.net/img/new/standard/city/046.webp"
           className="rounded"
         />
       </TEAnimation>

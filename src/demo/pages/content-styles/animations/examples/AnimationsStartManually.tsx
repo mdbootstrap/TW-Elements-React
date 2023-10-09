@@ -20,7 +20,7 @@ export default function AnimationsStartManually(): JSX.Element {
           start="manually"
           toggle={toggle}
           repeat={true}
-          className="[&>svg]:w-11 w-11"
+          className="[&>svg]:w-11"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

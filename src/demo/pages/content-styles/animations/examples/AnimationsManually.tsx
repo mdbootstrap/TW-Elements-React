@@ -7,7 +7,7 @@ export default function AnimationsManually(): JSX.Element {
       <TEAnimation
         animation="[slide-right_1s_ease-in-out]"
         start="manually"
-        className="[&>svg]:w-11 w-11"
+        className="[&>svg]:w-11"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

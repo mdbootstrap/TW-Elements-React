@@ -9,6 +9,7 @@ import AnimationsLaunchingExternal from "./examples/AnimationsLaunchingExternal"
 import AnimationsStartManually from "./examples/AnimationsStartManually";
 import AnimationsChangeType from "./examples/AnimationsChangeType";
 import AnimationsListGroup from "./examples/AnimationsListGroup";
+import AnimationsOnScroll from "./examples/AnimationsOnScroll";
 
 export default [
   {
@@ -60,5 +61,10 @@ export default [
     name: "AnimationsListGroup",
     path: "/content-styles/animations/examples/animations-list-group",
     element: <AnimationsListGroup />,
+  },
+  {
+    name: "AnimationsOnScroll",
+    path: "/content-styles/animations/examples/animations-on-scroll",
+    element: <AnimationsOnScroll />,
   },
 ];

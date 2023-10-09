@@ -14,6 +14,7 @@ interface AnimationProps extends BaseComponent {
   offset?: number;
   repeatOnScroll?: boolean;
   showOnLoad?: boolean;
+  beginHidden?: boolean;
   onStart?: () => any;
   onEnd?: () => any;
   onShow?: () => any;

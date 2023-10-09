@@ -8,7 +8,7 @@ export default function AnimationsOnLoad(): JSX.Element {
         animation="[slide-right_1s_ease-in-out]"
         start="onLoad"
         delay={500}
-        className="[&>svg]:w-11 w-11"
+        className="[&>svg]:w-11"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

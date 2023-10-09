@@ -3,7 +3,7 @@ import { TEAnimation } from "tw-elements-react";
 
 export default function AnimationsAll(): JSX.Element {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 place-items-center">
+    <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 place-items-center">
       <TEAnimation
         animation="[fade-in_1s_ease-in-out]"
         start="onHover"

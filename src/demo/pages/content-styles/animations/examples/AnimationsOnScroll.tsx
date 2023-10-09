@@ -3,12 +3,17 @@ import { TEAnimation } from "tw-elements-react";
 
 export default function AnimationsOnScroll(): JSX.Element {
   return (
-    <>
-      <div className="flex justify-center h-[200px] overflow-y-scroll">
+    <div className="!overflow-auto">
+      <div className="h-[2000px]">
+        <p className="text-center font-semibold">
+          Scroll Down to see the effect.
+        </p>
+      </div>
+      <div className="flex justify-center">
         <TEAnimation
           animation="[slide-right_1s_ease-in-out]"
           start="onScroll"
-          className="[&>svg]:w-11 w-11 mt-[300px]"
+          className="[&>svg]:w-11"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +24,6 @@ export default function AnimationsOnScroll(): JSX.Element {
           </svg>
         </TEAnimation>
       </div>
-    </>
+    </div>
   );
 }
