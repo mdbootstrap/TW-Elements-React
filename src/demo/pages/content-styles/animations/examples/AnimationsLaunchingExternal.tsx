@@ -35,7 +35,6 @@ export default function AnimationsLaunchingExternal(): JSX.Element {
           animation="[slide-right_1s_ease-in-out]"
           start="manually"
           toggle={clicked}
-          beginHidden
           className="[&>svg]:w-11"
         >
           <svg
