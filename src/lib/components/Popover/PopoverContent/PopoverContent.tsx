@@ -99,17 +99,17 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
 
   useEffect(() => {
     if ((isOpenState || isFocused) && enabled) {
-      onTransitionStart((e) => {
+      onTransitionStart(() => {
         setIsFaded(true);
-        !isFaded && onShown?.(e as SyntheticEvent);
+        !isFaded && onShown?.();
       });
-    } else {
-      setIsFaded(false);
-      onTransitionEnd((e) => {
-        setIsReadyToHide(false);
-        isFaded && onHidden?.(e as SyntheticEvent);
-      });
+      return;
     }
+
+    setIsFaded(false);
+    onTransitionEnd(() => {
+      isFaded && onHidden?.();
+    });
   }, [isOpenState, isFocused, enabled, trigger]);
 
   return (

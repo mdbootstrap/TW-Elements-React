@@ -89,11 +89,11 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
       onTransitionStart(() => {
         setIsFaded(true);
       });
-    } else {
-      setIsFaded(false);
-
-      onTransitionEnd();
+      return;
     }
+
+    setIsFaded(false);
+    onTransitionEnd();
   }, [isOpenState]);
 
   useEffect(() => {

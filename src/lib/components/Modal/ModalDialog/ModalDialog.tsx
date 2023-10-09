@@ -34,22 +34,26 @@ const MDBModalDialog: React.FC<ModalDialogProps> = ({
     className
   );
 
-  const { transitionDuration, onTransitionStart } = useTransition(
-    dialogRef.current
-  );
+  const { transitionDuration } = useTransition(dialogRef.current);
 
   useEffect(() => {
     setTransitionDuration(transitionDuration);
   }, [transitionDuration]);
 
   useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
     if (isOpenModal) {
-      onTransitionStart(() => {
-        setIsOpen(isOpenModal);
-      });
+      timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 50);
     } else {
-      setIsOpen(isOpenModal);
+      setIsOpen(false);
     }
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [isOpenModal]);
 
   return (

@@ -18,7 +18,6 @@ import React, {
 } from "react";
 import type { PopoverProps } from "./types";
 import { PopoverContext } from "./context/PopoverContext";
-import { useTransition } from "../../hooks/useTransition";
 
 const TEPopover: React.FC<PopoverProps> = ({
   children,
@@ -46,8 +45,8 @@ const TEPopover: React.FC<PopoverProps> = ({
     ) => {
       if (!enabled) return;
 
-      eventType === "mouseenter" && onMouseEnter?.(e);
-      eventType === "mouseleave" && onMouseLeave?.(e);
+      eventType === "mouseenter" && onMouseEnter?.();
+      eventType === "mouseleave" && onMouseLeave?.();
 
       if (
         (eventType === "mouseleave" && !trigger.includes("click")) ||
@@ -65,30 +64,30 @@ const TEPopover: React.FC<PopoverProps> = ({
           return;
         }
         if (eventType === "mouseenter") {
-          !isFocused && onShow?.(e);
+          !isFocused && onShow?.();
           !e.defaultPrevented && setIsOpenState(true);
         } else {
-          !isFocused && onHide?.(e);
+          !isFocused && onHide?.();
           !e.defaultPrevented && setIsOpenState(false);
         }
       } else if (eventType === "mousedown") {
         if (e.target === referenceElement.current) {
           if (trigger === "click") {
-            !isOpenState && onShow?.(e);
-            isOpenState && onHide?.(e);
+            !isOpenState && onShow?.();
+            isOpenState && onHide?.();
             setIsOpenState((prevState) => !prevState);
           } else if (trigger.includes("focus")) {
-            !isFocused && !isOpenState && onShow?.(e);
+            !isFocused && !isOpenState && onShow?.();
             setIsFocused(true);
           } else if (trigger.includes("click")) {
-            !isFocused && !isOpenState && onShow?.(e);
-            isFocused && onHide?.(e);
+            !isFocused && !isOpenState && onShow?.();
+            isFocused && onHide?.();
             setIsFocused((prev) => !prev);
             isFocused && setIsOpenState(false);
           }
         } else {
           if (trigger.includes("focus")) {
-            isFocused && onHide?.(e);
+            isFocused && onHide?.();
             setIsFocused(false);
           }
         }

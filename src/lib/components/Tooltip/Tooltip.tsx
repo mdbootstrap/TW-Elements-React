@@ -54,6 +54,7 @@ const TETooltip: React.FC<TooltipProps> = ({
   const [isReadyToHide, setIsReadyToHide] = useState(false);
   const popperElement = useRef(null);
   const referenceElement = useRef(null);
+  const isTransitioning = useRef(false);
 
   const theme = {
     ...tooltipTheme,
@@ -102,21 +103,26 @@ const TETooltip: React.FC<TooltipProps> = ({
   );
 
   useEffect(() => {
+    if (!isTransitioning.current) {
+      return;
+    }
+
     if ((isOpen || isFocused) && enabled) {
-      onTransitionStart((e) => {
+      onTransitionStart(() => {
         setIsFaded(true);
         if (trigger !== "focus") {
-          !isFocused && onShown?.(e as SyntheticEvent);
+          !isFocused && onShown?.();
         } else {
-          onShown?.(e as SyntheticEvent);
+          onShown?.();
         }
       });
-    } else {
-      setIsFaded(false);
-      onTransitionEnd((e) => {
-        isFaded && onHidden?.(e as SyntheticEvent);
-      });
+      return;
     }
+
+    setIsFaded(false);
+    onTransitionEnd(() => {
+      isFaded && onHidden?.();
+    });
   }, [isOpen, isFocused, enabled]);
 
   const handleMouseAndClick = useCallback(
@@ -125,9 +131,10 @@ const TETooltip: React.FC<TooltipProps> = ({
       eventType: "mouseenter" | "mouseleave" | "mousedown"
     ) => {
       if (!enabled) return;
+      isTransitioning.current = true;
 
-      eventType === "mouseenter" && onMouseEnter?.(e);
-      eventType === "mouseleave" && onMouseLeave?.(e);
+      eventType === "mouseenter" && onMouseEnter?.();
+      eventType === "mouseleave" && onMouseLeave?.();
 
       if (
         ((eventType === "mouseenter" || eventType === "mouseleave") &&
@@ -145,29 +152,29 @@ const TETooltip: React.FC<TooltipProps> = ({
           return;
         }
         if (eventType === "mouseenter") {
-          !isFocused && onShow?.(e);
+          !isFocused && onShow?.();
           !e.defaultPrevented && setIsOpen(true);
         } else {
-          !isFocused && onHide?.(e);
+          !isFocused && onHide?.();
           !e.defaultPrevented && setIsOpen(false);
         }
       } else if (eventType === "mousedown") {
         if (e.target === referenceElement.current) {
           if (trigger.includes("focus")) {
-            !isFocused && !isOpen && onShow?.(e);
+            !isFocused && !isOpen && onShow?.();
             setIsFocused(true);
           }
           if (trigger.includes("click")) {
-            !isOpen && onShow?.(e);
+            !isOpen && onShow?.();
             setIsOpen(true);
           }
         } else {
           if (trigger.includes("focus")) {
-            isFocused && onHide?.(e);
+            isFocused && onHide?.();
             setIsFocused(false);
           }
           if (trigger.includes("click")) {
-            isOpen && onHide?.(e);
+            isOpen && onHide?.();
             setIsOpen(false);
           }
         }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SyntheticEvent } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const useTransition = (
   referenceElement:
@@ -7,7 +7,9 @@ const useTransition = (
     | null,
   setShow?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  const [transitionDuration, setTransitionDuration] = useState<number>(0);
+  const [transitionDuration, setTransitionDuration] = useState<number>(150);
+  const tiemoutShowRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const tiemoutHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (referenceElement !== null) {
@@ -16,31 +18,29 @@ const useTransition = (
       );
       const time = Number(transitionDuration.replace("s", "")) * 1000;
       setTransitionDuration(time);
-    } else {
-      setTransitionDuration(0);
     }
   }, [referenceElement]);
 
-  const onTransitionStart = (callback?: (e?: SyntheticEvent) => any) => {
+  const onTransitionStart = (callback?: () => any) => {
+    if (tiemoutShowRef.current !== null) {
+      clearTimeout(tiemoutShowRef.current);
+    }
+
     setShow?.(true);
-    const timer = setTimeout(() => {
+    tiemoutShowRef.current = setTimeout(() => {
       callback?.();
     }, transitionDuration);
-
-    return () => {
-      clearTimeout(timer);
-    };
   };
 
-  const onTransitionEnd = (callback?: (e?: SyntheticEvent) => any) => {
-    const timer = setTimeout(() => {
+  const onTransitionEnd = (callback?: () => any) => {
+    if (tiemoutHideRef.current !== null) {
+      clearTimeout(tiemoutHideRef.current);
+    }
+
+    tiemoutHideRef.current = setTimeout(() => {
       setShow?.(false);
       callback?.();
     }, transitionDuration);
-
-    return () => {
-      clearTimeout(timer);
-    };
   };
 
   return {

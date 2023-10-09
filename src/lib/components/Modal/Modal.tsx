@@ -59,13 +59,13 @@ const TEModal: React.FC<ModalProps> = ({
     isOpenModal ? theme.show : "hidden"
   );
 
-  const { onTransitionStart, onTransitionEnd } = useTransition(
+  const { onTransitionEnd } = useTransition(
     modalReference.current,
     setStaticModal
   );
 
   const startStaticAnimation = () => {
-    onTransitionStart();
+    setStaticModal(true);
     onTransitionEnd();
   };
 
