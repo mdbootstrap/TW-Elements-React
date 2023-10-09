@@ -39,7 +39,7 @@ const TEAnimation: React.FC<AnimationProps> = ({
   const [toggleAnimation, setToggleAnimation] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const initialRender = useRef(0);
+  const isFirstRender = useRef(true);
   const isAnimationing = useRef(false);
   const animationInnerRef = useRef(null);
   const timeoutToggleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -285,13 +285,12 @@ const TEAnimation: React.FC<AnimationProps> = ({
   }, [animationReference, handleAnimationEnd]);
 
   useEffect(() => {
-    if (initialRender.current < 2) {
-      initialRender.current++;
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
       return;
     }
 
     if (toggle !== null && start === "manually") {
-      isAnimationing.current = true;
       toggle ? handleToggleAnimation() : handleAnimationEnd();
     }
   }, [start, toggle]);
