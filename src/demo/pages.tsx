@@ -79,6 +79,7 @@ interface Pages {
   name: string;
   path: string;
   element: ReactElement;
+  fullscreenOnly?: boolean;
 }
 
 interface PagesSection {

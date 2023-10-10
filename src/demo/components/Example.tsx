@@ -3,9 +3,14 @@ import React, { ReactNode, useEffect, useRef } from "react";
 interface ExampleProps {
   children: ReactNode;
   path: string;
+  fullscreenOnly?: boolean;
 }
 
-const Example: React.FC<ExampleProps> = ({ children, path }) => {
+const Example: React.FC<ExampleProps> = ({
+  children,
+  path,
+  fullscreenOnly,
+}) => {
   const listenerNotAdded = useRef(true);
   const exampleRef = useRef<HTMLDivElement>(null);
   let resizeTimeout: ReturnType<typeof setTimeout>;
@@ -43,13 +48,17 @@ const Example: React.FC<ExampleProps> = ({ children, path }) => {
   useEffect(() => {
     postHeight();
 
-    document.body.classList.add("overflow-hidden");
+    fullscreenOnly
+      ? document.body.classList.add("overflow-x-hidden")
+      : document.body.classList.add("overflow-hidden");
     resizeObserver.observe(exampleRef.current as HTMLDivElement);
 
     return () => {
       clearTimeout(resizeTimeout);
 
-      document.body.classList.remove("overflow-hidden");
+      fullscreenOnly
+        ? document.body.classList.remove("overflow-x-hidden")
+        : document.body.classList.remove("overflow-hidden");
       resizeObserver.disconnect();
     };
   }, []);
