@@ -133,8 +133,8 @@ const TETooltip: React.FC<TooltipProps> = ({
       if (!enabled) return;
       isTransitioning.current = true;
 
-      eventType === "mouseenter" && onMouseEnter?.();
-      eventType === "mouseleave" && onMouseLeave?.();
+      eventType === "mouseenter" && onMouseEnter?.(e);
+      eventType === "mouseleave" && onMouseLeave?.(e);
 
       if (
         ((eventType === "mouseenter" || eventType === "mouseleave") &&
@@ -152,29 +152,29 @@ const TETooltip: React.FC<TooltipProps> = ({
           return;
         }
         if (eventType === "mouseenter") {
-          !isFocused && onShow?.();
+          !isFocused && onShow?.(e);
           !e.defaultPrevented && setIsOpen(true);
         } else {
-          !isFocused && onHide?.();
+          !isFocused && onHide?.(e);
           !e.defaultPrevented && setIsOpen(false);
         }
       } else if (eventType === "mousedown") {
         if (e.target === referenceElement.current) {
           if (trigger.includes("focus")) {
-            !isFocused && !isOpen && onShow?.();
+            !isFocused && !isOpen && onShow?.(e);
             setIsFocused(true);
           }
           if (trigger.includes("click")) {
-            !isOpen && onShow?.();
+            !isOpen && onShow?.(e);
             setIsOpen(true);
           }
         } else {
           if (trigger.includes("focus")) {
-            isFocused && onHide?.();
+            isFocused && onHide?.(e);
             setIsFocused(false);
           }
           if (trigger.includes("click")) {
-            isOpen && onHide?.();
+            isOpen && onHide?.(e);
             setIsOpen(false);
           }
         }

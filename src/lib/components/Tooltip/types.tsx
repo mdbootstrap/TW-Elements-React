@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import { BaseComponent } from "../../types/baseComponent";
 import { placement } from "../../types/placement";
 import { Boundary } from "@popperjs/core";
@@ -23,12 +24,12 @@ interface TooltipProps extends BaseComponent {
   fallbackPlacements?: placement[];
   boundary?: Boundary;
   enabled?: boolean;
-  onShow?: () => any;
+  onShow?: (e: SyntheticEvent) => any;
   onShown?: () => any;
-  onHide?: () => any;
+  onHide?: (e: SyntheticEvent) => any;
   onHidden?: () => any;
-  onMouseEnter?: () => any;
-  onMouseLeave?: () => any;
+  onMouseEnter?: (e: SyntheticEvent) => any;
+  onMouseLeave?: (e: SyntheticEvent) => any;
 }
 
 export { TooltipProps };

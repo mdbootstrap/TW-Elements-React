@@ -45,8 +45,8 @@ const TEPopover: React.FC<PopoverProps> = ({
     ) => {
       if (!enabled) return;
 
-      eventType === "mouseenter" && onMouseEnter?.();
-      eventType === "mouseleave" && onMouseLeave?.();
+      eventType === "mouseenter" && onMouseEnter?.(e);
+      eventType === "mouseleave" && onMouseLeave?.(e);
 
       if (
         (eventType === "mouseleave" && !trigger.includes("click")) ||
@@ -64,30 +64,30 @@ const TEPopover: React.FC<PopoverProps> = ({
           return;
         }
         if (eventType === "mouseenter") {
-          !isFocused && onShow?.();
+          !isFocused && onShow?.(e);
           !e.defaultPrevented && setIsOpenState(true);
         } else {
-          !isFocused && onHide?.();
+          !isFocused && onHide?.(e);
           !e.defaultPrevented && setIsOpenState(false);
         }
       } else if (eventType === "mousedown") {
         if (e.target === referenceElement.current) {
           if (trigger === "click") {
-            !isOpenState && onShow?.();
-            isOpenState && onHide?.();
+            !isOpenState && onShow?.(e);
+            isOpenState && onHide?.(e);
             setIsOpenState((prevState) => !prevState);
           } else if (trigger.includes("focus")) {
-            !isFocused && !isOpenState && onShow?.();
+            !isFocused && !isOpenState && onShow?.(e);
             setIsFocused(true);
           } else if (trigger.includes("click")) {
-            !isFocused && !isOpenState && onShow?.();
-            isFocused && onHide?.();
+            !isFocused && !isOpenState && onShow?.(e);
+            isFocused && onHide?.(e);
             setIsFocused((prev) => !prev);
             isFocused && setIsOpenState(false);
           }
         } else {
           if (trigger.includes("focus")) {
-            isFocused && onHide?.();
+            isFocused && onHide?.(e);
             setIsFocused(false);
           }
         }

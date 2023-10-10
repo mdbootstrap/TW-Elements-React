@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { BaseComponent } from "../../types/baseComponent";
 
 interface PopoverProps extends BaseComponent {
@@ -6,12 +6,12 @@ interface PopoverProps extends BaseComponent {
   tag?: React.ComponentProps<any>;
   enabled?: boolean;
   trigger?: string;
-  onShow?: () => any;
+  onShow?: (e: SyntheticEvent) => any;
   onShown?: () => any;
-  onHide?: () => any;
+  onHide?: (e: SyntheticEvent) => any;
   onHidden?: () => any;
-  onMouseEnter?: () => any;
-  onMouseLeave?: () => any;
+  onMouseEnter?: (e: SyntheticEvent) => any;
+  onMouseLeave?: (e: SyntheticEvent) => any;
 }
 
 export { PopoverProps };
