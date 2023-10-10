@@ -3,9 +3,11 @@ import { TEAnimation, TERipple } from "tw-elements-react";
 
 export default function AnimationsListGroup(): JSX.Element {
   const [list, setList] = useState([
-    "Cras justo odio",
-    "Dapibus ac facilisis in",
-    "Vestibulum at eros",
+    "An item",
+    "A second item",
+    "A third item",
+    "A fourth item",
+    "And a fifth one",
   ]);
 
   const addListRow = () => {
@@ -27,6 +29,7 @@ export default function AnimationsListGroup(): JSX.Element {
     element.classList.add(`animate-${animation}`);
 
     setTimeout(() => {
+      element.classList.remove(`animate-${animation}`);
       setList(list.filter((_, i) => i !== id));
     }, 1000);
   };

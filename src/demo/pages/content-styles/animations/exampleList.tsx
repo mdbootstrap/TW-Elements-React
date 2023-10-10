@@ -10,6 +10,9 @@ import AnimationsStartManually from "./examples/AnimationsStartManually";
 import AnimationsChangeType from "./examples/AnimationsChangeType";
 import AnimationsListGroup from "./examples/AnimationsListGroup";
 import AnimationsOnScroll from "./examples/AnimationsOnScroll";
+import AnimationsRepeatOnScroll from "./examples/AnimationsRepeatOnScroll";
+import AnimationsShowOnLoad from "./examples/AnimationsShowOnLoad";
+import AnimationsFadingGallery from "./examples/AnimationsFadingGallery";
 
 export default [
   {
@@ -66,5 +69,24 @@ export default [
     name: "AnimationsOnScroll",
     path: "/content-styles/animations/examples/animations-on-scroll",
     element: <AnimationsOnScroll />,
+    fullscreenOnly: true,
+  },
+  {
+    name: "AnimationsRepeatOnScroll",
+    path: "/content-styles/animations/examples/animations-repeat-on-scroll",
+    element: <AnimationsRepeatOnScroll />,
+    fullscreenOnly: true,
+  },
+  {
+    name: "AnimationsShowOnLoad",
+    path: "/content-styles/animations/examples/animations-show-on-load",
+    element: <AnimationsShowOnLoad />,
+    fullscreenOnly: true,
+  },
+  {
+    name: "AnimationsFadingGallery",
+    path: "/content-styles/animations/examples/animations-fading-gallery",
+    element: <AnimationsFadingGallery />,
+    fullscreenOnly: true,
   },
 ];
