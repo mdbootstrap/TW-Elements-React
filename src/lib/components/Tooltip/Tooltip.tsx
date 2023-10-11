@@ -54,7 +54,6 @@ const TETooltip: React.FC<TooltipProps> = ({
   const [isReadyToHide, setIsReadyToHide] = useState(false);
   const popperElement = useRef(null);
   const referenceElement = useRef(null);
-  const isTransitioning = useRef(false);
 
   const theme = {
     ...tooltipTheme,
@@ -103,10 +102,6 @@ const TETooltip: React.FC<TooltipProps> = ({
   );
 
   useEffect(() => {
-    if (!isTransitioning.current) {
-      return;
-    }
-
     if ((isOpen || isFocused) && enabled) {
       onTransitionStart(() => {
         setIsFaded(true);
@@ -131,7 +126,6 @@ const TETooltip: React.FC<TooltipProps> = ({
       eventType: "mouseenter" | "mouseleave" | "mousedown"
     ) => {
       if (!enabled) return;
-      isTransitioning.current = true;
 
       eventType === "mouseenter" && onMouseEnter?.(e);
       eventType === "mouseleave" && onMouseLeave?.(e);

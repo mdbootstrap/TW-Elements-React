@@ -7,9 +7,10 @@ const useTransition = (
     | null,
   setShow?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  const [transitionDuration, setTransitionDuration] = useState<number>(150);
+  const [transitionDuration, setTransitionDuration] = useState<number>(0);
   const tiemoutShowRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const tiemoutHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isTransitionShown = useRef(false);
 
   useEffect(() => {
     if (referenceElement !== null) {
@@ -22,6 +23,7 @@ const useTransition = (
   }, [referenceElement]);
 
   const onTransitionStart = (callback?: () => any) => {
+    isTransitionShown.current = true;
     if (tiemoutShowRef.current !== null) {
       clearTimeout(tiemoutShowRef.current);
     }
@@ -33,6 +35,10 @@ const useTransition = (
   };
 
   const onTransitionEnd = (callback?: () => any) => {
+    if (!isTransitionShown.current) {
+      return;
+    }
+
     if (tiemoutHideRef.current !== null) {
       clearTimeout(tiemoutHideRef.current);
     }

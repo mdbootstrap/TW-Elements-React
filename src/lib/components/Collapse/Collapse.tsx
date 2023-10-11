@@ -35,7 +35,6 @@ const TECollapse: React.FC<CollapseProps> = ({
   );
   const [transition, setTransition] = useState(false);
   const isFirstRender = useRef(true);
-  const isTransitioning = useRef(false);
 
   const theme = {
     ...collapseTheme,
@@ -84,11 +83,6 @@ const TECollapse: React.FC<CollapseProps> = ({
     if (showCollapse !== show) {
       show ? onShow?.() : onHide?.();
       setShowCollapse(show);
-      isTransitioning.current = true;
-    }
-
-    if (!isTransitioning.current) {
-      return;
     }
 
     if (show) {
