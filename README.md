@@ -1,12 +1,12 @@
-# Tailwind Elements React [<img src="https://tecdn.b-cdn.net/img/logo/te-react-logo.webp" width="45" align="right" alt="Tailwind-elements">](https://tailwind-elements.com/docs/react/)<a href="https://www.npmjs.com/package/tw-elements"><img src="https://img.shields.io/npm/dt/tw-elements.svg" alt="Total Downloads"></a> <a href="https://github.com/mdbootstrap/Tailwind-Elements-React/releases"><img src="https://img.shields.io/npm/v/tw-elements.svg" alt="Latest Release"></a> <a href="https://twitter.com/intent/tweet/?text=Thanks+@TailwindElement+for+creating+an+amazing+collection+of+open+source+components+for+@tailwindcss%20https://tailwind-elements.com/docs/react/&hashtags=tailwindCSS,bootstrap,webdesign,react,100DaysOfCode,DevCommunity"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Let%20us%20know%20you%20were%20here%21&"></a>
+# TW Elements React [<img src="https://tecdn.b-cdn.net/img/logo/te-react-logo.webp" width="45" align="right" alt="tw-elements">](https://tw-elements.com/docs/react/)<a href="https://www.npmjs.com/package/tw-elements"><img src="https://img.shields.io/npm/dt/tw-elements.svg" alt="Total Downloads"></a> <a href="https://github.com/mdbootstrap/TW-Elements-React/releases"><img src="https://img.shields.io/npm/v/tw-elements.svg" alt="Latest Release"></a> <a href="https://twitter.com/intent/tweet/?text=Thanks+@TWElement+for+creating+an+amazing+collection+of+open+source+components+for+@tailwindcss%20https://tw-elements.com/docs/react/&hashtags=tailwindCSS,bootstrap,webdesign,react,100DaysOfCode,DevCommunity"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Let%20us%20know%20you%20were%20here%21&"></a>
 
-Tailwind Elements React is a huge collection of free, interactive React components for Tailwind CSS.
+TW Elements React is a huge collection of free, interactive React components for Tailwind CSS.
 
  <table>
     <tbody>
     <tr>
       <td>
-          <a href="https://tailwind-elements.com/docs/react/" alt="Tailwind Elements tutorials" rel="dofollow">
+          <a href="https://tw-elements.com/docs/react/" alt="TW Elements tutorials" rel="dofollow">
           		<img width="600" src="https://tecdn.b-cdn.net/img/react-big.jpg">
           </a>
       </td>
@@ -18,7 +18,7 @@ Tailwind Elements React is a huge collection of free, interactive React componen
          <li>Simple, 1 minute install</li>    
          <li>Free for personal & commercial use</li>
         </ul>
-        <p><b><a href="https://tailwind-elements.com/docs/react/getting-started/quick-start/">Get started with Tailwind Elements React now!</a></b></p>
+        <p><b><a href="https://tw-elements.com/docs/react/getting-started/quick-start/">Get started with Tailwind Elements React now!</a></b></p>
       </td>
     </tr>
    </tbody>
@@ -38,30 +38,30 @@ Tailwind Elements React is a huge collection of free, interactive React componen
 
 ## Community
 
-Tailwind Elements is a **community-driven** project.
+TW Elements is a **community-driven** project.
 We invite you to **track our [live progress 👁️](https://github.com/orgs/mdbootstrap/projects/3/)** on the upcoming release.
 
 In the meantime you can also:
 
-- Motivate us with some [words of encouragament ❤️](https://github.com/mdbootstrap/Tailwind-Elements/discussions/categories/kind-words-general-feedback)
-- Share your [ideas & feature requests 💡](https://github.com/mdbootstrap/Tailwind-Elements/discussions/categories/share-ideas-request-features)
-- Aks for help & help others in our [community support 🙏](https://github.com/mdbootstrap/Tailwind-Elements/discussions/categories/support-from-community)
-- **Engage, discuss & have fun in our [open-source community 💬](https://github.com/mdbootstrap/Tailwind-Elements/discussions)**
+- Motivate us with some [words of encouragament ❤️](https://github.com/mdbootstrap/TWd-Elements/discussions/categories/kind-words-general-feedback)
+- Share your [ideas & feature requests 💡](https://github.com/mdbootstrap/TW-Elements/discussions/categories/share-ideas-request-features)
+- Aks for help & help others in our [community support 🙏](https://github.com/mdbootstrap/TW-Elements/discussions/categories/support-from-community)
+- **Engage, discuss & have fun in our [open-source community 💬](https://github.com/mdbootstrap/TW-Elements/discussions)**
 
 **If you want to help the project grow, start by simply sharing it with your peers!**
 
-- [Share via Dev.to](<https://dev.to/new?prefill=---%0Atitle%3A%20500+%20open-source%20components%20for%20TailwindCSS%20and%20React%20%0Apublished%3A%20true%0Atags%3Atailwindcss%0A---%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[![Tailwind%20components](https://tailwind-elements.com/img/components-big.jpg)](https://tailwind-elements.com/docs/react/)%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20I%27d%20like%20to%20share%20my%20latest%20discovery%20with%20you.%20\n%20%20%20%20%20%20%20%20[Tailwind%20Elements](https://tailwind-elements.com/docs/react/)%20is%20currently,%20the%20most%20popular%203rd%20party%20UI%20kit%20for%20TailwindCSS%20with%20over%2010k%20Github%20stars.%20%20%20%20%20%20%20%20[![GitHub%20Repo%20stars](https://img.shields.io/github/stars/mdbootstrap/tailwind-elements?style=social)](https://github.com/mdbootstrap/Tailwind-Elements/)%20%20%20%20%20%20%20%20It%27s%20a%20**huge%20collection%20of%20stunning%20components**%20made%20with%20attention%20to%20the%20smallest%20detail.%20%20%20%20%20%20%20%20%20Forms,%20cards,%20buttons,%20and%20hundreds%20of%20others.%20%20%20%20%20%20%20%20%20All%20components%20have%20**dark%20mode**%20and%20very%20intuitive%20**theming%20options**.%20%20%20%20%20%20%20%20The%20project%20is%20supported%20by%20an%20[engaged%20community%20on%20GitHub](https://github.com/mdbootstrap/Tailwind-Elements/discussions),%20I%20recommend%20you%20check%20it%20out%20and%20join%20one%20of%20the%20many%20discussions.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20You%20will%20find%20installation%20instructions%20[here](https://tailwind-elements.com/docs/react/getting-started/installation),%20and%20you%20can%20track%20the%20progress%20of%20the%20project%20live%20%20%20%20%20%20%20%20%20[here](https://tailwind-elements.com/docs/react/getting-started/changelog/).%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20The%20project%20was%20kickstarted%20by%20@MDBootstrap,%20a%20group%20of%20open-source%20developers%20behind%20[MDB%20UI%20Kit](https://github.com/mdbootstrap/mdb-ui-kit)%20-%20a%20high-quality%20UI%20kit%20for%20Bootstrap,%20and%20also%20behind%20[MDB%20GO](https://mdbgo.com/)%20-%20hosting%20and%20deployment%20platform.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20I%20highly%20recommend%20you%20to%20check%20it%20out!%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%7B%25%20link%20mdbootstrap/tailwind-elements-breakthrough-version-is-here-59hh%20%25%7D%20%20%20%20%20%20%20%20\n>)
-- [Share via Twitter](https://twitter.com/intent/tweet?text=500%2B%20open-source%20components%20for%20%23TailwindCSS%20%F0%9F%A4%A9%0Ahttps%3A//tailwind-elements.com/docs/react/%0A%0ACongrats%20%40MDBootstrap%20%40ascensus_mdb%20%40dawidadach%20for%20this%20awesome%20design%20collection!%0A%0AI%20will%20keep%20using%20it%20in%20my%20projects%20for%20sure!%0A%0A%23uiux%20%23webdevelopment%20%23HTML%20%23CSS%20%23design%20%23Webdesign%20%23programming%20)
-- [Share via Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A//tailwind-elements.com/docs/react/)
-- [Share via LinkedIn](http://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftailwind-elements.com/docs/react/%2F&title=500%2B%20open-source%20components%20for%20TailwindCSS)
-- [Share via Pinterest](https://www.pinterest.com/pin/create/button?url=https://tailwind-elements.com/&media=https://tailwind-elements.com/img/components-big.jpg&description=TailwindElements)
-- [Share via Reddit](https://reddit.com/submit?url=https://tailwind-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via StumbleUpon](https://www.stumbleupon.com/submit?url=https://tailwind-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Vkontakte](https://vk.com/share.php?url=https://tailwind-elements.com/docs/react/)
-- [Share via Weibo](https://service.weibo.com/share/share.php?url=https://tailwind-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Hackernews](https://news.ycombinator.com/submitlink?u=https://tailwind-elements.com/docs/react/&t=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Gmail](https://mail.google.com/mail/?view=cm&to=%7Bemail_address%7D&su=Check%20out%20this%20project&body=Hello,%0AI%27m%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt%27s%20over%20500+%20open-source%20components%20for%20TailwindCSS%20with%20excellent%20support%20and%20an%20awesome%20community:%0Ahttps://tailwind-elements.com/docs/react/%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards,&bcc=%7Bemail_address%7D&cc=%7Bemail_address%7D)
-- [Share via email](mailto:?subject=Check%20out%20this%20project&body=Hello%2C%0AI'm%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt's%20over%20500%20%20open-source%20components%20for%20Tailwind%20CSS%20with%20excellent%20support%20and%20an%20awesome%20community%3A%0Ahttps%3A%2F%2Ftailwind-elements.com/docs/react/%2F%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards%2C)
+- [Share via Dev.to](<https://dev.to/new?prefill=---%0Atitle%3A%20500+%20open-source%20components%20for%20TailwindCSS%20and%20React%20%0Apublished%3A%20true%0Atags%3Atailwindcss%0A---%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[![Tailwind%20components](https://tw-elements.com/img/components-big.jpg)](https://tw-elements.com/docs/react/)%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20I%27d%20like%20to%20share%20my%20latest%20discovery%20with%20you.%20\n%20%20%20%20%20%20%20%20[Tailwind%20Elements](https://tw-elements.com/docs/react/)%20is%20currently,%20the%20most%20popular%203rd%20party%20UI%20kit%20for%20TailwindCSS%20with%20over%2010k%20Github%20stars.%20%20%20%20%20%20%20%20[![GitHub%20Repo%20stars](https://img.shields.io/github/stars/mdbootstrap/tw-elements?style=social)](https://github.com/mdbootstrap/TW-Elements/)%20%20%20%20%20%20%20%20It%27s%20a%20**huge%20collection%20of%20stunning%20components**%20made%20with%20attention%20to%20the%20smallest%20detail.%20%20%20%20%20%20%20%20%20Forms,%20cards,%20buttons,%20and%20hundreds%20of%20others.%20%20%20%20%20%20%20%20%20All%20components%20have%20**dark%20mode**%20and%20very%20intuitive%20**theming%20options**.%20%20%20%20%20%20%20%20The%20project%20is%20supported%20by%20an%20[engaged%20community%20on%20GitHub](https://github.com/mdbootstrap/TW-Elements/discussions),%20I%20recommend%20you%20check%20it%20out%20and%20join%20one%20of%20the%20many%20discussions.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20You%20will%20find%20installation%20instructions%20[here](https://tw-elements.com/docs/react/getting-started/installation),%20and%20you%20can%20track%20the%20progress%20of%20the%20project%20live%20%20%20%20%20%20%20%20%20[here](https://tw-elements.com/docs/react/getting-started/changelog/).%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20The%20project%20was%20kickstarted%20by%20@MDBootstrap,%20a%20group%20of%20open-source%20developers%20behind%20[MDB%20UI%20Kit](https://github.com/mdbootstrap/mdb-ui-kit)%20-%20a%20high-quality%20UI%20kit%20for%20Bootstrap,%20and%20also%20behind%20[MDB%20GO](https://mdbgo.com/)%20-%20hosting%20and%20deployment%20platform.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20I%20highly%20recommend%20you%20to%20check%20it%20out!%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%7B%25%20link%20mdbootstrap/tw-elements-breakthrough-version-is-here-59hh%20%25%7D%20%20%20%20%20%20%20%20\n>)
+- [Share via Twitter](https://twitter.com/intent/tweet?text=500%2B%20open-source%20components%20for%20%23TailwindCSS%20%F0%9F%A4%A9%0Ahttps%3A//tw-elements.com/docs/react/%0A%0ACongrats%20%40MDBootstrap%20%40ascensus_mdb%20%40dawidadach%20for%20this%20awesome%20design%20collection!%0A%0AI%20will%20keep%20using%20it%20in%20my%20projects%20for%20sure!%0A%0A%23uiux%20%23webdevelopment%20%23HTML%20%23CSS%20%23design%20%23Webdesign%20%23programming%20)
+- [Share via Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A//tw-elements.com/docs/react/)
+- [Share via LinkedIn](http://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftw-elements.com/docs/react/%2F&title=500%2B%20open-source%20components%20for%20TailwindCSS)
+- [Share via Pinterest](https://www.pinterest.com/pin/create/button?url=https://tw-elements.com/&media=https://tw-elements.com/img/components-big.jpg&description=TailwindElements)
+- [Share via Reddit](https://reddit.com/submit?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
+- [Share via StumbleUpon](https://www.stumbleupon.com/submit?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
+- [Share via Vkontakte](https://vk.com/share.php?url=https://tw-elements.com/docs/react/)
+- [Share via Weibo](https://service.weibo.com/share/share.php?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
+- [Share via Hackernews](https://news.ycombinator.com/submitlink?u=https://tw-elements.com/docs/react/&t=500+%20open-source%20components%20for%20TailwindCSS)
+- [Share via Gmail](https://mail.google.com/mail/?view=cm&to=%7Bemail_address%7D&su=Check%20out%20this%20project&body=Hello,%0AI%27m%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt%27s%20over%20500+%20open-source%20components%20for%20TailwindCSS%20with%20excellent%20support%20and%20an%20awesome%20community:%0Ahttps://tw-elements.com/docs/react/%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards,&bcc=%7Bemail_address%7D&cc=%7Bemail_address%7D)
+- [Share via email](mailto:?subject=Check%20out%20this%20project&body=Hello%2C%0AI'm%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt's%20over%20500%20%20open-source%20components%20for%20Tailwind%20CSS%20with%20excellent%20support%20and%20an%20awesome%20community%3A%0Ahttps%3A%2F%2Ftw-elements.com/docs/react/%2F%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards%2C)
 
 Thank you!
 
@@ -115,7 +115,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/modal/">
+        <a href="https://tw-elements.com/docs/react/components/modal/">
             <img alt="Modal" src="https://mdbootstrap.com/img/tw-demo/modal.webp">
         </a>
     </td>
@@ -151,12 +151,12 @@ A collection of stunning components made with attention to the smallest details.
   
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/accordion/">
+        <a href="https://tw-elements.com/docs/react/components/accordion/">
             <img alt="Accordion" src="https://mdbootstrap.com/img/tw-demo/accordion.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/navigation/tabs/">
+        <a href="https://tw-elements.com/docs/react/navigation/tabs/">
             <img alt="Tabs" src="https://mdbootstrap.com/img/tw-demo/tabs.webp">
         </a>
     </td>
@@ -178,7 +178,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/navigation/footer/">
+        <a href="https://tw-elements.com/docs/react/navigation/footer/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/img/tw-demo/footer.webp">
         </a>
     </td>
@@ -201,12 +201,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/avatar/">
+        <a href="https://tw-elements.com/docs/react/components/avatar/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/avatar.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/badges/">
+        <a href="https://tw-elements.com/docs/react/components/badges/">
             <img alt="Tailwind CSS Navbar" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/badge-1.webp">
         </a>
     </td>
@@ -219,17 +219,17 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/button-group/">
+        <a href="https://tw-elements.com/docs/react/components/button-group/">
             <img alt="Tailwind CSS Time picker" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/button-group-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/buttons/">
+        <a href="https://tw-elements.com/docs/react/components/buttons/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/button-2.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/cards/">
+        <a href="https://tw-elements.com/docs/react/components/cards/">
             <img alt="Tailwind CSS Navbar" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/card-1.webp">
         </a>
     </td>
@@ -247,7 +247,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/collapse/">
+        <a href="https://tw-elements.com/docs/react/components/collapse/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/collapse-1.webp">
         </a>
     </td>
@@ -270,12 +270,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/link/">
+        <a href="https://tw-elements.com/docs/react/components/link/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/link.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/listgroup/">
+        <a href="https://tw-elements.com/docs/react/components/listgroup/">
             <img alt="Tailwind CSS Navbar" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/list-group-1.webp">
         </a>
     </td>
@@ -293,12 +293,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/paragraphs/">
+        <a href="https://tw-elements.com/docs/react/components/paragraphs/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/paragraphs.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/placeholders/">
+        <a href="https://tw-elements.com/docs/react/components/placeholders/">
             <img alt="Tailwind CSS Navbar" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/placeholder-1.webp">
         </a>
     </td>
@@ -316,12 +316,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/progress/">
+        <a href="https://tw-elements.com/docs/react/components/progress/">
             <img alt="Tailwind CSS Tables" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/progress-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/rating/">
+        <a href="https://tw-elements.com/docs/react/components/rating/">
             <img alt="Tailwind CSS Navbar" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-pro/rating-1.webp">
         </a>
     </td>
@@ -334,17 +334,17 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/scroll-back-to-top-button/">
+        <a href="https://tw-elements.com/docs/react/components/scroll-back-to-top-button/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/scroll-back-to-top.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/social-buttons/">
+        <a href="https://tw-elements.com/docs/react/components/social-buttons/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/social-media.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/spinners/">
+        <a href="https://tw-elements.com/docs/react/components/spinners/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/spinner-1.webp">
         </a>
     </td>
@@ -357,7 +357,7 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/components/timeline/">
+        <a href="https://tw-elements.com/docs/react/components/timeline/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/timeline.webp">
         </a>
     </td>
@@ -390,7 +390,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/checkbox/">
+        <a href="https://tw-elements.com/docs/react/forms/checkbox/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/checkbox-1.webp">
         </a>
     </td>
@@ -403,7 +403,7 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/file-input/">
+        <a href="https://tw-elements.com/docs/react/forms/file-input/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/file-upload.webp">
         </a>
     </td>
@@ -413,7 +413,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/login-form/">
+        <a href="https://tw-elements.com/docs/react/forms/login-form/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/login-form.webp">
         </a>
     </td>
@@ -426,17 +426,17 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/radio/">
+        <a href="https://tw-elements.com/docs/react/forms/radio/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/radio-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/range/">
+        <a href="https://tw-elements.com/docs/react/forms/range/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/range-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/registration-form/">
+        <a href="https://tw-elements.com/docs/react/forms/registration-form/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/registration-form.webp">
         </a>
     </td>
@@ -449,7 +449,7 @@ A collection of stunning components made with attention to the smallest details.
   <!--New row-->
   <tr>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/search/">
+        <a href="https://tw-elements.com/docs/react/forms/search/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/search-1.webp">
         </a>
     </td>
@@ -459,7 +459,7 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/forms/switch/">
+        <a href="https://tw-elements.com/docs/react/forms/switch/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/switch.webp">
         </a>
     </td>
@@ -477,12 +477,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/data/tables/">
+        <a href="https://tw-elements.com/docs/react/data/tables/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/table-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/methods/ripple/">
+        <a href="https://tw-elements.com/docs/react/methods/ripple/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/ripple.webp">
         </a>
     </td>
@@ -500,12 +500,12 @@ A collection of stunning components made with attention to the smallest details.
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/content-styles/mask/">
+        <a href="https://tw-elements.com/docs/react/content-styles/mask/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/mask-1.webp">
         </a>
     </td>
     <td>
-        <a href="https://tailwind-elements.com/docs/react/content-styles/shadows/">
+        <a href="https://tw-elements.com/docs/react/content-styles/shadows/">
             <img alt="Tailwind Component" src="https://mdbootstrap.com/docs/standard/pro/demo/assets/images/components-free/shadow-1.webp">
         </a>
     </td>
@@ -580,7 +580,7 @@ mdb login
 3. Initialize a project and choose **Tailwind Elements React** from the list:
 
 ```
-mdb init tailwind-elements-react
+mdb init tw-elements-react
 ```
 
 4. Install the dependencies (inside the project directory):
