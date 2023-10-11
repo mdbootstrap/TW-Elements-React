@@ -59,14 +59,14 @@ const TEModal: React.FC<ModalProps> = ({
     isOpenModal ? theme.show : "hidden"
   );
 
-  const { onTransitionEnd } = useTransition(
+  const { onTransitionHide } = useTransition(
     modalReference.current,
     setStaticModal
   );
 
   const startStaticAnimation = () => {
     setStaticModal(true);
-    onTransitionEnd();
+    onTransitionHide();
   };
 
   const handleBackdropClick = (e: Event) => {

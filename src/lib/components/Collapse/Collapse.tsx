@@ -53,9 +53,10 @@ const TECollapse: React.FC<CollapseProps> = ({
   const collapseEl = useRef<HTMLElement>(null);
   const refCollapse = collapseRef ?? collapseEl;
 
-  const { onTransitionStart, onTransitionEnd } = useTransition(
+  const { onTransitionShow, onTransitionHide } = useTransition(
     refCollapse.current,
-    setTransition
+    setTransition,
+    horizontal ? theme.collapsingHorizontal : theme.collapsing
   );
 
   const handleResize = useCallback(() => {
@@ -86,11 +87,11 @@ const TECollapse: React.FC<CollapseProps> = ({
     }
 
     if (show) {
-      onTransitionStart();
+      onTransitionShow();
       return;
     }
 
-    onTransitionEnd();
+    onTransitionHide();
   }, [show, onShow, onHide]);
 
   useEffect(() => {

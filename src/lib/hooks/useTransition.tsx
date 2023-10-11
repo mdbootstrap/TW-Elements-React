@@ -1,29 +1,58 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const useTransition = (
   referenceElement:
     | React.MutableRefObject<HTMLElement | null>
     | HTMLElement
     | null,
-  setShow?: React.Dispatch<React.SetStateAction<boolean>>
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>,
+  classNames?: string
 ) => {
-  const [transitionDuration, setTransitionDuration] = useState<number>(0);
+  const transitionTime = useRef<number>(0);
   const tiemoutShowRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const tiemoutHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isTransitionShown = useRef(false);
+  const transitionDurationSet = useRef(false);
 
-  useEffect(() => {
-    if (referenceElement !== null) {
+  const getTransitionTime = (element: HTMLElement) => {
+    if (element !== null && !transitionDurationSet.current) {
+      transitionDurationSet.current = true;
+
       const { transitionDuration } = window.getComputedStyle(
-        referenceElement as HTMLElement
+        element as HTMLElement
       );
       const time = Number(transitionDuration.replace("s", "")) * 1000;
-      setTransitionDuration(time);
+      transitionTime.current = time;
+
+      return;
     }
+
+    if (!classNames) {
+      return;
+    }
+
+    const arrayOfClasses = classNames?.split(" ");
+
+    if (classNames?.includes("duration")) {
+      const durationClass = arrayOfClasses?.filter((className) =>
+        className.includes("duration")
+      );
+
+      const time = Number(
+        durationClass?.join("").split("-")[1].replace(/\D/g, "")
+      );
+      transitionTime.current = time;
+
+      return;
+    } else if (classNames?.includes("transition")) {
+      transitionTime.current = 150;
+    }
+  };
+
+  useEffect(() => {
+    getTransitionTime(referenceElement as HTMLElement);
   }, [referenceElement]);
 
-  const onTransitionStart = (callback?: () => any) => {
-    isTransitionShown.current = true;
+  const onTransitionShow = async (callback?: () => any) => {
     if (tiemoutShowRef.current !== null) {
       clearTimeout(tiemoutShowRef.current);
     }
@@ -31,11 +60,11 @@ const useTransition = (
     setShow?.(true);
     tiemoutShowRef.current = setTimeout(() => {
       callback?.();
-    }, transitionDuration);
+    }, transitionTime.current);
   };
 
-  const onTransitionEnd = (callback?: () => any) => {
-    if (!isTransitionShown.current) {
+  const onTransitionHide = (callback?: () => any) => {
+    if (transitionDurationSet.current === false) {
       return;
     }
 
@@ -46,13 +75,13 @@ const useTransition = (
     tiemoutHideRef.current = setTimeout(() => {
       setShow?.(false);
       callback?.();
-    }, transitionDuration);
+    }, transitionTime.current);
   };
 
   return {
-    transitionDuration,
-    onTransitionStart,
-    onTransitionEnd,
+    transitionDuration: transitionTime.current,
+    onTransitionShow,
+    onTransitionHide,
   };
 };
 

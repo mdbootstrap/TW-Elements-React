@@ -9,13 +9,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 --------------------------------------------------------------------------
 */
 
-import React, {
-  useContext,
-  useRef,
-  useEffect,
-  useState,
-  SyntheticEvent,
-} from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
 import type { PopoverContentProps } from "../PopoverContent/types";
@@ -92,14 +86,15 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
     }
   );
 
-  const { onTransitionStart, onTransitionEnd } = useTransition(
+  const { onTransitionShow, onTransitionHide } = useTransition(
     popperElement.current,
-    setIsReadyToHide
+    setIsReadyToHide,
+    theme.fade
   );
 
   useEffect(() => {
     if ((isOpenState || isFocused) && enabled) {
-      onTransitionStart(() => {
+      onTransitionShow(() => {
         setIsFaded(true);
         !isFaded && onShown?.();
       });
@@ -107,7 +102,7 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
     }
 
     setIsFaded(false);
-    onTransitionEnd(() => {
+    onTransitionHide(() => {
       isFaded && onHidden?.();
     });
   }, [isOpenState, isFocused, enabled, trigger]);

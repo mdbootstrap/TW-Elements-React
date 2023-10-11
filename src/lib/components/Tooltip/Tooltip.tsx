@@ -96,14 +96,15 @@ const TETooltip: React.FC<TooltipProps> = ({
     }
   );
 
-  const { onTransitionStart, onTransitionEnd } = useTransition(
+  const { onTransitionShow, onTransitionHide } = useTransition(
     popperElement.current,
-    setIsReadyToHide
+    setIsReadyToHide,
+    theme.fade
   );
 
   useEffect(() => {
     if ((isOpen || isFocused) && enabled) {
-      onTransitionStart(() => {
+      onTransitionShow(() => {
         setIsFaded(true);
         if (trigger !== "focus") {
           !isFocused && onShown?.();
@@ -115,7 +116,7 @@ const TETooltip: React.FC<TooltipProps> = ({
     }
 
     setIsFaded(false);
-    onTransitionEnd(() => {
+    onTransitionHide(() => {
       isFaded && onHidden?.();
     });
   }, [isOpen, isFocused, enabled]);

@@ -61,17 +61,18 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     alwaysOpen,
   } = useContext(DropdownContext);
 
-  const { onTransitionStart, onTransitionEnd } = useTransition(
-    popperElement,
-    setShow
-  );
-
-  useKeyboard(children);
-
   const theme = {
     ...customTheme,
     ...DropdownMenuTheme,
   };
+
+  const { onTransitionShow, onTransitionHide } = useTransition(
+    popperElement,
+    setShow,
+    theme.fade
+  );
+
+  useKeyboard(children);
 
   const classes = clsx(
     theme.menu,
@@ -86,14 +87,14 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
 
   useEffect(() => {
     if (isOpenState) {
-      onTransitionStart(() => {
+      onTransitionShow(() => {
         setIsFaded(true);
       });
       return;
     }
 
     setIsFaded(false);
-    onTransitionEnd();
+    onTransitionHide();
   }, [isOpenState]);
 
   useEffect(() => {
