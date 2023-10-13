@@ -15,11 +15,12 @@ import { CarouselContainerProps } from "./types";
 
 const TERCarouselContainer: React.FC<CarouselContainerProps> = ({ 
   children, 
-  items, 
+  items,
+  renderItem,
   ...props
 }) => {
   const { items: itemsData, activeItemId, desiredItemId, isRotating } = useCarouselState()
-  const { interval, touch } = useCarouselConfig()
+  const { interval, touch, ride } = useCarouselConfig()
   const duration = 600
   const dispatch = useCarouselDispatch()
 
@@ -33,7 +34,7 @@ const TERCarouselContainer: React.FC<CarouselContainerProps> = ({
   }, [items, dispatch])
 
   useEffect(() => {
-    if (isRotating && typeof interval === 'number' && desiredItemId === activeItemId) {
+    if (ride && isRotating && typeof interval === 'number' && desiredItemId === activeItemId) {
       const autoRunTimeout = setTimeout(() => {
         dispatch(carouselSlideNext())
       }, interval)
@@ -42,7 +43,7 @@ const TERCarouselContainer: React.FC<CarouselContainerProps> = ({
         clearTimeout(autoRunTimeout)
       }
     }
-  }, [interval, activeItemId, desiredItemId, isRotating, dispatch])
+  }, [ride, interval, activeItemId, desiredItemId, isRotating, dispatch])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -113,7 +114,10 @@ const TERCarouselContainer: React.FC<CarouselContainerProps> = ({
           onTouchMove={touch ? handleTouchMove : undefined}
           onTouchEnd={touch ? handleTouchEnd : undefined}
         >
-          {item}
+          {renderItem 
+            ? renderItem({ children: item })
+            : item
+          }
         </li>)
       })}
     </ol>

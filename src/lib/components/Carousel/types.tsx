@@ -6,6 +6,7 @@ interface CarouselConfig {
   interval: number;
   touch: boolean;
   keyboard: boolean;
+  ride: 'carousel'|boolean;
 }
 
 interface CarouselProps extends BaseComponent {

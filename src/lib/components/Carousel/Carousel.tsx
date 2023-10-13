@@ -18,9 +18,10 @@ import CarouselContainer from "./CarouselContainer/CarouselContainer";
 import { CarouselConfig, CarouselProps } from "./types";
 
 const TECarousel: React.FC<CarouselProps & Partial<CarouselConfig>> = ({ 
-  interval = 4000,
+  interval = 5000,
   touch = true,
   keyboard = true,
+  ride = false,
   items,
   children,
   ...props
@@ -28,18 +29,20 @@ const TECarousel: React.FC<CarouselProps & Partial<CarouselConfig>> = ({
   const config: CarouselConfig = useMemo(() => ({
     interval,
     touch,
-    keyboard
+    keyboard,
+    ride
   }), [
     interval,
     touch,
-    keyboard
+    keyboard,
+    ride
   ]);
 
   const [ state, dispatch ] = useReducer(carouselReducer, {
     items: [],
     activeItemId: 0,
     desiredItemId: 0,
-    isRotating: false,
+    isRotating: ride === 'carousel',
   });
 
   return (<CarouselConfigContext.Provider value={config}>
