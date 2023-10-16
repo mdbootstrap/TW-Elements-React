@@ -177,6 +177,12 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/textarea/",
+    "name": "Textarea",
+    "keywords": ["textarea"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/forms/form-templates/",
     "name": "Form templates",
     "keywords": ["form", "templates"],
@@ -193,6 +199,12 @@
     "name": "Registration form",
     "keywords": ["registration", "form"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/charts/",
+    "name": "Charts",
+    "keywords": ["charts"],
+    "category": "Data"
   },
   {
     "href": "/docs/react/data/tables/",
@@ -249,6 +261,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/tooltip/",
+    "name": "Tooltip",
+    "keywords": ["tooltip"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/cards/",
     "name": "Cards",
     "keywords": ["content container"],
@@ -258,6 +276,12 @@
     "href": "/docs/react/components/placeholders/",
     "name": "Placeholders",
     "keywords": ["placeholders"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/popover/",
+    "name": "Popover",
+    "keywords": ["popover"],
     "category": "Components"
   },
   {
@@ -294,6 +318,12 @@
     "href": "/docs/react/components/collapse",
     "name": "Collapse",
     "keywords": ["collapse"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/dropdown",
+    "name": "Dropdown",
+    "keywords": ["dropdown"],
     "category": "Components"
   },
   {
