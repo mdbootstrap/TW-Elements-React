@@ -25,9 +25,9 @@ interface TooltipProps extends BaseComponent {
   boundary?: Boundary;
   enabled?: boolean;
   onShow?: (e: SyntheticEvent) => any;
-  onShown?: (e: SyntheticEvent) => any;
+  onShown?: () => any;
   onHide?: (e: SyntheticEvent) => any;
-  onHidden?: (e: SyntheticEvent) => any;
+  onHidden?: () => any;
   onMouseEnter?: (e: SyntheticEvent) => any;
   onMouseLeave?: (e: SyntheticEvent) => any;
 }

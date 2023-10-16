@@ -31,38 +31,12 @@ const TEPopover: React.FC<PopoverProps> = ({
   onHidden,
   onMouseEnter,
   onMouseLeave,
-
   ...props
 }): JSX.Element => {
   const [isOpenState, setIsOpenState] = useState<boolean>(isOpen ?? false);
   const [isFocused, setIsFocused] = useState(false);
-  const [isReadyToHide, setIsReadyToHide] = useState(false);
-  const [isFaded, setIsFaded] = useState(false);
 
   const referenceElement = useRef(null);
-
-  useEffect(() => {
-    let timer: number;
-    let secondTimer: number;
-
-    if ((isOpenState || isFocused) && enabled) {
-      setIsReadyToHide(true);
-      timer = setTimeout((e: SyntheticEvent) => {
-        setIsFaded(true);
-        !isFaded && onShown?.(e);
-      }, 150);
-    } else {
-      setIsFaded(false);
-      secondTimer = setTimeout((e: SyntheticEvent) => {
-        setIsReadyToHide(false);
-        isFaded && onHidden?.(e);
-      }, 150);
-    }
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(secondTimer);
-    };
-  }, [isOpenState, isFocused, enabled, trigger]);
 
   const handleMouseAndClick = useCallback(
     (
@@ -147,11 +121,12 @@ const TEPopover: React.FC<PopoverProps> = ({
     <PopoverContext.Provider
       value={{
         referenceElement,
-
         isOpenState,
-
-        isReadyToHide,
-        isFaded,
+        isFocused,
+        enabled,
+        trigger,
+        onShown,
+        onHidden,
         handleMouseAndClick,
       }}
     >
