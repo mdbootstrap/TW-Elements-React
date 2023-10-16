@@ -22,7 +22,6 @@ const useTransition = (
       );
       const time = Number(transitionDuration.replace("s", "")) * 1000;
       transitionTime.current = time;
-
       return;
     }
 
@@ -33,13 +32,11 @@ const useTransition = (
     const arrayOfClasses = classNames?.split(" ");
 
     if (classNames?.includes("duration")) {
-      const durationClass = arrayOfClasses?.filter((className) =>
+      const durationClass = arrayOfClasses?.find((className) =>
         className.includes("duration")
       );
 
-      const time = Number(
-        durationClass?.join("").split("-")[1].replace(/\D/g, "")
-      );
+      const time = Number(durationClass?.split("-")[1].replace(/\D/g, ""));
       transitionTime.current = time;
 
       return;
@@ -49,10 +46,14 @@ const useTransition = (
   };
 
   useEffect(() => {
+    if (transitionDurationSet.current) {
+      return;
+    }
+
     getTransitionTime(referenceElement as HTMLElement);
   }, [referenceElement]);
 
-  const onTransitionShow = async (callback?: () => any) => {
+  const onTransitionShow = (callback?: () => any) => {
     if (tiemoutShowRef.current !== null) {
       clearTimeout(tiemoutShowRef.current);
     }
