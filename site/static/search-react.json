@@ -303,6 +303,15 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/select",
+    "name": "Select",
+    "keywords": ["options", "multiselect"],
+    "category": "Forms",
+    "priority": {
+      "select": 1
+    }
+  },
+  {
     "href": "/docs/react/components/collapse",
     "name": "Collapse",
     "keywords": ["collapse"],

@@ -21,6 +21,7 @@ import TEDropdownItem from "./components/Dropdown/DropdownItem/DropdownItem";
 import TEChart from "./data/Chart/Chart";
 import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
+import TESelect from "./forms/Select/Select";
 
 export {
   TECollapse,
@@ -46,4 +47,5 @@ export {
   TEChart,
   TETooltip,
   TETextarea,
+  TESelect,
 };

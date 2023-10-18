@@ -1,0 +1,14 @@
+export const LEFT_ARROW = "ArrowLeft";
+export const UP_ARROW = "ArrowUp";
+export const RIGHT_ARROW = "ArrowRight";
+export const DOWN_ARROW = "ArrowDown";
+export const HOME = "Home";
+export const END = "End";
+export const PAGE_UP = "PageUp";
+export const PAGE_DOWN = "PageDown";
+export const ENTER = "Enter";
+export const SPACE = " ";
+export const ESCAPE = "Escape";
+export const TAB = "Tab";
+export const BACKSPACE = "Backspace";
+export const DELETE = "Delete";
