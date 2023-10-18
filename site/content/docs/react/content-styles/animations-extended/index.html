@@ -1,108 +1,136 @@
 ---
-title: "Popover"
-date: 2023-03-01T16:00:58+02:00
+title: "Animations extended"
+date: 2023-03-07T16:00:58+02:00
 draft: false
-main_title: "Popover"
-subheading: "Tailwind CSS React Popover"
-seo_title: "Tailwind CSS React Popover - Free Examples & Tutorial"
-description: "Documentation and examples for adding React Popovers, like those found in iOS, to any element on your site."
-image: "https://tecdn.b-cdn.net/img/docs/components/popover.webp"
+main_title: "Animations extended"
+subheading: "Tailwind CSS React Animations extended"
+seo_title: "Tailwind CSS React Animations extended - Free Examples & Tutorial"
+description: "Enhance your web design effortlessly with Tailwind Elements React Animations Extended. Easily integrate captivating animations using Tailwind CSS, turning your projects into engaging visual experiences."
+image: "https://tecdn.b-cdn.net/img/docs/content-and-styles/animation.webp"
 video: "https://www.youtube.com/watch?v=-GmnyjgI4Jc&ab_channel=Keepcoding"
-url: "docs/react/components/popover/"
+url: "docs/react/content-styles/animations-extended/"
 menu:
-  components:
-    name: "Popover"
+  contentstyles:
+    name: "Animations extended"
 ---
 
-<!-- Section: Basic Example -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="basic"
-    data-te-spy-item>
-    Basic example
-  </h2>
-
+<!-- Section: All animations -->
+<section id="section-introduction">
+  
   <!-- Description -->
   <p class="mb-3">
-    In the following example you can see the button that will trigger the
-    popover element to be shown when clicked.
+    Welcome to the realm of enhanced web dynamics with the Tailwind Elements React
+    Animations Extended toolkit. Discover a captivating array of seamless
+    animations designed to breathe life into your web projects. This collection
+    features a versatile set of animations including <code>drop-in</code>,
+    <code>drop-out</code>, <code>fly-in</code> variations (up, down, left,
+    right), <code>fly-out</code> variations (up, down, left, right),
+    <code>browse-in</code>, <code>browse-out</code>,
+    <code>browse-out</code> transitions (left, right), as well as
+    attention-grabbing effects like <code>jiggle</code>, <code>flash</code>,
+    <code>shake</code>, and <code>glow</code>.
   </p>
 
-  <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example1" iframe="/components/popover/examples/popover-basic-example" title="Popover Basic Example" >}}
+   <div
+    class="mb-5 rounded-lg bg-info-100 px-6 py-5 text-base text-info-700"
+    role="alert">
+    <p class="mb-2">
+      <strong>Note:</strong> When you use Animation Extended, you don't need to
+      configure <code>transition timing function</code> – they come preset.
+      Simply provide the animation name and duration in the
+      <code>animation</code> property, and you're all set to elevate
+      your web content with captivating animations.
+    </p>
+    <p class="mb-2">
+      <strong>For example:</strong>
+      <code>animation="[drop-in_0.5s]"</code>;
+      <code>animation="[browse-out-left_0.5s]"</code>
+    </p>
 
-
-  <section class="!visible hidden" data-te-collapse-item id="example1">
-     <!-- prettier-ignore  -->
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from "react";
-      import {
-        TEPopover,
-        TEPopoverToggler,
-        TEPopoverContent,
-        TERipple,
-      } from "tw-elements-react";
-      
-      export default function PopoverBasicExample(): JSX.Element {
-        return (
-          <TEPopover className="py-10 md:text-center">
-            <TERipple rippleColor="light">
-              <TEPopoverToggler className="inline-block rounded bg-danger px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
-                Click to toggle popover
-              </TEPopoverToggler>
-            </TERipple>
-      
-            <TEPopoverContent>
-              <h3 className="py-2 px-4 mb-0 shadow-[0_0px_3px_0_rgba(0,0,0,0.07)] bg-white bg-clip-padding rounded-t-lg border border-b-2 border-neutral-100 font-medium empty:hidden dark:border-x-0 dark:border-t-0 dark:border-neutral-500 dark:bg-neutral-700">
-                Popover title
-              </h3>
-              <div className="p-4 text-[#212529] rounded-b-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                And here's some amazing content. It's very engaging. Right?
-              </div>
-            </TEPopoverContent>
-          </TEPopover>
-        );
-      }      
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
+    <p>
+      Also, be sure to explore the primary
+      <a
+        class="text-primary-600"
+        href="/docs/react/content-styles/animations/"
+        >Animations documentation</a
+      >
+      for further information.
+    </p>
+  </div>
 </section>
-<!-- Section: Basic Example -->
+<!-- Section: All animations -->
 
-<!-- Section: Overview -->
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="overview"
-    data-te-spy-item>
-    Overview
-  </h2>
+<!-- Section: Extended examples -->
+<section id="section-extended-examples">
 
-  <!-- Description -->
-  <p class="mb-2">
-    Things to know when using the popover plugin:
+  <p class="my-5 text-center font-medium">
+    Move the mouse over the squares below to launch the animation.
   </p>
-  <!-- napisz mi punktowaną listę używając klas tailwindowych -->
-  <ul class="list-disc list-inside ml-5">
-    <li>
-        Triggering popovers on hidden elements will not work.
-    </li>
-    <li>
-        When triggered from hyperlinks that span multiple lines, popovers will be centered. Use <code>whitespace-nowrap</code> class on your <code>&lt;a&gt;</code> elements to avoid this behavior.
-    </li>
-    <li>
-        Popovers must be hidden before their corresponding elements have been removed from the DOM.
-    </li>
-    <li>
-        Popovers can be triggered thanks to an element inside a shadow DOM.
-    </li>
-</ul>
-<!-- Section: Overview -->
+
+  <!-- prettier-ignore -->
+  {{< twsnippet/demo-iframe id="example1" iframe="/content-styles/animations-extended/examples/animations-extended-all" title="Animations Extended All" >}}
+  
+  <section class="!visible hidden" data-te-collapse-item id="example1">
+    <!-- prettier-ignore  -->
+    <div class="pt-4">
+    {{< twsnippet/wrapper "JSX" >}}
+    {{< twsnippet/code active=true lang="jsx" >}}
+    import React from "react";
+    import { TEAnimation } from "tw-elements-react";
+    
+    export default function AnimationsExtendedAll(): JSX.Element {
+      return (
+        <div className="flex space-x-2">
+          <TEAnimation
+            animation="[drop-in_0.5s]"
+            start="onHover"
+            reset
+            className="m-[20px] h-[130px] w-[130px] bg-[#fbfbfb] pt-10 text-center shadow-[0_2px_10px_0_rgba(0,0,0,0.14)] dark:bg-neutral-600"
+          >
+            drop-in
+          </TEAnimation>
+          <TEAnimation
+            animation="[fly-in_0.5s]"
+            start="onHover"
+            reset
+            className="m-[20px] h-[130px] w-[130px] bg-[#fbfbfb] pt-10 text-center shadow-[0_2px_10px_0_rgba(0,0,0,0.14)] dark:bg-neutral-600"
+          >
+            fly-in
+          </TEAnimation>
+          <TEAnimation
+            animation="[fly-out_0.5s]"
+            start="onHover"
+            reset
+            className="m-[20px] h-[130px] w-[130px] bg-[#fbfbfb] pt-10 text-center shadow-[0_2px_10px_0_rgba(0,0,0,0.14)] dark:bg-neutral-600"
+          >
+            fly-out
+          </TEAnimation>
+        </div>
+      );
+    }    
+    {{< /twsnippet/code >}}
+    {{< /twsnippet/wrapper >}}
+    </div>
+</section>
+
+  <div
+    class="mb-5 rounded-lg bg-red-100 px-6 py-5 text-base text-red-700"
+    role="alert">
+    <p class="mb-2">
+      <strong>Important:</strong> If you want to use one of the animations above
+      you got to add their name in object <code>safelist</code> in
+      <code>theme</code> of your <code>tailwind.config.js</code>.
+    </p>
+    <p><strong>For example:</strong></p>
+    <p class="mb-2">
+      <code
+        >safelist: ['animate-[drop-in_0.5s]', 'animate-[drop-out_0.5s]']</code
+      >.
+    </p>
+  </div>
+
+</section>
+<!-- Section: Extended examples -->
 
 <!-- Section: Sharing request: React-->
 <section class="mb-12 pt-14">
@@ -142,19 +170,24 @@ menu:
         \n        
         
         I'd like to share my latest discovery with you. \n
+
         [Tailwind Elements](https://tailwind-elements.com/) is currently, the most popular 3rd party UI kit for TailwindCSS with over 10k Github stars.
         [![GitHub Repo stars](https://img.shields.io/github/stars/mdbootstrap/tailwind-elements?style=social)](https://github.com/mdbootstrap/Tailwind-Elements/)
         It's a **huge collection of stunning components** made with attention to the smallest detail. 
         Forms, cards, buttons, and hundreds of others. All components have **dark mode** and very intuitive **theming options**.
         \n
+
         **They just released a React version of the library!**
         \n          
         [React + Tailwind Components](https://tailwind-elements.com/docs/react/)
         \n
+
         **They are also looking for contributors:**
         \n
+
         [Contribution + Guidelines](https://tailwind-elements.com/docs/react/getting-started/contribute/)
         \n
+
         [Discord channel](https://discord.gg/UAKHzQp5be)
         \n
         This is a fantastic opportunity to contribute to an open-source project, work with a professional team, and gain invaluable experience in React and Tailwind CSS. The project is still fresh & just taking its shape so it's the perfect stage for contributions.
@@ -362,265 +395,93 @@ menu:
 </section>
 <!-- Section: Sharing request-->
 
-<!-- Section: Four directions -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="four-directions"
-    data-te-spy-item>
-    Four directions
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Click on the buttons below to see the four popovers directions: <code>top,
-    right, bottom, left</code>. Check <a href='/docs/react/components/popover/#docsTabsAPI' class="text-primary dark:text-primary-400">API Properties</a> to see all available options.
-  </p>
-
-  <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example2" iframe="/components/popover/examples/popover-four-directions" title="Popover Four Directions" >}}
-
-
-  <section class="!visible hidden" data-te-collapse-item id="example2">
-     <!-- prettier-ignore  -->
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from "react";
-      import {
-        TEPopover,
-        TEPopoverContent,
-        TEPopoverToggler,
-        TERipple,
-      } from "tw-elements-react";
-      
-      export default function PopoverFourDirections(): JSX.Element {
-        return (
-          <div className="flex space-x-1">
-            <TEPopover>
-              <TERipple rippleColor="light">
-                <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
-                  Popover on top
-                </TEPopoverToggler>
-              </TERipple>
-      
-              <TEPopoverContent placement="top">
-                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </div>
-              </TEPopoverContent>
-            </TEPopover>
-            <TEPopover className="text-left">
-              <TERipple rippleColor="light">
-                <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
-                  Popover on right
-                </TEPopoverToggler>
-              </TERipple>
-      
-              <TEPopoverContent>
-                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </div>
-              </TEPopoverContent>
-            </TEPopover>
-            <TEPopover>
-              <TERipple rippleColor="light">
-                <TEPopoverToggler className="max-w-[180px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
-                  Popover on bottom
-                </TEPopoverToggler>
-              </TERipple>
-      
-              <TEPopoverContent placement="bottom">
-                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </div>
-              </TEPopoverContent>
-            </TEPopover>
-            <TEPopover className="text-right">
-              <TERipple rippleColor="light">
-                <TEPopoverToggler className="max-w-[160px] rounded bg-primary-100 px-6 py-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200">
-                  Popover on left
-                </TEPopoverToggler>
-              </TERipple>
-      
-              <TEPopoverContent placement="left">
-                <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
-                </div>
-              </TEPopoverContent>
-            </TEPopover>
-          </div>
-        );
-      }      
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Four directions-->
-
-<!-- Section: Dismiss on next click -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="dismiss-on-next-click"
-    data-te-spy-item>
-    Dismiss on next click
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Use <code>trigger="focus"</code> to dismiss on the next click of a
-    different element than the toggle element.
-  </p>
-
-  <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example3" iframe="/components/popover/examples/popover-dismiss" title="Popover Dismiss on next click" >}}
-
-
-  <section class="!visible hidden" data-te-collapse-item id="example3">
-     <!-- prettier-ignore  -->
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from "react";
-      import {
-        TEPopover,
-        TEPopoverToggler,
-        TEPopoverContent,
-        TERipple,
-      } from "tw-elements-react";
-      
-      export default function PopoverDismiss(): JSX.Element {
-        return (
-          <TEPopover className="py-10 md:text-center" trigger="focus">
-            <TERipple rippleColor="light">
-              <TEPopoverToggler className="inline-block rounded bg-danger px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]">
-                Dismissible popover
-              </TEPopoverToggler>
-            </TERipple>
-      
-            <TEPopoverContent>
-              <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                Dismissible popover And here's some amazing content. It's very
-                engaging. Right?
-              </div>
-            </TEPopoverContent>
-          </TEPopover>
-        );
-      }      
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Dismiss on next click-->
-
-<!-- Section: Disabled elements -->
-<section>
-  <!-- Title -->
-  <h2
-    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
-    id="disabled-elements"
-    data-te-spy-item>
-    Disabled elements
-  </h2>
-
-  <!-- Description -->
-  <p class="mb-3">
-    Elements with the <code>disabled</code> attribute aren’t interactive,
-    meaning users cannot focus, hover, or click them to trigger a popover
-    (or tootlip). As a workaround, you’ll want to trigger the <code>TEPopoverToggler</code> from
-    a wrapper <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>,
-    ideally made keyboard-focusable using <code>tabIndex={0}</code>, and
-    override the <code>pointer-events</code> on the disabled element.
-  </p>
-
-  <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example4" iframe="/components/popover/examples/popover-disabled" title=" Disabled Elements" >}}
-
-
-  <section class="!visible hidden" data-te-collapse-item id="example4">
-     <!-- prettier-ignore  -->
-    <div class="pt-4">
-      {{< twsnippet/wrapper "JSX" >}}
-      {{< twsnippet/code active=true lang="jsx" >}}
-      import React from "react";
-      import {
-        TEPopover,
-        TEPopoverContent,
-        TEPopoverToggler,
-      } from "tw-elements-react";
-      
-      export default function PopoverDisabled(): JSX.Element {
-        return (
-          <TEPopover className="py-10 md:text-center" trigger="hover focus">
-            <TEPopoverToggler className="inline-block" tag="span">
-              <button
-                type="button"
-                className="pointer-events-none inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] disabled:opacity-70 dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                disabled
-              >
-                Disabled button
-              </button>
-            </TEPopoverToggler>
-      
-            <TEPopoverContent>
-              <div className="p-4 text-[#212529] rounded-lg shadow-[0_0px_3px_0_rgba(0,0,0,0.07),0_2px_2px_0_rgba(0,0,0,0.04)] bg-white bg-clip-padding border border-t-0 border-neutral-100 empty:hidden dark:text-white dark:border-0 dark:bg-neutral-700">
-                Disabled popover
-              </div>
-            </TEPopoverContent>
-          </TEPopover>
-        );
-      }      
-      {{< /twsnippet/code >}}
-      {{< /twsnippet/wrapper >}}
-    </div>
-  </section>
-</section>
-<!-- Section: Disabled elements -->
-
 <hr class="mb-5 dark:border-neutral-600" />
 
 <!-- Section: Related resources -->
-<section id="section-related-resources">
-  <!-- Title -->
-  <h2 class="mb-5 mt-0 text-3xl font-semibold leading-normal" data-te-spy-item>
-    Related resources
-  </h2>
+  <section id="section-related-resources">
+    <!-- Title -->
+    <h2 class="mb-5 mt-0 text-3xl font-semibold leading-normal" data-te-spy-item>
+      Related resources
+    </h2>
+  
+    <!-- Resources -->
+    <div class="justify-content-start w-100 my-5 text-start">
+      <!-- Main -->
+        <!-- content & styles-->
+        <a
+          href="https://tailwind-elements.com/docs/react/content-styles/animations"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          animations
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/react/content-styles/hover-effects"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          hover effects
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/react/content-styles/icons"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          icons
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/react/content-styles/images"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          images
+        </a>
 
-  <!-- Resources -->
-  <div class="justify-content-start w-100 my-5 text-start">
-    <!-- Extended docs -->
-    <a
-      href="https://tailwind-elements.com/docs/react/components/button-group/"
-      type="button"
-      data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Button group</a
-    >
+        <!-- navigation-->
 
-    <!-- Main docs -->
-    <a
-      href="https://tailwind-elements.com/docs/react/components/buttons/"
-      type="button"
-      data-te-ripple-init
-      class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400"
-      >Buttons</a
-    >
-  </div>
-  <!-- Resources -->
-</section>
+        <!-- components-->
+        <a
+          href="https://tailwind-elements.com/docs/react/components/buttons"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          buttons
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/standard/components/gallery"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          gallery
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/react/components/listgroup"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          list group
+        </a>
+        <a
+          href="https://tailwind-elements.com/docs/react/components/spinners"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          spinners
+        </a>
+
+        <!-- forms-->
+
+        <!-- data-->
+
+        <!-- methods -->
+        <a
+          href="https://tailwind-elements.com/docs/react/methods/ripple"
+          type="button"
+          data-te-ripple-init
+          class="my-2 inline-block rounded-full bg-neutral-200 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-700 shadow-md transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:bg-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400">
+          ripple
+        </a>
+      </div>
+    <!-- Resources -->
+  </section>
 <!-- Section: Related resources -->
-
-<p>
-  If you are looking for more advanced options, try
-  <a
-    class="text-primary dark:text-primary-400"
-    href="https://mdbootstrap.com/docs/react/components/popovers/"
-    >Bootstrap Popover</a
-  >
-  from MDBootstrap.
-</p>

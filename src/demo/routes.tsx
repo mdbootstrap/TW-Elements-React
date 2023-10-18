@@ -25,11 +25,15 @@ export default function Routes(): JSX.Element {
               <Route key={name} path={path} element={element} />
             ))
           )}
-          {examplesPages.map(({ name, path, element }) => (
+          {examplesPages.map(({ name, path, element, fullscreenOnly }) => (
             <Route
               key={name}
               path={path}
-              element={<Example path={path}>{element}</Example>}
+              element={
+                <Example path={path} fullscreenOnly={fullscreenOnly}>
+                  {element}
+                </Example>
+              }
             />
           ))}
         </Switch>

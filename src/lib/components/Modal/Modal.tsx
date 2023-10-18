@@ -19,6 +19,7 @@ import modalTheme from "./modalTheme";
 import Backdrop from "../../shared/backdrop/Backdrop";
 import { useScrollbar } from "../../hooks/useScrollbar";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { useTransition } from "../../hooks/useTransition";
 
 const TEModal: React.FC<ModalProps> = ({
   show = false,
@@ -44,7 +45,7 @@ const TEModal: React.FC<ModalProps> = ({
   const { initFocusTrap, removeFocusTrap } = useFocusTrap();
 
   const [isOpenModal, setIsOpenModal] = useState(show || false);
-  const [transitionDuration, setTransitionDuration] = useState(0);
+  const [transitionDuration, setTransitionDuration] = useState<number>(0);
   const [staticModal, setStaticModal] = useState(false);
 
   const modalInnerRef = useRef<HTMLElement>(null);
@@ -58,11 +59,14 @@ const TEModal: React.FC<ModalProps> = ({
     isOpenModal ? theme.show : "hidden"
   );
 
+  const { onTransitionHide } = useTransition(
+    modalReference.current,
+    setStaticModal
+  );
+
   const startStaticAnimation = () => {
     setStaticModal(true);
-    setTimeout(() => {
-      setStaticModal(false);
-    }, 300);
+    onTransitionHide();
   };
 
   const handleBackdropClick = (e: Event) => {

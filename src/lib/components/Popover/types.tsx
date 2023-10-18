@@ -7,9 +7,9 @@ interface PopoverProps extends BaseComponent {
   enabled?: boolean;
   trigger?: string;
   onShow?: (e: SyntheticEvent) => any;
-  onShown?: (e: SyntheticEvent) => any;
+  onShown?: () => any;
   onHide?: (e: SyntheticEvent) => any;
-  onHidden?: (e: SyntheticEvent) => any;
+  onHidden?: () => any;
   onMouseEnter?: (e: SyntheticEvent) => any;
   onMouseLeave?: (e: SyntheticEvent) => any;
 }
