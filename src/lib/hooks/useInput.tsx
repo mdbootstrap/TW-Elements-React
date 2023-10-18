@@ -64,7 +64,8 @@ const useInput = (
       ? theme.labelSizeBase
       : size === "sm"
       ? theme.labelSizeSm
-      : theme.labelSizeBase
+      : theme.labelSizeBase,
+    formWhite ? theme.labelWhite : theme.labelDefault
   );
 
   const notchLeadingClasses = clsx(
