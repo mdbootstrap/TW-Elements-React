@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 interface ExampleProps {
   children: ReactNode;
@@ -11,9 +11,11 @@ const Example: React.FC<ExampleProps> = ({
   path,
   fullscreenOnly,
 }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const listenerNotAdded = useRef(true);
   const exampleRef = useRef<HTMLDivElement>(null);
   let resizeTimeout: ReturnType<typeof setTimeout>;
+  let mountingTimeout: ReturnType<typeof setTimeout>;
 
   const postHeight = () => {
     window.parent.postMessage(
@@ -67,13 +69,18 @@ const Example: React.FC<ExampleProps> = ({
     if (listenerNotAdded.current) {
       window.addEventListener("message", (event) => receiveMessage(event));
       listenerNotAdded.current = false;
+
+      mountingTimeout = setTimeout(() => {
+        setIsLoaded(true);
+      }, 100);
     }
     return () => {
       window.removeEventListener("message", (event) => receiveMessage(event));
+      clearTimeout(mountingTimeout);
     };
   }, []);
 
-  return <div ref={exampleRef}>{children}</div>;
+  return <div ref={exampleRef}>{isLoaded && children}</div>;
 };
 
 export default Example;
