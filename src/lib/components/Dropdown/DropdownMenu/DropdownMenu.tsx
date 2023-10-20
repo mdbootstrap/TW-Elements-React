@@ -68,7 +68,6 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
 
   const { onTransitionShow, onTransitionHide } = useTransition(
     popperElement,
-    setShow,
     theme.fade
   );
 
@@ -87,15 +86,18 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
 
   useEffect(() => {
     if (isOpenState) {
-      onTransitionShow();
-      setTimeout(() => {
+      setShow(true);
+      onTransitionShow(() => {
         setIsFaded(true);
-      }, 50);
+      });
+
       return;
     }
 
     setIsFaded(false);
-    onTransitionHide();
+    onTransitionHide(() => {
+      setShow(false);
+    });
   }, [isOpenState]);
 
   useEffect(() => {

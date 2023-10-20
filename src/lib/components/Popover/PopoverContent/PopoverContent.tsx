@@ -88,12 +88,12 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
 
   const { onTransitionShow, onTransitionHide } = useTransition(
     popperElement.current,
-    setIsReadyToHide,
     theme.fade
   );
 
   useEffect(() => {
     if ((isOpenState || isFocused) && enabled) {
+      setIsReadyToHide(true);
       onTransitionShow(() => {
         setIsFaded(true);
         !isFaded && onShown?.();
@@ -103,6 +103,7 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
 
     setIsFaded(false);
     onTransitionHide(() => {
+      setIsReadyToHide(false);
       isFaded && onHidden?.();
     });
   }, [isOpenState, isFocused, enabled, trigger]);
