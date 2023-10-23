@@ -32,7 +32,7 @@ const useCombinedRefs = (...refs: any) => {
   return targetRef;
 };
 
-const TERipple: React.FC<RippleProps> = React.forwardRef<
+const TERipple: React.FC<RippleProps> = /*#__PURE__*/ React.forwardRef<
   HTMLAllCollection,
   RippleProps
 >(
