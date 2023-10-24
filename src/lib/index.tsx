@@ -22,6 +22,8 @@ import TEDropdownItem from "./components/Dropdown/DropdownItem/DropdownItem";
 import TEChart from "./data/Chart/Chart";
 import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
+import TECarousel from "./components/Carousel/Carousel";
+import TECarouselItem from "./components/Carousel/CarouselItem/CarouselItem";
 
 export {
   TECollapse,
@@ -48,4 +50,6 @@ export {
   TEChart,
   TETooltip,
   TETextarea,
+  TECarousel,
+  TECarouselItem,
 };
