@@ -5,6 +5,8 @@ interface InputTheme {
   input?: string;
   activeInput?: string;
   label?: string;
+  labelDefault?: string;
+  labelWhite?: string;
   activeLabel?: string;
   notch?: string;
   notchLeading?: string;
