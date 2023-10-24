@@ -66,10 +66,7 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     ...DropdownMenuTheme,
   };
 
-  const { onTransitionShow, onTransitionHide } = useTransition(
-    popperElement,
-    theme.fade
-  );
+  const { onTransitionShow, onTransitionHide } = useTransition(popperElement);
 
   useKeyboard(children);
 

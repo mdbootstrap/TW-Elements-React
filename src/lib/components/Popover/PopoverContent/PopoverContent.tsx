@@ -87,8 +87,7 @@ const TEPopoverContent: React.FC<PopoverContentProps> = ({
   );
 
   const { onTransitionShow, onTransitionHide } = useTransition(
-    popperElement.current,
-    theme.fade
+    popperElement.current
   );
 
   useEffect(() => {
