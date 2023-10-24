@@ -14,7 +14,7 @@ import type { InputProps } from "./types";
 import InputTheme from "./inputTheme";
 import { useInput } from "../../hooks/useInput";
 
-const TEInput: React.FC<InputProps> = React.forwardRef<
+const TEInput: React.FC<InputProps> = /*#__PURE__*/ React.forwardRef<
   HTMLInputElement,
   InputProps
 >(

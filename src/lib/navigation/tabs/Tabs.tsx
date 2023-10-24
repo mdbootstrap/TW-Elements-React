@@ -15,7 +15,7 @@ import type { TabsProps } from "./types";
 import tabsTheme from "./tabsTheme";
 import { TabsContext } from "./context/TabsContext";
 
-const TETabs: React.FC<TabsProps> = React.forwardRef<
+const TETabs: React.FC<TabsProps> = /*#__PURE__*/ React.forwardRef<
   HTMLUListElement,
   TabsProps
 >(
