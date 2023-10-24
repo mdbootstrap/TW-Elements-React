@@ -17,11 +17,7 @@ const TECarouselItem: React.FC<CarouselItemProps> = ({
 
   const classes = clsx(className);
 
-  const { transitionDuration } = useTransition(
-    itemRef.current as HTMLElement,
-    null,
-    classes
-  );
+  const { transitionDuration } = useTransition(itemRef.current as HTMLElement);
 
   useEffect(() => {
     if (activeSlide === itemID - 1) {
