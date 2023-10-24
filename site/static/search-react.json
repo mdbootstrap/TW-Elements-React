@@ -42,6 +42,15 @@
     "category": "Getting started"
   },
   {
+    "href": "/docs/react/components/alerts/",
+    "name": "Alerts",
+    "keywords": ["notifications", "dismissing"],
+    "category": "Components",
+    "priority": {
+      "alert": 1
+    }
+  },
+  {
     "href": "docs/react/components/badges/",
     "name": "Badges",
     "keywords": ["label", "notifications"],
