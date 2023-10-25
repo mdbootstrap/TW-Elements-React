@@ -26,7 +26,7 @@ import TESelectOptionList from "./SelectOptionList/SelectOptionList";
 import { UP_ARROW, DOWN_ARROW, ENTER, TAB, ESCAPE } from "./keycodes";
 import { isArraysEqual } from "./utils";
 
-const selectAllIndex = -1;
+const SELECT_ALL_INDEX = -1;
 
 const TESelect: React.FC<SelectProps> = ({
   open = false,
@@ -83,7 +83,7 @@ const TESelect: React.FC<SelectProps> = ({
   const [query, setQuery] = useState("");
 
   const [activeElementIndex, setActiveElementIndex] = useState(() => {
-    return selectAll ? selectAllIndex : data.findIndex((el) => !el.disabled);
+    return selectAll ? SELECT_ALL_INDEX : data.findIndex((el) => !el.disabled);
   });
 
   // selected data
@@ -198,8 +198,8 @@ const TESelect: React.FC<SelectProps> = ({
     while (index < selectData.length - 1) {
       index++;
 
-      if (multiple && index === selectAllIndex) {
-        return selectAllIndex;
+      if (multiple && index === SELECT_ALL_INDEX) {
+        return SELECT_ALL_INDEX;
       }
 
       const isOptionInFilteredData = findOptionIndexInFilteredData(index) != -1;
@@ -290,7 +290,7 @@ const TESelect: React.FC<SelectProps> = ({
 
       if (!isOpen) return setIsOpen(true);
 
-      return activeElementIndex === selectAllIndex
+      return activeElementIndex === SELECT_ALL_INDEX
         ? handleSelectAll()
         : handleOptionClick(filteredData[selectedOptionIndex]);
     }
@@ -497,25 +497,25 @@ const TESelect: React.FC<SelectProps> = ({
     let selectedIndex = selectData.findIndex((el) => el.defaultSelected);
 
     // if there's no default selected item - get first not disabled one
-    if (selectedIndex === selectAllIndex && !preventFirstSelection) {
+    if (selectedIndex === SELECT_ALL_INDEX && !preventFirstSelection) {
       selectedIndex = selectData.findIndex((el) => !el.disabled && !el.hidden);
     }
 
     // additional check if all elements are disabled
     // and there's no default selected element
-    if (selectedIndex !== selectAllIndex) {
+    if (selectedIndex !== SELECT_ALL_INDEX) {
       setSelectedElements([selectedIndex]);
     }
   }, [selectData, updateMultipleInput, multiple, preventFirstSelection]);
 
   useEffect(() => {
     if (isOpen && search && selectedElements.length === 0) {
-      return setActiveElementIndex(selectAllIndex);
+      return setActiveElementIndex(SELECT_ALL_INDEX);
     }
     if (!isOpen) {
       selectedElements.length > 0
         ? setActiveElementIndex(Math.max(...selectedElements))
-        : setActiveElementIndex(multiple ? selectAllIndex - 1 : 0);
+        : setActiveElementIndex(multiple ? SELECT_ALL_INDEX - 1 : 0);
     }
   }, [filteredData, isOpen, search, selectedElements, selectedElements]);
 
@@ -613,8 +613,10 @@ const TESelect: React.FC<SelectProps> = ({
   }, [isOpen]);
 
   useEffect(() => {
-    showDropdown ? onOpen?.() : onClose?.();
-    showDropdown && search && searchRef.current?.focus();
+    if (isMounted) {
+      showDropdown ? onOpen?.() : onClose?.();
+      showDropdown && search && searchRef.current?.focus();
+    }
   }, [showDropdown]);
 
   const dropdownContainer = container
@@ -631,7 +633,9 @@ const TESelect: React.FC<SelectProps> = ({
           onKeyDown={handleKeyboard}
           value={inputValue}
           disabled={disabled}
-          placeholder={String(inputValue) ? undefined : placeholder}
+          placeholder={
+            String(inputValue) ? undefined : label ? undefined : placeholder
+          }
           label={label}
           readOnly
           size={size}

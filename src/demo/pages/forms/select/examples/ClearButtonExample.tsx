@@ -13,7 +13,12 @@ export default function ClearButtonExample(): JSX.Element {
   return (
     <div className="flex justify-center">
       <div className="relative mb-3 md:w-96 pt-5">
-        <TESelect data={data} clearBtn />
+        <TESelect
+          data={data}
+          clearBtn
+          label="Example label"
+          preventFirstSelection
+        />
       </div>
     </div>
   );

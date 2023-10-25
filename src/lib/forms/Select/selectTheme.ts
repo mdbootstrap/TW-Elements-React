@@ -13,7 +13,8 @@ const SelectTheme = {
   optionsWrapper: "overflow-y-auto",
   optionsWrapperScrollbar:
     "[&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-button]:block [&::-webkit-scrollbar-button]:h-0 [&::-webkit-scrollbar-button]:bg-transparent [&::-webkit-scrollbar-track-piece]:bg-transparent [&::-webkit-scrollbar-track-piece]:rounded-none [&::-webkit-scrollbar-track-piece]: [&::-webkit-scrollbar-track-piece]:rounded-l [&::-webkit-scrollbar-thumb]:h-[50px] [&::-webkit-scrollbar-thumb]:bg-[#999] [&::-webkit-scrollbar-thumb]:rounded",
-  selectArrow: "absolute right-3 text-[0.8rem] cursor-pointer w-5 h-5",
+  selectArrow:
+    "absolute right-3 text-[0.8rem] cursor-pointer w-5 h-5 pointer-events-none",
   selectArrowFocused: "text-primary",
   selectArrowWhite: "text-gray-50",
   selectArrowWhiteFocused: "!text-white",
@@ -30,7 +31,7 @@ const SelectTheme = {
   selectFilterInput:
     "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-gray-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition duration-300 ease-in-out motion-reduce:transition-none focus:border-primary focus:text-gray-700 focus:shadow-te-primary focus:outline-none dark:text-gray-200 dark:placeholder:text-gray-200",
   selectInput:
-    "peer block min-h-[auto] w-full rounded border-0 bg-transparent outline-none transition-all duration-200 ease-linear peer-focus:text-primary motion-reduce:transition-none disabled:bg-neutral-100 dark:disabled:bg-neutral-700 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary cursor-pointer",
+    "peer block min-h-[auto] w-full rounded border-0 bg-transparent outline-none transition-all duration-200 ease-linear peer-focus:text-primary motion-reduce:transition-none disabled:bg-neutral-100 dark:disabled:bg-neutral-700 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary cursor-pointer disabled:cursor-default",
   selectLabel:
     "pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate text-neutral-500 transition-all duration-200 ease-out peer-focus:scale-[0.8] peer-focus:text-primary motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary",
   selectOption:

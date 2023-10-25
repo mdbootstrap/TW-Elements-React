@@ -3,7 +3,7 @@ import clsx from "clsx";
 import type { SelectOptionListProps, SelectOptionState } from "./types";
 import type { ExtendedSelectData } from "../types";
 
-const optionsWithoutGroup = 0;
+const OPTIONS_WITHOUT_GROUP = 0;
 
 const TESelect: React.FC<SelectOptionListProps> = ({
   data,
@@ -157,7 +157,7 @@ const TESelect: React.FC<SelectOptionListProps> = ({
         </div>
       )}
       <div className={theme.optionsList}>
-        {createOptions(optionsWithoutGroup)}
+        {createOptions(OPTIONS_WITHOUT_GROUP)}
         {!isEmptyResults &&
           optionGroups?.map((groupName, index) => {
             const options = createOptions(index + 1).filter(
