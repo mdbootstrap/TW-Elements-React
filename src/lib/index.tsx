@@ -23,6 +23,7 @@ import TEChart from "./data/Chart/Chart";
 import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
 import TEAlert from "./components/Alert/Alert";
+import TEToast from "./components/Toasts/Toast";
 
 export {
   TECollapse,
@@ -50,4 +51,5 @@ export {
   TETooltip,
   TETextarea,
   TEAlert,
+  TEToast,
 };

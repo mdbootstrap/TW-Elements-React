@@ -11,35 +11,37 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import clsx from "clsx";
 import React, { useEffect, useState, useRef } from "react";
-import type { AlertProps } from "./types";
-import alertTheme from "./alertTheme";
+import type { ToastProps } from "./types";
+import toastTheme from "./toastTheme";
 
-const TEAlert: React.FC<AlertProps> = ({
+const TEToast: React.FC<ToastProps> = ({
   open = false,
   setOpen,
   className,
   autohide,
   animation = true,
   children,
-  color = "bg-primary-100 text-primary-800",
+  color = "bg-white dark:bg-neutral-600 dark:border-opacity-50 dark:bg-neutral-600",
   delay = 1000,
-  dismiss,
-  dismissTemplate,
-  staticAlert,
+  staticToast,
   tag: Tag = "div",
   theme: customTheme,
   onClose,
   onClosed,
+  onShow,
+  onShown,
   ...props
 }): JSX.Element => {
-  const [showAlert, setShowAlert] = useState<boolean | undefined>(false);
+  const [showToast, setShowToast] = useState<boolean | undefined>(false);
   const [isMounted, setIsMounted] = useState(false);
 
   const unmountTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
   const autohideTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
 
+  const toastRef = useRef<HTMLDivElement>(null);
+
   const theme = {
-    ...alertTheme,
+    ...toastTheme,
     ...customTheme,
   };
 
@@ -47,17 +49,43 @@ const TEAlert: React.FC<AlertProps> = ({
     theme.wrapper,
     color,
     animation && theme.wrapperTransition,
-    staticAlert ? theme.static : theme.nonStatic,
-    showAlert ? theme.wrapperVisible : theme.wrapperHidden,
+    !staticToast && theme.nonStatic,
+    showToast ? theme.wrapperVisible : theme.wrapperHidden,
     className
   );
+
+  const addEvents = () => {
+    if (showToast && !staticToast) {
+      toastRef.current?.addEventListener("mouseenter", () => {
+        clearTimeout(autohideTimeout.current);
+      });
+
+      toastRef.current?.addEventListener("mouseleave", handleAutohide);
+    }
+  };
+
+  const removeEvents = () => {
+    toastRef.current?.removeEventListener("mouseenter", () => {
+      clearTimeout(autohideTimeout.current);
+    });
+
+    toastRef.current?.removeEventListener("mouseleave", handleAutohide);
+  };
+
+  const handleAutohide = () => {
+    if (autohide) {
+      autohideTimeout.current = setTimeout(() => {
+        setShowToast(false);
+      }, delay);
+    }
+  };
 
   useEffect(() => {
     if (open) {
       setIsMounted(true);
       return;
     }
-    setShowAlert(false);
+    setShowToast(false);
   }, [open]);
 
   useEffect(() => {
@@ -66,23 +94,27 @@ const TEAlert: React.FC<AlertProps> = ({
     }
 
     setTimeout(() => {
-      setShowAlert(true);
+      setShowToast(true);
 
-      if (autohide) {
-        autohideTimeout.current = setTimeout(() => {
-          setShowAlert(false);
-        }, delay);
-      }
+      handleAutohide();
     }, 50);
 
-    return () => clearTimeout(autohideTimeout.current);
+    return () => {
+      removeEvents();
+      clearTimeout(autohideTimeout.current);
+    };
   }, [isMounted]);
 
   useEffect(() => {
-    if (showAlert) {
+    if (showToast) {
       setIsMounted(true);
-    } else if (!showAlert && isMounted) {
+      onShow?.();
+      addEvents();
+      onShown?.();
+    } else if (!showToast && isMounted) {
       onClose?.();
+      removeEvents();
+
       unmountTimeout.current = setTimeout(() => {
         setIsMounted(false);
         setOpen?.(false);
@@ -91,42 +123,24 @@ const TEAlert: React.FC<AlertProps> = ({
     }
 
     return () => clearTimeout(unmountTimeout.current);
-  }, [showAlert]);
+  }, [showToast]);
 
   return (
     <>
       {isMounted && (
-        <Tag className={wrapperClasses} {...props} role="alert">
+        <Tag
+          className={wrapperClasses}
+          {...props}
+          ref={toastRef}
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           {children}
-          {dismiss && (
-            <button
-              type="button"
-              className={theme.dismissButtonWrapper}
-              aria-label="Close"
-              onClick={() => setShowAlert(false)}
-            >
-              <span className={theme.dismissButton}>
-                {dismissTemplate || (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-              </span>
-            </button>
-          )}
         </Tag>
       )}
     </>
   );
 };
 
-export default TEAlert;
+export default TEToast;

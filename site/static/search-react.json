@@ -270,6 +270,15 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/toast/",
+    "name": "Toasts",
+    "keywords": ["notifications"],
+    "category": "Components",
+    "priority": {
+      "toast": 1
+    }
+  },
+  {
     "href": "/docs/react/components/tooltip/",
     "name": "Tooltip",
     "keywords": ["tooltip"],

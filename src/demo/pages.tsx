@@ -54,6 +54,7 @@ import ChartPage from "./pages/data/chart/ChartPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
 import TextareaPage from "./pages/forms/textarea/TextareaPage";
 import AlertPage from "./pages/components/alert/AlertPage";
+import ToastsPage from "./pages/components/toasts/ToastsPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -86,6 +87,7 @@ import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
 import AlertExamples from "./pages/components/alert/exampleList";
+import ToastsExamples from "./pages/components/toasts/exampleList";
 
 interface Pages {
   name: string;
@@ -173,6 +175,11 @@ const componentsPages: Pages[] = [
     name: "Alert",
     path: "/components/alert",
     element: <AlertPage />,
+  },
+  {
+    name: "Toasts",
+    path: "/components/toasts",
+    element: <ToastsPage />,
   },
 ];
 
@@ -376,6 +383,7 @@ export const examplesPages: Pages[] = [
   ...TooltipExamples,
   ...TextareaExamples,
   ...AlertExamples,
+  ...ToastsExamples,
 ];
 
 export default demoPages;

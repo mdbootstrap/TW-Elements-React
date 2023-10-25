@@ -1,16 +1,14 @@
 import { HTMLAttributes } from "react";
 
-interface AlertTheme {
+interface ToastTheme {
   wrapper: string;
   wrapperTransition: string;
   wrapperVisible: string;
   wrapperHidden: string;
   defaultColor: string;
-  dismissButton: string;
-  dismissButtonWrapper: string;
 }
 
-interface AlertProps extends HTMLAttributes<HTMLElement> {
+interface ToastProps extends HTMLAttributes<HTMLElement> {
   open?: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   animation?: boolean;
@@ -18,13 +16,13 @@ interface AlertProps extends HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
   color?: string;
   delay?: number;
-  dismiss?: boolean;
-  dismissTemplate?: React.ReactNode;
   onClose?: () => void;
   onClosed?: () => void;
-  staticAlert?: boolean;
+  onShow?: () => void;
+  onShown?: () => void;
+  staticToast?: boolean;
   tag?: React.ElementType;
-  theme?: AlertTheme;
+  theme?: ToastTheme;
 }
 
-export type { AlertProps };
+export type { ToastProps };
