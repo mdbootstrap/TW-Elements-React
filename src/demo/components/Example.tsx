@@ -69,11 +69,10 @@ const Example: React.FC<ExampleProps> = ({
     if (listenerNotAdded.current) {
       window.addEventListener("message", (event) => receiveMessage(event));
       listenerNotAdded.current = false;
-
-      mountingTimeout = setTimeout(() => {
-        setIsLoaded(true);
-      }, 100);
     }
+    mountingTimeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
     return () => {
       window.removeEventListener("message", (event) => receiveMessage(event));
       clearTimeout(mountingTimeout);
