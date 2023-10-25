@@ -28,10 +28,12 @@ const TECarouselItem: React.FC<CarouselItemProps> = ({
 
   useEffect(() => {
     if (isFirstRender?.current) {
+      setCarouselItems((prev: any) => [
+        ...prev,
+        itemRef.current as HTMLElement,
+      ]);
       return;
     }
-
-    setCarouselItems((prev: any) => [...prev, itemRef.current as HTMLElement]);
   }, []);
 
   useEffect(() => {
