@@ -227,6 +227,31 @@
                    Adds a <code>setState</code> method to keep the open state value in sync
                   </td>
                 </tr>
+
+                <tr
+                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+              >
+                <td
+                  class="border-r px-6 py-4 font-medium dark:border-neutral-500"
+                >
+                  <code class="text-red-500 dark:text-red-300"
+                    >staticToast</code
+                  >
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                >
+                  Boolean
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                >
+                  <code class="text-red-500 dark:text-red-300">false</code>
+                </td>
+                <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                 Makes the Toast static
+                </td>
+              </tr>
                 
                 <tr
                 class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
@@ -534,7 +559,7 @@
         export default function App(): JSX.Element {
           return (
             <div>
-              <TEToast onClosed="()=>console.log('Do something ...')">
+              <TEToast onClosed={()=>console.log('Do something ...')}>
                 A simple toast - check it out!
               </TEToast>
             </div>

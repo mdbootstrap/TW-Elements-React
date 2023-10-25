@@ -221,7 +221,21 @@
                   <td
                     class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
                   >
-                    <code class="text-red-500 dark:text-red-300"></code>
+                    <code class="text-red-500 dark:text-red-300">
+                      &lt;svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-6 w-6"
+                    >
+                    &lt;path
+                        fillRule="evenodd"
+                        d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                        clipRule="evenodd"
+                      />
+                      &lt;/svg>
+
+                    </code>
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                    Changes the default dismiss button template. Used only when <code>dismiss</code> is set to <code>true</code>. Provide a React node to replace the default template.
@@ -275,6 +289,31 @@
                   </td>
                   <td class="px-6 py-4 max-lg:whitespace-nowrap">
                    Adds a <code>setState</code> method to keep the open state value in sync
+                  </td>
+                </tr>
+                
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700"
+                >
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500"
+                  >
+                    <code class="text-red-500 dark:text-red-300"
+                      >staticAlert</code
+                    >
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap"
+                  >
+                    <code class="text-red-500 dark:text-red-300">false</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                   Makes the Alert static
                   </td>
                 </tr>
                 
@@ -612,7 +651,7 @@
         export default function App(): JSX.Element {
           return (
             <div>
-              <TEAlert onClosed="()=>console.log('Do something ...')">
+              <TEAlert onClosed={()=>console.log('Do something ...')}>
                 A simple primary alert—check it out!
               </TEAlert>
             </div>
