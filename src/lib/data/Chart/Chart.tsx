@@ -12,15 +12,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 import React, { useRef, useEffect, useState } from "react";
 import type { ChartProps } from "./types";
 import type { Chart } from "chart.js";
-import {
-  defaultOptions,
-  setupOptions,
-  getChart,
-  getColorMode,
-  getDarkConfig,
-  updateChart,
-} from "./utils";
-import ChartDataLabels from "chartjs-plugin-datalabels";
+import { useCharts } from "./utils";
 
 const TEChart: React.FC<ChartProps> = ({
   type,
@@ -37,6 +29,18 @@ const TEChart: React.FC<ChartProps> = ({
   darkBgColor = "#262626",
   ...props
 }) => {
+  const ChartDataLabelsRef = useRef<any>(null);
+
+  const {
+    defaultOptions,
+    setupOptions,
+    getChart,
+    getColorMode,
+    getDarkConfig,
+    updateChart,
+    chartsLoaded,
+  } = useCharts();
+
   const [darkModeTheme, setDarkModeTheme] = useState<string | undefined>(
     getColorMode(disableDarkMode || false, darkMode || "")
   );
@@ -59,7 +63,7 @@ const TEChart: React.FC<ChartProps> = ({
       : options;
 
   useEffect(() => {
-    const plugins = datalabels ? [ChartDataLabels] : [];
+    const plugins = datalabels ? [ChartDataLabelsRef.current] : [];
     const chart = getChart(
       chartReference,
       type,
@@ -71,7 +75,7 @@ const TEChart: React.FC<ChartProps> = ({
     return () => {
       chart?.destroy();
     };
-  }, [chartReference, type, datalabels]);
+  }, [chartReference, type, datalabels, chartsLoaded]);
 
   useEffect(() => {
     if (chartInstance.current) {
@@ -81,7 +85,14 @@ const TEChart: React.FC<ChartProps> = ({
         setupOptions(chartOptions, type, defaultOptions)
       );
     }
-  }, [options, darkOptions, chartOptions, data, chartInstance.current]);
+  }, [
+    options,
+    darkOptions,
+    chartOptions,
+    data,
+    chartInstance.current,
+    chartsLoaded,
+  ]);
 
   useEffect(() => {
     if (disableDarkMode) {
@@ -114,6 +125,15 @@ const TEChart: React.FC<ChartProps> = ({
       observer.current = null;
     };
   }, [disableDarkMode, darkMode]);
+
+  useEffect(() => {
+    const loadDataLabels = async () => {
+      const ChartDataLabels = await import("chartjs-plugin-datalabels");
+      ChartDataLabelsRef.current = ChartDataLabels.default;
+    };
+
+    loadDataLabels();
+  }, []);
 
   return (
     <>

@@ -20,7 +20,7 @@ const useCombinedRefs = (...refs: any) => {
   return targetRef;
 };
 
-const TETabsPane: React.FC<TabsPaneProps> = React.forwardRef<
+const TETabsPane: React.FC<TabsPaneProps> = /*#__PURE__*/ React.forwardRef<
   HTMLAllCollection,
   TabsPaneProps
 >(

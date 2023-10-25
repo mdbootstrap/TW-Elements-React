@@ -4,7 +4,7 @@ import type { TabsItemProps } from "./types";
 import { TabsContext } from "../context/TabsContext";
 import TabsItemTheme from "./tabsItemTheme";
 
-const TETabsItem: React.FC<TabsItemProps> = React.forwardRef<
+const TETabsItem: React.FC<TabsItemProps> = /*#__PURE__*/ React.forwardRef<
   HTMLAnchorElement | HTMLButtonElement | HTMLLIElement,
   TabsItemProps
 >(

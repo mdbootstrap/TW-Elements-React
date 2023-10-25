@@ -54,6 +54,7 @@ import ChartPage from "./pages/data/chart/ChartPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
 import TextareaPage from "./pages/forms/textarea/TextareaPage";
 import SelectPage from "./pages/forms/select/SelectPage";
+import CarouselPage from "./pages/components/carousel/CarouselPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -86,6 +87,7 @@ import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
 import SelectExamples from "./pages/forms/select/exampleList";
+import CarouselExamples from "./pages/components/carousel/exampleList";
 
 interface Pages {
   name: string;
@@ -168,6 +170,11 @@ const componentsPages: Pages[] = [
     name: "tooltip",
     path: "/components/tooltip",
     element: <TooltipPage />,
+  },
+  {
+    name: "carousel",
+    path: "/components/carousel",
+    element: <CarouselPage />,
   },
 ];
 
@@ -376,6 +383,7 @@ export const examplesPages: Pages[] = [
   ...TooltipExamples,
   ...TextareaExamples,
   ...SelectExamples,
+  ...CarouselExamples,
 ];
 
 export default demoPages;
