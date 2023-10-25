@@ -4,6 +4,7 @@ interface ModalTheme {
   show?: string;
   static?: string;
   staticProperties?: string;
+  wrapper?: string;
 }
 
 interface ModalProps extends BaseComponent {

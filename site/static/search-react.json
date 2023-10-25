@@ -291,6 +291,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/carousel/",
+    "name": "Carousel",
+    "keywords": ["carousel", "slider"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/placeholders/",
     "name": "Placeholders",
     "keywords": ["placeholders"],
@@ -331,6 +337,15 @@
     "name": "Inputs",
     "keywords": ["inputs", "input", "fields"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/forms/select",
+    "name": "Select",
+    "keywords": ["options", "multiselect"],
+    "category": "Forms",
+    "priority": {
+      "select": 1
+    }
   },
   {
     "href": "/docs/react/components/collapse",

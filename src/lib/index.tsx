@@ -24,6 +24,9 @@ import TETooltip from "./components/Tooltip/Tooltip";
 import TETextarea from "./forms/Textarea/Textarea";
 import TEAlert from "./components/Alert/Alert";
 import TEToast from "./components/Toasts/Toast";
+import TESelect from "./forms/Select/Select";
+import TECarousel from "./components/Carousel/Carousel";
+import TECarouselItem from "./components/Carousel/CarouselItem/CarouselItem";
 
 export {
   TECollapse,
@@ -52,4 +55,7 @@ export {
   TETextarea,
   TEAlert,
   TEToast,
+  TESelect,
+  TECarousel,
+  TECarouselItem,
 };

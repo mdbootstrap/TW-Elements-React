@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const useTransition = (
   referenceElement:
     | React.MutableRefObject<HTMLElement | null>
     | HTMLElement
     | null,
-  setShow?: React.Dispatch<React.SetStateAction<boolean>>,
-  classNames?: string
+  classNames?: string,
+  defaultDuration: number = 150
 ) => {
-  const transitionTime = useRef<number>(0);
+  const [transitionDuration, setTransitionDuration] = useState<number>(0);
+
   const tiemoutShowRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const tiemoutHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const transitionDurationSet = useRef(false);
@@ -21,7 +22,7 @@ const useTransition = (
         element as HTMLElement
       );
       const time = Number(transitionDuration.replace("s", "")) * 1000;
-      transitionTime.current = time;
+      setTransitionDuration(time);
       return;
     }
 
@@ -37,11 +38,10 @@ const useTransition = (
       );
 
       const time = Number(durationClass?.split("-")[1].replace(/\D/g, ""));
-      transitionTime.current = time;
-
+      setTransitionDuration(time);
       return;
     } else if (classNames?.includes("transition")) {
-      transitionTime.current = 150;
+      setTransitionDuration(defaultDuration);
     }
   };
 
@@ -58,10 +58,9 @@ const useTransition = (
       clearTimeout(tiemoutShowRef.current);
     }
 
-    setShow?.(true);
     tiemoutShowRef.current = setTimeout(() => {
       callback?.();
-    }, transitionTime.current);
+    }, 50);
   };
 
   const onTransitionHide = (callback?: () => any) => {
@@ -74,15 +73,15 @@ const useTransition = (
     }
 
     tiemoutHideRef.current = setTimeout(() => {
-      setShow?.(false);
       callback?.();
-    }, transitionTime.current);
+    }, transitionDuration);
   };
 
   return {
-    transitionDuration: transitionTime.current,
+    transitionDuration,
     onTransitionShow,
     onTransitionHide,
+    getTransitionTime,
   };
 };
 
