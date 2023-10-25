@@ -284,14 +284,14 @@ const TECarousel: React.FC<CarouselProps> = ({
   }, [interval, ride]);
 
   useEffect(() => {
-    if (!keyboard) {
+    if (!keyboard || !carouselRef.current) {
       return;
     }
+    const carouselElement = carouselRef.current;
 
-    window.addEventListener("keydown", handleKeydown);
-
+    carouselElement.addEventListener("keydown", handleKeydown);
     return () => {
-      window.removeEventListener("keydown", handleKeydown);
+      carouselElement.removeEventListener("keydown", handleKeydown);
     };
   }, [keyboard, handleKeydown]);
 
