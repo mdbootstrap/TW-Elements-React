@@ -53,6 +53,8 @@ import DropdownPage from "./pages/components/dropdown/DropdownPage";
 import ChartPage from "./pages/data/chart/ChartPage";
 import TooltipPage from "./pages/components/tooltip/TooltipPage";
 import TextareaPage from "./pages/forms/textarea/TextareaPage";
+import AlertPage from "./pages/components/alert/AlertPage";
+import ToastsPage from "./pages/components/toasts/ToastsPage";
 import SelectPage from "./pages/forms/select/SelectPage";
 import CarouselPage from "./pages/components/carousel/CarouselPage";
 
@@ -86,6 +88,8 @@ import DropdownExamples from "./pages/components/dropdown/exampleList";
 import ChartExamples from "./pages/data/chart/exampleList";
 import TooltipExamples from "./pages/components/tooltip/exampleList";
 import TextareaExamples from "./pages/forms/textarea/exampleList";
+import AlertExamples from "./pages/components/alert/exampleList";
+import ToastsExamples from "./pages/components/toasts/exampleList";
 import SelectExamples from "./pages/forms/select/exampleList";
 import CarouselExamples from "./pages/components/carousel/exampleList";
 
@@ -170,6 +174,16 @@ const componentsPages: Pages[] = [
     name: "tooltip",
     path: "/components/tooltip",
     element: <TooltipPage />,
+  },
+  {
+    name: "Alert",
+    path: "/components/alert",
+    element: <AlertPage />,
+  },
+  {
+    name: "Toasts",
+    path: "/components/toasts",
+    element: <ToastsPage />,
   },
   {
     name: "carousel",
@@ -382,6 +396,8 @@ export const examplesPages: Pages[] = [
   ...ChartExamples,
   ...TooltipExamples,
   ...TextareaExamples,
+  ...AlertExamples,
+  ...ToastsExamples,
   ...SelectExamples,
   ...CarouselExamples,
 ];
