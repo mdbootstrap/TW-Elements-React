@@ -11,7 +11,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import type { CarouselProps } from "./types";
-import { getCarouselItems, forceReflow, isVisible } from "./utils";
+import { forceReflow, isVisible } from "./utils";
 import { CarouselContext } from "./context/CarouselContext";
 import CarouselTheme from "./carouselTheme";
 import clsx from "clsx";
@@ -22,7 +22,7 @@ const TECarousel: React.FC<CarouselProps> = ({
   children,
   interval = 5000,
   ride = false,
-  keyboard = false,
+  keyboard = true,
   pause = "hover",
   wrap = true,
   touch = true,
@@ -44,15 +44,17 @@ const TECarousel: React.FC<CarouselProps> = ({
     document.visibilityState
   );
   const [clientTouch, setClientTouch] = useState({ initialX: 0, initialY: 0 });
+  const [carouselItems, setCarouselItems] = useState<HTMLElement[]>([]);
 
   const carouselRef = useRef<HTMLElement>(null);
-  const items = useRef<HTMLElement[]>([]);
   const prevIndex = useRef(0);
   const isFirstRender = useRef(true);
   const isTransitioning = useRef(false);
   const isFirstSlide = useRef(true);
   const visibilityChangeRef = useRef(false);
+  const hasMouseEnteredCarousel = useRef(false);
   const intervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const theme = {
     ...CarouselTheme,
@@ -66,8 +68,6 @@ const TECarousel: React.FC<CarouselProps> = ({
   );
 
   const getNextElement = (direction: "prev" | "next", index?: number) => {
-    const carouselItems = items.current as HTMLElement[];
-
     if (index !== undefined) {
       return carouselItems[index];
     }
@@ -99,22 +99,21 @@ const TECarousel: React.FC<CarouselProps> = ({
     if (newIndex !== undefined) {
       prevIndex.current = newIndex;
       setActiveSlide(newIndex);
-    } else {
-      const next =
-        activeSlide === items.current.length - 1 ? 0 : activeSlide + 1;
-      const prev =
-        activeSlide === 0 ? items.current.length - 1 : activeSlide - 1;
-
-      prevIndex.current = direction === "next" ? next : prev;
-      setActiveSlide(direction === "next" ? next : prev);
+      return;
     }
+
+    const next = activeSlide === carouselItems.length - 1 ? 0 : activeSlide + 1;
+    const prev = activeSlide === 0 ? carouselItems.length - 1 : activeSlide - 1;
+
+    prevIndex.current = direction === "next" ? next : prev;
+    setActiveSlide(direction === "next" ? next : prev);
   };
 
   const slide = useCallback(
     (direction: string, nextElement: HTMLElement, index?: number) => {
       if (
-        !items.current ||
-        items.current.length < 2 ||
+        !carouselItems ||
+        carouselItems.length < 2 ||
         isTransitioning.current
       ) {
         return;
@@ -124,8 +123,7 @@ const TECarousel: React.FC<CarouselProps> = ({
         isFirstSlide.current = false;
       }
 
-      const carouselElements = items.current;
-      const activeElement = carouselElements[activeSlide];
+      const activeElement = carouselItems[activeSlide];
 
       if (!activeElement || !nextElement) {
         return;
@@ -155,11 +153,14 @@ const TECarousel: React.FC<CarouselProps> = ({
 
       nextElement.classList.remove(nextClass);
 
-      setTimeout(() => {
+      if (timeoutRef.current !== null) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
         isTransitioning.current = false;
         onSlid?.();
 
-        activeElement.removeAttribute("data-te-active");
         activeElement.classList.remove(activeClass, theme.block);
       }, transitionDuration);
     },
@@ -192,7 +193,7 @@ const TECarousel: React.FC<CarouselProps> = ({
 
     if (
       !nextElement ||
-      index > items.current.length - 1 ||
+      index > carouselItems.length - 1 ||
       index < 0 ||
       index === activeSlide
     ) {
@@ -204,6 +205,10 @@ const TECarousel: React.FC<CarouselProps> = ({
 
   const startInterval = useCallback(() => {
     if (typeof interval === "number" && interval > 0) {
+      if (hasMouseEnteredCarousel.current) {
+        hasMouseEnteredCarousel.current = false;
+      }
+
       intervalRef.current = setTimeout(() => {
         changeSlide("next");
       }, interval);
@@ -315,13 +320,18 @@ const TECarousel: React.FC<CarouselProps> = ({
       return;
     }
 
+    const handleMouseEnter = () => {
+      pauseInterval();
+      hasMouseEnteredCarousel.current = true;
+    };
+
     const carouselElement = carouselRef.current;
-    carouselElement.addEventListener("mouseenter", pauseInterval);
+    carouselElement.addEventListener("mouseenter", handleMouseEnter);
     carouselElement.addEventListener("mouseleave", startInterval);
     carouselElement.addEventListener("touchend", pauseInterval);
 
     return () => {
-      carouselElement.removeEventListener("mouseenter", pauseInterval);
+      carouselElement.removeEventListener("mouseenter", handleMouseEnter);
       carouselElement.removeEventListener("mouseleave", startInterval);
       carouselElement.removeEventListener("touchend", pauseInterval);
     };
@@ -330,16 +340,10 @@ const TECarousel: React.FC<CarouselProps> = ({
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
-
-      if (!carouselRef.current) {
-        return;
-      }
-      const carouselElement = carouselRef.current;
-      items.current = getCarouselItems(carouselElement);
       return;
     }
 
-    if (!items.current || items.current.length < 2) {
+    if (!carouselItems || carouselItems.length < 2) {
       return;
     }
 
@@ -347,7 +351,8 @@ const TECarousel: React.FC<CarouselProps> = ({
       (ride === true && isFirstSlide.current) ||
       !ride ||
       visibilityState === "hidden" ||
-      !interval
+      !interval ||
+      hasMouseEnteredCarousel.current
     ) {
       return;
     }
@@ -387,6 +392,8 @@ const TECarousel: React.FC<CarouselProps> = ({
         block: theme.block,
         visible: theme.visible,
         crossfade,
+        setCarouselItems,
+        isFirstRender,
       }}
     >
       <Tag
@@ -403,28 +410,27 @@ const TECarousel: React.FC<CarouselProps> = ({
               className={theme.prevBtn}
               type="button"
             >
-              {prevBtnIcon || (
-                <>
-                  <span className="inline-block h-8 w-8 [&>svg]:h-8">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15.75 19.5L8.25 12l7.5-7.5"
-                      />
-                    </svg>
-                  </span>
-                  <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                    Previous
-                  </span>
-                </>
-              )}
+              <span className={theme.prevBtnIcon}>
+                {prevBtnIcon || (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                )}
+              </span>
+
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Previous
+              </span>
             </button>
 
             <button
@@ -432,34 +438,32 @@ const TECarousel: React.FC<CarouselProps> = ({
               className={theme.nextBtn}
               type="button"
             >
-              {nextBtnIcon || (
-                <>
-                  <span className="inline-block h-8 w-8 [&>svg]:h-8">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  </span>
-                  <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                    Next
-                  </span>
-                </>
-              )}
+              <span className={theme.nextBtnIcon}>
+                {nextBtnIcon || (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                )}
+              </span>
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Next
+              </span>
             </button>
           </>
         )}
         {showIndicators && (
           <div className={theme.indicatorsWrapper}>
-            {items.current.map((_, index) => (
+            {carouselItems.map((_, index) => (
               <button
                 key={index}
                 data-te-target={index}

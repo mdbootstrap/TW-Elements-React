@@ -9,13 +9,16 @@ interface CarouselTheme {
   slideRight?: string;
   slideLeft?: string;
   nextBtn?: string;
+  nextBtnIcon?: string;
   prevBtn?: string;
+  prevBtnIcon?: string;
   indicatorsWrapper?: string;
   indicator?: string;
   activeIndicator?: string;
 }
 
 interface CarouselProps extends BaseComponent {
+  tag?: React.ComponentProps<any>;
   theme?: CarouselTheme;
   interval?: number | boolean;
   keyboard?: boolean;

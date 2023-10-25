@@ -6,6 +6,8 @@ interface CarouselContextProps {
   block?: string;
   visible?: string;
   crossfade?: boolean;
+  setCarouselItems?: React.SetStateAction<any>;
+  isFirstRender?: React.MutableRefObject<boolean>;
 }
 
 const CarouselContext = createContext<CarouselContextProps>({
@@ -14,6 +16,8 @@ const CarouselContext = createContext<CarouselContextProps>({
   block: "",
   visible: "",
   crossfade: undefined,
+  setCarouselItems: () => {},
+  isFirstRender: { current: true },
 });
 
 export { CarouselContext };

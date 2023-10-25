@@ -1,11 +1,3 @@
-export const getCarouselItems = (
-  carouselElement: HTMLElement
-): HTMLElement[] => {
-  return Array.from(
-    carouselElement.querySelectorAll("[data-te-carousel-item]")
-  );
-};
-
 export const forceReflow = (element: HTMLElement): number =>
   element.offsetHeight;
 
