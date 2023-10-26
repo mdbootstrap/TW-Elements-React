@@ -134,8 +134,8 @@ const ButtonPage = () => {
         </h2>
         {/* <!-- Description --> */}
         <p className="mb-3">
-          Tailwind Elements includes several predefined button styles, each
-          serving its own semantic purpose.
+          TW Elements includes several predefined button styles, each serving
+          its own semantic purpose.
         </p>
 
         <div className="flex justify-center space-x-2">

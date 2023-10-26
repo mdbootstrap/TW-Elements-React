@@ -43,7 +43,7 @@ export default function FooterFormExample(): JSX.Element {
             className="text-secondary-800 dark:text-secondary-400"
             href="https://tailwind-elements.com/"
           >
-            Tailwind Elements
+            TW Elements
           </a>
         </div>
       </footer>

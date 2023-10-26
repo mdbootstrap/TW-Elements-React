@@ -14,14 +14,12 @@ const TypographyPage = () => {
         Use the following <code>text-{"{size}"}</code> utility classes from
         Tailwind to set the font size for any text element.
       </p>
-      <h2 className="text-5xl font-medium leading-tight">Tailwind Elements</h2>
-      <h2 className="text-4xl font-medium leading-tight">Tailwind Elements</h2>
-      <h3 className="text-3xl font-medium leading-tight">Tailwind Elements</h3>
-      <h4 className="text-2xl font-medium leading-tight">Tailwind Elements</h4>
-      <h5 className="text-xl font-medium leading-tight">Tailwind Elements</h5>
-      <h6 className="mb-5 text-base font-medium leading-tight">
-        Tailwind Elements
-      </h6>
+      <h2 className="text-5xl font-medium leading-tight">TW Elements</h2>
+      <h2 className="text-4xl font-medium leading-tight">TW Elements</h2>
+      <h3 className="text-3xl font-medium leading-tight">TW Elements</h3>
+      <h4 className="text-2xl font-medium leading-tight">TW Elements</h4>
+      <h5 className="text-xl font-medium leading-tight">TW Elements</h5>
+      <h6 className="mb-5 text-base font-medium leading-tight">TW Elements</h6>
 
       <h2
         className="mb-5 mt-0 text-3xl font-semibold leading-normal"
