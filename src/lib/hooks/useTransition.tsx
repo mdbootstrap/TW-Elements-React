@@ -77,6 +77,14 @@ const useTransition = (
     }, transitionDuration);
   };
 
+  useEffect(() => {
+    return () => {
+      if (tiemoutHideRef.current !== null) {
+        clearTimeout(tiemoutHideRef.current);
+      }
+    };
+  }, []);
+
   return {
     transitionDuration,
     onTransitionShow,

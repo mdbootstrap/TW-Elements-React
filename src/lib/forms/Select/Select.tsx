@@ -25,6 +25,7 @@ import { TEInput } from "tw-elements-react";
 import TESelectOptionList from "./SelectOptionList/SelectOptionList";
 import { UP_ARROW, DOWN_ARROW, ENTER, TAB, ESCAPE } from "./keycodes";
 import { isArraysEqual } from "./utils";
+import { useTransition } from "../../hooks/useTransition";
 
 const SELECT_ALL_INDEX = -1;
 
@@ -96,6 +97,7 @@ const TESelect: React.FC<SelectProps> = ({
 
   const searchRef = useRef<HTMLInputElement>(null);
   const dropdownWrapperRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLSpanElement>(null);
 
   const filteredData = useMemo(
@@ -186,6 +188,12 @@ const TESelect: React.FC<SelectProps> = ({
       }
     }
   };
+
+  // transition
+
+  const { onTransitionShow, onTransitionHide } = useTransition(
+    dropdownRef.current
+  );
 
   const setNextOptionActive = (): number => {
     const findOptionIndexInFilteredData = (index: number) => {
@@ -584,13 +592,12 @@ const TESelect: React.FC<SelectProps> = ({
   }, [open]);
 
   useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
     if (isOpen) {
       setIsMounted(true);
-      setTimeout(() => {
+      onTransitionShow(() => {
         setShowDropdown(true);
         setOpen?.(true);
-      }, 10);
+      });
       return;
     }
 
@@ -602,14 +609,10 @@ const TESelect: React.FC<SelectProps> = ({
     setOpen?.(false);
     document.activeElement === referenceElement && referenceElement.blur();
 
-    timeout = setTimeout(() => {
+    onTransitionHide(() => {
       setIsMounted(false);
       search && setQuery("");
-    }, 300);
-
-    return () => {
-      clearTimeout(timeout);
-    };
+    });
   }, [isOpen]);
 
   useEffect(() => {
@@ -699,7 +702,7 @@ const TESelect: React.FC<SelectProps> = ({
               {...attributes.popper}
               className={theme.selectDropdownContainer}
             >
-              <div tabIndex={0} className={dropdownClasses}>
+              <div tabIndex={0} className={dropdownClasses} ref={dropdownRef}>
                 {search && (
                   <div className={theme.inputGroup}>
                     <input

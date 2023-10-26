@@ -13,6 +13,7 @@ import clsx from "clsx";
 import React, { useEffect, useState, useRef } from "react";
 import type { AlertProps } from "./types";
 import alertTheme from "./alertTheme";
+import { useTransition } from "../../hooks/useTransition";
 
 const TEAlert: React.FC<AlertProps> = ({
   open = false,
@@ -35,8 +36,8 @@ const TEAlert: React.FC<AlertProps> = ({
   const [showAlert, setShowAlert] = useState<boolean | undefined>(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const unmountTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
   const autohideTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
+  const alertRef = useRef<HTMLDivElement>(null);
 
   const theme = {
     ...alertTheme,
@@ -52,6 +53,10 @@ const TEAlert: React.FC<AlertProps> = ({
     className
   );
 
+  const { onTransitionShow, onTransitionHide } = useTransition(
+    alertRef.current
+  );
+
   useEffect(() => {
     if (open) {
       setIsMounted(true);
@@ -65,7 +70,7 @@ const TEAlert: React.FC<AlertProps> = ({
       return;
     }
 
-    setTimeout(() => {
+    onTransitionShow(() => {
       setShowAlert(true);
 
       if (autohide) {
@@ -73,7 +78,7 @@ const TEAlert: React.FC<AlertProps> = ({
           setShowAlert(false);
         }, delay);
       }
-    }, 50);
+    });
 
     return () => clearTimeout(autohideTimeout.current);
   }, [isMounted]);
@@ -83,20 +88,18 @@ const TEAlert: React.FC<AlertProps> = ({
       setIsMounted(true);
     } else if (!showAlert && isMounted) {
       onClose?.();
-      unmountTimeout.current = setTimeout(() => {
+      onTransitionHide(() => {
         setIsMounted(false);
         setOpen?.(false);
         onClosed?.();
-      }, 300);
+      });
     }
-
-    return () => clearTimeout(unmountTimeout.current);
   }, [showAlert]);
 
   return (
     <>
       {isMounted && (
-        <Tag className={wrapperClasses} {...props} role="alert">
+        <Tag className={wrapperClasses} {...props} role="alert" ref={alertRef}>
           {children}
           {dismiss && (
             <button
