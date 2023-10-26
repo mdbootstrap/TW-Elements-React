@@ -285,6 +285,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/video-carousel/",
+    "name": "Video carousel",
+    "keywords": ["video", "video carousel"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/cards/",
     "name": "Cards",
     "keywords": ["content container"],

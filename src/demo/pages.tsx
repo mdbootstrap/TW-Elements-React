@@ -57,6 +57,7 @@ import AlertPage from "./pages/components/alert/AlertPage";
 import ToastsPage from "./pages/components/toasts/ToastsPage";
 import SelectPage from "./pages/forms/select/SelectPage";
 import CarouselPage from "./pages/components/carousel/CarouselPage";
+import VideoCarouselPage from "./pages/components/video-carousel/VideoCarouselPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -92,6 +93,7 @@ import AlertExamples from "./pages/components/alert/exampleList";
 import ToastsExamples from "./pages/components/toasts/exampleList";
 import SelectExamples from "./pages/forms/select/exampleList";
 import CarouselExamples from "./pages/components/carousel/exampleList";
+import VideoCarouselExamples from "./pages/components/video-carousel/exampleList";
 
 interface Pages {
   name: string;
@@ -189,6 +191,11 @@ const componentsPages: Pages[] = [
     name: "carousel",
     path: "/components/carousel",
     element: <CarouselPage />,
+  },
+  {
+    name: "video carousel",
+    path: "/components/video-carousel",
+    element: <VideoCarouselPage />,
   },
 ];
 
@@ -400,6 +407,7 @@ export const examplesPages: Pages[] = [
   ...ToastsExamples,
   ...SelectExamples,
   ...CarouselExamples,
+  ...VideoCarouselExamples,
 ];
 
 export default demoPages;
