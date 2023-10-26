@@ -8,7 +8,6 @@ export default function VideoCarouselFullPageExample(): JSX.Element {
       showIndicators
       crossfade
       ride="carousel"
-      pause={false}
       theme={{
         carouselWrapper: "relative h-screen",
         indicatorsWrapper:
