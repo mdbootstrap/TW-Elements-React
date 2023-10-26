@@ -18,7 +18,7 @@ TW Elements React is a huge collection of free, interactive React components for
          <li>Simple, 1 minute install</li>    
          <li>Free for personal & commercial use</li>
         </ul>
-        <p><b><a href="https://tw-elements.com/docs/react/getting-started/quick-start/">Get started with Tailwind Elements React now!</a></b></p>
+        <p><b><a href="https://tw-elements.com/docs/react/getting-started/quick-start/">Get started with TW Elements React now!</a></b></p>
       </td>
     </tr>
    </tbody>
@@ -100,7 +100,7 @@ Check out the upcoming features - watch our **[social profiles](https://twitter.
 
 ## Components
 
-A collection of stunning components made with attention to the smallest details. Forms, cards, buttons, and hundreds of others – in Tailwind Elements React you will find all the essential elements necessary for every project.
+A collection of stunning components made with attention to the smallest details. Forms, cards, buttons, and hundreds of others – in TW Elements React you will find all the essential elements necessary for every project.
 
 <table>
   <tr>
@@ -532,13 +532,13 @@ A collection of stunning components made with attention to the smallest details.
 npm install tw-elements-react
 ```
 
-3. Add the Tailwind Elements React css file to your main js/tsx file
+3. Add the TW Elements React css file to your main js/tsx file
 
 ```javascript
 import "tw-elements-react/dist/css/tw-elements-react.min.css";
 ```
 
-4. Tailwind Elements is a plugin and should be included inside the **tailwind.config.js** file. It is also recommended to extend the content array with a js file that loads dynamic component classes:
+4. TW Elements is a plugin and should be included inside the **tailwind.config.js** file. It is also recommended to extend the content array with a js file that loads dynamic component classes:
 
 ```javascript
 module.exports = {
@@ -577,7 +577,7 @@ npm install -g mdb-cli
 mdb login
 ```
 
-3. Initialize a project and choose **Tailwind Elements React** from the list:
+3. Initialize a project and choose **TW Elements React** from the list:
 
 ```
 mdb init tw-elements-react
