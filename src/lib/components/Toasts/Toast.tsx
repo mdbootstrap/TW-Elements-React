@@ -13,6 +13,7 @@ import clsx from "clsx";
 import React, { useEffect, useState, useRef } from "react";
 import type { ToastProps } from "./types";
 import toastTheme from "./toastTheme";
+import { useTransition } from "../../hooks/useTransition";
 
 const TEToast: React.FC<ToastProps> = ({
   open = false,
@@ -35,7 +36,6 @@ const TEToast: React.FC<ToastProps> = ({
   const [showToast, setShowToast] = useState<boolean | undefined>(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const unmountTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
   const autohideTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const toastRef = useRef<HTMLDivElement>(null);
@@ -52,6 +52,10 @@ const TEToast: React.FC<ToastProps> = ({
     !staticToast && theme.nonStatic,
     showToast ? theme.wrapperVisible : theme.wrapperHidden,
     className
+  );
+
+  const { onTransitionShow, onTransitionHide } = useTransition(
+    toastRef.current
   );
 
   const addEvents = () => {
@@ -93,11 +97,10 @@ const TEToast: React.FC<ToastProps> = ({
       return;
     }
 
-    setTimeout(() => {
+    onTransitionShow(() => {
       setShowToast(true);
-
       handleAutohide();
-    }, 50);
+    });
 
     return () => {
       removeEvents();
@@ -115,14 +118,12 @@ const TEToast: React.FC<ToastProps> = ({
       onClose?.();
       removeEvents();
 
-      unmountTimeout.current = setTimeout(() => {
+      onTransitionHide(() => {
         setIsMounted(false);
         setOpen?.(false);
         onClosed?.();
-      }, 300);
+      });
     }
-
-    return () => clearTimeout(unmountTimeout.current);
   }, [showToast]);
 
   return (
