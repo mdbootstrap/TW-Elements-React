@@ -19,7 +19,7 @@ interface TooltipProps extends BaseComponent {
   tooltipClassName?: string;
   theme?: TooltipTheme;
   container?: string | boolean;
-  trigger?: "hover" | "click" | "focus";
+  trigger?: string;
   offset?: [number, number];
   fallbackPlacements?: placement[];
   boundary?: Boundary;

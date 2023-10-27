@@ -54,6 +54,7 @@ const TETooltip: React.FC<TooltipProps> = ({
   const [isReadyToHide, setIsReadyToHide] = useState(false);
   const popperElement = useRef(null);
   const referenceElement = useRef(null);
+  const isInvoked = useRef(false);
 
   const theme = {
     ...tooltipTheme,
@@ -102,14 +103,14 @@ const TETooltip: React.FC<TooltipProps> = ({
 
   useEffect(() => {
     if ((isOpen || isFocused) && enabled) {
+      if (isInvoked.current) {
+        return;
+      }
+      isInvoked.current = true;
       setIsReadyToHide(true);
       onTransitionShow(() => {
         setIsFaded(true);
-        if (trigger !== "focus") {
-          !isFocused && onShown?.();
-        } else {
-          onShown?.();
-        }
+        onShown?.();
       });
       return;
     }
@@ -118,6 +119,7 @@ const TETooltip: React.FC<TooltipProps> = ({
     onTransitionHide(() => {
       setIsReadyToHide(false);
       isFaded && onHidden?.();
+      isInvoked.current = false;
     });
   }, [isOpen, isFocused, enabled]);
 
@@ -158,8 +160,7 @@ const TETooltip: React.FC<TooltipProps> = ({
           if (trigger.includes("focus")) {
             !isFocused && !isOpen && onShow?.(e);
             setIsFocused(true);
-          }
-          if (trigger.includes("click")) {
+          } else if (trigger.includes("click")) {
             !isOpen && onShow?.(e);
             setIsOpen(true);
           }
@@ -167,8 +168,7 @@ const TETooltip: React.FC<TooltipProps> = ({
           if (trigger.includes("focus")) {
             isFocused && onHide?.(e);
             setIsFocused(false);
-          }
-          if (trigger.includes("click")) {
+          } else if (trigger.includes("click")) {
             isOpen && onHide?.(e);
             setIsOpen(false);
           }
