@@ -58,7 +58,6 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
     animation,
     referenceElement,
     popperElement,
-    alwaysOpen,
   } = useContext(DropdownContext);
 
   const theme = {
@@ -203,13 +202,7 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
   );
 
   return (
-    <>
-      {!show && !alwaysOpen
-        ? null
-        : appendToBody
-        ? createPortal(menu, document.body)
-        : menu}
-    </>
+    <>{!show && appendToBody ? createPortal(menu, document.body) : menu}</>
   );
 };
 

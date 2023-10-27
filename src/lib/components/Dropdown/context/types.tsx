@@ -15,5 +15,4 @@ export interface DropdownContextProps {
   onShow?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   onShown?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   autoClose?: boolean | string;
-  alwaysOpen?: boolean;
 }

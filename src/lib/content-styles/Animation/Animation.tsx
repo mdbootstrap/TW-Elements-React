@@ -169,7 +169,7 @@ const TEAnimation: React.FC<AnimationProps> = ({
         clearTimeout(timeoutIntervalRef.current);
       }
 
-      timeoutIntervalRef.current = setTimeout(() => {
+      timeoutIntervalRef.current = setInterval(() => {
         setToggleAnimation((prevToggleAnimation) => !prevToggleAnimation);
         onStart?.();
       }, interval);
@@ -294,6 +294,11 @@ const TEAnimation: React.FC<AnimationProps> = ({
       toggle ? handleToggleAnimation() : handleAnimationEnd();
     }
   }, [start, toggle]);
+
+  useEffect(() => {
+    return () =>
+      clearTimeout(timeoutIntervalRef.current as ReturnType<typeof setTimeout>);
+  }, []);
 
   return (
     <Tag

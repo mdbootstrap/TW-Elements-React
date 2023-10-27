@@ -1,11 +1,14 @@
 const TextareaTheme = {
   wrapper: "relative",
   input:
-    "peer block min-h-[auto] w-full rounded border-0 bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary motion-reduce:transition-none placeholder:opacity-0 disabled:bg-neutral-100 read-only:bg-neutral-100 dark:disabled:bg-neutral-700 dark:read-only:bg-neutral-700 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary",
+    "peer block min-h-[auto] w-full rounded border-0 bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary motion-reduce:transition-none placeholder:opacity-0 disabled:bg-neutral-100 read-only:bg-neutral-100 dark:disabled:bg-neutral-700 dark:read-only:bg-neutral-700 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary",
+  inputDefault: "text-neutral-800 dark:text-neutral-200",
+  inputWhite: "text-white",
   activeInput: "placeholder:opacity-100",
   label:
-    "pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate transition-all duration-200 ease-out peer-focus:scale-[0.8] peer-focus:text-primary motion-reduce:transition-none dark:peer-focus:text-primary",
-  labelDefault: "text-neutral-500 dark:text-neutral-200",
+    "pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate transition-all duration-200 ease-out peer-focus:scale-[0.8] motion-reduce:transition-none",
+  labelDefault:
+    "text-neutral-500 dark:text-neutral-200 peer-focus:text-primary dark:peer-focus:text-primary",
   labelWhite: "text-white",
   activeLabel: "scale-[0.8]",
   notch:

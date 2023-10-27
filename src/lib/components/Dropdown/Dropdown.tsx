@@ -26,7 +26,6 @@ const TEDropdown: React.FC<DropdownProps> = ({
   onShown,
   children,
   autoClose = true,
-  alwaysOpen,
   theme: customTheme,
   ...props
 }) => {
@@ -60,7 +59,6 @@ const TEDropdown: React.FC<DropdownProps> = ({
         setIsOpenState,
         referenceElement,
         autoClose,
-        alwaysOpen,
         onHide,
         onHidden,
         onShow,

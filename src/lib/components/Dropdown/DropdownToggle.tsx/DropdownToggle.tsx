@@ -25,7 +25,6 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
     setReferenceElement,
     isOpenState,
     autoClose,
-    alwaysOpen,
     setActiveIndex,
     onHide,
     onHidden,
@@ -42,7 +41,7 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
 
     isOpenState ? onHide?.(e) : onShow?.(e);
 
-    if (e.defaultPrevented || alwaysOpen) {
+    if (e.defaultPrevented) {
       return;
     }
     setIsOpenState((prev) => !prev);
