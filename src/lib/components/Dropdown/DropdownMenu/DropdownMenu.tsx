@@ -202,7 +202,7 @@ const TEDropdownMenu: React.FC<DropdownMenuProps> = ({
   );
 
   return (
-    <>{!show && appendToBody ? createPortal(menu, document.body) : menu}</>
+    <>{show && (appendToBody ? createPortal(menu, document.body) : menu)}</>
   );
 };
 
