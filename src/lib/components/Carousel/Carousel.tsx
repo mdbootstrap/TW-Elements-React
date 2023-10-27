@@ -377,7 +377,14 @@ const TECarousel: React.FC<CarouselProps> = ({
     return () => {
       pauseInterval();
     };
-  }, [activeSlide, interval, ride, transitionDuration, visibilityState]);
+  }, [
+    activeSlide,
+    interval,
+    ride,
+    transitionDuration,
+    visibilityState,
+    stopSliding,
+  ]);
 
   useEffect(() => {
     if (isFirstRender.current) {
