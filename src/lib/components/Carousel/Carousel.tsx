@@ -26,7 +26,7 @@ const TECarousel: React.FC<CarouselProps> = ({
   pause = "hover",
   wrap = true,
   touch = true,
-  stopSliding = false,
+  stopSliding,
   showControls,
   showIndicators,
   prevBtnIcon,
@@ -325,14 +325,22 @@ const TECarousel: React.FC<CarouselProps> = ({
       hasMouseEnteredCarousel.current = true;
     };
 
+    const handleMouseLeave = () => {
+      if (stopSliding) {
+        return;
+      }
+
+      startInterval();
+    };
+
     const carouselElement = carouselRef.current;
     carouselElement.addEventListener("mouseenter", handleMouseEnter);
-    carouselElement.addEventListener("mouseleave", startInterval);
+    carouselElement.addEventListener("mouseleave", handleMouseLeave);
     carouselElement.addEventListener("touchend", pauseInterval);
 
     return () => {
       carouselElement.removeEventListener("mouseenter", handleMouseEnter);
-      carouselElement.removeEventListener("mouseleave", startInterval);
+      carouselElement.removeEventListener("mouseleave", handleMouseLeave);
       carouselElement.removeEventListener("touchend", pauseInterval);
     };
   }, [pause, ride, startInterval]);
@@ -348,6 +356,7 @@ const TECarousel: React.FC<CarouselProps> = ({
     }
 
     if (
+      stopSliding ||
       (ride === true && isFirstSlide.current) ||
       !ride ||
       visibilityState === "hidden" ||
