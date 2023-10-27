@@ -42,7 +42,7 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
 
     isOpenState ? onHide?.(e) : onShow?.(e);
 
-    if (e.defaultPrevented || alwaysOpen) {
+    if (e.defaultPrevented) {
       return;
     }
     setIsOpenState((prev) => !prev);
@@ -52,7 +52,7 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
     }, 300);
   };
 
-  useClickOutside();
+  !alwaysOpen && useClickOutside();
 
   return (
     <Tag

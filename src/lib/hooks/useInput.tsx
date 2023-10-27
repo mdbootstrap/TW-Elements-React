@@ -44,6 +44,7 @@ const useInput = (
       : size === "sm"
       ? theme.inputSizeSm
       : theme.inputSizeBase,
+    formWhite ? theme.inputWhite : theme.inputDefault,
     className
   );
 

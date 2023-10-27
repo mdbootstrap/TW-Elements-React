@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TEAnimation, TERipple } from "tw-elements-react";
 
 export default function AnimationsListGroup(): JSX.Element {
+  const [canAnimate, setCanAnimate] = useState(true);
   const [list, setList] = useState([
     "An item",
     "A second item",
@@ -11,10 +12,23 @@ export default function AnimationsListGroup(): JSX.Element {
   ]);
 
   const addListRow = () => {
+    if (!canAnimate) {
+      return;
+    }
+    setCanAnimate(false);
     setList([...list, `element ${list.length}`]);
+
+    setTimeout(() => {
+      setCanAnimate(true);
+    }, 1000);
   };
 
   const removeListRow = (id: number) => {
+    if (!canAnimate) {
+      return;
+    }
+    setCanAnimate(false);
+
     const element = document.getElementById(`list-group-item-${id}`);
 
     const prevElement = element?.previousElementSibling
@@ -26,11 +40,12 @@ export default function AnimationsListGroup(): JSX.Element {
         ? "[fade-out_1s_ease-in-out]"
         : "[slide-out-up_1s_ease-in-out]";
 
-    element.classList.add(`animate-${animation}`);
+    element?.classList.add(`animate-${animation}`);
 
     setTimeout(() => {
-      element.classList.remove(`animate-${animation}`);
+      element?.classList.remove(`animate-${animation}`);
       setList(list.filter((_, i) => i !== id));
+      setCanAnimate(true);
     }, 1000);
   };
 
@@ -45,7 +60,7 @@ export default function AnimationsListGroup(): JSX.Element {
             return (
               <TEAnimation
                 id={`list-group-item-${i}`}
-                key={i}
+                key={el}
                 tag="li"
                 animation="[slide-in-down_1s_ease-in-out]"
                 reset
