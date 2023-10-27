@@ -50,12 +50,14 @@ menu:
 
       export default function App() {
         return (
-          <h1 className="text-5xl font-medium leading-tight">TW Elements</h1>
-          <h2 className="text-4xl font-medium leading-tight">TW Elements</h2>
-          <h3 className="text-3xl font-medium leading-tight">TW Elements</h3>
-          <h4 className="text-2xl font-medium leading-tight">TW Elements</h4>
-          <h5 className="text-xl font-medium leading-tight">TW Elements</h5>
-          <h6 className="text-base font-medium leading-tight">TW Elements</h6>
+          <>
+            <h1 className="text-5xl font-medium leading-tight">TW Elements</h1>
+            <h2 className="text-4xl font-medium leading-tight">TW Elements</h2>
+            <h3 className="text-3xl font-medium leading-tight">TW Elements</h3>
+            <h4 className="text-2xl font-medium leading-tight">TW Elements</h4>
+            <h5 className="text-xl font-medium leading-tight">TW Elements</h5>
+            <h6 className="text-base font-medium leading-tight">TW Elements</h6>
+          </>
         );
       }
       {{< /twsnippet/code >}} 
@@ -404,12 +406,14 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example3">}}
-  <h1 class="mb-4 border-b pb-4 text-9xl leading-tight">Display 1</h1>
-  <h2 class="mb-4 border-b pb-4 text-8xl leading-tight">Display 2</h2>
-  <h3 class="mb-4 border-b pb-4 text-7xl leading-tight">Display 3</h3>
-  <h4 class="mb-4 border-b pb-4 text-6xl leading-tight">Display 4</h4>
-  <h5 class="mb-4 border-b pb-4 text-5xl leading-tight">Display 5</h5>
-  <h6 class="text-4xl leading-tight">Display 6</h6>
+  <div>
+    <h1 class="mb-4 border-b pb-4 text-9xl leading-tight">Display 1</h1>
+    <h2 class="mb-4 border-b pb-4 text-8xl leading-tight">Display 2</h2>
+    <h3 class="mb-4 border-b pb-4 text-7xl leading-tight">Display 3</h3>
+    <h4 class="mb-4 border-b pb-4 text-6xl leading-tight">Display 4</h4>
+    <h5 class="mb-4 border-b pb-4 text-5xl leading-tight">Display 5</h5>
+    <h6 class="text-4xl leading-tight">Display 6</h6>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example3">
@@ -499,23 +503,25 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example5">}}
-  <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-  <p><del>This line of text is meant to be treated as deleted text.</del></p>
-  <p>
-    <s>This line of text is meant to be treated as no longer accurate.</s>
-  </p>
-  <p>
-    <ins
-      >This line of text is meant to be treated as an addition to the
-      document.</ins
-    >
-  </p>
-  <p><u>This line of text will render as underlined</u></p>
-  <p>
-    <small>This line of text is meant to be treated as fine print.</small>
-  </p>
-  <p><strong>This line rendered as bold text.</strong></p>
-  <p><em>This line rendered as italicized text.</em></p>
+  <div>
+    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p>
+      <s>This line of text is meant to be treated as no longer accurate.</s>
+    </p>
+    <p>
+      <ins
+        >This line of text is meant to be treated as an addition to the
+        document.</ins
+      >
+    </p>
+    <p><u>This line of text will render as underlined</u></p>
+    <p>
+      <small>This line of text is meant to be treated as fine print.</small>
+    </p>
+    <p><strong>This line rendered as bold text.</strong></p>
+    <p><em>This line rendered as italicized text.</em></p>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example5">
@@ -723,22 +729,24 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example8">}}
-  <p class="text-start">Start aligned text on all viewport sizes.</p>
-  <p class="text-center">Center aligned text on all viewport sizes.</p>
-  <p class="text-right">End aligned text on all viewport sizes.</p>
+  <div>
+    <p class="text-start">Start aligned text on all viewport sizes.</p>
+    <p class="text-center">Center aligned text on all viewport sizes.</p>
+    <p class="text-right">End aligned text on all viewport sizes.</p>
 
-  <p class="sm:text-start">
-    Start aligned text on viewports sized SM (small) or wider.
-  </p>
-  <p class="sm:text-start">
-    Start aligned text on viewports sized MD (medium) or wider.
-  </p>
-  <p class="sm:text-start">
-    Start aligned text on viewports sized LG (large) or wider.
-  </p>
-  <p class="sm:text-start">
-    Start aligned text on viewports sized XL (extra-large) or wider.
-  </p>
+    <p class="sm:text-start">
+      Start aligned text on viewports sized SM (small) or wider.
+    </p>
+    <p class="sm:text-start">
+      Start aligned text on viewports sized MD (medium) or wider.
+    </p>
+    <p class="sm:text-start">
+      Start aligned text on viewports sized LG (large) or wider.
+    </p>
+    <p class="sm:text-start">
+      Start aligned text on viewports sized XL (extra-large) or wider.
+    </p>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example8">
@@ -877,9 +885,11 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example11">}}
-  <p class="mb-4 lowercase">Lowercased text.</p>
-  <p class="mb-4 uppercase">Uppercased text.</p>
-  <p class="capitalize">capitalized text.</p>
+  <div>
+    <p class="mb-4 lowercase">Lowercased text.</p>
+    <p class="mb-4 uppercase">Uppercased text.</p>
+    <p class="capitalize">capitalized text.</p>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example11">
@@ -918,11 +928,13 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example12">}}
-  <p class="mb-4 font-bold">Bold weight text.</p>
-  <p class="mb-4 font-semibold">Semibold weight text.</p>
-  <p class="mb-4 font-normal">Normal weight text.</p>
-  <p class="mb-4 font-light">Light weight text.</p>
-  <p class="italic">Italic text.</p>
+  <div>
+    <p class="mb-4 font-bold">Bold weight text.</p>
+    <p class="mb-4 font-semibold">Semibold weight text.</p>
+    <p class="mb-4 font-normal">Normal weight text.</p>
+    <p class="mb-4 font-light">Light weight text.</p>
+    <p class="italic">Italic text.</p>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example12">
@@ -966,30 +978,32 @@ menu:
 
   <!-- prettier-ignore -->
   {{< twsnippet/demo id="example13">}}
-  <p class="mb-4 leading-none">
-    This is a long paragraph written to show how the line-height of an element
-    is affected by our utilities. Classes are applied to the element itself or
-    sometimes the parent element. These classes can be customized as needed with
-    our utility API.
-  </p>
-  <p class="mb-4 leading-tight">
-    This is a long paragraph written to show how the line-height of an element
-    is affected by our utilities. Classes are applied to the element itself or
-    sometimes the parent element. These classes can be customized as needed with
-    our utility API.
-  </p>
-  <p class="mb-4 leading-normal">
-    This is a long paragraph written to show how the line-height of an element
-    is affected by our utilities. Classes are applied to the element itself or
-    sometimes the parent element. These classes can be customized as needed with
-    our utility API.
-  </p>
-  <p class="leading-loose">
-    This is a long paragraph written to show how the line-height of an element
-    is affected by our utilities. Classes are applied to the element itself or
-    sometimes the parent element. These classes can be customized as needed with
-    our utility API.
-  </p>
+  <div>
+    <p class="mb-4 leading-none">
+      This is a long paragraph written to show how the line-height of an element
+      is affected by our utilities. Classes are applied to the element itself or
+      sometimes the parent element. These classes can be customized as needed with
+      our utility API.
+    </p>
+    <p class="mb-4 leading-tight">
+      This is a long paragraph written to show how the line-height of an element
+      is affected by our utilities. Classes are applied to the element itself or
+      sometimes the parent element. These classes can be customized as needed with
+      our utility API.
+    </p>
+    <p class="mb-4 leading-normal">
+      This is a long paragraph written to show how the line-height of an element
+      is affected by our utilities. Classes are applied to the element itself or
+      sometimes the parent element. These classes can be customized as needed with
+      our utility API.
+    </p>
+    <p class="leading-loose">
+      This is a long paragraph written to show how the line-height of an element
+      is affected by our utilities. Classes are applied to the element itself or
+      sometimes the parent element. These classes can be customized as needed with
+      our utility API.
+    </p>
+  </div>
   {{< /twsnippet/demo >}}
 
   <section class="!visible hidden" data-te-collapse-item id="example13">
