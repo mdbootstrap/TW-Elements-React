@@ -25,7 +25,6 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
     setReferenceElement,
     isOpenState,
     autoClose,
-    alwaysOpen,
     setActiveIndex,
     onHide,
     onHidden,
@@ -52,7 +51,7 @@ const TEDropdownToggle: React.FC<DropdownToggleProps> = ({
     }, 300);
   };
 
-  !alwaysOpen && useClickOutside();
+  useClickOutside();
 
   return (
     <Tag

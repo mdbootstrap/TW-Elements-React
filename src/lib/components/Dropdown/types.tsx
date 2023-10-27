@@ -12,7 +12,6 @@ export interface DropdownProps extends BaseComponent {
   tag?: ComponentProps<any>;
   theme?: DropdownTheme;
   autoClose?: boolean | string;
-  alwaysOpen?: boolean;
   onHide?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   onHidden?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;
   onShow?: (e: MouseEvent | SyntheticEvent | KeyboardEvent) => any;

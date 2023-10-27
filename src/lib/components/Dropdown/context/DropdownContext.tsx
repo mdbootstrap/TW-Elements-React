@@ -11,7 +11,6 @@ export const DropdownContext = createContext<DropdownContextProps>({
   popperElement: null,
   referenceElement: null,
   autoClose: true,
-  alwaysOpen: false,
   onHide: () => {},
   onHidden: () => {},
   onShow: () => {},
