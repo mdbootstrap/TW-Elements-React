@@ -1,6 +1,6 @@
 {
   "name": "tw-elements-react",
-  "version": "1.0.0-alpha1",
+  "version": "1.0.0-alpha2",
   "type": "module",
   "license": "AGPL",
   "main": "dist/js/tw-elements-react.umd.min.js",
