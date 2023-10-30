@@ -46,6 +46,18 @@ import LoginFormPage from "./pages/forms/login-form/LoginFormPage";
 import RegistrationFormPage from "./pages/forms/registration-form/RegistrationFormPage";
 import SearchPage from "./pages/forms/search/SearchPage";
 import FooterPage from "./pages/navigation/footer/FooterPage";
+import AnimationsPage from "./pages/content-styles/animations/AnimationsPage";
+import AnimationsExtendedPage from "./pages/content-styles/animations-extended/AnimationsExtendedPage";
+import PopoverPage from "./pages/components/popover/PopoverPage";
+import DropdownPage from "./pages/components/dropdown/DropdownPage";
+import ChartPage from "./pages/data/chart/ChartPage";
+import TooltipPage from "./pages/components/tooltip/TooltipPage";
+import TextareaPage from "./pages/forms/textarea/TextareaPage";
+import AlertPage from "./pages/components/alert/AlertPage";
+import ToastsPage from "./pages/components/toasts/ToastsPage";
+import SelectPage from "./pages/forms/select/SelectPage";
+import CarouselPage from "./pages/components/carousel/CarouselPage";
+import VideoCarouselPage from "./pages/components/video-carousel/VideoCarouselPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -70,11 +82,24 @@ import LoginFormExamples from "./pages/forms/login-form/exampleList";
 import RegistrationFormExamples from "./pages/forms/registration-form/exampleList";
 import SearchExamples from "./pages/forms/search/exampleList";
 import FooterExamples from "./pages/navigation/footer/exampleList";
+import AnimationsExamples from "./pages/content-styles/animations/exampleList";
+import AnimationsExtendedExamples from "./pages/content-styles/animations-extended/exampleList";
+import PopoverExamples from "./pages/components/popover/exampleList";
+import DropdownExamples from "./pages/components/dropdown/exampleList";
+import ChartExamples from "./pages/data/chart/exampleList";
+import TooltipExamples from "./pages/components/tooltip/exampleList";
+import TextareaExamples from "./pages/forms/textarea/exampleList";
+import AlertExamples from "./pages/components/alert/exampleList";
+import ToastsExamples from "./pages/components/toasts/exampleList";
+import SelectExamples from "./pages/forms/select/exampleList";
+import CarouselExamples from "./pages/components/carousel/exampleList";
+import VideoCarouselExamples from "./pages/components/video-carousel/exampleList";
 
 interface Pages {
   name: string;
   path: string;
   element: ReactElement;
+  fullscreenOnly?: boolean;
 }
 
 interface PagesSection {
@@ -137,6 +162,41 @@ const componentsPages: Pages[] = [
     path: "/components/accordion",
     element: <AccordionPage />,
   },
+  {
+    name: "popover",
+    path: "/components/popover",
+    element: <PopoverPage />,
+  },
+  {
+    name: "dropdown",
+    path: "/components/dropdown",
+    element: <DropdownPage />,
+  },
+  {
+    name: "tooltip",
+    path: "/components/tooltip",
+    element: <TooltipPage />,
+  },
+  {
+    name: "Alert",
+    path: "/components/alert",
+    element: <AlertPage />,
+  },
+  {
+    name: "Toasts",
+    path: "/components/toasts",
+    element: <ToastsPage />,
+  },
+  {
+    name: "carousel",
+    path: "/components/carousel",
+    element: <CarouselPage />,
+  },
+  {
+    name: "video carousel",
+    path: "/components/video-carousel",
+    element: <VideoCarouselPage />,
+  },
 ];
 
 const contentStylesPages: Pages[] = [
@@ -174,10 +234,21 @@ const contentStylesPages: Pages[] = [
     path: "/content-styles/typography",
     element: <TypographyPage />,
   },
+  {
+    name: "animations",
+    path: "/content-styles/animations",
+    element: <AnimationsPage />,
+  },
+  {
+    name: "animations extended",
+    path: "/content-styles/animations-extended",
+    element: <AnimationsExtendedPage />,
+  },
 ];
 
 const dataPages: Pages[] = [
   { name: "tables", path: "/data/tables", element: <TablesPage /> },
+  { name: "chart", path: "/data/chart", element: <ChartPage /> },
 ];
 
 const formsPages: Pages[] = [
@@ -222,6 +293,16 @@ const formsPages: Pages[] = [
     name: "Search",
     path: "/components/search",
     element: <SearchPage />,
+  },
+  {
+    name: "Textarea",
+    path: "/forms/textarea",
+    element: <TextareaPage />,
+  },
+  {
+    name: "Select",
+    path: "/forms/select",
+    element: <SelectPage />,
   },
 ];
 
@@ -315,6 +396,18 @@ export const examplesPages: Pages[] = [
   ...RegistrationFormExamples,
   ...SearchExamples,
   ...FooterExamples,
+  ...AnimationsExamples,
+  ...AnimationsExtendedExamples,
+  ...PopoverExamples,
+  ...DropdownExamples,
+  ...ChartExamples,
+  ...TooltipExamples,
+  ...TextareaExamples,
+  ...AlertExamples,
+  ...ToastsExamples,
+  ...SelectExamples,
+  ...CarouselExamples,
+  ...VideoCarouselExamples,
 ];
 
 export default demoPages;

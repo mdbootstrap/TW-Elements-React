@@ -1,6 +1,6 @@
 /*
 --------------------------------------------------------------------------
-Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
+TW Elements React is an open-source UI kit of advanced components for TailwindCSS.
 Copyright © 2023 MDBootstrap.com
 
 Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -19,6 +19,7 @@ import modalTheme from "./modalTheme";
 import Backdrop from "../../shared/backdrop/Backdrop";
 import { useScrollbar } from "../../hooks/useScrollbar";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { useTransition } from "../../hooks/useTransition";
 
 const TEModal: React.FC<ModalProps> = ({
   show = false,
@@ -44,7 +45,7 @@ const TEModal: React.FC<ModalProps> = ({
   const { initFocusTrap, removeFocusTrap } = useFocusTrap();
 
   const [isOpenModal, setIsOpenModal] = useState(show || false);
-  const [transitionDuration, setTransitionDuration] = useState(0);
+  const [transitionDuration, setTransitionDuration] = useState<number>(0);
   const [staticModal, setStaticModal] = useState(false);
 
   const modalInnerRef = useRef<HTMLElement>(null);
@@ -58,11 +59,14 @@ const TEModal: React.FC<ModalProps> = ({
     isOpenModal ? theme.show : "hidden"
   );
 
+  const { onTransitionHide } = useTransition(modalReference.current);
+
   const startStaticAnimation = () => {
     setStaticModal(true);
-    setTimeout(() => {
+
+    onTransitionHide(() => {
       setStaticModal(false);
-    }, 300);
+    });
   };
 
   const handleBackdropClick = (e: Event) => {

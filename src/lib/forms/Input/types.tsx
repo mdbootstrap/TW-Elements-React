@@ -5,6 +5,8 @@ interface InputTheme {
   input?: string;
   activeInput?: string;
   label?: string;
+  labelDefault?: string;
+  labelWhite?: string;
   activeLabel?: string;
   notch?: string;
   notchLeading?: string;
@@ -45,6 +47,7 @@ type InputELement = Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
 type InputProps = InputELement & {
   label?: React.ReactNode;
   labelRef?: React.RefObject<HTMLLabelElement>;
+  labelID?: string;
   ref?: React.Ref<HTMLInputElement>;
   readonly?: boolean;
   disabled?: boolean;

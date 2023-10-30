@@ -1,6 +1,6 @@
 /*
 --------------------------------------------------------------------------
-Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
+TW Elements React is an open-source UI kit of advanced components for TailwindCSS.
 Copyright © 2023 MDBootstrap.com
 
 Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -32,7 +32,7 @@ const useCombinedRefs = (...refs: any) => {
   return targetRef;
 };
 
-const TERipple: React.FC<RippleProps> = React.forwardRef<
+const TERipple: React.FC<RippleProps> = /*#__PURE__*/ React.forwardRef<
   HTMLAllCollection,
   RippleProps
 >(
@@ -222,7 +222,7 @@ const TERipple: React.FC<RippleProps> = React.forwardRef<
 
     const getRoundedClasses = () => {
       // prettier-ignore
-      if (!children || !React.isValidElement(children) || Array.isArray(children)) {
+      if (!children || !React.isValidElement(children) || Array.isArray(children) || !children.props.className) {
         return [];
       }
 

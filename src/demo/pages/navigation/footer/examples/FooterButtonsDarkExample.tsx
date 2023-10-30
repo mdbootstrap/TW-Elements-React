@@ -113,7 +113,7 @@ export default function FooterButtonsDarkExample(): JSX.Element {
         <div className="p-4 text-center bg-black bg-opacity-20">
           © 2023 Copyright:
           <a className="text-whitehite" href="https://tailwind-elements.com/">
-            Tailwind Elements
+            TW Elements
           </a>
         </div>
       </footer>

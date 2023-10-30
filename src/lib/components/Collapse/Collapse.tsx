@@ -1,6 +1,6 @@
 /*
 --------------------------------------------------------------------------
-Tailwind Elements React is an open-source UI kit of advanced components for TailwindCSS.
+TW Elements React is an open-source UI kit of advanced components for TailwindCSS.
 Copyright © 2023 MDBootstrap.com
 
 Unless a custom, individually assigned license has been granted, this program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -13,6 +13,7 @@ import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import type { CollapseProps } from "./types";
 import collapseTheme from "./collapseTheme";
+import { useTransition } from "../../hooks/useTransition";
 
 const TECollapse: React.FC<CollapseProps> = ({
   className,
@@ -33,6 +34,7 @@ const TECollapse: React.FC<CollapseProps> = ({
     undefined
   );
   const [transition, setTransition] = useState(false);
+  const isFirstRender = useRef(true);
 
   const theme = {
     ...collapseTheme,
@@ -42,9 +44,7 @@ const TECollapse: React.FC<CollapseProps> = ({
   const classes = clsx(
     theme.collapseStyles,
     theme.visible,
-    transition &&
-      theme.baseTransition &&
-      (horizontal ? `${theme.collapsingHorizontal}` : `${theme.collapsing}`),
+    horizontal ? `${theme.collapsingHorizontal}` : `${theme.collapsing}`,
     !transition && !showCollapse && theme.hidden,
     scroll && theme.scrollStyles,
     className
@@ -52,6 +52,8 @@ const TECollapse: React.FC<CollapseProps> = ({
 
   const collapseEl = useRef<HTMLElement>(null);
   const refCollapse = collapseRef ?? collapseEl;
+
+  const { onTransitionHide } = useTransition(refCollapse.current);
 
   const handleResize = useCallback(() => {
     if (showCollapse) {
@@ -70,23 +72,25 @@ const TECollapse: React.FC<CollapseProps> = ({
   }, [collapseSize, showCollapse, refCollapse, horizontal]);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     if (showCollapse !== show) {
       show ? onShow?.() : onHide?.();
       setShowCollapse(show);
     }
 
-    if (showCollapse) {
+    if (show) {
       setTransition(true);
+      return;
     }
 
-    const timer = setTimeout(() => {
+    onTransitionHide(() => {
       setTransition(false);
-    }, 350);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [show, showCollapse, onShow, onHide]);
+    });
+  }, [show, onShow, onHide]);
 
   useEffect(() => {
     if (showCollapse) {

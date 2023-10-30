@@ -1,0 +1,825 @@
+---
+---
+
+<!-- Section: Docs content-->
+<section>
+  <!--Section: Import-->
+  <section id="api-section-import">
+    <!--Title-->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal text-gray-800 dark:text-gray-200"
+      id="import"
+      data-te-spy-item>
+      Import
+    </h2>
+
+    <!--Section: Code-->
+    {{< twsnippet/no-demo id="api-example41" >}}
+    <section class="!visible hidden" data-te-collapse-item id="api-example41">
+      <div class="pt-4">
+        {{< twsnippet/wrapper "javascript" >}}
+        <!-- prettier-ignore -->
+        {{< twsnippet/code active=true lang="js" >}}
+        import {
+          TEDropdown,
+          TEDropdownToggle,
+          TEDropdownMenu,
+          TEDropdownItem,
+        } from "tw-elements-react";
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!--Section: Code-->
+  </section>
+  <!--Section: Import-->
+
+  <hr class="mb-5 dark:border-gray-600" />
+
+  <!-- Section: Options-->
+  <section id="api-section-properties">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Properties
+    </h2>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDropdown
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>animation</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>true</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Turn off/on animation to <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>autoClose</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String | Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>true</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    <p class="mb-1">
+                      Configure the auto close behavior of the dropdown:
+                    </p>
+                    <ul class="list-disc pl-7">
+                      <li>
+                        <code>true</code> - clicking outside or inside the
+                        dropdown menu.
+                      </li>
+                      <li>
+                        <code>false</code> - clicking the toggle button or manually toggling <code>TEDropdown</code> 
+                        element using <code>isOpen</code> property. Also will not be closed by pressing <code>esc</code> key.
+                      </li>
+                      <li>
+                        <code>'inside'</code> - clicking only inside the dropdown menu.
+                      </li>
+                      <li>
+                        <code>'outside'</code> - clicking only outside the dropdown menu.
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr
+                class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                <td
+                  class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                  <code>isOpen</code>
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  Boolean
+                </td>
+                <td
+                  class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                  <code>false</code>
+                </td>
+                <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Toggle visibility of the dropdown element.
+                </td>
+              </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'div'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>theme</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   Object
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>{}</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Allows to change the Tailwind classes used in the component.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDropdownToggle
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'button'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEDropdownToggle</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDrodpdownMenu
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>alignment</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    "start" | "end"
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>"start"</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set alignment of the <code>TEDropdownMenu</code> element. 
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>appendToBody</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>false</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Append <code>TEDropdownMenu</code> element to the body.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>display</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    "dynamic" | "static"
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>"dynamic"</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    By default, we use Popper for dynamic positioning. Disable this with <code>static</code>.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>offset</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    array | function
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>[0, 0]</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    <p class="mb-4">
+                      Offset of the dropdown relative to its target.
+                    </p>
+                    <p class="mb-4">
+                      When a function is used to determine the offset, it is
+                      called with an object containing the offset data as its
+                      first argument. The function must return an object with
+                      the same structure. The triggering element DOM node is
+                      passed as the second argument.
+                    </p>
+                    <p>
+                      For more information refer to Popper's
+                      <a
+                        class="mb-4 text-blue-600 transition duration-300 ease-in-out hover:text-blue-700"
+                        href="https://popper.js.org/docs/v2/modifiers/offset/#options"
+                        >offset docs</a
+                      >.
+                    </p>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>popperConfig</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Object
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>{}</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set default popper options to dropdown element
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>position</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    "dropup" | "dropright" | "dropleft"
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Set position of the <code>TEDropdownMenu</code> element. Available valuse are <code>dropup</code>, <code>dropleft</code>, <code>dropright</code>. When is not set, the menu will be positioned to the bottom.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>responsive</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                     "sm-start"
+                    | "md-start"
+                    | "lg-start"
+                    | "xl-start"
+                    | "xxl-start"
+                    | "sm-end"
+                    | "md-end"
+                    | "lg-end"
+                    | "xl-end"
+                    | "xxl-end"
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>-</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines the responsive alignment of the <code>TEDropdownMenu</code> component.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'ul'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEDropdownMenu</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>theme</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                   Object
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>{}</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Allows to change the Tailwind classes used in the component.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDropdownItem
+    </h3>  
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Type
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>preventCloseOnClick</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    Boolean
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>false</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Prevents dropdown from closing when clicked inside the <code>TEDropdownItem</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500">
+                    <code>tag</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    String
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>'li'</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Defines tag of the <code>TEDropdownItem</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Properties-->
+
+  <hr class="my-5 dark:border-neutral-600" />
+  <!-- Section: Classes-->
+  <section id="api-section-classes">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Classes
+    </h2>
+
+    <p class="mb-3">Custom classes can be passed via <code>theme</code> prop. Create an object with classes like below and pass it to the prop.</p>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDropdown
+    </h3>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>dropdown</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    relative
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles to the <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3
+      class="mb-5 mt-3 text-2xl font-semibold leading-normal">
+      TEDropdownMenu
+    </h3>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Default
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>fade</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    transition-opacity duration-300 ease-linear motion-reduce:transition-none
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets transition styles to the <code>TEDropdownMenu</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 font-medium dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>menu</code>
+                  </td>
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    absolute z-[1000] float-left m-0.5 min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Sets styles to the <code>TEDropdownMenu</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Classes-->
+
+  <hr class="my-5 dark:border-neutral-600" />
+
+  <!-- Section: Events-->
+  <section id="api-section-events">
+    <!-- Section title -->
+    <h2
+      class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+      data-te-spy-item>
+      Events
+    </h2>
+
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full py-2">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full border text-left text-sm font-light text-neutral-900 dark:border-neutral-500 dark:text-neutral-100">
+              <thead
+                class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                <tr>
+                  <th
+                    scope="col"
+                    class="border-r px-6 py-4 dark:border-neutral-500">
+                    Event type
+                  </th>
+                  <th scope="col" class="px-6 py-4">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onHide</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Fires immediately when the <code>onHide</code> instance method has been called. It can be triggered in <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onHidden</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Fired when the dropdown has finished being hidden from the user and CSS transitions have completed. It can be triggered in <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onShow</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Fires immediately when the <code>onShow</code> instance method is called. It can be triggered in <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+                <tr
+                  class="border-b dark:border-neutral-500 [&:nth-child(even)]:bg-white dark:[&:nth-child(even)]:bg-neutral-600 [&:nth-child(odd)]:bg-gray-100 dark:[&:nth-child(odd)]:bg-neutral-700">
+                  <td
+                    class="border-r px-6 py-4 dark:border-neutral-500 max-lg:whitespace-nowrap">
+                    <code>onShown</code>
+                  </td>
+                  <td class="px-6 py-4 max-lg:whitespace-nowrap">
+                    Fired when the dropdown has been made visible to the user and CSS transitions have completed. It can be triggered in <code>TEDropdown</code> element.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Code-->
+    {{< twsnippet/no-demo id="api-example6" >}}
+    <section
+      class="!visible hidden"
+      data-te-collapse-item
+      id="api-example6">
+      <!-- prettier-ignore -->
+      <div class="pt-4">
+        {{< twsnippet/wrapper "JSX" >}}
+        {{< twsnippet/code active=true lang="jsx" >}}
+        import React from "react";
+        import {
+          TEDropdown,
+          TEDropdownToggle,
+          TEDropdownMenu,
+          TEDropdownItem,
+          TERipple,
+        } from "tw-elements-react";
+        
+        export default function DropdownEventsExample(): JSX.Element {
+          return (
+              <TEDropdown className="flex justify-center" onShow={() => console.log("onShow")}>
+                <TERipple rippleColor="light">
+                  <TEDropdownToggle className="flex items-center whitespace-nowrap rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                    Dropdown button
+                    <span className="ml-2 [&>svg]:w-5 w-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </TEDropdownToggle>
+                </TERipple>
+        
+                <TEDropdownMenu>
+                  <TEDropdownItem link>
+                    Action
+                  </TEDropdownItem>
+                  <TEDropdownItem link>
+                    Another action
+                  </TEDropdownItem>
+                  <TEDropdownItem link>
+                    Something else here
+                  </TEDropdownItem>
+                </TEDropdownMenu>
+              </TEDropdown>
+          );
+        }           
+        {{< /twsnippet/code >}}
+        {{< /twsnippet/wrapper >}}
+      </div>
+    </section>
+    <!-- Section: Code-->
+    <!-- Section: Events-->
+  </section>
+  <!-- Section: Docs content-->
+</section>

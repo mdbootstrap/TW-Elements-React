@@ -42,6 +42,15 @@
     "category": "Getting started"
   },
   {
+    "href": "/docs/react/components/alerts/",
+    "name": "Alerts",
+    "keywords": ["notifications", "dismissing"],
+    "category": "Components",
+    "priority": {
+      "alert": 1
+    }
+  },
+  {
     "href": "docs/react/components/badges/",
     "name": "Badges",
     "keywords": ["label", "notifications"],
@@ -75,6 +84,18 @@
     "href": "/docs/react/content-styles/images/",
     "name": "Images",
     "keywords": ["images"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/animations/",
+    "name": "Animations",
+    "keywords": ["animations"],
+    "category": "Content & styles"
+  },
+  {
+    "href": "/docs/react/content-styles/animations-extended/",
+    "name": "Animations extended",
+    "keywords": ["animations", "extended"],
     "category": "Content & styles"
   },
   {
@@ -165,6 +186,12 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/textarea/",
+    "name": "Textarea",
+    "keywords": ["textarea"],
+    "category": "Forms"
+  },
+  {
     "href": "/docs/react/forms/form-templates/",
     "name": "Form templates",
     "keywords": ["form", "templates"],
@@ -181,6 +208,12 @@
     "name": "Registration form",
     "keywords": ["registration", "form"],
     "category": "Forms"
+  },
+  {
+    "href": "/docs/react/data/charts/",
+    "name": "Charts",
+    "keywords": ["charts"],
+    "category": "Data"
   },
   {
     "href": "/docs/react/data/tables/",
@@ -237,15 +270,48 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/toast/",
+    "name": "Toasts",
+    "keywords": ["notifications"],
+    "category": "Components",
+    "priority": {
+      "toast": 1
+    }
+  },
+  {
+    "href": "/docs/react/components/tooltip/",
+    "name": "Tooltip",
+    "keywords": ["tooltip"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/video-carousel/",
+    "name": "Video carousel",
+    "keywords": ["video", "video carousel"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/cards/",
     "name": "Cards",
     "keywords": ["content container"],
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/carousel/",
+    "name": "Carousel",
+    "keywords": ["carousel", "slider"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/components/placeholders/",
     "name": "Placeholders",
     "keywords": ["placeholders"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/popover/",
+    "name": "Popover",
+    "keywords": ["popover"],
     "category": "Components"
   },
   {
@@ -279,9 +345,24 @@
     "category": "Forms"
   },
   {
+    "href": "/docs/react/forms/select",
+    "name": "Select",
+    "keywords": ["options", "multiselect"],
+    "category": "Forms",
+    "priority": {
+      "select": 1
+    }
+  },
+  {
     "href": "/docs/react/components/collapse",
     "name": "Collapse",
     "keywords": ["collapse"],
+    "category": "Components"
+  },
+  {
+    "href": "/docs/react/components/dropdown",
+    "name": "Dropdown",
+    "keywords": ["dropdown"],
     "category": "Components"
   },
   {
