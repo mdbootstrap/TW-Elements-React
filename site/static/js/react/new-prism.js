@@ -2800,7 +2800,7 @@ Prism.languages.scss["atrule"].inside.rest = Prism.languages.scss;
 
       newButton.innerHTML = `
         <button
-          class="px-4 py-2"
+          class="px-4 py-2 focus:outline-none"
           type="button"
           id="dropdownMenuButton1"
           data-te-dropdown-toggle-ref
