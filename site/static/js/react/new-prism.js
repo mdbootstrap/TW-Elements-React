@@ -2759,10 +2759,12 @@ Prism.languages.scss["atrule"].inside.rest = Prism.languages.scss;
   }
 
   Prism.plugins.toolbar.registerButton("copy-to-clipboard", function (env) {
+    var isJSX = env.language === "jsx" || env.language === "tsx";
+
     var linkCopy = document.createElement("button");
     linkCopy.innerHTML = "Copy";
     linkCopy.classList =
-      "btn-copy-code text-gray-500 text-xs leading-[1.6] !top-[16px] lg:!right-16 bg-transparent font-bold uppercase text-sm px-4 py-2 outline-none focus:outline-none";
+      `btn-copy-code text-gray-500 text-xs leading-[1.6] !top-[16px] ${isJSX ? "lg:!right-16" : ""} bg-transparent font-bold uppercase text-sm px-4 py-2 outline-none focus:outline-none`;
 
     if (!ClipboardJS) {
       callbacks.push(registerClipboard);
@@ -2790,13 +2792,15 @@ Prism.languages.scss["atrule"].inside.rest = Prism.languages.scss;
         resetText();
       });
 
-      createSubCopy()
+      isJSX && createSubCopy()
     }
 
     function createSubCopy() {
       const newButton = document.createElement("div");
       newButton.className = "hidden lg:block absolute text-gray-500 text-xs leading-[1.6] !top-[17px] right-0 bg-transparent font-bold uppercase text-sm px-4 outline-none focus:outline-none"
       newButton.setAttribute("data-te-dropdown-ref", "")
+
+      const buttonsToAdd = splitTheJSX(["template", "scripts", "imports"])
 
       newButton.innerHTML = `
         <button
@@ -2814,50 +2818,59 @@ Prism.languages.scss["atrule"].inside.rest = Prism.languages.scss;
           class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block normal-case"
           aria-labelledby="dropdownMenuButton1"
           data-te-dropdown-menu-ref>
-          <li>
+          ${buttonsToAdd.template ? `<li>
             <a
               class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600 cursor-pointer"
               data-te-dropdown-item-ref
               >Copy template</a
             >
-          </li>
-          <li>
+          </li>` : ``}
+          ${buttonsToAdd.scripts ? `<li>
             <a
               class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600 cursor-pointer"
               data-te-dropdown-item-ref
               >Copy scripts</a
             >
-          </li>
-          <li>
+          </li>` : ``}
+          ${buttonsToAdd.imports ? `<li>
             <a
               class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600 cursor-pointer"
               data-te-dropdown-item-ref
               >Copy imports</a
             >
-          </li>
+          </li>` : ``}
         </ul>
       `
       const items = newButton.querySelectorAll("[data-te-dropdown-item-ref]")
 
       items.forEach(item => {
         item.addEventListener("click", (e) => {
-            const content = e.target.textContent;
-            let codeToCopy = env.code;
-    
-            if (content === "Copy template") {
-                codeToCopy = extractCodeBlock(codeToCopy, "return (", ");\n}");
-            } else if (content === "Copy scripts") {
-                const separators = ["React.FC = () => {", "function App() {", "JSX.Element {"];
-                const separator = separators.find(sep => codeToCopy.includes(sep)) || "JSX.Element {";
-                codeToCopy = extractCodeBlock(codeToCopy, separator, "return (\n");
-            } else {
-                codeToCopy = codeToCopy.split("export default function")[0];
-            }
-    
-            codeToCopy = codeToCopy || "";
-            copyToClipboard(codeToCopy);
+          const content = e.target.textContent
+          const part = content === "Copy template" ? "template" : content === "Copy scripts" ? "scripts" : "imports"
+
+          const result =  splitTheJSX([part])
+          copyToClipboard(result[part]);
         });
       });
+
+      function splitTheJSX(searchFor) {
+        const codeToCopy = env.code;
+        let result = {}
+
+        searchFor.forEach((part)=>{
+          if (part === "template") {
+              result.template = extractCodeBlock(codeToCopy, "return (", ");\n}");
+          } else if (part === "scripts") {
+              const separators = ["React.FC = () => {", "function App() {", "JSX.Element {"];
+              const separator = separators.find(sep => codeToCopy.includes(sep)) || "JSX.Element {";
+              result.scripts = extractCodeBlock(codeToCopy, separator, "return (\n");
+          } else {
+              result.imports = codeToCopy.split("export default function")[0];
+          }
+        })
+
+        return result
+      }
       
       function extractCodeBlock(code, start, end) {
           const startIndex = code.indexOf(start);

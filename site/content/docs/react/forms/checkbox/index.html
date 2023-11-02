@@ -427,7 +427,7 @@ menu:
       {{< twsnippet/code active=true lang="jsx" >}}
       import React, { useRef, useEffect } from "react";
 
-      const MyCheckbox: React.FC = () => {
+      export default function App() {
         const checkboxRef = useRef<HTMLInputElement>(null);
 
           useEffect(() => {
@@ -451,8 +451,6 @@ menu:
             </label>
           </div>
         );
-
-        export default App;
       }
       {{< /twsnippet/code >}}
       {{< /twsnippet/wrapper >}}
