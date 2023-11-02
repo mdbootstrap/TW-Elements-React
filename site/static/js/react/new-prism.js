@@ -2859,7 +2859,9 @@ Prism.languages.scss["atrule"].inside.rest = Prism.languages.scss;
 
         searchFor.forEach((part)=>{
           if (part === "template") {
-              result.template = extractCodeBlock(codeToCopy, "return (", ");\n}");
+            const separators = [");\n}", ");\n }", ");\n  }"];
+            const separator = separators.find(sep => codeToCopy.includes(sep)) || ");\n";
+            result.template = extractCodeBlock(codeToCopy, "return (", separator);
           } else if (part === "scripts") {
               const separators = ["React.FC = () => {", "function App() {", "JSX.Element {"];
               const separator = separators.find(sep => codeToCopy.includes(sep)) || "JSX.Element {";
