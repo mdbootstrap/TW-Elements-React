@@ -58,6 +58,7 @@ import ToastsPage from "./pages/components/toasts/ToastsPage";
 import SelectPage from "./pages/forms/select/SelectPage";
 import CarouselPage from "./pages/components/carousel/CarouselPage";
 import VideoCarouselPage from "./pages/components/video-carousel/VideoCarouselPage";
+import StepperPage from "./pages/components/stepper/StepperPage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -196,6 +197,11 @@ const componentsPages: Pages[] = [
     name: "video carousel",
     path: "/components/video-carousel",
     element: <VideoCarouselPage />,
+  },
+  {
+    name: "stepper",
+    path: "/components/stepper",
+    element: <StepperPage />,
   },
 ];
 
