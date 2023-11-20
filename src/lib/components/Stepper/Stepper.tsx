@@ -1,12 +1,10 @@
 import clsx from "clsx";
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useRef, useState, useMemo } from "react";
 import StepperContext from "./StepperContext";
 import { StepperStepProps } from "./StepperStep/types";
 import StepperTheme from "./stepperTheme";
 import useActiveValue from "../../hooks/useActiveValue";
 import type { StepperProps } from "./types";
-// import MDBStepperMobileHead from "./StepperMobileHead/StepperMobileHead";
-// import MDBStepperMobileFooter from "./StepperMobileFooter/StepperMobileFooter";
 
 const TEStepper: React.FC<StepperProps> = ({
   theme: customTheme,
@@ -15,12 +13,16 @@ const TEStepper: React.FC<StepperProps> = ({
   activeStep: activeStepProp,
   children,
   onChange,
+  vertical,
 }) => {
   const theme = {
     ...StepperTheme,
     ...customTheme,
   };
-  const classes = clsx(theme.stepper, className);
+  const classes = clsx(
+    vertical ? theme.stepperVertical : theme.stepper,
+    className
+  );
   const [activeStepState, setActiveStepState] = useState<number>(defaultStep);
   const activeStep = useActiveValue(activeStepProp, activeStepState);
   const stepperRef = useRef<HTMLUListElement>(null);
@@ -45,12 +47,14 @@ const TEStepper: React.FC<StepperProps> = ({
           stepperRef,
           stepperHeight,
           setStepperHeight,
+          vertical,
+          stepsAmount: childrenArray.length,
         }}
       >
         <ul
           className={classes}
           ref={stepperRef}
-          style={{ height: `${stepperHeight}px` }}
+          style={vertical ? {} : { height: `${stepperHeight}px` }}
         >
           {childrenArray.map((ChildComponent, index: number) => {
             return React.cloneElement(ChildComponent, {

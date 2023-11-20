@@ -2,28 +2,30 @@ const useHeadIconClasses = (
   isActive: boolean,
   isCompleted: boolean,
   isInvalid: boolean,
-  theme: any
+  theme: any,
+  vertical: boolean
 ): string => {
   const {
     stepperHeadIcon,
-    stepperHeadIconActive,
-    stepperHeadIconCompleted,
-    stepperHeadIconInvalid,
+    stepperHeadIconVertical,
+    stepperHeadIconActiveBg,
+    stepperHeadIconCompletedBg,
+    stepperHeadIconInvalidBg,
   } = theme;
 
+  const headIconTheme = vertical ? stepperHeadIconVertical : stepperHeadIcon;
+
   if (isActive) {
-    return stepperHeadIconActive;
+    return headIconTheme + " " + stepperHeadIconActiveBg;
   }
-
-  if (isCompleted) {
-    return stepperHeadIconCompleted;
-  }
-
   if (isInvalid) {
-    return stepperHeadIconInvalid;
+    return headIconTheme + stepperHeadIconInvalidBg;
+  }
+  if (isCompleted) {
+    return headIconTheme + " " + stepperHeadIconCompletedBg;
   }
 
-  return stepperHeadIcon;
+  return headIconTheme;
 };
 
 export default useHeadIconClasses;

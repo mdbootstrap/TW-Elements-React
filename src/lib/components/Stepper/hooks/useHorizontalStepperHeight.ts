@@ -21,15 +21,9 @@ const useStepperHeight = (
       );
     }
   };
-  // if (vertical) {
-  //   return setStepperHeight("unset");
-  // }
 
   useEffect(() => {
     handleResize();
-  }, [isActive, children]);
-
-  useEffect(() => {
     if (!isActive) return;
     window.addEventListener("resize", handleResize);
     return () => {

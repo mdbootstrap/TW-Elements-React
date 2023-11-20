@@ -7,6 +7,8 @@ import useHeadIconClasses from "../hooks/useHeadIconClasses";
 import useIsStepCompleted from "../hooks/useIsStepCompleted";
 import useStepperHeight from "../hooks/useHorizontalStepperHeight";
 import { getTranslateDirection } from "../utils/utils";
+import useVerticalStepHeight from "../hooks/useVerticalStepHeight";
+import useHeadClasses from "../hooks/useHeadClasses";
 
 const TEStepperStep: React.FC<StepperStepProps> = ({
   theme: customTheme,
@@ -15,10 +17,13 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   headIcon = "",
   headText = "",
   children,
+  invalid,
+  style,
 }) => {
   const headRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const { activeStep, onChange } = useContext(StepperContext);
+  const { activeStep, onChange, vertical, stepsAmount } =
+    useContext(StepperContext);
 
   const animationDirection = useMemo(() => {
     return getTranslateDirection(activeStep, itemId);
@@ -27,28 +32,57 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   const isActive = useMemo(() => {
     return activeStep === itemId;
   }, [activeStep, itemId]);
+
+  const isLastStep = useMemo(() => {
+    return itemId === stepsAmount;
+  }, [itemId, stepsAmount]);
+
   const isCompleted = useIsStepCompleted(activeStep, isActive, itemId);
   const theme = {
     ...StepperStepTheme,
     ...customTheme,
   };
 
-  const stepperStepClasses = clx(theme.stepperStep, className);
   const headIconClasses = useHeadIconClasses(
     isActive,
     isCompleted,
-    false,
-    theme
+    invalid,
+    theme,
+    vertical
+  );
+  const stepperHeadClasses = useHeadClasses(theme, itemId);
+  const stepperStepClasses = clx(
+    vertical
+      ? isLastStep
+        ? theme.stepperLastStepVertical
+        : theme.stepperStepVertical
+      : theme.stepperStep,
+
+    className
   );
 
-  useStepperHeight(isActive, headRef, contentRef, false, children);
-  const dynamicAnimationDirection: string = `stepperContentTranslated${animationDirection}`;
+  const dynamicAnimationDirection: string = `stepperContentTranslate${animationDirection}`;
+  const stepperContentClasses = clx(
+    vertical ? theme.stepperVerticalContent : theme.stepperContent,
+    !vertical && theme[dynamicAnimationDirection as keyof typeof theme]
+  );
+
+  const headClickHandler = () => {
+    itemId != activeStep && onChange?.(itemId);
+  };
+
+  useStepperHeight(isActive, headRef, contentRef, vertical, children);
+  const verticalStepHeight = useVerticalStepHeight(
+    isActive,
+    contentRef,
+    children
+  );
 
   return (
     <li className={stepperStepClasses}>
       <div
-        className={theme.stepperHead}
-        onClick={() => onChange?.(itemId)}
+        className={stepperHeadClasses}
+        onClick={headClickHandler}
         ref={headRef}
       >
         <span className={headIconClasses}>{headIcon}</span>
@@ -61,18 +95,15 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
         </span>
       </div>
       <div
-        className={
-          isActive
-            ? theme.stepperContentActive
-            : theme[dynamicAnimationDirection as keyof typeof theme]
-        }
-        style={{ visibility: isActive ? "visible" : "hidden" }}
-        onTransitionEnd={(e) => {
-          console.log(e);
+        style={{
+          height: vertical ? verticalStepHeight : "auto",
+          visibility: isActive ? "visible" : "hidden",
         }}
-        ref={contentRef}
+        className={theme.stepperContentWrapper}
       >
-        {children}
+        <div className={stepperContentClasses} style={style} ref={contentRef}>
+          {children}
+        </div>
       </div>
     </li>
   );
