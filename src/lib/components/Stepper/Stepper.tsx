@@ -28,7 +28,7 @@ const TEStepper: React.FC<StepperProps> = ({
   const [activeStepState, setActiveStepState] = useState<number>(defaultStep);
   const activeStep = useActiveValue(activeStepProp, activeStepState);
   const stepperRef = useRef<HTMLUListElement>(null);
-  const [stepperHeight, setStepperHeight] = useState<string>("0");
+  const [stepperHeight, setStepperHeight] = useState<string>("auto");
 
   const childrenArray = useMemo(() => {
     return React.Children.toArray(

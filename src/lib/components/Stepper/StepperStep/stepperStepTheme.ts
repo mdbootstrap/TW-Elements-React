@@ -16,14 +16,12 @@ const StepperStepTheme = {
   stepperStepVertical:
     "relative h-fit after:absolute after:left-[2.45rem] after:top-[3.6rem] after:mt-px after:h-[calc(100%-2.45rem)] after:w-px after:bg-[#e0e0e0] dark:after:bg-neutral-600",
   stepperLastStepVertical: "relative h-fit",
-  stepperHead:
-    "flex cursor-pointer items-center leading-[1.3rem] no-underline hover:bg-[#f9f9f9] focus:outline-none dark:hover:bg-[#3b3b3b]",
-  stepperHeadBeforeLineHorizontal:
-    "before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] dark:before:bg-neutral-600",
-  stepperHeadAfterLineHorizontal:
-    "after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] dark:after:bg-neutral-600",
-  stepperHeadAfterLineVertical:
-    "after:absolute after:left-[2.45rem] after:top-[3.6rem] after:mt-px after:h-[calc(100%-2.45rem)] after:w-px after:bg-[#e0e0e0] after:content-[''] dark:after:bg-neutral-600",
+  stepperHeadHorizontal:
+    "flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:before:bg-neutral-600 dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]",
+  stepperFirstStepHeadHorizontal:
+    "flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]",
+  stepperLastStepHeadHorizontal:
+    "flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:before:bg-neutral-600 dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]",
   stepperHeadVertical:
     "flex cursor-pointer items-center p-6 leading-[1.3rem] no-underline hover:bg-[#f9f9f9] focus:outline-none dark:hover:bg-[#3b3b3b]",
   stepperHeadIcon:
