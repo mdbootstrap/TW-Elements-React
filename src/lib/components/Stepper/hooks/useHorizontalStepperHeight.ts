@@ -8,26 +8,35 @@ const useStepperHeight = (
   vertical: boolean,
   children: React.ReactNode | React.ReactNode[]
 ) => {
-  if (vertical) return;
   const { setStepperHeight } = useContext(StepperContext);
 
-  const handleResize = () => {
-    if (!isActive) {
-      return;
-    }
-    if (stepRef.current && headRef.current) {
-      setStepperHeight(
-        String(stepRef.current.scrollHeight + headRef.current.scrollHeight)
-      );
-    }
-  };
-
   useEffect(() => {
-    handleResize();
-    if (!isActive) return;
-    window.addEventListener("resize", handleResize);
+    if (vertical) return;
+    const headHeight = headRef.current?.offsetHeight || 0;
+
+    const handleResize = (entries: Array<any>) => {
+      if (!isActive) {
+        return;
+      }
+      const stepHeight = entries[0].contentRect.height;
+      const computed = window.getComputedStyle(stepRef.current as Element);
+
+      const offsetY =
+        parseFloat(computed.paddingTop) +
+        parseFloat(computed.paddingBottom) +
+        parseFloat(computed.marginBottom) +
+        parseFloat(computed.marginTop);
+
+      setStepperHeight(`${stepHeight + offsetY + headHeight}px`);
+    };
+
+    const observer = new ResizeObserver((entries) => {
+      handleResize(entries);
+    });
+
+    observer.observe(stepRef.current as Element);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
     };
   }, [isActive, children]);
 };

@@ -13,12 +13,14 @@ const TEStepper: React.FC<StepperProps> = ({
   activeStep: activeStepProp,
   children,
   onChange,
-  vertical,
+  type = "horizontal",
+  style,
 }) => {
   const theme = {
     ...StepperTheme,
     ...customTheme,
   };
+  const vertical = type === "vertical";
   const classes = clsx(
     vertical ? theme.stepperVertical : theme.stepper,
     className
@@ -54,7 +56,7 @@ const TEStepper: React.FC<StepperProps> = ({
         <ul
           className={classes}
           ref={stepperRef}
-          style={vertical ? {} : { height: `${stepperHeight}px` }}
+          style={{ height: vertical ? "" : stepperHeight, ...style }}
         >
           {childrenArray.map((ChildComponent, index: number) => {
             return React.cloneElement(ChildComponent, {
