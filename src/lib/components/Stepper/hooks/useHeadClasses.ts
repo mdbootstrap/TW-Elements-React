@@ -1,7 +1,11 @@
 import { useContext, useMemo } from "react";
 import StepperContext from "../StepperContext";
+import type { StepperStepThemeProps } from "../StepperStep/stepperStepTheme";
 
-export default function useHeadClasses(theme: any, itemId: number) {
+export default function useHeadClasses(
+  theme: StepperStepThemeProps,
+  itemId: number
+) {
   const { stepsAmount, vertical } = useContext(StepperContext);
 
   const isFirstStep = useMemo(() => itemId === 1, [itemId]);

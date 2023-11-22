@@ -22,7 +22,7 @@ const TEStepper: React.FC<StepperProps> = ({
   };
   const vertical = type === "vertical";
   const classes = clsx(
-    vertical ? theme.stepperVertical : theme.stepper,
+    vertical ? theme.stepperVertical : theme.stepperHorizontal,
     className
   );
   const [activeStepState, setActiveStepState] = useState<number>(defaultStep);

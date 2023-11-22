@@ -1,17 +1,25 @@
 interface StepperStepThemeProps {
   stepperStep: string;
-  stepperHead: string;
-  stepperHeadIcon: string;
-  stepperHeadIconActive: string;
-  stepperHeadIconCompleted: string;
+  stepperStepVertical: string;
+  stepperLastStepVertical: string;
+  stepperHeadHorizontal: string;
+  stepperFirstStepHeadHorizontal: string;
+  stepperLastStepHeadHorizontal: string;
+  stepperHeadVertical: string;
+  stepperHeadIconHorizontal: string;
+  stepperHeadIconVertical: string;
+  stepperHeadIconActiveBg: string;
+  stepperHeadIconCompletedBg: string;
   stepperHeadText: string;
   stepperHeadTextActive: string;
-  stepperContentTranslatedLeft: string;
-  stepperContentTranslatedRight: string;
-  stepperContentActive: string;
+  stepperContent: string;
+  stepperContentTranslateLeft: string;
+  stepperContentTranslateRight: string;
+  stepperVerticalContent: string;
+  stepperContentWrapper: string;
 }
 
-const StepperStepTheme = {
+const StepperStepTheme: StepperStepThemeProps = {
   stepperStep: "w-[4.5rem] flex-auto",
   stepperStepVertical:
     "relative h-fit after:absolute after:left-[2.45rem] after:top-[3.6rem] after:mt-px after:h-[calc(100%-2.45rem)] after:w-px after:bg-[#e0e0e0] dark:after:bg-neutral-600",
@@ -24,13 +32,12 @@ const StepperStepTheme = {
     "flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:before:bg-neutral-600 dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]",
   stepperHeadVertical:
     "flex cursor-pointer items-center p-6 leading-[1.3rem] no-underline hover:bg-[#f9f9f9] focus:outline-none dark:hover:bg-[#3b3b3b]",
-  stepperHeadIcon:
+  stepperHeadIconHorizontal:
     "my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]",
   stepperHeadIconVertical:
     "mr-3 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]",
   stepperHeadIconCompletedBg: "!bg-success-100 !text-success-700",
   stepperHeadIconActiveBg: "!bg-primary-100 !text-primary-700",
-  stepperHeadIconInvalidBg: "!bg-danger-100 !text-danger-700",
   stepperHeadText:
     "text-neutral-500 after:flex after:text-[0.8rem] dark:text-neutral-300",
   stepperHeadTextActive:
