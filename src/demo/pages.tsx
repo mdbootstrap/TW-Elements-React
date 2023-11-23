@@ -95,6 +95,7 @@ import ToastsExamples from "./pages/components/toasts/exampleList";
 import SelectExamples from "./pages/forms/select/exampleList";
 import CarouselExamples from "./pages/components/carousel/exampleList";
 import VideoCarouselExamples from "./pages/components/video-carousel/exampleList";
+import StepperExamples from "./pages/components/stepper/exampleList";
 
 interface Pages {
   name: string;
@@ -414,6 +415,7 @@ export const examplesPages: Pages[] = [
   ...SelectExamples,
   ...CarouselExamples,
   ...VideoCarouselExamples,
+  ...StepperExamples,
 ];
 
 export default demoPages;
