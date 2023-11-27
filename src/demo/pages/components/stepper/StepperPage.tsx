@@ -2,6 +2,7 @@ import React from "react";
 import StepperControlledStep from "./examples/StepperControlledStep";
 import StepperVerticalExample from "./examples/StepperVerticalExample";
 import StepperBasicExample from "./examples/StepperBasicExample";
+import StepperLinearExample from "./examples/StepperLinear";
 
 const StepperPage = () => {
   return (
@@ -37,6 +38,16 @@ const StepperPage = () => {
 
         <div className="rounded-lg border dark:border-neutral-600 p-4 w-1/2">
           <StepperVerticalExample />
+        </div>
+
+        <hr className="my-10" />
+
+        <h2 className="text-2xl font-semibold text-neutral-700 dark:text-neutral-300 mb-6">
+          Linear stepper
+        </h2>
+
+        <div className="rounded-lg border dark:border-neutral-600 p-4">
+          <StepperLinearExample />
         </div>
       </div>
     </div>

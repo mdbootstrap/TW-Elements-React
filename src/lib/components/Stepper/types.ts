@@ -9,6 +9,7 @@ interface StepperThemeProps {
 type StepperProps = Omit<BaseComponent, "children"> & {
   activeStep?: number;
   defaultStep?: number;
+  linear?: boolean;
   theme?: StepperThemeProps;
   type?: "horizontal" | "vertical";
   onChange?: (id: number) => void;

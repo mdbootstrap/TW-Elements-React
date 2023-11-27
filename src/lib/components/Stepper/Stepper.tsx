@@ -14,6 +14,7 @@ const TEStepper: React.FC<StepperProps> = ({
   children,
   onChange,
   type = "horizontal",
+  linear,
   style,
 }) => {
   const theme = {
@@ -51,6 +52,7 @@ const TEStepper: React.FC<StepperProps> = ({
           setStepperHeight,
           vertical,
           stepsAmount: childrenArray.length,
+          linear,
         }}
       >
         <ul
