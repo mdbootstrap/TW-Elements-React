@@ -12,6 +12,7 @@ const TEStepper: React.FC<StepperProps> = ({
   defaultStep = 1,
   activeStep: activeStepProp,
   children,
+  noEditable = false,
   onChange,
   type = "horizontal",
   style,
@@ -36,7 +37,8 @@ const TEStepper: React.FC<StepperProps> = ({
     ) as React.ReactElement<StepperStepProps>[];
   }, [children]);
 
-  const onChangeHandler = (id: number) => {
+  const stepChangeHandler = (id: number) => {
+    if (noEditable && id < activeStep) return;
     onChange?.(id);
     setActiveStepState(id);
   };
@@ -45,12 +47,13 @@ const TEStepper: React.FC<StepperProps> = ({
       <StepperContext.Provider
         value={{
           activeStep,
-          onChange: onChangeHandler,
+          onChange: stepChangeHandler,
           stepperRef,
           stepperHeight,
           setStepperHeight,
           vertical,
           stepsAmount: childrenArray.length,
+          noEditable,
         }}
       >
         <ul
@@ -63,7 +66,7 @@ const TEStepper: React.FC<StepperProps> = ({
               itemId: index + 1,
               activeStep,
               key: "stepper-step-" + index,
-              onChange: onChangeHandler,
+              onChange: stepChangeHandler,
             });
           })}
         </ul>
