@@ -51,19 +51,19 @@
     }
   },
   {
-    "href": "docs/react/components/badges/",
+    "href": "/docs/react/components/badges/",
     "name": "Badges",
     "keywords": ["label", "notifications"],
     "category": "Components"
   },
   {
-    "href": "docs/react/components/avatar/",
+    "href": "/docs/react/components/avatar/",
     "name": "Avatar",
     "keywords": ["avatar"],
     "category": "Components"
   },
   {
-    "href": "docs/react/navigation/pagination/",
+    "href": "/docs/react/navigation/pagination/",
     "name": "Pagination",
     "keywords": ["pages", "paginate", "next", "previous"],
     "category": "Navigation"
