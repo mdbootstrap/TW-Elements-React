@@ -20,7 +20,7 @@ const AccordionPage = () => {
         <p className="mb-3">
           The accordion uses the
           <a
-            href="https://tailwind-elements.com/docs/react/components/collapse/"
+            href="https://tw-elements.com/docs/react/components/collapse/"
             className="text-primary dark:text-primary-400"
           >
             collapse
@@ -56,14 +56,14 @@ const AccordionPage = () => {
           stretch full width of their parent container. It comes useful when you
           want to embed the accordion in a different component i.e. inside of a
           <a
-            href="https://tailwind-elements.com/docs/react/components/cards/"
+            href="https://tw-elements.com/docs/react/components/cards/"
             className="text-primary dark:text-primary-400"
           >
             Card
           </a>
           or
           <a
-            href="https://tailwind-elements.com/docs/react/components/modal/"
+            href="https://tw-elements.com/docs/react/components/modal/"
             className="text-primary dark:text-primary-400"
           >
             Modal

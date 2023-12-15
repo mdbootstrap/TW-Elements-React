@@ -24,7 +24,7 @@ export default function FooterCtaExample(): JSX.Element {
         {/* <!--Copyright section--> */}
         <div className="p-4 text-center bg-black bg-opacity-20">
           © 2023 Copyright:
-          <a className="text-white" href="https://tailwind-elements.com/">
+          <a className="text-white" href="https://tw-elements.com/">
             TW Elements
           </a>
         </div>
