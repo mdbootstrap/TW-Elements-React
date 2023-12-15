@@ -90,7 +90,7 @@ const BreadcrumbsPage = () => {
       <p className="mb-3">
         You can use breadcrumb together with
         <a
-          href="https://tailwind-elements.com/docs/standard/navigation/navbar/"
+          href="https://tw-elements.com/docs/standard/navigation/navbar/"
           className="text-primary dark:text-primary-400"
         >
           navbar

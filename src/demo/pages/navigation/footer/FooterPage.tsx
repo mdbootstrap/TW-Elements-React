@@ -219,7 +219,7 @@ const FooterPage = () => {
           <span>© 2023 Copyright:</span>
           <a
             className="font-semibold text-neutral-600 dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>
@@ -244,7 +244,7 @@ const FooterPage = () => {
           © 2023 Copyright:
           <a
             className="text-neutral-800 dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>
@@ -385,7 +385,7 @@ const FooterPage = () => {
           © 2023 Copyright:
           <a
             className="text-neutral-800 dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>
@@ -428,7 +428,7 @@ const FooterPage = () => {
           © 2023 Copyright:
           <a
             className="text-neutral-800 dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>
@@ -488,7 +488,7 @@ const FooterPage = () => {
           © 2023 Copyright:
           <a
             className="dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>
@@ -574,7 +574,7 @@ const FooterPage = () => {
           © 2023 Copyright:
           <a
             className="text-neutral-800 dark:text-neutral-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>

@@ -41,7 +41,7 @@ export default function FooterFormExample(): JSX.Element {
           © 2023 Copyright:
           <a
             className="text-secondary-800 dark:text-secondary-400"
-            href="https://tailwind-elements.com/"
+            href="https://tw-elements.com/"
           >
             TW Elements
           </a>

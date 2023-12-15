@@ -109,7 +109,7 @@ const PillsPage = () => {
         <p className="mb-3">
           You can also use
           <a
-            href="https://tailwind-elements.com/docs/react/components/buttons/"
+            href="https://tw-elements.com/docs/react/components/buttons/"
             className="text-primary-700"
           >
             buttons
