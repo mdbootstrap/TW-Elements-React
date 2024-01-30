@@ -7,7 +7,6 @@ import useHeadIconClasses from "../hooks/useHeadIconClasses";
 import useIsStepCompleted from "../hooks/useIsStepCompleted";
 import useStepperHeight from "../hooks/useHorizontalStepperHeight";
 import { getTranslateDirection } from "../utils/utils";
-import useVerticalStepHeight from "../hooks/useVerticalStepHeight";
 import useHeadClasses from "../hooks/useHeadClasses";
 
 const TEStepperStep: React.FC<StepperStepProps> = ({
@@ -65,7 +64,8 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   const stepperContentClasses = clx(
     vertical ? theme.stepperVerticalContent : theme.stepperContent,
     !vertical && theme[dynamicAnimationDirection as keyof typeof theme],
-    contentClassName
+    contentClassName,
+    isActive ? "pb-6" : "pb-0"
   );
 
   const headClickHandler = () => {
@@ -73,11 +73,6 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   };
 
   useStepperHeight(isActive, headRef, contentRef, vertical, children);
-  const verticalStepHeight = useVerticalStepHeight(
-    isActive,
-    contentRef,
-    children
-  );
 
   return (
     <li className={stepperStepClasses}>
@@ -97,8 +92,9 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
       </div>
       <div
         style={{
-          height: vertical ? verticalStepHeight : "auto",
           visibility: isActive ? "visible" : "hidden",
+          display: vertical ? "grid" : "block",
+          gridTemplateRows: isActive ? "1fr" : "0fr",
         }}
         className={theme.stepperContentWrapper}
       >
