@@ -3,6 +3,7 @@ import StepperControlledStep from "./examples/StepperControlledStep";
 import StepperVerticalExample from "./examples/StepperVerticalExample";
 import StepperBasicExample from "./examples/StepperBasicExample";
 import StepperLinearExample from "./examples/StepperLinear";
+import StepperLinearCustomValidationExample from "./examples/StepperLinearCustomValidation";
 
 const StepperPage = () => {
   return (
@@ -48,6 +49,16 @@ const StepperPage = () => {
 
         <div className="rounded-lg border dark:border-neutral-600 p-4">
           <StepperLinearExample />
+        </div>
+
+        <hr className="my-10" />
+
+        <h2 className="text-2xl font-semibold text-neutral-700 dark:text-neutral-300 mb-6">
+          Linear stepper with custom validation
+        </h2>
+
+        <div className="rounded-lg border dark:border-neutral-600 p-4">
+          <StepperLinearCustomValidationExample />
         </div>
       </div>
     </div>

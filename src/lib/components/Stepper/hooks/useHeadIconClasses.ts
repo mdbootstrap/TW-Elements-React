@@ -1,21 +1,27 @@
 import clsx from "clsx";
 
 const useHeadIconClasses = (
+  theme: any,
+  vertical: boolean,
   isActive: boolean,
   isCompleted: boolean,
-  theme: any,
-  vertical: boolean
+  isInvalid?: boolean
 ): string => {
   const {
     stepperHeadIconHorizontal,
     stepperHeadIconVertical,
     stepperHeadIconActiveBg,
     stepperHeadIconCompletedBg,
+    stepperHeadIconInvalidBg,
   } = theme;
 
   const headIconTheme = vertical
     ? stepperHeadIconVertical
     : stepperHeadIconHorizontal;
+
+  if (isInvalid) {
+    return clsx(headIconTheme, stepperHeadIconInvalidBg);
+  }
 
   if (isActive) {
     return clsx(headIconTheme, stepperHeadIconActiveBg);

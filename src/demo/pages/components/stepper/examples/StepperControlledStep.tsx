@@ -7,8 +7,8 @@ export default function StepperControlledStep(): JSX.Element {
   return (
     <TEStepper
       activeStep={activeStep}
-      onChange={(stepId) => {
-        setActiveStep(stepId);
+      onChange={(_, next) => {
+        setActiveStep(next);
       }}
     >
       <TEStepperStep headText="Step 1" headIcon={"1"}>

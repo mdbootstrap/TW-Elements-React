@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useContext } from "react";
+import React, { useMemo, useRef, useContext, useEffect } from "react";
 import clx from "clsx";
 import StepperStepTheme from "./stepperStepTheme";
 import StepperContext from "../StepperContext";
@@ -20,10 +20,28 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   children,
   style,
 }) => {
+  const stepRef = useRef<HTMLLIElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const { activeStep, onChange, vertical, stepsAmount } =
-    useContext(StepperContext);
+  const {
+    activeStep,
+    onChange,
+    vertical,
+    linear,
+    stepsAmount,
+    setActiveStepContent,
+    stepsValidity,
+  } = useContext(StepperContext);
+
+  const isInvalid = useMemo(() => {
+    if (!linear) {
+      return false;
+    }
+    return (
+      stepsValidity?.["step" + itemId].wasValidated &&
+      !stepsValidity?.["step" + itemId].isValid
+    );
+  }, [stepsValidity, itemId]);
 
   const animationDirection = useMemo(() => {
     return getTranslateDirection(activeStep, itemId);
@@ -44,10 +62,11 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   };
 
   const headIconClasses = useHeadIconClasses(
+    theme,
+    vertical,
     isActive,
     isCompleted,
-    theme,
-    vertical
+    isInvalid
   );
   const stepperHeadClasses = clx(useHeadClasses(theme, itemId), headClassName);
   const stepperStepClasses = clx(
@@ -68,6 +87,12 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
     isActive ? "pb-6" : "pb-0"
   );
 
+  useEffect(() => {
+    if (isActive && contentRef.current && setActiveStepContent) {
+      setActiveStepContent(contentRef.current);
+    }
+  }, [isActive, contentRef, children]);
+
   const headClickHandler = () => {
     itemId != activeStep && onChange?.(itemId);
   };
@@ -75,7 +100,7 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   useStepperHeight(isActive, headRef, contentRef, vertical, children);
 
   return (
-    <li className={stepperStepClasses}>
+    <li className={stepperStepClasses} ref={stepRef}>
       <div
         className={stepperHeadClasses}
         onClick={headClickHandler}

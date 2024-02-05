@@ -10,6 +10,7 @@ interface StepperStepThemeProps {
   stepperHeadIconHorizontal: string;
   stepperHeadIconVertical: string;
   stepperHeadIconActiveBg: string;
+  stepperHeadIconInvalidBg: string;
   stepperHeadIconDisabledBg: string;
   stepperHeadIconCompletedBg: string;
   stepperHeadText: string;
@@ -43,6 +44,8 @@ const StepperStepTheme: StepperStepThemeProps = {
     "!bg-success-100 !text-success-700 dark:!bg-[#04201f] dark:!text-[#72c894]",
   stepperHeadIconActiveBg:
     "!bg-primary-100 !text-primary-700 dark:!bg-[#0c1728] dark:!text-[#628dd5]",
+  stepperHeadIconInvalidBg:
+    "!bg-danger-100 !text-danger-700 dark:!bg-[#2c0f14] dark:!text-[#e37083]",
   stepperHeadIconDisabledBg:
     "!bg-[#6d6d6d] !text-neutral-300 dark:!bg-[#757575]",
   stepperHeadText:

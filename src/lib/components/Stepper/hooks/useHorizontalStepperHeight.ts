@@ -15,7 +15,7 @@ const useStepperHeight = (
     const headHeight = headRef.current?.offsetHeight || 0;
 
     const handleResize = (entries: Array<any>) => {
-      if (!isActive) {
+      if (!isActive || !stepRef.current) {
         return;
       }
       const stepHeight = entries[0].contentRect.height;

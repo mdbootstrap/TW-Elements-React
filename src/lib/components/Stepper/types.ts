@@ -6,16 +6,22 @@ interface StepperThemeProps {
   stepperVertical: string;
 }
 
+type customValidationType = (
+  validableElement: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+) => boolean;
+
 type StepperProps = Omit<BaseComponent, "children"> & {
   activeStep?: number;
   defaultStep?: number;
   linear?: boolean;
   theme?: StepperThemeProps;
   type?: "horizontal" | "vertical";
-  onChange?: (id: number) => void;
+  onChange?: (prevStepId: number, nextStepId: number) => void;
+  onInvalid?: (prevStepId: number, nextStepId: number) => void;
   children:
     | React.ReactElement<StepperStepProps>[]
     | React.ReactElement<StepperStepProps>;
+  customValidation?: customValidationType;
 };
 
-export type { StepperProps };
+export type { StepperProps, customValidationType };
