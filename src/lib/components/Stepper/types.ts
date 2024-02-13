@@ -1,10 +1,6 @@
 import { BaseComponent } from "../../types/baseComponent";
 import type { StepperStepProps } from "./StepperStep/types";
-
-interface StepperThemeProps {
-  stepper: string;
-  stepperVertical: string;
-}
+import type { StepperThemeProps } from "./stepperTheme";
 
 type customValidationType = (
   validableElement: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -24,4 +20,4 @@ type StepperProps = Omit<BaseComponent, "children"> & {
   customValidation?: customValidationType;
 };
 
-export type { StepperProps, customValidationType };
+export type { StepperProps, StepperThemeProps, customValidationType };

@@ -1,25 +1,25 @@
 interface StepperStepThemeProps {
-  stepperStep: string;
-  stepperStepVertical: string;
-  stepperLastStepVertical: string;
-  disabledStep: string;
-  stepperHeadHorizontal: string;
-  stepperFirstStepHeadHorizontal: string;
-  stepperLastStepHeadHorizontal: string;
-  stepperHeadVertical: string;
-  stepperHeadIconHorizontal: string;
-  stepperHeadIconVertical: string;
-  stepperHeadIconActiveBg: string;
-  stepperHeadIconInvalidBg: string;
-  stepperHeadIconDisabledBg: string;
-  stepperHeadIconCompletedBg: string;
-  stepperHeadText: string;
-  stepperHeadTextActive: string;
-  stepperContent: string;
-  stepperContentTranslateLeft: string;
-  stepperContentTranslateRight: string;
-  stepperVerticalContent: string;
-  stepperContentWrapper: string;
+  stepperStep?: string;
+  stepperStepVertical?: string;
+  stepperLastStepVertical?: string;
+  disabledStep?: string;
+  stepperHeadHorizontal?: string;
+  stepperFirstStepHeadHorizontal?: string;
+  stepperLastStepHeadHorizontal?: string;
+  stepperHeadVertical?: string;
+  stepperHeadIconHorizontal?: string;
+  stepperHeadIconVertical?: string;
+  stepperHeadIconActiveBg?: string;
+  stepperHeadIconInvalidBg?: string;
+  stepperHeadIconDisabledBg?: string;
+  stepperHeadIconCompletedBg?: string;
+  stepperHeadText?: string;
+  stepperHeadTextActive?: string;
+  stepperContent?: string;
+  stepperContentTranslateLeft?: string;
+  stepperContentTranslateRight?: string;
+  stepperVerticalContent?: string;
+  stepperContentWrapper?: string;
 }
 
 const StepperStepTheme: StepperStepThemeProps = {
@@ -59,7 +59,7 @@ const StepperStepTheme: StepperStepThemeProps = {
   stepperContentTranslateLeft: "-translate-x-[150%]",
   stepperContentTranslateRight: "translate-x-[150%]",
   stepperVerticalContent:
-    "transition-[height, margin-bottom, padding-top, padding-bottom] left-0 overflow-hidden pl-[3.75rem] pr-6 duration-300 ease-in-out",
+    "transition-[height,_margin-bottom,_padding-top,_padding-bottom] left-0 overflow-hidden pl-[3.75rem] pr-6 duration-300 ease-in-out",
 };
 
 export default StepperStepTheme;
