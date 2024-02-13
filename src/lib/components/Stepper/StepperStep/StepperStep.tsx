@@ -12,8 +12,6 @@ import useHeadClasses from "../hooks/useHeadClasses";
 const TEStepperStep: React.FC<StepperStepProps> = ({
   theme: customTheme,
   className,
-  contentClassName,
-  headClassName,
   itemId = 1,
   headIcon = "",
   headText = "",
@@ -68,7 +66,7 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
     isCompleted,
     isInvalid
   );
-  const stepperHeadClasses = clx(useHeadClasses(theme, itemId), headClassName);
+  const stepperHeadClasses = clx(useHeadClasses(theme, itemId));
   const stepperStepClasses = clx(
     vertical
       ? isLastStep
@@ -80,10 +78,14 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   );
 
   const dynamicAnimationDirection: string = `stepperContentTranslate${animationDirection}`;
+  const stepperContentWrapperClasses = clx(
+    theme.stepperContentWrapper,
+    isActive ? "visible" : "invisible",
+    vertical ? "grid" : "block"
+  );
   const stepperContentClasses = clx(
     vertical ? theme.stepperVerticalContent : theme.stepperContent,
     !vertical && theme[dynamicAnimationDirection as keyof typeof theme],
-    contentClassName,
     isActive ? "pb-6" : "pb-0"
   );
 
@@ -117,11 +119,9 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
       </div>
       <div
         style={{
-          visibility: isActive ? "visible" : "hidden",
-          display: vertical ? "grid" : "block",
           gridTemplateRows: isActive ? "1fr" : "0fr",
         }}
-        className={theme.stepperContentWrapper}
+        className={stepperContentWrapperClasses}
       >
         <div className={stepperContentClasses} style={style} ref={contentRef}>
           {children}

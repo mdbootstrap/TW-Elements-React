@@ -11,7 +11,9 @@ const useStepperHeight = (
   const { setStepperHeight } = useContext(StepperContext);
 
   useEffect(() => {
-    if (vertical) return;
+    if (vertical) {
+      return;
+    }
     const headHeight = headRef.current?.offsetHeight || 0;
 
     const handleResize = (entries: Array<any>) => {
