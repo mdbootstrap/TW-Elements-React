@@ -27,6 +27,8 @@ import TEToast from "./components/Toasts/Toast";
 import TESelect from "./forms/Select/Select";
 import TECarousel from "./components/Carousel/Carousel";
 import TECarouselItem from "./components/Carousel/CarouselItem/CarouselItem";
+import TEStepper from "./components/Stepper/Stepper";
+import TEStepperStep from "./components/Stepper/StepperStep/StepperStep";
 
 export {
   TECollapse,
@@ -58,4 +60,6 @@ export {
   TESelect,
   TECarousel,
   TECarouselItem,
+  TEStepper,
+  TEStepperStep,
 };

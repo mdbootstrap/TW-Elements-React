@@ -138,6 +138,12 @@
     "category": "Components"
   },
   {
+    "href": "/docs/react/components/stepper/",
+    "name": "Stepper",
+    "keywords": ["stepper", "progress", "steps", "wizard"],
+    "category": "Components"
+  },
+  {
     "href": "/docs/react/forms/checkbox/",
     "name": "Checkbox",
     "keywords": ["checked"],
