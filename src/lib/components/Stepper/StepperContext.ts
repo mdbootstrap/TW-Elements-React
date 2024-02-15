@@ -8,7 +8,6 @@ interface StepperContextProps {
   setStepperHeight: (height: string) => void;
   vertical: boolean;
   stepsAmount: number;
-  noEditable?: boolean;
 }
 
 const StepperContext = createContext<StepperContextProps>({
@@ -19,7 +18,6 @@ const StepperContext = createContext<StepperContextProps>({
   setStepperHeight: () => {},
   vertical: false,
   stepsAmount: 0,
-  noEditable: false,
 });
 
 export default StepperContext;

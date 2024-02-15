@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useContext, useEffect } from "react";
+import React, { useMemo, useRef, useContext } from "react";
 import clx from "clsx";
 import StepperStepTheme from "./stepperStepTheme";
 import StepperContext from "../StepperContext";
@@ -22,9 +22,8 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   style,
 }) => {
   const headRef = useRef<HTMLDivElement>(null);
-  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const { activeStep, noEditable, onChange, vertical, stepsAmount } =
+  const { activeStep, onChange, vertical, stepsAmount } =
     useContext(StepperContext);
 
   const animationDirection = useMemo(() => {
@@ -48,22 +47,9 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   const headIconClasses = useHeadIconClasses(
     isActive,
     isCompleted,
-    isDisabled,
     theme,
     vertical
   );
-
-  const headTextClasses = clx(
-    isActive ? theme.stepperHeadTextActive : theme.stepperHeadText,
-    isDisabled && theme.disabledStep
-  );
-
-  useEffect(() => {
-    if (isCompleted && noEditable) {
-      setIsDisabled(true);
-    }
-  }, [isCompleted, noEditable]);
-
   const stepperHeadClasses = clx(useHeadClasses(theme, itemId), headClassName);
   const stepperStepClasses = clx(
     vertical
@@ -71,7 +57,6 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
         ? theme.stepperLastStepVertical
         : theme.stepperStepVertical
       : theme.stepperStep,
-    isDisabled && theme.disabledStep,
 
     className
   );
@@ -102,7 +87,13 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
         ref={headRef}
       >
         <span className={headIconClasses}>{headIcon}</span>
-        <span className={headTextClasses}>{headText}</span>
+        <span
+          className={
+            isActive ? theme.stepperHeadTextActive : theme.stepperHeadText
+          }
+        >
+          {headText}
+        </span>
       </div>
       <div
         style={{
