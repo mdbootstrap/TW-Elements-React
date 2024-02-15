@@ -96,12 +96,12 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   const stepperContentWrapperClasses = clx(
     theme.stepperContentWrapper,
     isActive ? "visible" : "invisible",
-    vertical ? "grid" : "block"
+    vertical ? "grid" : "block",
+    isActive ? "pb-6" : "pb-0"
   );
   const stepperContentClasses = clx(
     vertical ? theme.stepperVerticalContent : theme.stepperContent,
-    !vertical && theme[dynamicAnimationDirection as keyof typeof theme],
-    isActive ? "pb-6" : "pb-0"
+    !vertical && theme[dynamicAnimationDirection as keyof typeof theme]
   );
 
   useEffect(() => {
