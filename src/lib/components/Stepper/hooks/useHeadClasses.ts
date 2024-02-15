@@ -14,8 +14,14 @@ export default function useHeadClasses(
     [itemId, stepsAmount]
   );
 
-  if (vertical) return theme.stepperHeadVertical;
-  if (isFirstStep) return theme.stepperFirstStepHeadHorizontal;
-  if (isLastStep) return theme.stepperLastStepHeadHorizontal;
+  if (vertical) {
+    return theme.stepperHeadVertical;
+  }
+  if (isFirstStep) {
+    return theme.stepperFirstStepHeadHorizontal;
+  }
+  if (isLastStep) {
+    return theme.stepperLastStepHeadHorizontal;
+  }
   return theme.stepperHeadHorizontal;
 }

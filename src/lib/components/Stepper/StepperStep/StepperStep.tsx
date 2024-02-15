@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useContext } from "react";
+import React, { useState, useMemo, useRef, useContext, useEffect } from "react";
 import clx from "clsx";
 import StepperStepTheme from "./stepperStepTheme";
 import StepperContext from "../StepperContext";
@@ -7,24 +7,41 @@ import useHeadIconClasses from "../hooks/useHeadIconClasses";
 import useIsStepCompleted from "../hooks/useIsStepCompleted";
 import useStepperHeight from "../hooks/useHorizontalStepperHeight";
 import { getTranslateDirection } from "../utils/utils";
-import useVerticalStepHeight from "../hooks/useVerticalStepHeight";
 import useHeadClasses from "../hooks/useHeadClasses";
 
 const TEStepperStep: React.FC<StepperStepProps> = ({
   theme: customTheme,
   className,
-  contentClassName,
-  headClassName,
   itemId = 1,
   headIcon = "",
   headText = "",
   children,
   style,
 }) => {
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const stepRef = useRef<HTMLLIElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const { activeStep, onChange, vertical, stepsAmount } =
-    useContext(StepperContext);
+  const {
+    activeStep,
+    noEditable,
+    onChange,
+    vertical,
+    linear,
+    stepsAmount,
+    setActiveStepContent,
+    stepsValidity,
+  } = useContext(StepperContext);
+
+  const isInvalid = useMemo(() => {
+    if (!linear) {
+      return false;
+    }
+    return (
+      stepsValidity?.["step" + itemId].wasValidated &&
+      !stepsValidity?.["step" + itemId].isValid
+    );
+  }, [stepsValidity, itemId]);
 
   const animationDirection = useMemo(() => {
     return getTranslateDirection(activeStep, itemId);
@@ -45,62 +62,75 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   };
 
   const headIconClasses = useHeadIconClasses(
+    theme,
+    vertical,
     isActive,
     isCompleted,
-    theme,
-    vertical
+    isInvalid,
+    isDisabled
   );
-  const stepperHeadClasses = clx(useHeadClasses(theme, itemId), headClassName);
+
+  const headTextClasses = clx(
+    isActive ? theme.stepperHeadTextActive : theme.stepperHeadText,
+    isDisabled && theme.disabledStep
+  );
+
+  useEffect(() => {
+    if (isCompleted && noEditable && !isActive) {
+      setIsDisabled(true);
+    }
+  }, [isCompleted, noEditable, isActive]);
+
+  const stepperHeadClasses = clx(useHeadClasses(theme, itemId));
   const stepperStepClasses = clx(
     vertical
       ? isLastStep
         ? theme.stepperLastStepVertical
         : theme.stepperStepVertical
       : theme.stepperStep,
-
+    isDisabled && theme.disabledStep,
     className
   );
 
   const dynamicAnimationDirection: string = `stepperContentTranslate${animationDirection}`;
+  const stepperContentWrapperClasses = clx(
+    theme.stepperContentWrapper,
+    isActive ? "visible" : "invisible",
+    vertical ? "grid" : "block"
+  );
   const stepperContentClasses = clx(
     vertical ? theme.stepperVerticalContent : theme.stepperContent,
     !vertical && theme[dynamicAnimationDirection as keyof typeof theme],
-    contentClassName
+    isActive ? "pb-6" : "pb-0"
   );
+
+  useEffect(() => {
+    if (isActive && contentRef.current && setActiveStepContent) {
+      setActiveStepContent(contentRef.current);
+    }
+  }, [isActive, contentRef, children]);
 
   const headClickHandler = () => {
     itemId != activeStep && onChange?.(itemId);
   };
 
   useStepperHeight(isActive, headRef, contentRef, vertical, children);
-  const verticalStepHeight = useVerticalStepHeight(
-    isActive,
-    contentRef,
-    children
-  );
 
   return (
-    <li className={stepperStepClasses}>
+    <li className={stepperStepClasses} ref={stepRef}>
       <div
         className={stepperHeadClasses}
         onClick={headClickHandler}
         ref={headRef}
       >
         <span className={headIconClasses}>{headIcon}</span>
-        <span
-          className={
-            isActive ? theme.stepperHeadTextActive : theme.stepperHeadText
-          }
-        >
-          {headText}
-        </span>
+        <span className={headTextClasses}>{headText}</span>
       </div>
       <div
         style={{
-          height: vertical ? verticalStepHeight : "auto",
-          visibility: isActive ? "visible" : "hidden",
+          gridTemplateRows: isActive ? "1fr" : "0fr",
         }}
-        className={theme.stepperContentWrapper}
+        className={stepperContentWrapperClasses}
       >
         <div className={stepperContentClasses} style={style} ref={contentRef}>
           {children}
