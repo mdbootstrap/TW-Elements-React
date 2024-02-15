@@ -435,6 +435,67 @@ menu:
 </section>
 <!-- Section: Vertical stepper -->
 
+<!-- Section: No editable stepper -->
+<section>
+  <!-- Title -->
+  <h2
+    class="mb-5 mt-0 text-3xl font-semibold leading-normal"
+    id="no-editable"
+    data-te-spy-item>
+    No editable stepper
+  </h2>
+  <!-- Description -->
+  <p class="mb-3">
+    Add <code>noEditable</code> to disable editing a completed step.
+  </p>
+
+  <!-- prettier-ignore  -->
+  {{< twsnippet/demo-iframe id="example4" iframe="/components/stepper/examples/stepper-no-editable-example" title="Stepper no editable" >}}
+
+  <!-- prettier-ignore -->
+  <section class="!visible hidden" data-te-collapse-item id="example4">
+    <div class="pt-4">
+      {{< twsnippet/wrapper "JSX" >}}
+      {{< twsnippet/code active=true lang="jsx" >}}
+        import React from "react";
+        import { TEStepper, TEStepperStep } from "tw-elements-react";
+
+        export default function StepperNoEditable() {
+          return (
+            <TEStepper noEditable>
+              <TEStepperStep headText="Step 1" headIcon="1">
+                <p className="text-neutral-500 dark:text-neutral-400">
+                  After changing the active step, the previous steps can't be accessed
+                  anymore.
+                </p>
+              </TEStepperStep>
+              <TEStepperStep headText="Step 2" headIcon="2">
+                <p className="text-neutral-500 dark:text-neutral-400">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur,
+                  tempora esse iusto tempore quod, aspernatur incidunt minima magnam,
+                  quaerat aut vel expedita illum molestias repellendus asperiores id
+                  suscipit saepe. Maxime.
+                </p>
+              </TEStepperStep>
+              <TEStepperStep headText="Step 3" headIcon="3">
+                <p className="text-neutral-500 dark:text-neutral-400">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+                  voluptatum, quod, voluptate quia, ipsam illum quibusdam dolorum
+                  voluptatibus laboriosam quae voluptates? Quisquam, voluptatibus
+                  voluptas. Quisquam, voluptatibus voluptas. Quisquam, voluptatibus
+                  voluptas.
+                </p>
+              </TEStepperStep>
+            </TEStepper>
+          );
+        }
+      {{< /twsnippet/code >}}
+      {{< /twsnippet/wrapper >}}
+    </div>
+  </section>
+</section>
+<!-- Section: No editable stepper -->
+
 <!-- Section: Linear stepper -->
 <section>
   <!-- Title -->
@@ -450,10 +511,10 @@ menu:
   </p>
 
   <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example4" iframe="/components/stepper/examples/stepper-linear-example" title="Stepper linear" >}}
+  {{< twsnippet/demo-iframe id="example5" iframe="/components/stepper/examples/stepper-linear-example" title="Stepper linear" >}}
 
   <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example4">
+  <section class="!visible hidden" data-te-collapse-item id="example5">
     <div class="pt-4">
       {{< twsnippet/wrapper "JSX" >}}
       {{< twsnippet/code active=true lang="jsx" >}}
@@ -522,10 +583,10 @@ menu:
   </p>
 
   <!-- prettier-ignore  -->
-  {{< twsnippet/demo-iframe id="example5" iframe="/components/stepper/examples/stepper-linear-custom-validation-example" title="Stepper linear" >}}
+  {{< twsnippet/demo-iframe id="example6" iframe="/components/stepper/examples/stepper-linear-custom-validation-example" title="Stepper linear" >}}
 
   <!-- prettier-ignore -->
-  <section class="!visible hidden" data-te-collapse-item id="example5">
+  <section class="!visible hidden" data-te-collapse-item id="example6">
     <div class="pt-4">
       {{< twsnippet/wrapper "JSX" >}}
       {{< twsnippet/code active=true lang="jsx" >}}

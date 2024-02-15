@@ -4,6 +4,7 @@ import StepperControlledStep from "./examples/StepperControlledStep";
 import StepperVerticalExample from "./examples/StepperVerticalExample";
 import StepperLinearExample from "./examples/StepperLinear";
 import StepperLinearCustomValidationExample from "./examples/StepperLinearCustomValidation";
+import StepperNoEditable from "./examples/StepperNoEditable";
 
 export default [
   {
@@ -20,6 +21,11 @@ export default [
     name: "StepperVerticalExample",
     path: "/components/stepper/examples/stepper-vertical-example",
     element: <StepperVerticalExample />,
+  },
+  {
+    name: "StepperNoEditable",
+    path: "/components/stepper/examples/stepper-no-editable-example",
+    element: <StepperNoEditable />,
   },
   {
     name: "StepperLinearExample",

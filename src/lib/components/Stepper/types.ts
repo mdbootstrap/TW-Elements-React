@@ -12,8 +12,8 @@ type StepperProps = Omit<BaseComponent, "children"> & {
   linear?: boolean;
   theme?: StepperThemeProps;
   type?: "horizontal" | "vertical";
-  onChange?: (prevStepId: number, nextStepId: number) => void;
-  onInvalid?: (prevStepId: number, nextStepId: number) => void;
+  onChange?: (prevStepId: number, targetStepId: number) => void;
+  onInvalid?: (prevStepId: number, targetStepId: number) => void;
   children:
     | React.ReactElement<StepperStepProps>[]
     | React.ReactElement<StepperStepProps>;
