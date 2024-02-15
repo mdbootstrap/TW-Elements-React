@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useContext, useEffect } from "react";
+import React, { useState, useMemo, useRef, useContext, useEffect } from "react";
 import clx from "clsx";
 import StepperStepTheme from "./stepperStepTheme";
 import StepperContext from "../StepperContext";
@@ -18,11 +18,13 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
   children,
   style,
 }) => {
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const stepRef = useRef<HTMLLIElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const {
     activeStep,
+    noEditable,
     onChange,
     vertical,
     linear,
@@ -64,8 +66,21 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
     vertical,
     isActive,
     isCompleted,
-    isInvalid
+    isInvalid,
+    isDisabled
   );
+
+  const headTextClasses = clx(
+    isActive ? theme.stepperHeadTextActive : theme.stepperHeadText,
+    isDisabled && theme.disabledStep
+  );
+
+  useEffect(() => {
+    if (isCompleted && noEditable && !isActive) {
+      setIsDisabled(true);
+    }
+  }, [isCompleted, noEditable, isActive]);
+
   const stepperHeadClasses = clx(useHeadClasses(theme, itemId));
   const stepperStepClasses = clx(
     vertical
@@ -73,7 +88,7 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
         ? theme.stepperLastStepVertical
         : theme.stepperStepVertical
       : theme.stepperStep,
-
+    isDisabled && theme.disabledStep,
     className
   );
 
@@ -109,13 +124,7 @@ const TEStepperStep: React.FC<StepperStepProps> = ({
         ref={headRef}
       >
         <span className={headIconClasses}>{headIcon}</span>
-        <span
-          className={
-            isActive ? theme.stepperHeadTextActive : theme.stepperHeadText
-          }
-        >
-          {headText}
-        </span>
+        <span className={headTextClasses}>{headText}</span>
       </div>
       <div
         style={{

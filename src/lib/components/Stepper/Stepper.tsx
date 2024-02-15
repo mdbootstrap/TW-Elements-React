@@ -20,6 +20,7 @@ const TEStepper: React.FC<StepperProps> = ({
   defaultStep = 1,
   activeStep: activeStepProp,
   children,
+  noEditable = false,
   onChange,
   onInvalid,
   type = "horizontal",
@@ -67,6 +68,10 @@ const TEStepper: React.FC<StepperProps> = ({
   });
 
   const onChangeHandler = (targetStepId: number) => {
+    if (noEditable && targetStepId < activeStep) {
+      return;
+    }
+
     if (linear) {
       if (!activeStepContent) {
         return;
@@ -120,10 +125,10 @@ const TEStepper: React.FC<StepperProps> = ({
           stepsValidity,
           setStepperHeight,
           setActiveStepContent,
-
           vertical,
           stepsAmount: childrenArray.length,
           linear,
+          noEditable,
         }}
       >
         <ul

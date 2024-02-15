@@ -5,7 +5,8 @@ const useHeadIconClasses = (
   vertical: boolean,
   isActive: boolean,
   isCompleted: boolean,
-  isInvalid?: boolean
+  isInvalid?: boolean,
+  isDisabled?: boolean
 ): string => {
   const {
     stepperHeadIconHorizontal,
@@ -13,6 +14,7 @@ const useHeadIconClasses = (
     stepperHeadIconActiveBg,
     stepperHeadIconCompletedBg,
     stepperHeadIconInvalidBg,
+    stepperHeadIconDisabledBg,
   } = theme;
 
   const headIconTheme = vertical
@@ -26,6 +28,11 @@ const useHeadIconClasses = (
   if (isActive) {
     return clsx(headIconTheme, stepperHeadIconActiveBg);
   }
+
+  if (isDisabled) {
+    return clsx(headIconTheme, stepperHeadIconDisabledBg);
+  }
+
   if (isCompleted) {
     return clsx(headIconTheme, stepperHeadIconCompletedBg);
   }

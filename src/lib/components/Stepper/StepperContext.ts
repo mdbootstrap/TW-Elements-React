@@ -12,6 +12,7 @@ interface StepperContextProps {
   stepsAmount: number;
   linear?: boolean;
   setActiveStepContent: React.Dispatch<React.SetStateAction<any>>;
+  noEditable?: boolean;
 }
 
 const StepperContext = createContext<StepperContextProps>({
@@ -25,6 +26,7 @@ const StepperContext = createContext<StepperContextProps>({
   stepsAmount: 0,
   linear: false,
   setActiveStepContent: () => {},
+  noEditable: false,
 });
 
 export default StepperContext;
