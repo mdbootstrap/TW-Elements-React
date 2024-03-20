@@ -58,6 +58,7 @@ import ToastsPage from "./pages/components/toasts/ToastsPage";
 import SelectPage from "./pages/forms/select/SelectPage";
 import CarouselPage from "./pages/components/carousel/CarouselPage";
 import VideoCarouselPage from "./pages/components/video-carousel/VideoCarouselPage";
+import AutocompletePage from "./pages/forms/autocomplete/AutocompletePage";
 
 //examples pages
 import ButtonExamples from "./pages/components/buttons/exampleList";
@@ -94,6 +95,7 @@ import ToastsExamples from "./pages/components/toasts/exampleList";
 import SelectExamples from "./pages/forms/select/exampleList";
 import CarouselExamples from "./pages/components/carousel/exampleList";
 import VideoCarouselExamples from "./pages/components/video-carousel/exampleList";
+import AutocompleteExamples from "./pages/forms/autocomplete/exampleList";
 
 interface Pages {
   name: string;
@@ -304,6 +306,11 @@ const formsPages: Pages[] = [
     path: "/forms/select",
     element: <SelectPage />,
   },
+  {
+    name: "Autocomplete",
+    path: "/forms/autocomplete",
+    element: <AutocompletePage />,
+  },
 ];
 
 const methodsPages: Pages[] = [
@@ -408,6 +415,7 @@ export const examplesPages: Pages[] = [
   ...SelectExamples,
   ...CarouselExamples,
   ...VideoCarouselExamples,
+  ...AutocompleteExamples,
 ];
 
 export default demoPages;

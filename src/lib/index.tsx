@@ -27,6 +27,7 @@ import TEToast from "./components/Toasts/Toast";
 import TESelect from "./forms/Select/Select";
 import TECarousel from "./components/Carousel/Carousel";
 import TECarouselItem from "./components/Carousel/CarouselItem/CarouselItem";
+import TEAutocomplete from "./forms/Autocomplete/Autocomplete";
 
 export {
   TECollapse,
@@ -58,4 +59,5 @@ export {
   TESelect,
   TECarousel,
   TECarouselItem,
+  TEAutocomplete,
 };
