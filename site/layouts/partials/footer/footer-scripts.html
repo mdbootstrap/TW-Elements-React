@@ -628,7 +628,7 @@
   let previouslyDeltaY = null;
 
   const handleWheelEvent = (event) => {    
-    if (previouslyDeltaY === event.deltaY && document.body.style.overflowY === 'hidden') {
+    if (previouslyDeltaY === event.deltaY && document.body.style.overflow === 'hidden') {
         document.body.style.paddingRight = null;
         document.body.style.overflow = null;
         window.removeEventListener('wheel', handleWheelEvent);
