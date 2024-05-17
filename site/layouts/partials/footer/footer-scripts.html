@@ -620,3 +620,22 @@
     iframe.parentNode.querySelector("[data-te-react-loeader]").classList.add("hidden");
   });
 </script>
+
+<!-- fix scrolling issues on linux system -->
+<script>
+  const isLinux = navigator.platform.toLowerCase().includes("linux");
+
+  let previouslyDeltaY = null;
+
+  const handleWheelEvent = (event) => {    
+    if (previouslyDeltaY === event.deltaY && document.body.style.overflowY === 'hidden') {
+        document.body.style.paddingRight = null;
+        document.body.style.overflow = null;
+        window.removeEventListener('wheel', handleWheelEvent);
+    }
+
+    previouslyDeltaY = event.deltaY;
+  }
+
+  isLinux && window.addEventListener('wheel', handleWheelEvent);
+</script>
