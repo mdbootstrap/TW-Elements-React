@@ -621,10 +621,8 @@
   });
 </script>
 
-<!-- fix scrolling issues on linux system -->
+<!-- fix scrolling issues -->
 <script>
-  const isLinux = navigator.platform.toLowerCase().includes("linux");
-
   let previouslyDeltaY = null;
 
   const handleWheelEvent = (event) => {    
@@ -637,5 +635,5 @@
     previouslyDeltaY = event.deltaY;
   }
 
-  isLinux && window.addEventListener('wheel', handleWheelEvent);
+  window.addEventListener('wheel', handleWheelEvent);
 </script>
