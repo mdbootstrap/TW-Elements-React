@@ -29,41 +29,16 @@ TW Elements React is a huge collection of free, interactive React components for
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Community](#community)
+- [License](#license)
 - [Coming soon](#coming-soon)
 - [Components](#components)
 - [Installation](#installation)
 
 ---
 
-## Community
+## License
 
-TW Elements is a **community-driven** project.
-We invite you to **track our [live progress 👁️](https://github.com/orgs/mdbootstrap/projects/3/)** on the upcoming release.
-
-In the meantime you can also:
-
-- Motivate us with some [words of encouragament ❤️](https://github.com/mdbootstrap/TWd-Elements/discussions/categories/kind-words-general-feedback)
-- Share your [ideas & feature requests 💡](https://github.com/mdbootstrap/TW-Elements/discussions/categories/share-ideas-request-features)
-- Aks for help & help others in our [community support 🙏](https://github.com/mdbootstrap/TW-Elements/discussions/categories/support-from-community)
-- **Engage, discuss & have fun in our [open-source community 💬](https://github.com/mdbootstrap/TW-Elements/discussions)**
-
-**If you want to help the project grow, start by simply sharing it with your peers!**
-
-- [Share via Dev.to](<https://dev.to/new?prefill=---%0Atitle%3A%20500+%20open-source%20components%20for%20TailwindCSS%20and%20React%20%0Apublished%3A%20true%0Atags%3Atailwindcss%0A---%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20[![Tailwind%20components](https://tw-elements.com/img/components-big.jpg)](https://tw-elements.com/docs/react/)%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20I%27d%20like%20to%20share%20my%20latest%20discovery%20with%20you.%20\n%20%20%20%20%20%20%20%20[Tailwind%20Elements](https://tw-elements.com/docs/react/)%20is%20currently,%20the%20most%20popular%203rd%20party%20UI%20kit%20for%20TailwindCSS%20with%20over%2010k%20Github%20stars.%20%20%20%20%20%20%20%20[![GitHub%20Repo%20stars](https://img.shields.io/github/stars/mdbootstrap/tw-elements?style=social)](https://github.com/mdbootstrap/TW-Elements/)%20%20%20%20%20%20%20%20It%27s%20a%20**huge%20collection%20of%20stunning%20components**%20made%20with%20attention%20to%20the%20smallest%20detail.%20%20%20%20%20%20%20%20%20Forms,%20cards,%20buttons,%20and%20hundreds%20of%20others.%20%20%20%20%20%20%20%20%20All%20components%20have%20**dark%20mode**%20and%20very%20intuitive%20**theming%20options**.%20%20%20%20%20%20%20%20The%20project%20is%20supported%20by%20an%20[engaged%20community%20on%20GitHub](https://github.com/mdbootstrap/TW-Elements/discussions),%20I%20recommend%20you%20check%20it%20out%20and%20join%20one%20of%20the%20many%20discussions.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20You%20will%20find%20installation%20instructions%20[here](https://tw-elements.com/docs/react/getting-started/installation),%20and%20you%20can%20track%20the%20progress%20of%20the%20project%20live%20%20%20%20%20%20%20%20%20[here](https://tw-elements.com/docs/react/getting-started/changelog/).%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20The%20project%20was%20kickstarted%20by%20@MDBootstrap,%20a%20group%20of%20open-source%20developers%20behind%20[MDB%20UI%20Kit](https://github.com/mdbootstrap/mdb-ui-kit)%20-%20a%20high-quality%20UI%20kit%20for%20Bootstrap,%20and%20also%20behind%20[MDB%20GO](https://mdbgo.com/)%20-%20hosting%20and%20deployment%20platform.%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20I%20highly%20recommend%20you%20to%20check%20it%20out!%20%20%20%20%20%20%20%20\n%20%20%20%20%20%20%20%20%7B%25%20link%20mdbootstrap/tw-elements-breakthrough-version-is-here-59hh%20%25%7D%20%20%20%20%20%20%20%20\n>)
-- [Share via Twitter](https://twitter.com/intent/tweet?text=500%2B%20open-source%20components%20for%20%23TailwindCSS%20%F0%9F%A4%A9%0Ahttps%3A//tw-elements.com/docs/react/%0A%0ACongrats%20%40MDBootstrap%20%40ascensus_mdb%20%40dawidadach%20for%20this%20awesome%20design%20collection!%0A%0AI%20will%20keep%20using%20it%20in%20my%20projects%20for%20sure!%0A%0A%23uiux%20%23webdevelopment%20%23HTML%20%23CSS%20%23design%20%23Webdesign%20%23programming%20)
-- [Share via Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A//tw-elements.com/docs/react/)
-- [Share via LinkedIn](http://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftw-elements.com/docs/react/%2F&title=500%2B%20open-source%20components%20for%20TailwindCSS)
-- [Share via Pinterest](https://www.pinterest.com/pin/create/button?url=https://tw-elements.com/&media=https://tw-elements.com/img/components-big.jpg&description=TailwindElements)
-- [Share via Reddit](https://reddit.com/submit?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via StumbleUpon](https://www.stumbleupon.com/submit?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Vkontakte](https://vk.com/share.php?url=https://tw-elements.com/docs/react/)
-- [Share via Weibo](https://service.weibo.com/share/share.php?url=https://tw-elements.com/docs/react/&title=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Hackernews](https://news.ycombinator.com/submitlink?u=https://tw-elements.com/docs/react/&t=500+%20open-source%20components%20for%20TailwindCSS)
-- [Share via Gmail](https://mail.google.com/mail/?view=cm&to=%7Bemail_address%7D&su=Check%20out%20this%20project&body=Hello,%0AI%27m%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt%27s%20over%20500+%20open-source%20components%20for%20TailwindCSS%20with%20excellent%20support%20and%20an%20awesome%20community:%0Ahttps://tw-elements.com/docs/react/%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards,&bcc=%7Bemail_address%7D&cc=%7Bemail_address%7D)
-- [Share via email](mailto:?subject=Check%20out%20this%20project&body=Hello%2C%0AI'm%20reaching%20out%20to%20recommend%20my%20latest%20discovery.%0A%0AIt's%20over%20500%20%20open-source%20components%20for%20Tailwind%20CSS%20with%20excellent%20support%20and%20an%20awesome%20community%3A%0Ahttps%3A%2F%2Ftw-elements.com/docs/react/%2F%0A%0AI%20hope%20you%20will%20find%20it%20useful.%0ABest%20regards%2C)
-
-Thank you!
+TWE React Alpha licensing information is available at the license file
 
 ---
 
@@ -529,7 +504,7 @@ A collection of stunning components made with attention to the smallest details.
 2. Run the following command to install the package via NPM:
 
 ```
-npm install tw-elements-react
+npm i git+https://oauth2:ACCESS_TOKEN@git.mdbootstrap.com/mdb/twe-react/prd/twe-react-pro-essential
 ```
 
 3. Add the TW Elements React css file to your main js/tsx file
@@ -559,44 +534,4 @@ module.exports = {
 
 ```javascript
 import { TECollapse } from "tw-elements-react";
-```
-
-##### MDB GO / CLI
-
-Create, deploy and host anything with a single command.
-
-1. To start using MDB GO / CLI install it with one command:
-
-```
-npm install -g mdb-cli
-```
-
-2. Log into the CLI using your MDB account:
-
-```
-mdb login
-```
-
-3. Initialize a project and choose **TW Elements React** from the list:
-
-```
-mdb init tw-elements-react
-```
-
-4. Install the dependencies (inside the project directory):
-
-```
-npm install
-```
-
-5. Run the app:
-
-```
-npm start
-```
-
-6. Publish when you're ready:
-
-```
-mdb publish
 ```

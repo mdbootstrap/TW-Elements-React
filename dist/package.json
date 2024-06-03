@@ -1,0 +1,13 @@
+{
+  "name": "tw-elements-react",
+  "version": "1.0.0-alpha-end",
+  "type": "module",
+  "homepage": "https://tw-elements.com/docs/react",
+  "repository": "https://github.com/mdbootstrap/Tw-Elements-React",
+  "author": "MDBootstrap",
+  "license": "MIT",
+  "style": "./css/tw-elements-react.min.css",
+  "sass": "./src/scss/tailwind.scss",
+  "main": "./js/tw-elements-react.umd.min.js",
+  "module": "./js/tw-elements-react.es.min.js"
+}

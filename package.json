@@ -1,8 +1,8 @@
 {
   "name": "tw-elements-react",
-  "version": "1.0.0-alpha2",
+  "version": "1.0.0-alpha-end",
   "type": "module",
-  "license": "AGPL",
+  "license": "MIT",
   "main": "dist/js/tw-elements-react.umd.min.js",
   "module": "dist/js/tw-elements-react.es.min.js",
   "style": "dist/css/tw-elements-react.min.css",
@@ -10,19 +10,6 @@
   "files": [
     "dist/**/*"
   ],
-  "scripts": {
-    "start": "vite --open",
-    "dev": "vite",
-    "build": "vite build && node config/build.cjs && npm run copy:te-files && cd ./site && npm run build:tailwind",
-    "build:demo": "cross-env --env.mode=demo --env.buildFile=umd vite build && cross-env --env.mode=demo node config/build.cjs",
-    "build:docs": "cross-env --env.mode=docs vite build && cross-env --env.mode=docs node config/build.cjs && cd dist-docs && mdb publish --override",
-    "copy:te-files": "node helpers/copyTeFiles.cjs",
-    "docs:install": "npm install && cd ./site && npm install && cd ../ && npm run build",
-    "docs:start": "cd ./site && npm start",
-    "test": "jest",
-    "lint": "lint-staged && pretty-quick",
-    "preview": "vite preview"
-  },
   "dependencies": {
     "chart.js": "^3.7.1",
     "chartjs-plugin-datalabels": "^2.0.0",
